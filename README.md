@@ -88,6 +88,8 @@
 
 ☕ [Buy Me a Coffee](https://buymeacoffee.com/aries72bulp)
 
+💎 USDT (TRC-20): `TTWroCr4CKttdWcgSoPjXEpQVPpuENVeN6`
+
 ---
 
 ## 🇬🇧 English
@@ -175,6 +177,8 @@ If you see connection where others see only objects — you are using Ω-Lab.
 If the language of relations resonates with you — you can support the development of Ω-Lab:
 
 ☕ [Buy Me a Coffee](https://buymeacoffee.com/aries72bulp)
+
+💎 USDT (TRC-20): `TTWroCr4CKttdWcgSoPjXEpQVPpuENVeN6`
 
 ---
 
@@ -264,6 +268,12 @@ If the language of relations resonates with you — you can support the developm
 
 ☕ [Buy Me a Coffee](https://buymeacoffee.com/aries72bulp)
 
+💎 USDT (TRC-20): `TTWroCr4CKttdWcgSoPjXEpQVPpuENVeN6`
+
 ---
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
 
 *Ω-Lab is an open hypothesis. Use it, test it, break it, rebuild it.*
