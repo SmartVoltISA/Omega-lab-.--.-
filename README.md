@@ -276,4 +276,4 @@ If the language of relations resonates with you — you can support the developm
 
 This project is licensed under the [MIT License](LICENSE).
 
-*Ω-Lab is an open hypothesis. Use it, test it, break it, rebuild it.*
+*Ω-Lab is an open hypothesis. Use it, test it, break it, rebuild it..*
