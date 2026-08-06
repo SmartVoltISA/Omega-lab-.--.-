@@ -83,7 +83,31 @@
 
 Если вы видите связь там, где другие видят только объект — вы используете Ω-Lab.
 
-### 8. Поддержать проект
+### 8. Где и как использовать?
+Этот язык работает в любой сфере, где нужно видеть структуру за вещами:
+
+- **Наука** — физика, биология, космология. Перестать искать «частицы» и начать искать отношения.
+- **Философия** — онтология, феноменология. Освободиться от предвзятости объектов.
+- **Психология и сознание** — мысль, эмоция, травма — всё это графы отношений, а не «состояния» внутри «человека».
+- **Творчество** — музыка, живопись, поэзия. Композиция как пересечение (-1, 0, +1).
+- **Повседневность** — конфликт, диалог, любовь, одиночество. Всё описывается через динамику отношений.
+
+### 9. Возможности
+С этим языком вы можете:
+- **Описывать** любое явление без привязки к объектам
+- **Предсказывать** точки переключения (где граф рушится или рождается)
+- **Понимать** сознание как эмерджентный процесс, а не «субстанцию»
+- **Видеть** связи между, казалось бы, несвязанными областями
+- **Строить** модели без заранее заданных сущностей
+
+### 10. Польза
+Кому это нужно?
+- **Исследователям** — новый инструмент для постановки вопросов
+- **Философам** — основание онтологии без догм
+- **Практикам** — понимание, что «я» не объект, а узел отношений. Это меняет отношение к себе и миру.
+- **Всем, кто чувствует** — что современная наука что-то упускает. Ω-Lab показывает, что именно: она забывает про отношения.
+
+### 11. Поддержать проект
 Если язык отношений откликается в вас — вы можете поддержать развитие Ω-Lab:
 
 ☕ [Buy Me a Coffee](https://buymeacoffee.com/aries72bulp)
@@ -173,7 +197,31 @@ This language can be applied to any phenomenon:
 
 If you see connection where others see only objects — you are using Ω-Lab.
 
-### 8. Support the Project
+### 8. Where and How to Use It?
+This language works in any field where you need to see structure behind things:
+
+- **Science** — physics, biology, cosmology. Stop looking for «particles» and start looking for relations.
+- **Philosophy** — ontology, phenomenology. Free yourself from the prejudice of objects.
+- **Psychology and consciousness** — thought, emotion, trauma — all are graphs of relations, not «states» inside a «person.»
+- **Creativity** — music, painting, poetry. Composition as intersection of (-1, 0, +1).
+- **Everyday life** — conflict, dialogue, love, solitude. All described through the dynamics of relations.
+
+### 9. Capabilities
+With this language you can:
+- **Describe** any phenomenon without attachment to objects
+- **Predict** switching points (where a graph collapses or is born)
+- **Understand** consciousness as an emergent process, not a «substance»
+- **See** connections between seemingly unrelated areas
+- **Build** models without pre-given entities
+
+### 10. Benefits
+Who needs this?
+- **Researchers** — a new tool for asking questions
+- **Philosophers** — foundations of ontology without dogma
+- **Practitioners** — understanding that «I» is not an object but a node of relations. This changes one's relationship to oneself and the world.
+- **Anyone who feels** that modern science is missing something. Ω-Lab shows what: it forgets about relations.
+
+### 11. Support the Project
 If the language of relations resonates with you — you can support the development of Ω-Lab:
 
 ☕ [Buy Me a Coffee](https://buymeacoffee.com/aries72bulp)
@@ -263,7 +311,31 @@ If the language of relations resonates with you — you can support the developm
 
 如果你在他人只看到对象的地方看到了关联——你正在使用 Ω-Lab。
 
-### 8. 支持项目
+### 8. 在哪里以及如何使用？
+这门语言适用于任何需要看到事物背后结构的领域：
+
+- **科学** — 物理、生物、宇宙学。停止寻找「粒子」，开始寻找关系。
+- **哲学** — 本体论、现象学。摆脱对象的偏见。
+- **心理学与意识** — 思想、情感、创伤——都是关系的图，而不是「人」内部的「状态」。
+- **创作** — 音乐、绘画、诗歌。构图为（-1, 0, +1）的交汇。
+- **日常生活** — 冲突、对话、爱、孤独。一切都通过关系的动力学来描述。
+
+### 9. 可能性
+使用这门语言，你可以：
+- **描述**任何现象，而不依附于对象
+- **预测**转换点（图崩溃或诞生的地方）
+- **理解**意识是涌现的过程，而不是「实体」
+- **看到**看似无关领域之间的联系
+- **构建**没有预先给定实体的模型
+
+### 10. 益处
+谁需要这个？
+- **研究者** — 提问的新工具
+- **哲学家** — 没有教条的形而上学基础
+- **实践者** — 理解「我」不是对象，而是关系的节点。这会改变人与自己、与世界的关系。
+- **任何感觉到**现代科学遗漏了什么的人。Ω-Lab 指出遗漏了什么：它忘记了关系。
+
+### 11. 支持项目
 如果关系语言在你心中引起共鸣——你可以支持 Ω-Lab 的发展：
 
 ☕ [Buy Me a Coffee](https://buymeacoffee.com/aries72bulp)
@@ -276,4 +348,4 @@ If the language of relations resonates with you — you can support the developm
 
 This project is licensed under the [MIT License](LICENSE).
 
-*Ω-Lab is an open hypothesis. Use it, test it, break it, rebuild it..*
+*Ω-Lab is an open hypothesis. Use it, test it, break it, rebuild it.*
