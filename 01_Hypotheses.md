@@ -12,8 +12,9 @@
 | H-0.6 | Воля является источником актов | OPEN | Не использовать как предпосылку до минимальных тестов |
 | H-0.7 | Память может быть не хранилищем состояния, а хранилищем связи между состояниями | OPEN | Проверяется через Ω-MEM-2 и последующие relation-memory эксперименты |
 | H-MEM-2 | Prediction advantage связан со структурой памяти | PARTIALLY_CONFIRMED | Ω-MEM-3; требуется отделить размер, структуру и выразительность |
-| H-MEM-2.1 | Prediction value зависит от структурного соответствия обновления памяти структуре процесса | REFINED | Ω-MEM-3: P1/P2/P4 поддерживают, P3 даёт контрпример для конкретной matched architecture |
-| H-MEM-2.2 | Prediction value зависит от structural match при условии достаточной expressive capacity | OPEN | Ω-MEM-4: MATCH × EXPRESSIVENESS |
+| H-MEM-2.1 | Prediction value зависит от структурного соответствия обновления памяти структуре процесса | REFINED | Ω-MEM-3: P1/P2/P4 поддерживают, P3 даёт контрпример для конкретной matched architecture; Ω-MEM-4 audit показал дополнительные implementation confounds |
+| H-MEM-2.2 | Prediction value зависит от structural match при условии достаточной expressive capacity | REFINED / NEEDS_RETEST | Ω-MEM-4 дал признаки capacity effects, но clean same-S test не выполнен: P3 Matched принудительно S=2, Context-2 реализован некорректно, intervention и protocol coverage неполны |
+| H-MEM-2.3 | Prediction advantage depends on sufficient expressive capacity, informational content of state, and robustness to implementation loss | OPEN | Candidate refinement from Ω-MEM-4; requires corrected replication with equal-capacity matched/mismatched/random controls and autonomous representation learning |
 
 ## Правило статусов
 
@@ -26,3 +27,7 @@ OPEN → TESTING → CONFIRMED / PARTIALLY_CONFIRMED / REFINED / REJECTED / NEED
 **OBSERVATION ≠ INTERPRETATION ≠ HYPOTHESIS.**
 
 Если эксперимент ломает конкретную архитектуру, сначала меняется статус архитектуры/гипотезы в пределах проверенной модели. Более сильный универсальный вывод требует дополнительных независимых контролей.
+
+## Ω-MEM-4 audit rule
+
+The submitted Ω-MEM-4 run is preserved as exploratory evidence. Its protocol/code inconsistencies must be resolved before treating H-MEM-2.2 or H-MEM-2.3 as confirmed. In particular, a random high-S machine must not be compared against a matched low-S machine and interpreted as a structural-match failure.
