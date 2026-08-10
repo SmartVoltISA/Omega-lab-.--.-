@@ -11,10 +11,10 @@
 | H-0.5 | Structured memory всегда превосходит random memory | REJECTED | Ω-MEM-1c показал trade-off: random может срабатывать чаще при больших S, structured может давать более сильный эффект |
 | H-0.6 | Воля является источником актов | OPEN | Не использовать как предпосылку до минимальных тестов |
 | H-0.7 | Память может быть не хранилищем состояния, а хранилищем связи между состояниями | OPEN | Проверяется через Ω-MEM-2 и последующие relation-memory эксперименты |
-| H-MEM-2 | Prediction advantage связан со структурой памяти | PARTIALLY_CONFIRMED | Ω-MEM-3; требуется отделить размер, структуру и выразительность |
-| H-MEM-2.1 | Prediction value зависит от структурного соответствия обновления памяти структуре процесса | REFINED | Ω-MEM-3: P1/P2/P4 поддерживают, P3 даёт контрпример для конкретной matched architecture; Ω-MEM-4 audit показал дополнительные implementation confounds |
-| H-MEM-2.2 | Prediction value зависит от structural match при условии достаточной expressive capacity | REFINED / NEEDS_RETEST | Ω-MEM-4 дал признаки capacity effects, но clean same-S test не выполнен: P3 Matched принудительно S=2, Context-2 реализован некорректно, intervention и protocol coverage неполны |
-| H-MEM-2.3 | Prediction advantage depends on sufficient expressive capacity, informational content of state, and robustness to implementation loss | OPEN | Candidate refinement from Ω-MEM-4; requires corrected replication with equal-capacity matched/mismatched/random controls and autonomous representation learning |
+| H-MEM-2 | Prediction advantage связан со структурой памяти | PARTIALLY_CONFIRMED | Ω-MEM-3/4R; преимущество наблюдается не универсально |
+| H-MEM-2.1 | Prediction value зависит от структурного соответствия обновления памяти структуре процесса | REFINED | Ω-MEM-3/4R: поддержка на части процессов и контрпример Thue-Morse |
+| H-MEM-2.2 | Prediction value зависит от structural match при условии достаточной expressive capacity | REFINED | Ω-MEM-4R: Matched > Random at equal S для 3/4 структурированных процессов; Thue-Morse — критический контрпример. Не считать универсально подтверждённой |
+| H-MEM-2.3 | Prediction advantage depends on sufficient expressive capacity, informational content of state, and robustness to implementation loss | PARTIALLY_CONFIRMED | Ω-MEM-4R: expressiveness threshold, process-specific minimal sufficient statistic, implementation loss и iid control поддержаны; Thue-Morse и random-feature advantage требуют дальнейшей проверки |
 
 ## Правило статусов
 
@@ -28,6 +28,16 @@ OPEN → TESTING → CONFIRMED / PARTIALLY_CONFIRMED / REFINED / REJECTED / NEED
 
 Если эксперимент ломает конкретную архитектуру, сначала меняется статус архитектуры/гипотезы в пределах проверенной модели. Более сильный универсальный вывод требует дополнительных независимых контролей.
 
-## Ω-MEM-4 audit rule
+## Ω-MEM-4 / Ω-MEM-4R rule
 
-The submitted Ω-MEM-4 run is preserved as exploratory evidence. Its protocol/code inconsistencies must be resolved before treating H-MEM-2.2 or H-MEM-2.3 as confirmed. In particular, a random high-S machine must not be compared against a matched low-S machine and interpreted as a structural-match failure.
+Ω-MEM-4 сохраняется как exploratory experiment с известными ошибками. Ω-MEM-4R является отдельной corrected replication и не стирает исходный результат.
+
+Ω-MEM-4R показал:
+
+- Periodic-4: expressive threshold at S=4;
+- Markov-2: in the tested generator, Context-1 was already sufficient;
+- Thue-Morse: chosen matched position-counter was insufficient at every tested S;
+- HMM: discretization can create implementation loss;
+- Random-iid: negative control works.
+
+Следующий контроль для H-MEM-2.3: независимая репликация или теоретический анализ, затем — при сохранении гипотезы — Ω-MEM-5 on autonomous predictive-state discovery.
