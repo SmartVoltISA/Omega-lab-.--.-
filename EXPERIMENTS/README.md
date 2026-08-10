@@ -4,6 +4,14 @@ This directory contains experimental records, including negative results and con
 
 ## Current series
 
+### Ω-0 — Foundations
+
+- [Ω-0 — Minimal reconstruction of time and memory](O0_time_memory.md)
+
+Ω-0 asks what minimum structure is required for internally distinguishable order and functional memory, without treating physical time as a pre-given coordinate.
+
+### Ω-B — Internal dynamics
+
 - [Ω-B0 — Self-organizing field / initial hypothesis](B0_initial_hypothesis.md)
 - [Ω-B1 — Internal dynamics vs white noise](B1_internal_dynamics_vs_noise.md)
 - [Ω-B2 — Diffusion-rule control](B2_diffusion_rule_control.md)
@@ -13,7 +21,9 @@ This directory contains experimental records, including negative results and con
 
 ## Important status
 
-The results in Ω-B1–Ω-B4 were reported by an external AI-assisted analysis run and are **not yet independently reproduced from archived source code and seeds inside this repository**. They should therefore be treated as preliminary until the code, exact parameters, seeds and raw outputs are archived and rerun.
+The Ω-0 result is a **preliminary reported result** from an AI-assisted experiment. The exact implementation, seeds (if any), and raw outputs are not yet archived in this repository, so it is not yet considered fully reproducible.
+
+The results in Ω-B1–Ω-B4 were also reported by an external AI-assisted analysis run and are **not yet independently reproduced from archived source code and seeds inside this repository**. They should therefore be treated as preliminary until the code, exact parameters, seeds and raw outputs are archived and rerun.
 
 This distinction is deliberate: a reported result is not the same thing as a reproducible result.
 
