@@ -1,0 +1,63 @@
+{
+  "id": "EXP-Ω-MEM-G-1",
+  "name": "Controlled Graph Geometry / Capacity Decomposition",
+  "date_registered": "2026-08-10",
+  "status": "REGISTERED_NOT_RUN",
+  "hypothesis": "H-MEM-G-1",
+  "question": "Which structural measure best characterizes the capacity represented by memory size S: state count, relation count, boundary, density, or projection?",
+  "principles": [
+    "Do not equate S with area or volume before testing",
+    "Keep observation separate from interpretation",
+    "Preserve all negative and failed results",
+    "Change one controlled factor at a time where possible",
+    "Projection must not alter the underlying graph"
+  ],
+  "state_counts": [4, 8, 16, 32, 64],
+  "edge_regimes": ["sparse", "medium", "dense"],
+  "seeds": 30,
+  "graph_types": ["ring", "path", "random", "degree_preserving_rewire"],
+  "metrics": [
+    "N_states",
+    "N_edges",
+    "density",
+    "N_boundary",
+    "connected_components",
+    "mean_degree",
+    "degree_std",
+    "projection_invariants"
+  ],
+  "projection_views": [
+    "state_space",
+    "adjacency",
+    "layered_path",
+    "radial_angle"
+  ],
+  "null_controls": [
+    "same_N_same_E_random_graph",
+    "degree_preserving_rewire",
+    "permutation"
+  ],
+  "analysis_plan": [
+    "Compare metrics within matched N",
+    "Compare metrics within matched E",
+    "Compare density at fixed N",
+    "Measure which quantities remain invariant under projection",
+    "Do not rank measures using post-hoc criteria"
+  ],
+  "success_criteria": [
+    "A structural measure shows reproducible association with the controlled graph property under independent seeds",
+    "The association survives relevant null controls",
+    "The result is not explained solely by N_states or N_edges"
+  ],
+  "failure_criteria": [
+    "No candidate measure adds explanatory value",
+    "Results are projection-dependent without corresponding graph change",
+    "Simple state/edge count explains all observed variation"
+  ],
+  "not_claimed": [
+    "Information is physically an area",
+    "Information is physically a volume",
+    "Connection to black-hole physics",
+    "Any fundamental physical interpretation"
+  ]
+}
