@@ -31,39 +31,76 @@ The research moved from existence of memory toward predictive information and st
 Results:
 
 - P1 Periodic-4: Matched 1.000 vs Mismatched 0.750 → supports structural match in the tested architecture.
-- P2 Markov-like: Matched 0.679 vs Mismatched 0.491 → supports structural match, but the previous generator was actually first-order.
-- P3 Thue-Morse: Matched 0.556 = Mismatched 0.556; Context 0.668 → counterexample to universal superiority of the tested matched architecture.
+- P2 Markov-like: Matched 0.679 vs Mismatched 0.491 → supports structure-aware prediction, but the previous generator was actually first-order in the tested prediction behaviour.
+- P3 Thue-Morse: Matched 0.556 = Mismatched 0.556; Context 0.668 → counterexample to universal superiority of the tested matched implementation.
 - P4 HMM-like: Matched 0.705 vs Mismatched 0.499 → supports structure-aware memory, but the matched estimator was not a genuine Bayesian filter.
 - P5 Random-iid: all ≈0.50 → negative control works.
 
 **H-MEM-2.1:** REFINED.
 
-The result establishes a failure mode of a specific matched architecture but does not by itself establish the minimum memory complexity of Thue–Morse.
+The result establishes a failure mode of a specific matched architecture but does not establish the minimum memory complexity of Thue–Morse.
 
-## 5. H-MEM-2.2 — Expressiveness condition
+## 5. Ω-MEM-4 — Expressiveness × Structural Match
 
-> Prediction value depends on structural match provided memory expressive capacity is sufficient to represent the relevant structure.
+The experiment was designed to separate structural match from expressive capacity. The submitted implementation produced useful exploratory observations, including the Periodic-4 S=4 threshold, strong Thue-Morse context prediction, increasing performance of random FSMs with S, and a working iid negative control.
 
-**Status:** OPEN.
+However, the run did **not** satisfy its own pre-registered protocol. The full audit is in:
 
-## 6. Ω-MEM-4 — next experiment
+`experiments/Omega-MEM-4/AUDIT_MEM4_2026-08-10.md`
 
-Target: **EXPRESSIVENESS × STRUCTURAL MATCH**.
+Critical issues:
 
-Required controls:
+1. Context-2 stores only one previous symbol and is effectively Context-1.
+2. P3 Matched is forcibly fixed at S=2, so the expressive-capacity sweep does not actually test matched expressiveness.
+3. P3 Matched is not a genuine online position/carry representation of Thue–Morse.
+4. Random S=64 vs Matched S=2 is not a controlled same-S comparison.
+5. The claimed Periodic-4 intervention drop is inconsistent with reset_step=500 for a period-4 counter.
+6. Required 95% CIs, paired comparisons, unconditional entropy, reachable-state counts, effective state entropy, memory lifetime/reconvergence and full raw per-seed data were not archived.
+7. Permutation evidence is predictive-information evidence, not a standalone proof of causality.
 
-- same S, different architecture;
-- same architecture, different S;
-- true Markov-2;
-- genuine HMM belief state;
-- Thue-Morse state-size/architecture sweep;
-- conditional entropy;
-- paired intervention;
-- permutation controls;
-- positive Periodic-4 control;
-- negative Random-iid control.
+Therefore Ω-MEM-4 is classified as **EXPLORATORY / NEEDS CORRECTED REPLICATION**, not as a clean confirmation of H-MEM-2.2.
 
-Protocol is archived in `experiments/Omega-MEM-4/PROTOCOL.md`.
+### Current hypothesis statuses
+
+**H-MEM-2:** PARTIALLY CONFIRMED.
+
+**H-MEM-2.1:** REFINED.
+
+**H-MEM-2.2:** REFINED / NEEDS_RETEST.
+
+**H-MEM-2.3:** OPEN.
+
+A useful weaker candidate formulation is:
+
+> Prediction advantage depends on whether the memory state is a sufficiently informative representation of the predictive state, subject to capacity and implementation constraints.
+
+This formulation is intentionally weaker than the earlier universal structural-match claim.
+
+## 6. Required corrected experiment: Ω-MEM-4R
+
+Before moving to a definitive Ω-MEM-5 claim, run a corrected replication:
+
+- true Context-k implementations;
+- true same-S matched/mismatched/random comparisons;
+- a genuine Thue-Morse position/carry representation and explicit finite approximations;
+- actual matched S sweep;
+- multiple random FSMs per condition;
+- paired seed-level contrasts and 95% CIs;
+- unconditional and conditional entropy;
+- reachable-state and effective-state statistics;
+- strict intervention with non-equivalent reset states;
+- recovery-time / memory-lifetime measurement;
+- full raw per-seed data;
+- machine-readable protocol and results;
+- no claim of O(log n) necessity without a dedicated complexity experiment.
+
+Primary falsification question:
+
+> At equal effective capacity, does a correctly matched representation outperform an equally expressive structurally mismatched representation?
+
+Secondary question:
+
+> Can a learner discover a predictive-state representation without being told the process-specific structure?
 
 ## 7. Ω-B — internal dynamics
 
@@ -85,6 +122,8 @@ OPEN research direction: whether stable organization occupies a bounded connecti
 8. Do not protect an Ω hypothesis from falsification.
 9. Distinguish state count from expressive capacity.
 10. Distinguish predictive correlation from causal memory via intervention.
+11. Do not claim a controlled comparison when state capacity differs.
+12. Preserve submitted implementations separately from corrected replications.
 
 ## 10. Current research order
 
@@ -101,9 +140,11 @@ minimum causal memory
   ↓
 predictive memory and structural match
   ↓
-Ω-MEM-4
+Ω-MEM-4 exploratory result + audit
   ↓
-expressive capacity × structural match
+Ω-MEM-4R corrected capacity × structure test
+  ↓
+Ω-MEM-5 adaptive predictive-state discovery
   ↓
 Ω-0.6 / minimal comparison
   ↓
