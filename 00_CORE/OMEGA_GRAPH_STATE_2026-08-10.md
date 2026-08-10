@@ -14,6 +14,39 @@ The graph is maintained as a research graph, not merely a file index.
 - `supersedes`
 - `depends_on`
 - `requires_retest`
+- `relates_to`
+- `branches_from`
+- `reconnects`
+
+## ORDER architecture
+
+Ω-Lab now separates two complementary structures:
+
+```text
+PROVENANCE / ORDER TREE
+        │
+        ├── branch A
+        ├── branch B
+        └── branch C
+
+RELATION GRAPH
+        ↕
+  cross-branch relations
+        ↕
+ stable intersections / nodes
+```
+
+The tree answers **where did this come from?**
+
+The graph answers **what is this connected to?**
+
+The two structures must not be collapsed into one. Provenance preserves branching history; the graph preserves structural relations. Their intersections may produce reusable research nodes.
+
+The architectural hypothesis is recorded as **H-ORDER-01: Order as the provenance root** and remains OPEN.
+
+`ORDER` is intentionally more general than `TIME`. Existing Ω-0 evidence concerns reconstruction of internal order from updating traces; it does not by itself establish physical time.
+
+See: `00_CORE/OMEGA_ORDER_ARCHITECTURE.md`.
 
 ## Direction → hypothesis → experiment structure
 
@@ -34,6 +67,29 @@ DIR-1
                 └── supports candidate → H-MEM-2.3 (OPEN)
                        └── requires_retest → EXP-Ω-MEM-4R
 ```
+
+## ORDER / DIR-1 provenance branch
+
+```text
+Ω-0
+  ↓
+Ω-MEM-1a–1d
+  ↓
+Ω-MEM-2
+  ↓
+Ω-MEM-3
+  ├── contradiction / failure
+  ↓
+Ω-MEM-4
+  ├── refinement
+  ├── new capacity questions
+  ↓
+Ω-MEM-4R
+  ↓
+Ω-MEM-5 (conditional future branch)
+```
+
+This sequence is a provenance path, not the complete relation graph. Cross-links may connect these experiments to other directions such as time, trace, symmetry, comparison, expressiveness, and adaptive memory.
 
 ## Ω-MEM-4 audit branch
 
@@ -110,6 +166,7 @@ H-Ω-C
 - H-MEM-2.1 REFINED
 - H-MEM-2.2 REFINED / NEEDS_RETEST
 - H-MEM-2.3 OPEN
+- H-ORDER-01 OPEN
 
 ## Historical graph rule
 
@@ -117,6 +174,8 @@ A contradiction does not delete an earlier edge. The graph must preserve the pat
 
 ## Current frontier
 
-`EXP-Ω-MEM-4` is preserved as an exploratory result. The active methodological frontier is now **Ω-MEM-4R**, whose purpose is to test expressive capacity and structural match under equal-capacity, correctly implemented controls.
+`EXP-Ω-MEM-4` is preserved as an exploratory result. The active methodological frontier is **Ω-MEM-4R**, whose purpose is to test expressive capacity and structural match under equal-capacity, correctly implemented controls.
+
+In parallel, **H-ORDER-01** is now an architectural validation branch. Its first target is the DIR-1 / memory provenance path. The objective is to determine whether the combined provenance-tree + relation-graph representation exposes useful dependencies, contradictions, branch points, or missing evidence that are obscured in the graph alone.
 
 After Ω-MEM-4R, and only if the representation problem is cleanly characterized, the project can proceed to Ω-MEM-5: adaptive discovery of predictive-state representations.
