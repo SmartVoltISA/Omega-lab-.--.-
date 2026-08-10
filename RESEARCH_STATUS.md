@@ -28,89 +28,85 @@ The research moved from existence of memory toward predictive information and st
 
 ## 4. Ω-MEM-3 — Generalization attempt
 
-Results:
-
-- P1 Periodic-4: Matched 1.000 vs Mismatched 0.750 → supports structural match in the tested architecture.
-- P2 Markov-like: Matched 0.679 vs Mismatched 0.491 → supports structure-aware prediction, but the previous generator was actually first-order in the tested prediction behaviour.
-- P3 Thue-Morse: Matched 0.556 = Mismatched 0.556; Context 0.668 → counterexample to universal superiority of the tested matched implementation.
-- P4 HMM-like: Matched 0.705 vs Mismatched 0.499 → supports structure-aware memory, but the matched estimator was not a genuine Bayesian filter.
-- P5 Random-iid: all ≈0.50 → negative control works.
+Results included support for structural prediction on some processes and a Thue-Morse counterexample. H-MEM-2.1 was therefore refined rather than universally confirmed.
 
 **H-MEM-2.1:** REFINED.
 
-The result establishes a failure mode of a specific matched architecture but does not establish the minimum memory complexity of Thue–Morse.
+## 5. Ω-MEM-4 — Exploratory expressiveness experiment
 
-## 5. Ω-MEM-4 — Expressiveness × Structural Match
+Ω-MEM-4 produced useful observations but violated parts of its intended protocol. The audit identified broken Context-2, forced capacity overrides, unequal comparisons, inadequate matched Thue-Morse representation and incomplete controls.
 
-The experiment was designed to separate structural match from expressive capacity. The submitted implementation produced useful exploratory observations, including the Periodic-4 S=4 threshold, strong Thue-Morse context prediction, increasing performance of random FSMs with S, and a working iid negative control.
+**Status:** EXPLORATORY / NEEDS CORRECTED REPLICATION.
 
-However, the run did **not** satisfy its own pre-registered protocol. The full audit is in:
+Ω-MEM-4 remains archived and is not deleted or rewritten as if it never occurred.
 
-`experiments/Omega-MEM-4/AUDIT_MEM4_2026-08-10.md`
+## 6. Ω-MEM-4R — Corrected controlled replication
 
-Critical issues:
+**Date:** 2026-08-10  
+**Status:** COMPLETED  
+**Hypotheses:** H-MEM-2.2, H-MEM-2.3
 
-1. Context-2 stores only one previous symbol and is effectively Context-1.
-2. P3 Matched is forcibly fixed at S=2, so the expressive-capacity sweep does not actually test matched expressiveness.
-3. P3 Matched is not a genuine online position/carry representation of Thue–Morse.
-4. Random S=64 vs Matched S=2 is not a controlled same-S comparison.
-5. The claimed Periodic-4 intervention drop is inconsistent with reset_step=500 for a period-4 counter.
-6. Required 95% CIs, paired comparisons, unconditional entropy, reachable-state counts, effective state entropy, memory lifetime/reconvergence and full raw per-seed data were not archived.
-7. Permutation evidence is predictive-information evidence, not a standalone proof of causality.
+The protocol was fixed before execution. The corrected run used:
 
-Therefore Ω-MEM-4 is classified as **EXPLORATORY / NEEDS CORRECTED REPLICATION**, not as a clean confirmation of H-MEM-2.2.
+- validated true Context-2/3 shift registers;
+- equal-S comparisons where valid;
+- 10 independent random FSMs per random condition;
+- an explicitly second-order Markov generator;
+- a discretized HMM Bayesian belief-state implementation;
+- intervention reset states checked to differ from control;
+- recovery horizons 1–128;
+- per-seed accuracy arrays.
 
-### Current hypothesis statuses
+### Key observations
 
-**H-MEM-2:** PARTIALLY CONFIRMED.
+**P1 Periodic-4:** Counter S=4 reaches 1.000; S<4 is approximately baseline. This supports an expressive-capacity threshold for this architecture/process pair.
 
-**H-MEM-2.1:** REFINED.
+**P2 Markov-2:** Context-1 = Context-2 = Context-3 = Matched ≈ 0.823 in the tested generator. The tested transition table is already predictable from the last-symbol partition, so additional context adds little predictive information. This is evidence for a process-specific minimal sufficient statistic, not a universal statement about all Markov-2 processes.
 
-**H-MEM-2.2:** REFINED / NEEDS_RETEST.
+**P3 Thue-Morse:** the chosen matched position-counter is ≈0.500 for all tested S, while Random S=64 reaches ≈0.730 and Context-2/3 ≈0.666. This is the critical counterexample. It shows that a nominal structural label is not sufficient if the implementation does not encode the relevant predictive information.
 
-**H-MEM-2.3:** OPEN.
+**P4 HMM:** Context-1 ≈0.704; Matched is ≈0.702 at S=8 and falls to ≈0.696 at S=64. Conditional entropy falls with S, but predictive accuracy does not improve, consistent with discretization/sparse-state implementation loss.
 
-A useful weaker candidate formulation is:
+**P5 Random-iid:** all architectures remain approximately 0.500. Negative control works.
 
-> Prediction advantage depends on whether the memory state is a sufficiently informative representation of the predictive state, subject to capacity and implementation constraints.
+### Equal-S comparison
 
-This formulation is intentionally weaker than the earlier universal structural-match claim.
+Representative results:
 
-## 6. Required corrected experiment: Ω-MEM-4R
+| Process | S | Matched | Random | Winner |
+|---|---:|---:|---:|---|
+| Periodic-4 | 8 | 1.000 | 0.844 | Matched |
+| Markov-2 | 4 | 0.823 | 0.634 | Matched |
+| Thue-Morse | 8 | 0.500 | 0.632 | Random |
+| HMM | 8 | 0.702 | 0.613 | Matched |
 
-Before moving to a definitive Ω-MEM-5 claim, run a corrected replication:
+Reported paired t-tests were significant in all four comparisons (p<0.001): Periodic t=29.4; Markov-2 t=25.1; Thue-Morse t=-15.2; HMM t=8.7.
 
-- true Context-k implementations;
-- true same-S matched/mismatched/random comparisons;
-- a genuine Thue-Morse position/carry representation and explicit finite approximations;
-- actual matched S sweep;
-- multiple random FSMs per condition;
-- paired seed-level contrasts and 95% CIs;
-- unconditional and conditional entropy;
-- reachable-state and effective-state statistics;
-- strict intervention with non-equivalent reset states;
-- recovery-time / memory-lifetime measurement;
-- full raw per-seed data;
-- machine-readable protocol and results;
-- no claim of O(log n) necessity without a dedicated complexity experiment.
+These statistical values are archived as **reported experiment outputs**; they are not independently rerun by this repository unless an executable reproduction is separately archived and executed.
 
-Primary falsification question:
+### Hypothesis status after Ω-MEM-4R
 
-> At equal effective capacity, does a correctly matched representation outperform an equally expressive structurally mismatched representation?
+**H-MEM-2.2: REFINED.** The equal-S prediction is supported for 3/4 tested structured processes but fails for Thue-Morse under the chosen matched implementation. The universal claim "Matched always wins at equal S" is therefore not accepted.
 
-Secondary question:
+**H-MEM-2.3: PARTIALLY CONFIRMED.** The run supports four components: expressive threshold, process-specific minimal sufficient statistic, implementation/discretization loss, and successful iid negative control. Counterevidence remains the Thue-Morse failure and the ability of random features at high S to outperform a hand-designed matched implementation.
 
-> Can a learner discover a predictive-state representation without being told the process-specific structure?
+## 7. Required next control
 
-## 7. Ω-B — internal dynamics
+Before treating H-MEM-2.3 as stable, perform an independent replication or theoretical analysis. If it survives, proceed to Ω-MEM-5:
+
+> Can a system autonomously discover a minimal sufficient predictive state without hand-designing the process-specific architecture?
+
+Ω-MEM-5 is therefore **conditional**, not yet a confirmed conclusion.
+
+## 8. Ω-B — internal dynamics
 
 The original self-organizing/self-will interpretation was not established. Controls exposed dependence on diffusion rules and an architectural artifact. Candidate effects remain under investigation with stronger null models and spatial shuffling.
 
-## 8. Ω-C — critical connectivity
+## 9. Ω-C — critical connectivity
 
 OPEN research direction: whether stable organization occupies a bounded connectivity regime measurable through quantities such as algebraic connectivity, spectral gap, percolation threshold and resilience.
 
-## 9. Methodological rules
+## 10. Methodological rules
 
 1. Do not treat attractive visualizations as evidence by themselves.
 2. Separate data, observation, interpretation and hypothesis.
@@ -124,8 +120,9 @@ OPEN research direction: whether stable organization occupies a bounded connecti
 10. Distinguish predictive correlation from causal memory via intervention.
 11. Do not claim a controlled comparison when state capacity differs.
 12. Preserve submitted implementations separately from corrected replications.
+13. Treat a process-specific matched architecture as an implementation, not as a proof of universal structural correspondence.
 
-## 10. Current research order
+## 11. Current research order
 
 ```text
 Ω-0
@@ -143,6 +140,8 @@ predictive memory and structural match
 Ω-MEM-4 exploratory result + audit
   ↓
 Ω-MEM-4R corrected capacity × structure test
+  ↓
+independent check / theory of H-MEM-2.3
   ↓
 Ω-MEM-5 adaptive predictive-state discovery
   ↓
