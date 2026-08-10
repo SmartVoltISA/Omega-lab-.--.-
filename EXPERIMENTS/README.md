@@ -12,11 +12,11 @@ This directory contains experimental records, including negative results and con
 
 ### Ω-MEM — Functional memory
 
-- [Ω-MEM-1a–1d — Minimal functional memory: repeatability, strict intervention, size vs structure, minimality](MEM/Omega-MEM-1_abcd.md)
+- [Ω-MEM-1a–1d — Minimal functional memory](MEM/Omega-MEM-1_abcd.md)
+- [Ω-MEM-2 — Predictive memory](../Omega-MEM-2.md)
+- [Ω-MEM-4R — Expressiveness × Structural Match — corrected replication](../experiments/Omega-MEM-4R/README.md)
 
-Ω-MEM-1 tests whether memory has a causal effect on future outputs, the minimum state-space size required for such an effect, and whether memory size or transition structure is more important.
-
-Current status: preliminary AI-assisted result. The strongest current claim is architecture-specific: S=1 cannot produce a non-trivial reset effect; S>=2 can. Reproducibility requires archiving source code, seeds and raw outputs.
+Ω-MEM-4R is the controlled replication of Ω-MEM-4. It fixes the known Context-k, capacity, random-baseline, Markov-process, HMM, intervention and recovery issues identified in the Ω-MEM-4 audit.
 
 ### Ω-B — Internal dynamics
 
@@ -27,15 +27,23 @@ Current status: preliminary AI-assisted result. The strongest current claim is a
 - [Ω-B4 — Fair three-model comparison](B4_fair_comparison.md)
 - [Ω-B5 — Spatial shuffle — proposed next control](B5_spatial_shuffle.md)
 
+## Ω-MEM-4 and Ω-MEM-4R status
+
+Ω-MEM-4 remains archived as **EXPLORATORY / NEEDS CORRECTED REPLICATION**. Its audit identified broken Context-2, capacity mismatch, an inadequate Thue-Morse matched implementation, and incomplete controls.
+
+Ω-MEM-4R is the completed corrected replication. It was preregistered on 2026-08-10 and uses true Context-2/3 shift registers, equal-S comparisons, 10 random FSMs per condition, a true second-order Markov generator, a discretized HMM belief-state implementation, explicit intervention reset checks, recovery horizons, and per-seed accuracy storage.
+
+Main result: Matched > Random at representative equal S for Periodic-4, Markov-2 and HMM; Thue-Morse is a critical counterexample where the chosen matched position-counter remains near baseline while Random S=64 reaches ~0.730.
+
+See:
+
+- `experiments/Omega-MEM-4R/README.md`
+- `experiments/Omega-MEM-4R/PROTOCOL.md`
+- `experiments/Omega-MEM-4R/RESULTS.md`
+
 ## Important status
 
-The Ω-0 result is a **preliminary reported result** from an AI-assisted experiment. The exact implementation, seeds (if any), and raw outputs are not yet archived in this repository, so it is not yet considered fully reproducible.
-
-The Ω-MEM-1a–1d results are also **preliminary** until the exact source code, all seeds, raw trajectories, intervention protocol and null-model procedure are archived and independently rerun.
-
-The results in Ω-B1–Ω-B4 were also reported by an external AI-assisted analysis run and are **not yet independently reproduced from archived source code and seeds inside this repository**. They should therefore be treated as preliminary until the code, exact parameters, seeds and raw outputs are archived and rerun.
-
-This distinction is deliberate: a reported result is not the same thing as a reproducible result.
+The project deliberately distinguishes a reported result from a reproducible result. Source code, seeds and raw outputs should be archived whenever possible. Statistical values reported in Ω-MEM-4R are retained as experiment-reported results; they should not be treated as independently rerun by the repository merely because the report records them.
 
 ## Research policy
 
