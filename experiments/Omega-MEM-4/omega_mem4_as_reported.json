@@ -1,0 +1,69 @@
+{
+  "experiment": "Ω-MEM-4",
+  "date": "2026-08-10",
+  "status": "exploratory_needs_corrected_replication",
+  "note": "These are summary values supplied by the original run. Full per-seed raw data were not archived in the supplied material and are not fabricated here.",
+  "parameters": {
+    "length": 2000,
+    "burn_in": 100,
+    "train_steps": 1000,
+    "test_steps": 1000,
+    "seeds": 30,
+    "permutation_trials": 100,
+    "intervention_step": 500,
+    "S": [1,2,4,8,16,32,64]
+  },
+  "results": {
+    "P1_Periodic4": {
+      "Baseline": [0.5005,0.5005,0.5005,0.5005,0.5005,0.5005,0.5005],
+      "Counter": [0.5005,0.5005,1.0,1.0,1.0,1.0,1.0],
+      "Random": [0.5005,0.6420,0.7238,0.8122,0.8896,0.9592,0.9535]
+    },
+    "P2_Markov2": {
+      "Baseline": 0.4824,
+      "Context1": 0.8344,
+      "Context2_reported": 0.8344,
+      "Context3_reported": 0.8344,
+      "Matched_reported": 0.8344,
+      "Random_S16": 0.7183,
+      "audit_note": "Context-2 and P2 Matched implementations are not valid two-symbol context machines in the submitted code."
+    },
+    "P3_ThueMorse": {
+      "Baseline": 0.5000,
+      "Counter_S64": 0.5000,
+      "Context2_reported": 0.6662,
+      "Context3_reported": 0.6656,
+      "Matched_reported": 0.5220,
+      "Random_S64": 0.7265,
+      "audit_note": "Matched is forcibly S=2, so Random S=64 is not a controlled same-capacity comparison."
+    },
+    "P4_HMM": {
+      "Baseline": 0.4935,
+      "Context1": 0.7041,
+      "Matched_S8": 0.7019,
+      "Matched_S64": 0.6961,
+      "Random_S32": 0.6673
+    },
+    "P5_RandomIID": {
+      "Baseline": 0.4965,
+      "Counter_S16": 0.4989,
+      "Context2": 0.4970,
+      "Random_S16": 0.4983
+    }
+  },
+  "interpretation": {
+    "confirmed_within_model": [
+      "Periodic-4 counter capacity threshold at S=4",
+      "Random-iid negative control near baseline",
+      "Submitted Thue-Morse parity tracker fails",
+      "Context representations predict submitted Thue-Morse data better than the parity tracker"
+    ],
+    "not_established": [
+      "O(log n) necessary memory for Thue-Morse",
+      "Random S=64 beats matched memory after capacity control",
+      "Markov-2 minimal sufficient statistic",
+      "Permutation test as proof of causality",
+      "Universal structural-match law"
+    ]
+  }
+}
