@@ -15,6 +15,7 @@
 | H-MEM-2.1 | Prediction value зависит от структурного соответствия обновления памяти структуре процесса | REFINED | Ω-MEM-3: P1/P2/P4 поддерживают, P3 даёт контрпример для конкретной matched architecture; Ω-MEM-4 audit показал дополнительные implementation confounds |
 | H-MEM-2.2 | Prediction value зависит от structural match при условии достаточной expressive capacity | REFINED / NEEDS_RETEST | Ω-MEM-4 дал признаки capacity effects, но clean same-S test не выполнен: P3 Matched принудительно S=2, Context-2 реализован некорректно, intervention и protocol coverage неполны |
 | H-MEM-2.3 | Prediction advantage depends on sufficient expressive capacity, informational content of state, and robustness to implementation loss | OPEN | Candidate refinement from Ω-MEM-4; requires corrected replication with equal-capacity matched/mismatched/random controls and autonomous representation learning |
+| H-MEM-G-1 | Геометрическое представление информационной ёмкости может быть разложено на state capacity, relation capacity, boundary, density и projection geometry | OPEN | Зарегистрирован EXP-Ω-MEM-G-1; до результатов не утверждать, что S является площадью или объёмом |
 
 ## Правило статусов
 
@@ -31,3 +32,7 @@ OPEN → TESTING → CONFIRMED / PARTIALLY_CONFIRMED / REFINED / REJECTED / NEED
 ## Ω-MEM-4 audit rule
 
 The submitted Ω-MEM-4 run is preserved as exploratory evidence. Its protocol/code inconsistencies must be resolved before treating H-MEM-2.2 or H-MEM-2.3 as confirmed. In particular, a random high-S machine must not be compared against a matched low-S machine and interpreted as a structural-match failure.
+
+## Ω-MEM-G-1 audit rule
+
+The geometry branch is exploratory. The terms area, volume, boundary, density and projection are operational labels for graph measurements, not claims about physical information geometry. Any physical interpretation requires a separate independent test.
