@@ -10,6 +10,7 @@
 | 002 | `SPACE-ORGANS-SKILLS` | SPACE / органы / навыки | Среда ИИ, Self Model, функциональные органы, capabilities, Guardian, RF sensing, графовая память, восстановление навыков |
 | 003 | `VIDEO-STRUCTURE-MEMORY` | Видео / структура / процесс / память | Визуализация, структура, каркас, объект, процесс, состояние, память и развитие визуальных экспериментов |
 | 004 | `ARCHIVE-CORE` | Архивная архитектура | Правила полного архивирования, разделение источника и извлечения, причинно-следственные связи, узлы, рёбра и граф истории |
+| 005 | `MEMORY-CAUSALITY-COMPETITION` | Память / причинность / конкуренция / критическая связность | Ω-0, Ω-MEM-1, Omega Breath, Ω-B, Ω-C, эксперименты с коллапсом, циклами, аттракторами и связностью |
 
 ## Правило хранения
 
@@ -46,12 +47,14 @@
 
 Пример:
 
-`ARCHIVE-001-MINIMAL-ONTOLOGY.md`
+`001-MINIMAL-ONTOLOGY.md`
 
-`ARCHIVE-002-SPACE-ORGANS-SKILLS.md`
+`002-SPACE-ORGANS-SKILLS.md`
 
-`ARCHIVE-003-VIDEO-STRUCTURE-MEMORY.md`
+`003-VIDEO-STRUCTURE-MEMORY.md`
 
-`ARCHIVE-004-ARCHIVE-CORE.md`
+`004-ARCHIVE-CORE.md`
+
+`005-MEMORY-CAUSALITY-COMPETITION.md`
 
 Так директор проекта сразу видит не только номер, но и направление конкретного архива.
