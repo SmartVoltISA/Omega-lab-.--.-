@@ -1,0 +1,23 @@
+{
+  "experiment": "Ω-INF-1",
+  "seed": 20260813,
+  "n_shuffles": 100,
+  "text_length_chars": 855,
+  "intervention": "random permutation of characters; composition and length preserved",
+  "original_metrics": {
+    "n_chars": 855,
+    "symbol_entropy_bits": 4.632674635385956,
+    "conditional_entropy_bits": 2.9978734538475162,
+    "unique_bigrams": 281,
+    "zlib_bytes": 654,
+    "lz_complexity": 359
+  },
+  "shuffle_summary": {
+    "n_chars": {"original": 855, "shuffle_mean": 855},
+    "symbol_entropy_bits": {"original": 4.632674635385956, "shuffle_mean": 4.632674635385956, "shuffle_sd": 0.0, "shuffle_min": 4.632674635385956, "shuffle_max": 4.632674635385956, "difference_mean_minus_original": 0.0},
+    "conditional_entropy_bits": {"original": 2.9978734538475162, "shuffle_mean": 3.726223310109279, "shuffle_sd": 0.02446614387377891, "shuffle_min": 3.6575829718707698, "shuffle_max": 3.7979760894959886, "difference_mean_minus_original": 0.728349856261763},
+    "unique_bigrams": {"original": 281, "shuffle_mean": 436.06, "shuffle_sd": 6.882594061115403, "shuffle_min": 421, "shuffle_max": 455, "difference_mean_minus_original": 155.06},
+    "zlib_bytes": {"original": 654, "shuffle_mean": 824.24, "shuffle_sd": 5.111128678055011, "shuffle_min": 812, "shuffle_max": 838, "difference_mean_minus_original": 170.24},
+    "lz_complexity": {"original": 359, "shuffle_mean": 387.75, "shuffle_sd": 2.5834555200820515, "shuffle_min": 381, "shuffle_max": 394, "difference_mean_minus_original": 28.75}
+  }
+}
