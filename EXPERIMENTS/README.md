@@ -18,6 +18,14 @@ This directory contains experimental records, including negative results and con
 
 Ω-MEM-4R is the controlled replication of Ω-MEM-4. It fixes the known Context-k, capacity, random-baseline, Markov-process, HMM, intervention and recovery issues identified in the Ω-MEM-4 audit.
 
+### Ω-INF — Information and relational organization
+
+- [Ω-INF-1 — Character order and structural information](INF/README.md)
+
+Ω-INF-1 asks whether changing only the organization of a fixed set of elements produces measurable structural differences. The initial controlled run preserved all 855 characters and their multiplicities, then compared the original with 100 deterministic-seed random permutations.
+
+Current status: **EXPLORATORY / H-INF-1 OPEN**. The run supports an operational distinction between composition and organization, but does not establish a universal theory of information.
+
 ### Ω-B — Internal dynamics
 
 - [Ω-B0 — Self-organizing field / initial hypothesis](B0_initial_hypothesis.md)
@@ -56,4 +64,4 @@ The project records:
 - control experiments;
 - alternative explanations.
 
-A result that breaks an Ω hypothesis is valuable and should remain in the history.
+A result that breaks an Ω hypothesis is valuable and should remain in the project history.
