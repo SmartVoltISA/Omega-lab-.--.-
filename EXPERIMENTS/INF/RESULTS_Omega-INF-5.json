@@ -4,12 +4,14 @@
   "seed_start": 20260820,
   "runs_per_corpus": 100,
   "question": "Does the Ω-INF-4 observation replicate on independent texts?",
+  "method": "Exact trigram multiset preserved by randomized Eulerian reconstruction; same intervention and metrics as Ω-INF-4.",
   "results": {
-    "technical": {"length": 386, "original_zlib": 355, "mean_zlib": 352.05, "sd_zlib": 2.6719, "range": [345, 360], "delta_mean": -2.95, "original_H3": 0.22714, "mean_H3": 0.25694, "trigram_invariant": true},
-    "literary": {"length": 310, "original_zlib": 286, "mean_zlib": 284.09, "sd_zlib": 2.6556, "range": [276, 291], "delta_mean": -1.91, "original_H3": 0.24523, "mean_H3": 0.29339, "trigram_invariant": true},
-    "random_like": {"length": 224, "original_zlib": 195, "mean_zlib": 196.46, "sd_zlib": 0.7709, "range": [194, 198], "delta_mean": 1.46, "original_H3": 0.03620, "mean_H3": 0.03620, "trigram_invariant": true},
-    "structured": {"length": 402, "original_zlib": 239, "mean_zlib": 247.23, "sd_zlib": 1.7399, "range": [242, 251], "delta_mean": 8.23, "original_H3": 0.30990, "mean_H3": 0.37583, "trigram_invariant": true}
+    "technical": {"length": 386, "original": {"H0": 4.534613384865333, "H1": 2.835754791077262, "H2": 0.7732790268748253, "H3": 0.2271376461088537, "unique_trigrams": 307, "zlib": 355}, "mean_zlib": 352.05, "sd_zlib": 2.6718699236468995, "min_zlib": 345, "max_zlib": 360, "mean_H3": 0.25693846726197184, "trigram_invariant": true},
+    "literary": {"length": 310, "original": {"H0": 4.346770368197459, "H1": 2.5795023547866527, "H2": 0.9106009702416784, "H3": 0.24522544793206608, "unique_trigrams": 247, "zlib": 286}, "mean_zlib": 284.09, "sd_zlib": 2.6556400814915118, "min_zlib": 276, "max_zlib": 291, "mean_H3": 0.2933948315013, "trigram_invariant": true},
+    "random_like": {"length": 224, "original": {"H0": 5.689725945383602, "H1": 1.7622458530077392, "H2": 0.27486283787681925, "H3": 0.03619909502262444, "unique_trigrams": 215, "zlib": 195}, "mean_zlib": 196.46, "sd_zlib": 0.7709367252527501, "min_zlib": 194, "max_zlib": 198, "mean_H3": 0.03619909502262444, "trigram_invariant": true},
+    "structured": {"length": 402, "original": {"H0": 4.12619227727884, "H1": 2.835777211035827, "H2": 1.0724943069867159, "H3": 0.30989659271113923, "unique_trigrams": 294, "mean_zlib": 247.23, "original_zlib": 239, "sd_zlib": 1.7399349807891493, "min_zlib": 242, "max_zlib": 251, "mean_H3": 0.37582623151604216, "trigram_invariant": true}
   },
-  "observation": "The trigram-preserving intervention is reproducible across all four corpora, but the direction and magnitude of compression change are not universal: two corpora moved slightly downward, one slightly upward, and one clearly upward.",
-  "interpretation_limit": "This is a replication/control result, not evidence for semantic information or a universal hierarchy. The corpus is small and the reconstruction family is not a uniform sample of all trigram-equivalent sequences."
+  "zlib_difference_mean_minus_original": {"technical": -2.95, "literary": -1.91, "random_like": 1.46, "structured": 8.23},
+  "observation": "The direction of zlib change is not universal: two corpora decrease, two increase. Exact trigram preservation is verified for all 100 reconstructions in each corpus.",
+  "interpretation_limit": "This is a replication/control result, not evidence of semantic information. Compression is an operational sequence-structure proxy only. The corpus is still small and deliberately constructed; no universal hierarchy is inferred."
 }
