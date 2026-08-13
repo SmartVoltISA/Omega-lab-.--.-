@@ -1,0 +1,86 @@
+{
+  "chromaticity_centered": {
+    "errors": {
+      "1": {
+        "max_abs_error": 0.5272050078064926,
+        "relative_fro_error": 0.47784546575360426,
+        "rmse": 0.14079999024569806
+      },
+      "2": {
+        "max_abs_error": 6.8833827526759706e-15,
+        "relative_fro_error": 1.2158890770368865e-15,
+        "rmse": 3.582689016765106e-16
+      },
+      "3": {
+        "max_abs_error": 9.43689570931383e-15,
+        "relative_fro_error": 1.2827058392397602e-15,
+        "rmse": 3.779568555039615e-16
+      }
+    },
+    "rank": 2,
+    "simplex_identity_max_abs": 2.220446049250313e-16,
+    "singular_ratios_to_s1": [1.0, 0.5439680984587466, 4.713024474455799e-16],
+    "singular_values": [9.72971848591681, 5.292656463323083, 4.585640135369095e-15]
+  },
+  "dataset": {
+    "file": "CIE_xyz_1931_2deg.csv",
+    "md5": "17cca777db64b17170f06f67ce9d3ab7",
+    "rows": 471,
+    "wavelength_max": 830,
+    "wavelength_min": 360
+  },
+  "experiment": "Omega-EMO-001A-R1",
+  "full_xyz": {
+    "errors": {
+      "1": {
+        "max_abs_error": 0.7446005747271982,
+        "relative_fro_error": 0.6668519602588424,
+        "rmse": 0.30187531163928355
+      },
+      "2": {
+        "max_abs_error": 0.3388352369064998,
+        "relative_fro_error": 0.23881758083691765,
+        "rmse": 0.108109649422191
+      },
+      "3": {
+        "max_abs_error": 2.625692022205188e-15,
+        "relative_fro_error": 4.1159049975648407e-16,
+        "rmse": 1.86321729238869e-16
+      }
+    },
+    "leave_one_out": {
+      "0": {
+        "coefficients": [0.7186513018383417, 0.1389749236475251],
+        "kept_columns": [1, 2],
+        "max_abs_residual": 0.6429042627683108,
+        "relative_residual": 0.6202460252750065
+      },
+      "1": {
+        "coefficients": [0.8189782566355186, -0.08889007458864151],
+        "kept_columns": [0, 2],
+        "max_abs_residual": 0.733803241690189,
+        "relative_residual": 0.6392917627336773
+      },
+      "2": {
+        "coefficients": [0.6379130672152358, -0.35803391708540805],
+        "kept_columns": [0, 1],
+        "max_abs_residual": 1.5738637892477048,
+        "relative_residual": 0.9514531477253054
+      }
+    },
+    "rank": 3,
+    "singular_ratios_to_s1": [1.0, 0.8355204060329033, 0.32047868398911356],
+    "singular_values": [12.680500379283586, 10.594816825599407, 4.063830073876259]
+  },
+  "interpretation_boundary": "Color-control result only; no universal Ω-basis claim.",
+  "status": "EXECUTED",
+  "tests": {
+    "checksum": true,
+    "chromaticity_affine_rank_two": true,
+    "chromaticity_rank3_residual_negligible": true,
+    "chromaticity_simplex": true,
+    "full_xyz_rank2_not_exact": true,
+    "full_xyz_rank_three": true,
+    "shape": true
+  }
+}
