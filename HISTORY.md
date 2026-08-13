@@ -70,6 +70,17 @@ Observation: the sign of the mean compression difference agreed between the comp
 
 Limit: this rejects only a narrow implementation-artifact explanation; it does not prove a universal property of all trigram-equivalent sequences.
 
+### Ω-INF-7 — Expanded Robustness / Sampling
+Question: do the trigram-preserving reconstruction effects remain stable across more texts and seeds?
+
+Protocol: four corpora, four deterministic seed families, 250 reconstructions per corpus; exact trigram multiset and character multiset preserved; compression measured with zlib.
+
+Audit event: the first local run accidentally produced 248 samples per corpus because of integer division. That run was rejected and not archived as final data. The GitHub protocol was corrected to exactly 250 samples. A syntax error introduced during that correction was also detected by audit and fixed before the final figures were recorded.
+
+Final observation: technical and literary corpora had predominantly negative mean compression deltas; the structured corpus had positive delta in all 250 reconstructions; the randomish corpus was centered essentially at zero. All four corpora produced 250 distinct reconstructions.
+
+Status: robustness of the tested sampling procedure is strengthened, but there is still no universal direction. The effect remains corpus-dependent.
+
 ## Current position
 
 The strongest defensible statement is narrow:
@@ -78,6 +89,6 @@ The strongest defensible statement is narrow:
 
 This is a statement about the experiments, not a general theory of information.
 
-## Next planned step
+## Current rule
 
-Ω-INF-7 is a robustness/expanded-sampling control. The aim is to increase independent corpora, seeds, and reconstruction samples before increasing n-gram order. The purpose is to determine whether the observed effects survive broader sampling and whether any apparent effect is dominated by reconstruction method.
+Before increasing n-gram order, strengthen controls where a methodological artifact is still plausible. Every failed or corrected run is part of the history.
