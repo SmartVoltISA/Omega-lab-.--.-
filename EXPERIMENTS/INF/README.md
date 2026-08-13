@@ -53,29 +53,44 @@ Across 100 runs:
 
 Status: **PARTIALLY SUPPORTED in the tested representation.**
 
-This is the key control after Ω-INF-1: it shows that preserving first-order local relations is not sufficient to preserve all measured sequence structure.
+This is the key control after Ω-INF-1: preserving first-order local relations is not sufficient to preserve all measured sequence structure.
 
 ### Ω-INF-4 — Trigram relations preserved
 
-**Question:** Does the observed difference remain when the exact trigram inventory is also held fixed?
+**Question:** Does the Ω-INF-3 effect survive when the exact trigram inventory is also fixed?
 
-A randomized Eulerian reconstruction uses every original character trigram exactly once. This preserves the character, bigram and trigram multisets and both first- and second-order conditional entropy.
+A randomized Eulerian traversal over overlapping character bigrams preserves every original trigram exactly once.
 
-Across 100 runs:
+Across 100 runs on the fixed Ω text:
 
-- length: invariant at 855;
-- symbol entropy: invariant at 4.632675 bits;
-- order-1 conditional entropy: invariant at 2.997873 bits;
-- order-2 conditional entropy: invariant at 1.243827 bits;
-- unique bigrams: invariant at 281;
-- unique trigrams: invariant at 549;
-- zlib compressed size: original 654 bytes; reconstructed mean 680.29 bytes (range 665–692; SD 5.41).
-
-Observation: the tested compression measure still changes after exact trigram statistics are preserved.
+- character composition: invariant;
+- bigram multiset: invariant;
+- trigram multiset: invariant;
+- first- and second-order conditional entropy: invariant;
+- zlib compressed size: original 654 bytes; reconstructed mean 680.29 bytes (range 665–692).
 
 Status: **PARTIALLY SUPPORTED in the tested representation.**
 
-Important limitation: this is one short text and one reconstruction family. The result does not establish semantic information or a universal hierarchy. The next control is independent-corpus replication, not a deeper theoretical claim.
+Important limitation: this remains one short text and one reconstruction family. No semantic or universal conclusion follows.
+
+### Ω-INF-5 — Independent corpus replication
+
+**Question:** Does the Ω-INF-4 observation replicate on other sequences without increasing the n-gram order?
+
+Four independent short corpora were tested: technical, literary, random-like, and deliberately structured. Each received 100 trigram-preserving Eulerian reconstructions.
+
+The exact trigram inventory was preserved in all runs. However, the compression effect was **not universal in direction**:
+
+| Corpus | Original zlib | Reconstruction mean | Mean difference |
+|---|---:|---:|---:|
+| technical | 355 | 352.05 | -2.95 |
+| literary | 286 | 284.09 | -1.91 |
+| random-like | 195 | 196.46 | +1.46 |
+| structured | 239 | 247.23 | +8.23 |
+
+This is an important control result. The experiment does **not** support a universal rule that preserving trigram statistics causes compression to increase or decrease. It does support that the intervention can change higher-order sequence organization while the exact trigram inventory remains fixed.
+
+Status: **DESCRIPTIVE / CONTROL — OPEN.**
 
 ## Current research path
 
@@ -99,6 +114,8 @@ same elements + same trigram relations, changed longer-range organization
 Ω-INF-5
   ↓
 independent corpus replication
+  ↓
+NEXT: larger corpus + stronger sampling controls
 ```
 
 ## Core rule
