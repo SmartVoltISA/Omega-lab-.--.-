@@ -1,0 +1,46 @@
+{
+  "experiment": "Ω-INF-2",
+  "date": "2026-08-13",
+  "seed": 20260814,
+  "n_permutations_per_condition": 100,
+  "text_length_chars": 855,
+  "original_metrics": {
+    "n_chars": 855,
+    "symbol_entropy_bits": 4.632674635385956,
+    "conditional_entropy_bits": 2.9978734538475162,
+    "unique_bigrams": 281,
+    "zlib_bytes": 654
+  },
+  "conditions": {
+    "character_shuffle": {
+      "conditional_entropy_bits": {"mean": 3.727949989044009, "sd": 0.026325078373693, "min": 3.6702249506923135, "max": 3.794533626333629, "mean_minus_original": 0.7300765351964928},
+      "unique_bigrams": {"mean": 437.37, "sd": 6.89261792196418, "min": 419, "max": 454, "mean_minus_original": 156.37},
+      "zlib_bytes": {"mean": 825.99, "sd": 5.600315647669813, "min": 813, "max": 839, "mean_minus_original": 171.99},
+      "symbol_entropy_bits": {"mean": 4.632674635385956, "sd": 0.0, "min": 4.632674635385956, "max": 4.632674635385956, "mean_minus_original": 0.0},
+      "n_chars": {"mean": 855.0, "sd": 0.0, "min": 855, "max": 855, "mean_minus_original": 0.0}
+    },
+    "word_shuffle": {
+      "conditional_entropy_bits": {"mean": 3.021952283380903, "sd": 0.004988886088471043, "min": 3.0046062689786566, "max": 3.031673119582355, "mean_minus_original": 0.02407882953338662},
+      "unique_bigrams": {"mean": 286.58, "sd": 0.9865765724632495, "min": 284, "max": 288, "mean_minus_original": 5.58},
+      "zlib_bytes": {"mean": 663.42, "sd": 4.47480037362991, "min": 652, "max": 673, "mean_minus_original": 9.42},
+      "symbol_entropy_bits": {"mean": 4.632674635385956, "sd": 0.0, "min": 4.632674635385956, "max": 4.632674635385956, "mean_minus_original": 0.0},
+      "n_chars": {"mean": 855.0, "sd": 0.0, "min": 855, "max": 855, "mean_minus_original": 0.0}
+    },
+    "sentence_shuffle_within_paragraphs": {
+      "conditional_entropy_bits": {"mean": 2.999114671646111, "sd": 0.0011747390118186064, "min": 2.9978734538475162, "max": 3.0002153742222233, "mean_minus_original": 0.001241217798594826},
+      "unique_bigrams": {"mean": 281.53, "sd": 0.5016135580465919, "min": 281, "max": 282, "mean_minus_original": 0.53},
+      "zlib_bytes": {"mean": 655.82, "sd": 2.540102598598116, "min": 652, "max": 660, "mean_minus_original": 1.82},
+      "symbol_entropy_bits": {"mean": 4.632674635385956, "sd": 0.0, "min": 4.632674635385956, "max": 4.632674635385956, "mean_minus_original": 0.0},
+      "n_chars": {"mean": 855.0, "sd": 0.0, "min": 855, "max": 855, "mean_minus_original": 0.0}
+    },
+    "paragraph_shuffle": {
+      "conditional_entropy_bits": {"mean": 2.9973816505688275, "sd": 0.0009586889478697228, "min": 2.9955315334728088, "max": 2.9978734538475162, "mean_minus_original": -0.000491803278688656},
+      "unique_bigrams": {"mean": 280.79, "sd": 0.40936018074033237, "min": 280, "max": 281, "mean_minus_original": -0.21},
+      "zlib_bytes": {"mean": 652.06, "sd": 4.11408028186818, "min": 641, "max": 659, "mean_minus_original": -1.94},
+      "symbol_entropy_bits": {"mean": 4.632674635385956, "sd": 0.0, "min": 4.632674635385956, "max": 4.632674635385956, "mean_minus_original": 0.0},
+      "n_chars": {"mean": 855.0, "sd": 0.0, "min": 855, "max": 855, "mean_minus_original": 0.0}
+    }
+  },
+  "execution_note": "Numerical results were independently computed during the experiment run and archived here; repository code and tests define the reproducibility protocol.",
+  "interpretation_limit": "The tested metrics are character-sequential. Small changes under word/sentence/paragraph permutation cannot be interpreted as proof that higher-level information was preserved."
+}
