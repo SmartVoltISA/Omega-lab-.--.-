@@ -1,0 +1,15 @@
+{
+  "experiment": "Ω-INF-5",
+  "date": "2026-08-13",
+  "seed_start": 20260820,
+  "runs_per_corpus": 100,
+  "question": "Does the Ω-INF-4 observation replicate on independent texts?",
+  "results": {
+    "technical": {"length": 386, "original_zlib": 355, "mean_zlib": 352.05, "sd_zlib": 2.6719, "range": [345, 360], "delta_mean": -2.95, "original_H3": 0.22714, "mean_H3": 0.25694, "trigram_invariant": true},
+    "literary": {"length": 310, "original_zlib": 286, "mean_zlib": 284.09, "sd_zlib": 2.6556, "range": [276, 291], "delta_mean": -1.91, "original_H3": 0.24523, "mean_H3": 0.29339, "trigram_invariant": true},
+    "random_like": {"length": 224, "original_zlib": 195, "mean_zlib": 196.46, "sd_zlib": 0.7709, "range": [194, 198], "delta_mean": 1.46, "original_H3": 0.03620, "mean_H3": 0.03620, "trigram_invariant": true},
+    "structured": {"length": 402, "original_zlib": 239, "mean_zlib": 247.23, "sd_zlib": 1.7399, "range": [242, 251], "delta_mean": 8.23, "original_H3": 0.30990, "mean_H3": 0.37583, "trigram_invariant": true}
+  },
+  "observation": "The trigram-preserving intervention is reproducible across all four corpora, but the direction and magnitude of compression change are not universal: two corpora moved slightly downward, one slightly upward, and one clearly upward.",
+  "interpretation_limit": "This is a replication/control result, not evidence for semantic information or a universal hierarchy. The corpus is small and the reconstruction family is not a uniform sample of all trigram-equivalent sequences."
+}
