@@ -55,6 +55,28 @@ Status: **PARTIALLY SUPPORTED in the tested representation.**
 
 This is the key control after Ω-INF-1: it shows that preserving first-order local relations is not sufficient to preserve all measured sequence structure.
 
+### Ω-INF-4 — Trigram relations preserved
+
+**Question:** Does the observed difference remain when the exact trigram inventory is also held fixed?
+
+A randomized Eulerian reconstruction uses every original character trigram exactly once. This preserves the character, bigram and trigram multisets and both first- and second-order conditional entropy.
+
+Across 100 runs:
+
+- length: invariant at 855;
+- symbol entropy: invariant at 4.632675 bits;
+- order-1 conditional entropy: invariant at 2.997873 bits;
+- order-2 conditional entropy: invariant at 1.243827 bits;
+- unique bigrams: invariant at 281;
+- unique trigrams: invariant at 549;
+- zlib compressed size: original 654 bytes; reconstructed mean 680.29 bytes (range 665–692; SD 5.41).
+
+Observation: the tested compression measure still changes after exact trigram statistics are preserved.
+
+Status: **PARTIALLY SUPPORTED in the tested representation.**
+
+Important limitation: this is one short text and one reconstruction family. The result does not establish semantic information or a universal hierarchy. The next control is independent-corpus replication, not a deeper theoretical claim.
+
 ## Current research path
 
 ```text
@@ -72,7 +94,7 @@ same elements + same bigram relations, changed longer-range organization
   ↓
 Ω-INF-4
   ↓
-same trigram relations, changed longer-range organization
+same elements + same trigram relations, changed longer-range organization
   ↓
 Ω-INF-5
   ↓
