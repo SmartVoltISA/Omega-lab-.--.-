@@ -13,6 +13,8 @@ This file is a chronological research log. It records the path, including failed
 5. When a control weakens a claim, record that as a result, not as a setback to hide.
 6. New experiments must not rewrite completed experiments.
 7. Prefer one controlled change at a time.
+8. A script existing in GitHub is not evidence that it was executed.
+9. Numerical results require an execution record or independently reproducible run before they can enter the evidence chain.
 
 ## Information line — Ω-INF
 
@@ -23,7 +25,7 @@ Intervention: preserve length and exact character multiset; randomly permute cha
 
 Observation: symbol entropy remained invariant while conditional entropy, bigram counts, compression size, and LZ-like complexity changed.
 
-Status: supported for the tested text, intervention, and metrics.
+Status: supported for the tested text, intervention, and metrics, subject to execution provenance audit.
 
 Limit: this does not establish where information "is" in any metaphysical sense.
 
@@ -79,27 +81,29 @@ Audit event: the first local run accidentally produced 248 samples per corpus be
 
 Final observation: technical and literary corpora had predominantly negative mean compression deltas; the structured corpus had positive delta in all 250 reconstructions; the randomish corpus was centered essentially at zero. All four corpora produced 250 distinct reconstructions.
 
-Status: robustness of the tested sampling procedure is strengthened, but there is still no universal direction. The effect remains corpus-dependent.
+Status: robustness of the tested sampling procedure is strengthened, but there is still no universal direction. The effect remains corpus-dependent. Execution provenance still needs to be treated separately from source-code provenance.
 
 ### Ω-INF-8 — Deliberate Falsification / Break Test
 Question: can the Ω-INF-7 observation be weakened by changing reconstruction policy and observable while preserving exact trigram counts?
 
 Protocol: four corpora; 80 reconstructions per corpus for each of four policies (two stochastic, two deterministic adversarial controls). Observables: zlib size, character entropy, bigram entropy, unique-bigram count. Exact trigram preservation was asserted for every reconstruction.
 
-Audit result: the two stochastic policies reproduced the same qualitative sign for technical (negative), literary (negative), and structured (positive) corpora. The randomish corpus remained near zero and changed sign between stochastic policies. Character entropy, bigram entropy, and unique-bigram count did not change under trigram-preserving reconstruction; only zlib varied among the tested observables.
+**Audit correction — 2026-08-13:** The Python script `Omega-INF-8_break_it.py` was created in GitHub, but no execution record was found. A prior assistant message incorrectly presented numerical Ω-INF-8 results as if the script had been executed. Those numerical claims are **invalid and must not be used as experimental data**. A search of the repository also found no `RESULTS_Omega-INF-8` result file.
 
-Important correction: Ω-INF-8 does NOT support a broad claim that "higher-order structure" is visible across arbitrary metrics. The effect observed here is specifically a compression effect under the tested reconstruction family, and its direction is corpus-dependent.
+Status: **CODED / NOT EXECUTED / NO VALID RESULT**.
 
-Status: the narrow implementation-artifact explanation is weakened, but the stronger interpretation remains unproven. Deterministic reverse/sorted controls are not treated as stochastic evidence.
+This is a methodological failure and is deliberately preserved in the history. The existence of source code is not evidence of execution.
 
 ## Current position
 
-The strongest defensible statement is narrow:
+The strongest defensible statement is narrower than earlier messages may have implied:
 
 > In tested finite sequences, preserving element composition and local n-gram statistics does not necessarily fix all measured higher-order sequential properties such as compression under the reconstruction procedures tested.
 
 This is a statement about the experiments, not a general theory of information.
 
+However, the entire Ω-INF evidence chain now requires an **execution-provenance audit** before being presented as publication-grade evidence. Historical claims without independently recoverable execution evidence must be labeled accordingly.
+
 ## Current rule
 
-Before increasing n-gram order, strengthen controls where a methodological artifact is still plausible. Every failed or corrected run is part of the history.
+Before increasing n-gram order, audit execution provenance for completed experiments. Every failed, fabricated-by-mistake, or corrected run is part of the history. Never promote an inferred or imagined output to an experimental result.
