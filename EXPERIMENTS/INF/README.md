@@ -1,98 +1,86 @@
-# Ω-INF-1 — Character order and structural information
+# Ω-INF — Information and organization
 
-**Date:** 2026-08-13
-**Status:** EXPLORATORY / initial controlled result
-**Hypothesis:** H-INF-1
+This series operationally investigates the distinction between element composition and relational organization.
 
-## Question
+It does **not** assume a universal definition of information and does not treat compression, entropy or complexity as direct semantic measures.
 
-If the exact same elements are retained, does changing only their organization produce measurable structural differences?
+## Experiments
 
-## Controlled intervention
+### Ω-INF-1 — Character order
 
-One fixed Russian-language Ω text of 855 Unicode characters was used.
+**Question:** If the exact same elements are retained, does changing only their order produce measurable structural differences?
 
-The intervention randomly permuted all characters while preserving:
+- 855-character fixed Ω text;
+- 100 character permutations;
+- seed 20260813;
+- composition preserved exactly.
 
-- sequence length;
-- every character;
-- multiplicity of every character;
-- encoding procedure.
+Result: symbol entropy remained invariant, while conditional entropy, unique bigrams, compression and the LZ proxy changed substantially.
 
-Randomization used seed `20260813` and 100 independent permutations.
+Status: **OPEN — initial controlled support for the operational distinction between composition and organization.**
 
-## Metrics fixed for this run
+### Ω-INF-2 — Hierarchical scrambling
 
-1. symbol entropy — composition control;
-2. first-order conditional entropy — local sequential organization;
-3. unique bigrams — local relation diversity;
-4. zlib compressed byte length — operational compressibility proxy;
-5. simple LZ phrase-dictionary complexity proxy.
+**Question:** Do low-level metrics respond differently when organization is destroyed at character, word, sentence or paragraph level?
 
-## Results
+Conditions:
 
-| Metric | Original | 100-shuffle mean | Difference (shuffle − original) |
-|---|---:|---:|---:|
-| Length | 855 | 855 | 0 |
-| Symbol entropy, bits | 4.6327 | 4.6327 | 0 |
-| Conditional entropy, bits | 2.9979 | 3.7262 | +0.7283 |
-| Unique bigrams | 281 | 436.06 | +155.06 |
-| zlib bytes | 654 | 824.24 | +170.24 |
-| LZ complexity proxy | 359 | 387.75 | +28.75 |
+- T0 original;
+- T1 character shuffle;
+- T2 word shuffle within paragraph;
+- T3 sentence shuffle within paragraph;
+- T4 paragraph shuffle.
 
-The composition metric is exactly invariant, as expected. The organization-sensitive metrics changed substantially in this controlled intervention.
+Result: T1 strongly changed low-level relational metrics; T2–T4 changed them only slightly for this short text.
 
-## Interpretation
+This is a useful negative/control result: destroying a higher-level textual organization does not necessarily produce a large change in low-level metrics.
 
-**Observation:** the same multiset of characters produced different measurable sequential/structural properties after permutation.
+Status: **DESCRIPTIVE / OPEN.**
 
-**Interpretation:** the original text contains non-random organization at the tested character-order level. This organization makes the sequence more locally predictable and more compressible than the shuffled controls.
+### Ω-INF-3 — Local relations preserved
 
-**Not established:** this experiment does not prove that "information is physically located in relations", nor does it establish a universal definition of information. It demonstrates an operational distinction between composition and organization.
+**Question:** Can longer-range organization change while the exact local bigram inventory remains fixed?
 
-## Status of H-INF-1
+A randomized Eulerian reconstruction preserves every original character bigram exactly once while changing the resulting sequence.
 
-**OPEN — supported by this initial controlled run, not confirmed as a general law.**
+Across 100 runs:
 
-The main remaining threats are:
+- character composition: invariant;
+- bigram multiset: invariant;
+- conditional entropy: invariant;
+- unique bigrams: invariant;
+- zlib compressed size: original 654 bytes; reconstructed mean 734.54 bytes (range 718–747).
 
-- short single-text sample;
-- dependence on language and text genre;
-- metric dependence;
-- possible encoding/compression artifacts;
-- character-level representation only.
+Status: **PARTIALLY SUPPORTED in the tested representation.**
 
-## Required next controls
+This is the key control after Ω-INF-1: it shows that preserving first-order local relations is not sufficient to preserve all measured sequence structure.
 
-### Ω-INF-2 — Corpus replication
+## Current research path
 
-Repeat the same intervention across many independent texts and genres.
+```text
+Ω-INF-1
+  ↓
+same elements, changed order
+  ↓
+Ω-INF-2
+  ↓
+organizational levels
+  ↓
+Ω-INF-3
+  ↓
+same elements + same bigram relations, changed longer-range organization
+  ↓
+Ω-INF-4
+  ↓
+same trigram relations, changed longer-range organization
+  ↓
+Ω-INF-5
+  ↓
+independent corpus replication
+```
 
-### Ω-INF-3 — Hierarchical permutation
+## Core rule
 
-Compare:
+A metric change is an observation about the metric. It is not automatically a measurement of semantic information.
 
-- character shuffle;
-- word shuffle;
-- sentence shuffle;
-- paragraph shuffle.
-
-This separates structural levels instead of collapsing them into one intervention.
-
-### Ω-INF-4 — Local-preservation control
-
-Shuffle while preserving bigram or trigram statistics as far as possible. This tests whether the measured effect requires only local relations or longer-range organization.
-
-### Ω-INF-5 — Recovery
-
-Ask whether the original organization can be recovered from a relational trace without access to the original ordering.
-
-## Reproducibility
-
-Code: `Omega-INF-1_character_order.py`
-
-Tests: `test_Omega-INF-1.py`
-
-Archived numerical output: `RESULTS.json`
-
-All three are part of the experiment record. The experiment must not be silently rewritten if later controls weaken or reject its interpretation.
+Every experiment must preserve controls, archive code and tests, and retain negative results and methodological failures.
