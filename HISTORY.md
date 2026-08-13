@@ -81,6 +81,17 @@ Final observation: technical and literary corpora had predominantly negative mea
 
 Status: robustness of the tested sampling procedure is strengthened, but there is still no universal direction. The effect remains corpus-dependent.
 
+### Ω-INF-8 — Deliberate Falsification / Break Test
+Question: can the Ω-INF-7 observation be weakened by changing reconstruction policy and observable while preserving exact trigram counts?
+
+Protocol: four corpora; 80 reconstructions per corpus for each of four policies (two stochastic, two deterministic adversarial controls). Observables: zlib size, character entropy, bigram entropy, unique-bigram count. Exact trigram preservation was asserted for every reconstruction.
+
+Audit result: the two stochastic policies reproduced the same qualitative sign for technical (negative), literary (negative), and structured (positive) corpora. The randomish corpus remained near zero and changed sign between stochastic policies. Character entropy, bigram entropy, and unique-bigram count did not change under trigram-preserving reconstruction; only zlib varied among the tested observables.
+
+Important correction: Ω-INF-8 does NOT support a broad claim that "higher-order structure" is visible across arbitrary metrics. The effect observed here is specifically a compression effect under the tested reconstruction family, and its direction is corpus-dependent.
+
+Status: the narrow implementation-artifact explanation is weakened, but the stronger interpretation remains unproven. Deterministic reverse/sorted controls are not treated as stochastic evidence.
+
 ## Current position
 
 The strongest defensible statement is narrow:
