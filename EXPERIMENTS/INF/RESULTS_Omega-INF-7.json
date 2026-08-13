@@ -1,0 +1,21 @@
+{
+  "experiment": "Ω-INF-7",
+  "date": "2026-08-13",
+  "question": "Do trigram-preserving reconstruction effects remain stable across more texts and seeds?",
+  "runs_per_corpus": 250,
+  "seeds": [7101, 7102, 7103, 7104],
+  "execution_audit": "The first local audit exposed an off-by-two sampling issue caused by integer division (248 instead of 250). The protocol was corrected before these final figures were recorded. The syntax of the corrected GitHub script was also audited and fixed before execution. No result from the faulty run is treated as final data.",
+  "results": {
+    "technical_ru": {"length": 386, "original_zlib": 355, "n_reconstructions": 250, "distinct_reconstructions": 250, "mean_delta_zlib": -2.884, "median_delta_zlib": -3.0, "sd_delta_zlib": 2.850798521263006, "min_delta_zlib": -11, "max_delta_zlib": 5, "positive_fraction": 0.124, "negative_fraction": 0.808, "zero_fraction": 0.068},
+    "literary_ru": {"length": 310, "original_zlib": 286, "n_reconstructions": 250, "distinct_reconstructions": 250, "mean_delta_zlib": -2.012, "median_delta_zlib": -2.0, "sd_delta_zlib": 2.6653842297817922, "min_delta_zlib": -10, "max_delta_zlib": 5, "positive_fraction": 0.16, "negative_fraction": 0.724, "zero_fraction": 0.116},
+    "structured_en": {"length": 402, "original_zlib": 239, "n_reconstructions": 250, "distinct_reconstructions": 250, "mean_delta_zlib": 8.268, "median_delta_zlib": 8.0, "sd_delta_zlib": 1.7846332011510384, "min_delta_zlib": 2, "max_delta_zlib": 12, "positive_fraction": 1.0, "negative_fraction": 0.0, "zero_fraction": 0.0},
+    "randomish_en": {"length": 222, "original_zlib": 197, "n_reconstructions": 250, "distinct_reconstructions": 250, "mean_delta_zlib": 0.056, "median_delta_zlib": 0.0, "sd_delta_zlib": 0.8046451486593604, "min_delta_zlib": -2, "max_delta_zlib": 1, "positive_fraction": 0.332, "negative_fraction": 0.256, "zero_fraction": 0.412}
+  },
+  "observations": [
+    "The technical and literary corpora show predominantly negative mean deltas.",
+    "The structured corpus shows a positive delta in all 250 reconstructions.",
+    "The randomish corpus is centered very close to zero, with many exact ties.",
+    "Every corpus produced 250 distinct reconstructions in this sample."
+  ],
+  "interpretation_limit": "The direction is corpus-dependent. Compression is one observable and is not a direct measure of semantic information. The result supports robustness of the tested sampling procedure, not a universal law about information or structure."
+}
