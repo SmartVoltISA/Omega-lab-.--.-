@@ -2,6 +2,23 @@
 
 This directory contains experimental records, including negative results and control experiments.
 
+## Mandatory evidence rule
+
+**No fact without evidence. No result without execution. No interpretation presented as a fact.**
+
+The detailed mandatory protocol is in [`METHOD.md`](../METHOD.md).
+
+Every experiment must distinguish at minimum:
+
+- **PLANNED** — protocol exists; no execution;
+- **CODED** — implementation exists; execution not verified;
+- **EXECUTED** — code was actually run and execution evidence is archived;
+- **VALIDATED** — result passed checks and provenance is recorded;
+- **REPRODUCED** — independent rerun reproduced the relevant result;
+- **REJECTED / INVALIDATED** — failed or later disproved result.
+
+A source file in GitHub is not evidence that it was executed. A plausible numerical output must never be substituted for missing execution evidence.
+
 ## Current series
 
 ### Ω-0 — Foundations
@@ -62,6 +79,15 @@ The project records:
 - failed hypotheses;
 - methodological corrections;
 - control experiments;
-- alternative explanations.
+- alternative explanations;
+- unverified or invalidated claims, when discovered.
 
 A result that breaks an Ω hypothesis is valuable and should remain in the project history.
+
+## Minimal-step rule
+
+Before increasing model complexity, first resolve the smallest outstanding methodological uncertainty that can be tested. Prefer:
+
+`minimum premise → minimum intervention → execution → verification → observation → next step`
+
+A long chain of plausible but unverified steps is not progress.
