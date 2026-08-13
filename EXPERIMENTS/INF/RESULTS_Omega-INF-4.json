@@ -1,0 +1,28 @@
+{
+  "experiment": "Ω-INF-4",
+  "date": "2026-08-13",
+  "seed_start": 20260815,
+  "n_runs": 100,
+  "text_length_chars": 855,
+  "preserved_exactly": ["character_multiset", "bigram_multiset", "trigram_multiset", "sequence_length", "first_order_conditional_entropy", "second_order_conditional_entropy"],
+  "original_metrics": {
+    "n_chars": 855,
+    "symbol_entropy_bits": 4.632674635385956,
+    "conditional_entropy_order1_bits": 2.9978734538475162,
+    "conditional_entropy_order2_bits": 1.243827235510937,
+    "unique_bigrams": 281,
+    "unique_trigrams": 549,
+    "zlib_bytes": 654
+  },
+  "reconstruction_summary": {
+    "n_chars": {"original": 855, "reconstructed_mean": 855.0, "reconstructed_sd": 0.0, "reconstructed_min": 855, "reconstructed_max": 855, "difference_mean_minus_original": 0.0},
+    "symbol_entropy_bits": {"original": 4.632674635385956, "reconstructed_mean": 4.632674635385956, "reconstructed_sd": 0.0, "reconstructed_min": 4.632674635385956, "reconstructed_max": 4.632674635385956, "difference_mean_minus_original": 0.0},
+    "conditional_entropy_order1_bits": {"original": 2.9978734538475162, "reconstructed_mean": 2.9978734538475162, "reconstructed_sd": 0.0, "reconstructed_min": 2.9978734538475162, "reconstructed_max": 2.9978734538475162, "difference_mean_minus_original": 0.0},
+    "conditional_entropy_order2_bits": {"original": 1.243827235510937, "reconstructed_mean": 1.243827235510937, "reconstructed_sd": 0.0, "reconstructed_min": 1.243827235510937, "reconstructed_max": 1.243827235510937, "difference_mean_minus_original": 0.0},
+    "unique_bigrams": {"original": 281, "reconstructed_mean": 281.0, "reconstructed_sd": 0.0, "reconstructed_min": 281, "reconstructed_max": 281, "difference_mean_minus_original": 0.0},
+    "unique_trigrams": {"original": 549, "reconstructed_mean": 549.0, "reconstructed_sd": 0.0, "reconstructed_min": 549, "reconstructed_max": 549, "difference_mean_minus_original": 0.0},
+    "zlib_bytes": {"original": 654, "reconstructed_mean": 680.29, "reconstructed_sd": 5.4091112808376245, "reconstructed_min": 665, "reconstructed_max": 692, "difference_mean_minus_original": 26.29}
+  },
+  "status": "PASS_PROTOCOL_PARTIALLY_SUPPORTED_HYPOTHESIS",
+  "interpretation_limit": "Compression is an operational sequence proxy, not a direct semantic-information measure. Independent-corpus replication is required before stronger claims."
+}
