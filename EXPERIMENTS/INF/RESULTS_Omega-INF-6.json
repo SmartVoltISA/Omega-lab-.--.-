@@ -1,0 +1,33 @@
+{
+  "experiment": "Ω-INF-6",
+  "date": "2026-08-13",
+  "runs_per_policy": 100,
+  "policies": ["shuffle_precomputed", "dynamic_choice", "reverse", "sorted"],
+  "question": "Is Ω-INF-5 variation dependent on the reconstruction sampling policy?",
+  "results": {
+    "technical": {
+      "original_zlib": 355,
+      "shuffle_precomputed": {"mean": 351.80, "sd": 2.6705, "range": [345,360], "distinct": 100, "delta": -3.20},
+      "dynamic_choice": {"mean": 351.54, "sd": 2.9930, "range": [342,357], "distinct": 100, "delta": -3.46},
+      "reverse": {"mean": 355.0, "sd": 0.0, "range": [355,355], "distinct": 1, "delta": 0.0},
+      "sorted": {"mean": 344.0, "sd": 0.0, "range": [344,344], "distinct": 1, "delta": -11.0}
+    },
+    "literary": {
+      "original_zlib": 286,
+      "shuffle_precomputed": {"mean": 284.04, "sd": 2.5581, "range": [276,291], "distinct": 100, "delta": -1.96},
+      "dynamic_choice": {"mean": 283.97, "sd": 2.4637, "range": [280,290], "distinct": 100, "delta": -2.03},
+      "reverse": {"mean": 286.0, "sd": 0.0, "range": [286,286], "distinct": 1, "delta": 0.0},
+      "sorted": {"mean": 276.0, "sd": 0.0, "range": [276,276], "distinct": 1, "delta": -10.0}
+    },
+    "structured": {
+      "original_zlib": 239,
+      "shuffle_precomputed": {"mean": 247.24, "sd": 1.5899, "range": [243,251], "distinct": 100, "delta": 8.24},
+      "dynamic_choice": {"mean": 247.00, "sd": 1.6453, "range": [242,251], "distinct": 100, "delta": 8.00},
+      "reverse": {"mean": 239.0, "sd": 0.0, "range": [239,239], "distinct": 1, "delta": 0.0},
+      "sorted": {"mean": 239.0, "sd": 0.0, "range": [239,239], "distinct": 1, "delta": 0.0}
+    }
+  },
+  "observation": "The two genuinely randomized traversal policies produce very similar distributions and the same direction of mean compression change for all three tested corpora. Deterministic reverse/sorted traversals are controls, not samples.",
+  "interpretation": "The Ω-INF-5 direction pattern is not explained simply by the choice between two closely related randomized traversal implementations. This strengthens the sampling-control result, but does not establish a universal property of all trigram-equivalent sequences.",
+  "limitations": ["small corpus", "one reconstruction family", "zlib is only an operational proxy", "deterministic policies are not representative samples"]
+}
