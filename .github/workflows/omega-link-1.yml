@@ -52,8 +52,10 @@ jobs:
         run: python experiments/Omega-LINK-1/future_divergence_link1.py > future_divergence_results.txt
       - name: Run Ω-LINK-1 minimal horizon validation
         run: python experiments/Omega-LINK-1/minimal_horizon_link1.py > minimal_horizon_results.txt
+      - name: Run Ω-LINK-1 exhaustive minimal horizon control
+        run: python experiments/Omega-LINK-1/exhaustive_horizon_link1.py > exhaustive_horizon_results.txt
       - name: Combine results
-        run: cat link1_results.txt influence_results.txt local_global_results.txt addition_results.txt direction_results.txt memory_state_results.txt hidden_history_results.txt state_augmentation_results.txt minimal_state_results.txt deep_memory_results.txt depth_sweep_results.txt state_distinguishability_results.txt state_distinguishability_v2_results.txt predictive_state_horizon_results.txt future_divergence_results.txt minimal_horizon_results.txt > omega_link1_results.txt
+        run: cat link1_results.txt influence_results.txt local_global_results.txt addition_results.txt direction_results.txt memory_state_results.txt hidden_history_results.txt state_augmentation_results.txt minimal_state_results.txt deep_memory_results.txt depth_sweep_results.txt state_distinguishability_results.txt state_distinguishability_v2_results.txt predictive_state_horizon_results.txt future_divergence_results.txt minimal_horizon_results.txt exhaustive_horizon_results.txt > omega_link1_results.txt
       - name: Upload results
         uses: actions/upload-artifact@v4
         with:
