@@ -40,8 +40,10 @@ jobs:
         run: python experiments/Omega-LINK-1/minimal_state_link1.py > minimal_state_results.txt
       - name: Run Ω-LINK-1 deep memory
         run: python experiments/Omega-LINK-1/deep_memory_link1.py > deep_memory_results.txt
+      - name: Run Ω-LINK-1 depth sweep
+        run: python experiments/Omega-LINK-1/depth_sweep_link1.py > depth_sweep_results.txt
       - name: Combine results
-        run: cat link1_results.txt influence_results.txt local_global_results.txt addition_results.txt direction_results.txt memory_state_results.txt hidden_history_results.txt state_augmentation_results.txt minimal_state_results.txt deep_memory_results.txt > omega_link1_results.txt
+        run: cat link1_results.txt influence_results.txt local_global_results.txt addition_results.txt direction_results.txt memory_state_results.txt hidden_history_results.txt state_augmentation_results.txt minimal_state_results.txt deep_memory_results.txt depth_sweep_results.txt > omega_link1_results.txt
       - name: Upload results
         uses: actions/upload-artifact@v4
         with:
