@@ -1,0 +1,27 @@
+name: Omega MEM-9 Dynamics
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'experiments/Omega-MEM-9/**'
+      - '.github/workflows/omega-mem9.yml'
+
+jobs:
+  mem9:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run Ω-MEM-9
+        run: |
+          python experiments/Omega-MEM-9/run_mem9_dynamics.py > mem9-results.txt
+      - name: Upload results
+        uses: actions/upload-artifact@v4
+        with:
+          name: omega-mem9-results
+          path: mem9-results.txt
