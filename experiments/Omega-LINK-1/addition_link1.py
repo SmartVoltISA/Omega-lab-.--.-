@@ -4,7 +4,7 @@ from collections import deque
 NODES = ("A", "B", "C", "D")
 CASES = {
     "REDUNDANT": {
-        "base": (("A", "B"), ("B", "C"), ("A", "C")),
+        "base": (("A", "B"), ("B", "C")),
         "add": ("A", "C"),
     },
     "NEW": {
