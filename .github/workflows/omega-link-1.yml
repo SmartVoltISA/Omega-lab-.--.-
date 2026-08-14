@@ -28,8 +28,10 @@ jobs:
         run: python experiments/Omega-LINK-1/local_global_link1.py > local_global_results.txt
       - name: Run Ω-LINK-1 edge addition
         run: python experiments/Omega-LINK-1/addition_link1.py > addition_results.txt
+      - name: Run Ω-LINK-1 directionality control
+        run: python experiments/Omega-LINK-1/direction_link1.py > direction_results.txt
       - name: Combine results
-        run: cat link1_results.txt influence_results.txt local_global_results.txt addition_results.txt > omega_link1_results.txt
+        run: cat link1_results.txt influence_results.txt local_global_results.txt addition_results.txt direction_results.txt > omega_link1_results.txt
       - name: Upload results
         uses: actions/upload-artifact@v4
         with:
