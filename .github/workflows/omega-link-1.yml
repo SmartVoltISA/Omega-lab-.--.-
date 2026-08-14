@@ -1,0 +1,26 @@
+name: Ω-LINK-1
+
+on:
+  push:
+    paths:
+      - 'experiments/Omega-LINK-1/**'
+      - '.github/workflows/omega-link-1.yml'
+  workflow_dispatch:
+
+jobs:
+  link1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run Ω-LINK-1
+        run: python experiments/Omega-LINK-1/run_link1.py > link1_results.txt
+      - name: Upload results
+        uses: actions/upload-artifact@v4
+        with:
+          name: omega-link-1-results
+          path: link1_results.txt
