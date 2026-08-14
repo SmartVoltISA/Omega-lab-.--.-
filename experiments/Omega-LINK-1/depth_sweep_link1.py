@@ -1,16 +1,18 @@
-"""Ω-LINK-1 Depth Sweep.
+"""Ω-LINK-1 Depth Sweep — corrected construction.
 
-Construct controlled deterministic processes whose next state depends on a
-specified number of previous symbols, then measure conditional entropy for
-history windows of increasing depth.
+For target depth N, the next symbol is a deterministic function of the full
+N-symbol history. Every shorter window is deliberately insufficient: for each
+shorter suffix there are histories with the same suffix but opposite next
+symbols. At window N, the full history is sufficient.
 
-This is a controlled model family. It tests whether the experimental setup
-can recover known minimal history depths; it is not evidence that arbitrary
-real systems have finite memory depth.
+This validates the measurement method on controlled model families. It is not
+evidence that arbitrary real systems have finite memory depth.
 """
 
 from collections import defaultdict, Counter
 import math
+
+ALPHABET = ("A", "C")
 
 
 def entropy(rows):
@@ -31,39 +33,42 @@ def entropy(rows):
     return result
 
 
+def all_histories(depth):
+    if depth == 0:
+        return [()]
+    histories = [()]
+    for _ in range(depth):
+        histories = [h + (x,) for h in histories for x in ALPHABET]
+    return histories
+
+
+def next_from_history(history):
+    # Encode A=0, C=1 and emit the parity of the complete history.
+    parity = sum(1 for x in history if x == "C") % 2
+    return ALPHABET[parity]
+
+
 def build_sequences(depth):
-    # For each binary history of length `depth`, emit a distinct next symbol.
-    # Prefix with one extra symbol so all observations have a current state.
-    alphabet = ["A", "C"]
-    histories = []
-
-    def gen(prefix, n):
-        if n == 0:
-            histories.append(tuple(prefix))
-            return
-        for x in alphabet:
-            gen(prefix + [x], n - 1)
-
-    gen([], depth)
-    sequences = []
-    for i, hist in enumerate(histories):
-        nxt = alphabet[i % 2]
-        sequences.append(hist + ("B", nxt))
-    return sequences
+    # Every complete depth-N history reaches the same current observation B.
+    # The next state depends on the entire N-symbol history.
+    return [history + ("B", next_from_history(history))
+            for history in all_histories(depth)]
 
 
 def measure(depth, window):
     rows = []
     for seq in build_sequences(depth):
-        # Current observation is the final pre-transition B. A window of 1
-        # means B alone; larger windows include progressively more history.
-        key = tuple(seq[-(window + 1):-1]) if window > 0 else ()
+        history = seq[:-2]  # symbols before the current B
+        if window == 0:
+            key = ()
+        else:
+            key = history[-window:]
         rows.append((key, seq[-1]))
     return entropy(rows)
 
 
 if __name__ == "__main__":
-    print("depth-sweep experiment")
+    print("depth-sweep experiment — corrected")
     for target_depth in range(1, 7):
         values = []
         for window in range(0, target_depth + 2):
