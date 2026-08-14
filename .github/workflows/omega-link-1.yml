@@ -64,8 +64,10 @@ jobs:
         run: python experiments/Omega-LINK-1/horizon_mechanism_link1.py > horizon_mechanism_results.txt
       - name: Run Ω-LINK-1 hidden vs explicit state equivalence
         run: python experiments/Omega-LINK-1/explicit_state_equivalence_link1.py > explicit_state_equivalence_results.txt
+      - name: Run Ω-LINK-1 corrected hidden vs explicit delayed control
+        run: python experiments/Omega-LINK-1/corrected_hidden_explicit_control_link1.py > corrected_hidden_explicit_results.txt
       - name: Combine results
-        run: cat link1_results.txt influence_results.txt local_global_results.txt addition_results.txt direction_results.txt memory_state_results.txt hidden_history_results.txt state_augmentation_results.txt minimal_state_results.txt deep_memory_results.txt depth_sweep_results.txt state_distinguishability_results.txt state_distinguishability_v2_results.txt predictive_state_horizon_results.txt future_divergence_results.txt minimal_horizon_results.txt exhaustive_horizon_results.txt exhaustive_horizon_3state_results.txt exhaustive_horizon_2memory_binary_results.txt exhaustive_horizon_3memory_binary_results.txt horizon_mechanism_results.txt explicit_state_equivalence_results.txt > omega_link1_results.txt
+        run: cat link1_results.txt influence_results.txt local_global_results.txt addition_results.txt direction_results.txt memory_state_results.txt hidden_history_results.txt state_augmentation_results.txt minimal_state_results.txt deep_memory_results.txt depth_sweep_results.txt state_distinguishability_results.txt state_distinguishability_v2_results.txt predictive_state_horizon_results.txt future_divergence_results.txt minimal_horizon_results.txt exhaustive_horizon_results.txt exhaustive_horizon_3state_results.txt exhaustive_horizon_2memory_binary_results.txt exhaustive_horizon_3memory_binary_results.txt horizon_mechanism_results.txt explicit_state_equivalence_results.txt corrected_hidden_explicit_results.txt > omega_link1_results.txt
       - name: Upload results
         uses: actions/upload-artifact@v4
         with:
