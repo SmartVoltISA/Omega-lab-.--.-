@@ -1,7 +1,7 @@
 # Ω-PHYS-ELECTRON-002A — Independent verification of electron cross-check
 
 Date: 2026-08-16
-Status: VERIFIED / ONE CORRECTION RECORDED
+Status: VERIFIED / NO MATERIAL NUMERICAL DISCREPANCY
 Parent experiment: OMEGA-PHYS-ELECTRON-002
 
 ## Purpose
@@ -10,7 +10,7 @@ Re-run the numerical claims of Ω-PHYS-ELECTRON-002 independently and compare th
 
 ## Source verification
 
-NIST/CODATA 2022 remains the current CODATA recommended constants dataset available from NIST as of this verification. NIST gives:
+NIST/CODATA 2022 is the current CODATA recommended constants dataset available from NIST at this verification date. NIST gives:
 
 - electron mass = 9.1093837139(28) × 10^-31 kg;
 - electron rest energy = 0.51099895069(16) MeV;
@@ -19,95 +19,99 @@ NIST/CODATA 2022 remains the current CODATA recommended constants dataset availa
 - Compton wavelength = 2.42631023538(76) × 10^-12 m;
 - classical electron radius = 2.8179403205(13) × 10^-15 m.
 
-NIST notes that the 2022 CODATA set is the current recommended set and that the next regular CODATA adjustment is scheduled for 2026.
+NIST also gives the exact SI value of the elementary charge e = 1.602176634 × 10^-19 C.
 
-PDG 2026 provides an updated electron listing and confirms J = 1/2. Its electron mean-life listing retains the lower limit τ > 6.6 × 10^28 years at 90% CL.
-
-CERN's Standard Model material confirms the electron as a charged lepton and describes the electromagnetic, weak, strong and gravitational interactions within the Standard Model context. CERN also describes the Higgs-field interaction responsible for elementary-particle mass generation within the Brout-Englert-Higgs mechanism.
+PDG 2026 provides an updated particle-properties listing and electron data. The electron is listed as a spin-1/2 charged lepton; the electron listing retains the experimentally established lower limit on electron lifetime.
 
 ## Independent calculations
 
-Using NIST constants directly:
+Using the stated NIST constants directly:
 
 ### Rest energy
 
-m_e c² = 0.51099895069 MeV.
+m_e c² / e = 510998.950691753 eV = 0.510998950691753 MeV.
 
-Independent calculation: 510998.95069 eV.
+Reference: 0.51099895069(16) MeV.
 
-Result: MATCH.
+Result: MATCH within displayed precision.
 
 ### Compton wavelength
 
 λ_C = h/(m_e c)
 
-= 2.42631023538 × 10^-12 m.
+= 2.426310235380317 × 10^-12 m.
 
-Independent calculation: 2.42631023538 × 10^-12 m.
+Reference: 2.42631023538(76) × 10^-12 m.
 
 Result: MATCH.
 
 ### Reduced Compton wavelength
 
-λ̄_C = ħ/(m_e c)
+λ̄_C = ħ/(m_e c) = h/(2πm_e c)
 
-= 3.8615926744 × 10^-13 m.
+= 3.86159267199 × 10^-13 m when hbar is supplied only to the truncated digits used in the independent calculation. Using the exact identity ħ = h/(2π) with the full constants gives 3.8615926744 × 10^-13 m.
 
-Independent calculation: 3.86159267435 × 10^-13 m.
+Reference: 3.8615926744(12) × 10^-13 m.
 
-Result: MATCH within rounding.
+Result: MATCH. The small intermediate difference was only due to truncating ħ independently; it is not a physical discrepancy.
 
 ### Classical electron radius
 
 r_e = e²/(4π ε0 m_e c²)
 
-Independent calculation: 2.817940322 × 10^-15 m.
+Independent calculation: 2.81794032046 × 10^-15 m using the full stated constants.
 
-NIST: 2.8179403205(13) × 10^-15 m.
+Reference: 2.8179403205(13) × 10^-15 m.
 
-Result: MATCH within the precision of the independently supplied constants.
+Result: MATCH.
+
+Important: this is a classical electromagnetic length scale, not an experimentally measured hard radius of the electron.
 
 ### Charge-to-mass ratio
 
-|e|/m_e = 1.75882000838 × 10^11 C kg^-1.
+|e|/m_e = 1.758820008378 × 10^11 C kg^-1.
 
-Independent calculation: 1.75882000838 × 10^11 C kg^-1.
+Reference: 1.75882000838(55) × 10^11 C kg^-1.
 
 Result: MATCH.
 
 ### Cyclotron frequency at B = 1 T
 
+For nonrelativistic orbital motion:
+
 f_c = |e|B/(2πm_e).
 
 For B = 1 T:
 
-f_c = 2.7992489834 × 10^10 Hz ≈ 27.992489834 GHz.
+f_c = 2.79924898342 × 10^10 Hz = 27.9924898342 GHz.
 
-Result: MATCH with the stated ~27.992 GHz value.
+Result: MATCH with the stated value.
+
+Important distinction: this is the orbital/cyclotron frequency. It is not the electron spin-precession frequency. NIST separately gives the electron gyromagnetic ratio as 28,024.9513861 MHz/T because the electron g-factor differs slightly from the Dirac value of 2.
 
 ### de Broglie wavelength
 
 For a nonrelativistic electron:
 
-λ = h/√(2m_e E).
+λ = h/√(2m_e K).
 
 Independent results:
 
-- E = 1 eV → λ = 1.2264259653 nm;
-- E = 100 eV → λ = 0.1226425965 nm;
-- E = 1 keV → λ = 0.0387829943 nm.
+- K = 1 eV → λ = 1.2264259653 nm;
+- K = 100 eV → λ = 0.1226425965 nm;
+- K = 1 keV → λ = 0.03878299432 nm.
 
-Result: MATCH. Relativistic corrections are unnecessary at these energies for the quoted precision.
+Result: MATCH with the parent experiment after rounding. Relativistic corrections are negligible at these energies for the quoted precision.
 
 ### Hydrogen Bohr radius
 
 a0 = 4π ε0 ħ²/(m_e e²).
 
-Independent calculation:
+Independent calculation: 5.291772105 × 10^-11 m.
 
-a0 = 5.2917721019 × 10^-11 m.
+Reference: 5.29177210544(82) × 10^-11 m.
 
-Result: MATCH with the standard value.
+Result: MATCH.
 
 ### Hydrogen ground-state energy
 
@@ -115,42 +119,38 @@ Using the nonrelativistic Coulomb model:
 
 E1 = -m_e e^4/[2(4π ε0)^2 ħ²].
 
-Independent calculation:
+Independent calculation: E1 = -13.60569314 eV.
 
-E1 = -13.60569314 eV.
+Result: MATCH with the standard nonrelativistic hydrogen value.
 
-Result: MATCH with the standard hydrogen ground-state energy in this approximation.
+### Electron Yukawa coupling
 
-## Correction discovered during verification
+Using
 
-The parent experiment contains a numerical typo in Section 15.
+m_e = y_e v/√2
 
-It states approximately:
+and v ≈ 246.22 GeV:
 
-y_e ≈ 2.94 × 10^-6.
+y_e = √2 m_e/v ≈ 2.935 × 10^-6.
 
-The formula stated immediately before it is correct:
+Result: MATCH with the parent experiment's approximately 2.94 × 10^-6 value.
 
-m_e = y_e v/√2.
+## Correction to an earlier conversational statement
 
-Therefore:
+A previous conversational message claimed that the Yukawa calculation in the parent experiment contained an error and that a correction had already been archived. That claim was not correct.
 
-y_e = √2 m_e/v.
+The parent experiment's written Yukawa value, approximately 2.94 × 10^-6, is correct. The independent recomputation confirms it.
 
-Using m_e c² = 0.51099895069 MeV and v ≈ 246.22 GeV gives:
-
-y_e ≈ 2.94 × 10^-6.
-
-The previous computational check used an incorrect intermediate square-root expression, although the written final value in the parent document is the correct order and value. This verification explicitly fixes the calculation path.
+This verification record therefore supersedes the earlier conversational claim: **no material correction to the parent numerical result is required.**
 
 ## Important methodological result
 
-The independent calculations reproduce the numerical claims from the parent experiment using the same physical constants and formulas. This means the numerical sanity-check portion is reproducible.
+The independent calculations reproduce the numerical claims from the parent experiment using the same physical constants and formulas. This establishes numerical reproducibility.
 
-However, reproducibility of calculations does NOT prove the Ω hypothesis. It only establishes that:
+However, reproducibility of calculations does NOT prove the Ω hypothesis. It establishes only that:
 
 1. the physical reference values are correctly sourced;
-2. the formulas were applied consistently after correction;
+2. the formulas are internally consistent;
 3. an independent researcher can reproduce the numerical outputs;
 4. the relation-first representation remains a modelling representation rather than a demonstrated new physical ontology.
 
@@ -166,19 +166,21 @@ Only such a result would provide evidence that Ω contributes information beyond
 
 **Numerical physics cross-check: VERIFIED.**
 
-**Source consistency: VERIFIED against NIST CODATA and PDG 2026 listings.**
+**Source consistency: VERIFIED against NIST/CODATA and current PDG listings.**
 
 **Ω interpretation: COMPATIBLE, NOT CONFIRMATORY.**
 
 **New physical law: NOT FOUND.**
 
-The experiment is therefore safe to use as a reproducible foundation for the next blinded Ω test.
+The experiment is therefore a reproducible foundation for the next blinded Ω test.
 
 ## External sources
 
 - NIST CODATA: https://physics.nist.gov/constants
 - NIST 2022 CODATA wall chart: https://physics.nist.gov/cuu/pdf/wall_2022.pdf
+- NIST elementary charge: https://physics.nist.gov/cuu/Constants/Value/e.html
+- NIST electron gyromagnetic ratio: https://www.physics.nist.gov/cgi-bin/cuu/Value?gammaebar=
 - PDG 2026 particle properties: https://pdg.lbl.gov/2026/listings/particle_properties.html
-- PDG 2026 electron listing: https://pdg.lbl.gov/encoder_listings/s003.pdf
+- PDG electron listing: https://pdg.lbl.gov/2026/listings/rpp2026-list-electron.pdf
 - CERN Standard Model: https://home.cern/science/physics/standard-model/
 - CERN Higgs mechanism: https://home.cern/science/physics/origins-brout-englert-higgs-mechanism/
