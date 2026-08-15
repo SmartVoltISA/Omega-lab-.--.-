@@ -1,0 +1,52 @@
+name: System Components CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  guardian:
+    name: Guardian Core
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run Guardian tests
+        working-directory: space/security
+        run: python -m unittest test_guardian_core.py -v
+
+  space-capabilities:
+    name: Space Capability Registry
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run capability tests
+        working-directory: space/prototype
+        run: python -m unittest test_capability_registry.py -v
+
+  graph-memory:
+    name: Graph Memory Inspector
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run graph inspector tests
+        working-directory: tools/graph_memory_inspector
+        run: python -m unittest test_inspector.py -v
+
+  all-components:
+    name: All Components Gate
+    needs: [guardian, space-capabilities, graph-memory]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Components passed
+        run: echo "Guardian + Space Capability Registry + Graph Memory Inspector passed independently. Integration gate is open."
