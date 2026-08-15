@@ -1,0 +1,28 @@
+name: Space Memory Guardian Cycle
+
+on:
+  push:
+    paths:
+      - 'space/integration/**'
+      - 'space/prototype/**'
+      - 'space/security/**'
+      - 'tools/graph_memory_inspector/**'
+      - '.github/workflows/space-memory-guardian-cycle.yml'
+  pull_request:
+    paths:
+      - 'space/integration/**'
+      - 'space/prototype/**'
+      - 'space/security/**'
+      - 'tools/graph_memory_inspector/**'
+      - '.github/workflows/space-memory-guardian-cycle.yml'
+
+jobs:
+  closed-loop:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run closed-loop tests
+        run: python -m unittest -v space/integration/test_space_memory_guardian_cycle.py
