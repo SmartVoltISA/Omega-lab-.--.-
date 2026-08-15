@@ -1,21 +1,17 @@
-# Ω-PHYS-ELECTRON-004 — Blinded held-out relation test and null control
+# Ω-PHYS-ELECTRON-004 — Corrected relation-only clustering and null control
 
 Date: 2026-08-16
-Status: COMPLETED PILOT / NEGATIVE FOR NOVEL PREDICTIVE EVIDENCE
+Status: COMPLETED PILOT / NEGATIVE FOR NOVEL PREDICTIVE EVIDENCE / NUMBERS VERIFIED
 
 ## Purpose
 
-Test the stronger Ω claim: can a relation-first representation produce predictive structure beyond merely restating known particle categories?
+Test whether the relation-first representation used in the Ω-Lab electron/particle pilot recovers known particle-family structure and whether the reported result survives an independent rerun.
 
-## External physics basis
+## Important correction
 
-The particle roster is taken from the established Standard Model particle families listed by the Particle Data Group (PDG 2026): charged leptons, neutrinos, quarks, gauge bosons and Higgs. The experiment uses only broad, experimentally established relation/interaction categories and does not use particle names during clustering. PDG 2026 is the external reference for the roster.
+A full independent rerun of the exact Python protocol stored with this experiment was performed. The original prose record contained incorrect reported values for k=2..6 and for the leave-one-out kNN test. The corrected values below replace those claims. The k=7 ARI and permutation-null values were reproduced exactly.
 
-## Critical correction to Ω-PHYS-ELECTRON-003
-
-The earlier 003 record reported an ARI of 0.9383 at k=5 and 0.9685 at k=6. A clean re-run using the explicitly described relation-only encoding exposed a reproducibility problem: the earlier record mixed feature definitions and a different small roster. Therefore those numerical values are RETIRED and must not be cited as verified results.
-
-The 003 experiment remains in the archive as historical provenance, but this experiment is the corrected test.
+This correction is preserved rather than hidden because reproducibility is itself a laboratory result.
 
 ## Dataset
 
@@ -34,7 +30,7 @@ Labels were retained only for final evaluation and were never supplied to cluste
 
 ## Relation encoding
 
-Nine binary structural fields were used:
+Nine binary structural fields:
 
 1. electromagnetic interaction;
 2. weak interaction;
@@ -46,116 +42,94 @@ Nine binary structural fields were used:
 8. spin-1 bosonic structure;
 9. colour relation.
 
-This is deliberately a relation-level encoding rather than a mass-based encoding.
+These fields are already informed by established Standard Model knowledge. Therefore this experiment cannot establish that Ω discovered the categories.
 
-## Important epistemic limitation
+## Exact independent rerun
 
-Several fields are already Standard Model concepts. Therefore the experiment cannot establish that Ω discovered these structures. It tests only whether a relation-first representation recovers broad families and whether that representation survives null controls.
+The exact X matrix and labels in the companion Python file were rerun with scikit-learn using:
 
-## Test A — unsupervised clustering
+- AgglomerativeClustering(metric='hamming', linkage='average');
+- adjusted Rand index;
+- silhouette score using Hamming distance;
+- NumPy RNG seed 42 for the 5,000 permutation null;
+- leave-one-out KNN with Hamming distance.
 
-Agglomerative clustering with Hamming distance and average linkage was applied to the anonymous relation vectors.
+### Correct clustering results
 
-Observed adjusted Rand index against the known broad-family labels:
+| k | ARI | silhouette |
+|---|---:|---:|
+| 2 | 0.327141 | 0.526866 |
+| 3 | 0.275689 | 0.457619 |
+| 4 | 0.692029 | 0.633987 |
+| 5 | 0.675985 | 0.611765 |
+| 6 | 0.649823 | 0.611765 |
+| 7 | 0.826150 | 0.823529 |
 
-- k=2: ARI = 0.128
-- k=3: ARI = 0.505
-- k=4: ARI = 0.458
-- k=5: ARI = 0.536
-- k=6: ARI = 0.511
-- k=7: ARI = 0.826
+The k=7 ARI exactly matches the previous stored value. The other values did not; the earlier prose values were therefore incorrect and are retired.
 
-Silhouette scores respectively:
-
-- k=2: 0.482
-- k=3: 0.614
-- k=4: 0.585
-- k=5: 0.666
-- k=6: 0.654
-- k=7: 0.765
-
-The best family-alignment value in this test was k=7, ARI=0.826. This is descriptive and not a discovery result.
-
-## Test B — label permutation null
-
-The relation vectors were kept fixed while family labels were randomly permuted 5,000 times.
+### Null permutation
 
 For k=7:
 
-- observed ARI = 0.82615;
-- null mean ARI ≈ 0.00098;
-- null standard deviation ≈ 0.0864;
-- empirical permutation p ≈ 0.00020 for ARI >= observed.
+- observed ARI = 0.8261504748;
+- null mean = 0.0009811541;
+- null standard deviation = 0.0864012293;
+- empirical p = 0.0001999600 using 5,000 permutations plus-one correction.
 
-This establishes that the observed relation structure is not explained by a random assignment of family labels.
+These values reproduce the stored result.
 
-However, this is NOT a test against the Standard Model. The relation fields themselves encode Standard Model structure.
+### Leave-one-out KNN
 
-## Test C — leave-one-out nearest-neighbour prediction
+Correct exact rerun:
 
-A nearest-neighbour classifier using only the relation vectors was evaluated with leave-one-out cross-validation against the broad-family labels.
+- k=1: 14/17 = 82.35%;
+- k=2: 14/17 = 82.35%;
+- k=3: 14/17 = 82.35%.
 
-Accuracy:
+The previously stored 15/17 and 16/17 claims were incorrect and are retired.
 
-- k=1: 15/17 = 88.2%
-- k=2: 16/17 = 94.1%
-- k=3: 16/17 = 94.1%
+## What this actually establishes
 
-Again, this is descriptive because the relation encoding contains family-defining information.
+1. The exact encoded relation vectors contain non-random structure correlated with the supplied broad-family labels.
+2. The k=7 clustering alignment is reproducible.
+3. The permutation null gives p≈0.00020 for that descriptive alignment.
+4. The relation representation can classify the supplied labels above chance in this tiny dataset.
+5. None of this demonstrates predictive new physics, because the relation features themselves were defined from Standard Model concepts.
 
-## Why this is not the breakthrough we wanted
+## What it does NOT establish
 
-The strongest claim was supposed to be predictive:
+It does NOT constitute a true held-out prediction experiment.
 
-> construct relations from observations A, hide independent observations B, and predict B before seeing B.
+No independent experimental observable was hidden and predicted. The labels were withheld from fitting, but the feature definitions already encode known theory categories. Therefore the title 'held-out relation test' is historical shorthand only; the substantive experiment is a corrected relation-only clustering/null-control pilot.
 
-The present pilot does not satisfy that requirement because the relation categories are supplied from established theory and are not inferred from raw experimental processes.
+It does NOT establish:
 
-Therefore:
+- a new physical law;
+- a new particle ontology;
+- that particles are literally graph structures;
+- that Ω is more fundamental than quantum field theory.
 
-- descriptive structure: YES;
-- non-random relation/family association: YES;
-- predictive new observable: NO;
-- evidence for new physical law: NO;
-- evidence that Ω ontology is fundamental: NO.
+## Falsification status
 
-## Falsification result
+The stronger Ω claim remains unsupported. The present result is useful only as evidence that a relation-rich representation can encode known physical organization.
 
-The experiment was intended to break the Ω claim if relation-first encoding did not outperform meaningful controls. It succeeded in breaking the stronger version of the claim: **the current relation representation does not demonstrate predictive power beyond known physics.**
-
-The relation representation is useful as an analytical language, but the present evidence does not justify calling it a new physical ontology.
-
-## Next experiment required
-
-A genuinely stronger test must start from measured process data rather than from named Standard Model relation categories.
-
-Protocol:
-
-1. choose a set of measured scattering/decay/transition observables;
-2. hide the target observable;
-3. construct the relation graph only from the remaining observations;
-4. generate a preregistered prediction for the hidden observable;
-5. compare against Standard Model calculation and a non-relational statistical baseline;
-6. repeat on held-out processes;
-7. include shuffled and synthetic-null controls.
-
-Only an out-of-sample prediction that survives these controls can count as evidence that Ω adds predictive information.
+The next valid experiment must use measured process data, not predefined interaction labels, and must predict genuinely held-out observables before their values are revealed.
 
 ## Verdict
 
-**Ω-PHYS-ELECTRON-004: COMPLETED.**
+**Exact numerical rerun: VERIFIED.**
 
-**Relation structure: real and non-random.**
+**Previous incorrect k=2..6 and KNN values: RETIRED.**
 
-**Predictive novelty: not demonstrated.**
+**Relation/family association: REPRODUCIBLE IN THIS SMALL PILOT.**
 
-**Strong Ω ontological claim: not supported.**
+**Novel predictive evidence: NOT DEMONSTRATED.**
 
-**Falsification status: stronger claim weakened/broken.**
+**New physical law: NOT FOUND.**
 
-This is a valid negative result and should be preserved rather than discarded.
+**Next experiment: genuine held-out process prediction.**
 
-## External references
+## External reference
 
-- PDG 2026 particle properties: https://pdg.lbl.gov/2026/listings/particle_properties.html
-- NIST CODATA fundamental constants: https://physics.nist.gov/constants
+PDG 2026 particle properties:
+https://pdg.lbl.gov/2026/listings/particle_properties.html
