@@ -1,0 +1,23 @@
+name: Graph Memory Inspector
+
+on:
+  push:
+    paths:
+      - 'tools/graph_memory_inspector/**'
+      - '.github/workflows/graph-memory-inspector.yml'
+  pull_request:
+    paths:
+      - 'tools/graph_memory_inspector/**'
+      - '.github/workflows/graph-memory-inspector.yml'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run inspector tests
+        working-directory: tools/graph_memory_inspector
+        run: python -m unittest -v test_inspector.py
