@@ -1,9 +1,8 @@
 """Ω-LOOP-GUARD v1.0
 
 Small dependency-free guard for detecting unproductive semantic repetition.
-It intentionally separates wording changes from real progress: a cycle only
-counts as productive when evidence or strategy changes, or the state changes
-materially.
+Wording changes alone never count as progress. Progress requires measurable
+state/evidence/strategy change.
 """
 
 from __future__ import annotations
@@ -18,7 +17,7 @@ def _fingerprint(value: str) -> str:
 
 
 def _similarity(a: str, b: str) -> float:
-    """Token Jaccard similarity; deliberately simple and deterministic."""
+    """Deterministic token Jaccard similarity."""
     aa = set(a.lower().split())
     bb = set(b.lower().split())
     if not aa and not bb:
@@ -37,21 +36,19 @@ class LoopDecision:
 
 
 class OmegaLoopGuard:
-    """Detect repeated work without evidence/strategy progress."""
+    """Detect repeated work without evidence or strategy progress."""
 
     def __init__(
         self,
         max_repetitions: int = 3,
         state_threshold: float = 0.90,
         action_threshold: float = 0.90,
-        output_threshold: float = 0.90,
     ) -> None:
         if max_repetitions < 1:
             raise ValueError("max_repetitions must be >= 1")
         self.max_repetitions = max_repetitions
         self.state_threshold = state_threshold
         self.action_threshold = action_threshold
-        self.output_threshold = output_threshold
         self._last: Optional[dict] = None
         self._repetitions = 0
 
@@ -83,35 +80,43 @@ class OmegaLoopGuard:
 
         state_sim = _similarity(self._last["state"], state)
         action_sim = _similarity(self._last["action"], action)
-        output_sim = _similarity(self._last["output"], output)
-        repeated = (
+
+        # Output wording is deliberately excluded from the stop decision.
+        # Rephrasing the same empty progress must NOT bypass the guard.
+        repeated_work = (
             state_sim >= self.state_threshold
             and action_sim >= self.action_threshold
-            and output_sim >= self.output_threshold
         )
 
-        if evidence_delta or strategy_delta or not repeated:
+        if evidence_delta or strategy_delta:
             self._repetitions = 0
             self._last = current
             return LoopDecision(
                 "CONTINUE", 0, 0,
-                "productive change detected (state/evidence/strategy/output)"
+                "measurable evidence or strategy change detected"
+            )
+
+        if not repeated_work:
+            self._repetitions = 0
+            self._last = current
+            return LoopDecision(
+                "CONTINUE", 0, 0,
+                "state or action changed materially"
             )
 
         self._repetitions += 1
         if self._repetitions >= self.max_repetitions:
-            # Hard stop: do not silently continue the same action.
             self._repetitions = 0
             self._last = None
             return LoopDecision(
                 "STOP_REPLAN", 2, self.max_repetitions,
-                "repeated state/action/output with zero evidence and strategy delta"
+                "same work repeated with zero evidence and strategy delta"
             )
 
         self._last = current
         return LoopDecision(
             "WARN", 1, self._repetitions,
-            "repetition detected without measurable progress"
+            "same work repeated without measurable progress"
         )
 
     def reset(self) -> None:
