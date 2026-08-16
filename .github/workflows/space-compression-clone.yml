@@ -30,13 +30,19 @@ jobs:
           mkdir -p evidence
           git rev-parse HEAD | tee evidence/original_commit.txt
           python -m unittest discover -s space -p 'test_*.py' | tee evidence/baseline_tests.txt
-          find . -type f \
-            -not -path './.git/*' \
-            -not -path './evidence/*' \
-            -not -path '*/__pycache__/*' \
-            -not -name '*.pyc' \
-            -print0 | sort -z | xargs -0 sha256sum > /tmp/original_manifest.sha256
-          cp /tmp/original_manifest.sha256 evidence/original_manifest.sha256
+          python - <<'PY'
+          from pathlib import Path
+          import hashlib
+          root = Path('.')
+          excluded = {'.git', 'evidence', '__pycache__'}
+          rows = []
+          for p in sorted(root.rglob('*')):
+              if not p.is_file() or p.suffix == '.pyc' or any(part in excluded for part in p.parts):
+                  continue
+              rows.append(f"{hashlib.sha256(p.read_bytes()).hexdigest()}  ./{p.as_posix()}\n")
+          Path('/tmp/original_manifest.sha256').write_text(''.join(rows), encoding='utf-8')
+          Path('evidence/original_manifest.sha256').write_text(''.join(rows), encoding='utf-8')
+          PY
           du -sk --exclude=.git --exclude=evidence . | tee evidence/original_size_kb.txt
 
       - name: Make isolated clone
@@ -72,13 +78,18 @@ jobs:
           set -euo pipefail
           for kind in tar zip; do
             root="/tmp/space-clone/restored-${kind}"
-            find "$root" -type f \
-              -not -path '*/__pycache__/*' \
-              -not -name '*.pyc' \
-              -print0 | sort -z | while IFS= read -r -d '' f; do
-                rel="${f#${root}/}"
-                sha256sum "$f" | sed "s#  $f#  ./$rel#"
-              done > "evidence/restored_${kind}_manifest.sha256"
+            python - "$root" "evidence/restored_${kind}_manifest.sha256" <<'PY'
+          from pathlib import Path
+          import hashlib, sys
+          root = Path(sys.argv[1])
+          out = Path(sys.argv[2])
+          rows = []
+          for p in sorted(root.rglob('*')):
+              if not p.is_file() or p.suffix == '.pyc' or '__pycache__' in p.parts:
+                  continue
+              rows.append(f"{hashlib.sha256(p.read_bytes()).hexdigest()}  ./{p.relative_to(root).as_posix()}\n")
+          out.write_text(''.join(rows), encoding='utf-8')
+          PY
             diff -u /tmp/original_manifest.sha256 "evidence/restored_${kind}_manifest.sha256"
             (cd "$root" && python -m unittest discover -s space -p 'test_*.py') | tee "evidence/restored_${kind}_tests.txt"
           done
