@@ -1,9 +1,10 @@
 """Ω-Language Organ v0.1.
 
-A small language-facing organ. It converts simple natural-language statements
-into explicit Ω-style semantic relations and renders those relations back to
-human-readable text. It owns tiered local memory only; graph/global-memory
-access is intentionally outside this module.
+A small language-facing organ. It converts constrained natural-language
+statements into explicit Ω semantic relations and renders those relations
+back to human-readable text. Local memory is tiered and every remembered
+relation may carry provenance and confidence. Global graph access is outside
+this module.
 """
 from dataclasses import dataclass, field
 import re
@@ -15,6 +16,12 @@ class SemanticRelation:
     subject: str
     relation: str
     object: str
+    provenance: str | None = None
+    confidence: float = 1.0
+
+    def __post_init__(self) -> None:
+        if not 0.0 <= self.confidence <= 1.0:
+            raise ValueError("confidence must be between 0 and 1")
 
 
 @dataclass
@@ -27,18 +34,6 @@ class MemoryTier:
 class LanguageOrgan:
     """Deterministic v0.1 language organ; no graph or external authority."""
 
-    RELATIONS = {
-        "связан": "связь",
-        "связана": "связь",
-        "связан с": "связь",
-        "хранит": "хранит",
-        "сохраняет": "сохраняет",
-        "работает": "состояние",
-        "работает с": "работает_с",
-        "имеет": "имеет",
-        "есть": "есть",
-    }
-
     def __init__(self) -> None:
         self.memory = MemoryTier()
 
@@ -46,7 +41,7 @@ class LanguageOrgan:
     def _clean(text: str) -> str:
         return re.sub(r"\s+", " ", text.strip().strip(".!?"))
 
-    def understand(self, text: str) -> list[SemanticRelation]:
+    def understand(self, text: str, provenance: str | None = None) -> list[SemanticRelation]:
         """Parse a deliberately small, auditable set of relation patterns."""
         text = self._clean(text)
         lower = text.lower()
@@ -60,7 +55,7 @@ class LanguageOrgan:
         for pattern, relation in patterns:
             match = re.match(pattern, lower, flags=re.IGNORECASE)
             if match:
-                return [SemanticRelation(match.group(1).strip(), relation, match.group(2).strip())]
+                return [SemanticRelation(match.group(1).strip(), relation, match.group(2).strip(), provenance)]
         raise ValueError("language pattern is outside the v0.1 contract")
 
     def remember(self, relations: Iterable[SemanticRelation], tier: str = "working") -> None:
@@ -69,6 +64,8 @@ class LanguageOrgan:
         getattr(self.memory, tier).extend(relations)
 
     def promote(self, relation: SemanticRelation, from_tier: str, to_tier: str) -> None:
+        if from_tier not in {"fast", "working", "long_term"} or to_tier not in {"fast", "working", "long_term"}:
+            raise ValueError("unknown memory tier")
         source = getattr(self.memory, from_tier)
         target = getattr(self.memory, to_tier)
         if relation not in source:
