@@ -13,6 +13,13 @@ class SpaceRelationshipTests(unittest.TestCase):
         self.t.set_initial("child", 0.2, "initial trust")
         self.r = SpaceRelationship(self.h, self.t)
 
+    def test_initial_trust_is_recorded(self):
+        self.assertEqual(self.t.score("child"), 0.2)
+        events = self.t.history("child")
+        self.assertEqual(len(events), 1)
+        self.assertEqual(events[0]["previous"], 0.0)
+        self.assertEqual(events[0]["current"], 0.2)
+
     def test_lineage_does_not_create_trust(self):
         ctx = self.r.context("root", "child", "observe", "request metadata")
         self.assertEqual(ctx.relation, "PARENT_OF")
