@@ -66,7 +66,8 @@ class SpaceOrganism:
         event_id = f"event:{self.state.cycle}"
         self.graph.upsert_node(event_id, feedback, trace.trace_id)
         self.graph.connect(f"space:{self.state.space_id}", event_id, "PRODUCED_FEEDBACK", trace.trace_id)
-        guard = self.loop_guard.observe(self.state.snapshot(), tool_id, output)
+        semantic_state = {"mode": self.state.mode, "values": dict(self.state.values)}
+        guard = self.loop_guard.observe(semantic_state, tool_id, output)
         if guard.action == "STOP_REPLAN":
             self.state.mode = "REPLAN"
         return OrganismResult(decision.decision.value, decision.executed, output, feedback, guard.action)
