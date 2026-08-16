@@ -17,7 +17,13 @@ class MultiOrganExchangeTests(unittest.TestCase):
         self.runtime.register(self.a)
         self.runtime.register(self.b)
         self.exchange = MultiOrganExchange(OrganGuardianRouter(self.runtime))
-        self.evidence = SecurityEvidence(source="test", action="organ:a:b:receive")
+        self.evidence = SecurityEvidence(
+            space_id="test-space",
+            device_key_id="test-key",
+            key_attested=True,
+            integrity_ok=True,
+            request_fresh=True,
+        )
         self.cap = Capability(name="organ.receive", scope="b")
 
     def test_exchange_goes_through_router(self):
