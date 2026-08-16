@@ -24,7 +24,13 @@ class MultiOrganExchangeTests(unittest.TestCase):
             integrity_ok=True,
             request_fresh=True,
         )
-        self.cap = Capability(name="organ.receive", scope="b")
+        self.cap = Capability(
+            capability_id="organ.receive",
+            description="receive an explicit organ message",
+            organs=("b",),
+            permissions=("organ.receive",),
+            verification_state="VERIFIED",
+        )
 
     def test_exchange_goes_through_router(self):
         step = self.exchange.send("a", "b", "receive", "hello", "organ.receive", [self.cap], self.evidence)
