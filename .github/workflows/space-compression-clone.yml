@@ -9,6 +9,9 @@ on:
 permissions:
   contents: read
 
+env:
+  SOURCE_EXCLUDES: "./.git/*|./evidence/*|*/__pycache__/*|*.pyc"
+
 jobs:
   compression-clone:
     runs-on: ubuntu-latest
@@ -26,9 +29,15 @@ jobs:
           set -euo pipefail
           mkdir -p evidence
           git rev-parse HEAD | tee evidence/original_commit.txt
-          find . -type f -not -path './.git/*' -print0 | sort -z | xargs -0 sha256sum > evidence/original_manifest.sha256
-          du -sk . | tee evidence/original_size_kb.txt
           python -m unittest discover -s space -p 'test_*.py' | tee evidence/baseline_tests.txt
+          find . -type f \
+            -not -path './.git/*' \
+            -not -path './evidence/*' \
+            -not -path '*/__pycache__/*' \
+            -not -name '*.pyc' \
+            -print0 | sort -z | xargs -0 sha256sum > /tmp/original_manifest.sha256
+          cp /tmp/original_manifest.sha256 evidence/original_manifest.sha256
+          du -sk --exclude=.git --exclude=evidence . | tee evidence/original_size_kb.txt
 
       - name: Make isolated clone
         shell: bash
@@ -36,7 +45,7 @@ jobs:
           set -euo pipefail
           rm -rf /tmp/space-clone
           mkdir -p /tmp/space-clone
-          tar --exclude=.git --exclude=evidence -cf /tmp/space-clone/source.tar .
+          tar --exclude=.git --exclude=evidence --exclude='*/__pycache__/*' --exclude='*.pyc' -cf /tmp/space-clone/source.tar .
           mkdir /tmp/space-clone/source
           tar -xf /tmp/space-clone/source.tar -C /tmp/space-clone/source
 
@@ -61,12 +70,18 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          (cd /tmp/space-clone/restored-tar && find . -type f -print0 | sort -z | xargs -0 sha256sum) > evidence/restored_tar_manifest.sha256
-          (cd /tmp/space-clone/restored-zip && find . -type f -print0 | sort -z | xargs -0 sha256sum) > evidence/restored_zip_manifest.sha256
-          diff -u evidence/original_manifest.sha256 evidence/restored_tar_manifest.sha256
-          diff -u evidence/original_manifest.sha256 evidence/restored_zip_manifest.sha256
-          (cd /tmp/space-clone/restored-tar && python -m unittest discover -s space -p 'test_*.py') | tee evidence/restored_tar_tests.txt
-          (cd /tmp/space-clone/restored-zip && python -m unittest discover -s space -p 'test_*.py') | tee evidence/restored_zip_tests.txt
+          for kind in tar zip; do
+            root="/tmp/space-clone/restored-${kind}"
+            find "$root" -type f \
+              -not -path '*/__pycache__/*' \
+              -not -name '*.pyc' \
+              -print0 | sort -z | while IFS= read -r -d '' f; do
+                rel="${f#${root}/}"
+                sha256sum "$f" | sed "s#  $f#  ./$rel#"
+              done > "evidence/restored_${kind}_manifest.sha256"
+            diff -u /tmp/original_manifest.sha256 "evidence/restored_${kind}_manifest.sha256"
+            (cd "$root" && python -m unittest discover -s space -p 'test_*.py') | tee "evidence/restored_${kind}_tests.txt"
+          done
 
       - name: Preserve evidence
         if: always()
