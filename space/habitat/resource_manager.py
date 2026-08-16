@@ -3,50 +3,62 @@
 CPU/RAM/GPU/VRAM/storage/network/device resources are represented as bounded
 resources. Hardware adapters may use this contract without entering the core.
 """
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import Any
 
 @dataclass
 class Resource:
     resource_id: str
     kind: str
-    capacity: float
-    available: float
-    metadata: dict[str, Any]
+    capacity: float | None = None
+    unit: str | None = None
+    metadata: dict[str, Any] = field(default_factory=dict)
+    available: bool = True
 
-    def allocate(self, amount: float) -> bool:
-        if amount < 0 or amount > self.available:
-            return False
-        self.available -= amount
-        return True
-
-    def release(self, amount: float) -> None:
-        if amount < 0:
-            raise ValueError("amount must be non-negative")
-        self.available = min(self.capacity, self.available + amount)
+@dataclass
+class ResourceClaim:
+    claim_id: str
+    owner: str
+    resource_id: str
+    amount: float
+    unit: str | None = None
+    released: bool = False
 
 class ResourceManager:
     def __init__(self) -> None:
         self.resources: dict[str, Resource] = {}
+        self.claims: dict[str, ResourceClaim] = {}
 
-    def register(self, resource_id: str, kind: str, capacity: float, metadata: dict[str, Any] | None = None) -> Resource:
-        if resource_id in self.resources:
+    def register(self, resource: Resource) -> None:
+        if resource.resource_id in self.resources:
             raise ValueError("duplicate resource")
-        resource = Resource(resource_id, kind, capacity, capacity, metadata or {})
-        self.resources[resource_id] = resource
-        return resource
+        self.resources[resource.resource_id] = resource
 
-    def request(self, resource_id: str, amount: float) -> bool:
-        return self.resources[resource_id].allocate(amount)
+    def request(self, claim_id: str, owner: str, resource_id: str, amount: float, unit: str | None = None) -> bool:
+        if amount < 0:
+            return False
+        resource = self.resources.get(resource_id)
+        if resource is None or not resource.available:
+            return False
+        used = sum(c.amount for c in self.claims.values() if c.resource_id == resource_id and not c.released)
+        if resource.capacity is not None and used + amount > resource.capacity:
+            return False
+        self.claims[claim_id] = ResourceClaim(claim_id, owner, resource_id, amount, unit)
+        return True
 
-    def release(self, resource_id: str, amount: float) -> None:
-        self.resources[resource_id].release(amount)
+    def release(self, claim_id: str) -> bool:
+        claim = self.claims.get(claim_id)
+        if claim is None or claim.released:
+            return False
+        claim.released = True
+        return True
 
-    def available(self, resource_id: str) -> float:
-        return self.resources[resource_id].available
+    def available(self, resource_id: str) -> float | None:
+        resource = self.resources[resource_id]
+        if resource.capacity is None:
+            return None
+        used = sum(c.amount for c in self.claims.values() if c.resource_id == resource_id and not c.released)
+        return max(0.0, resource.capacity - used)
 
-    def snapshot(self) -> dict[str, dict[str, Any]]:
-        return {
-            rid: {"kind": r.kind, "capacity": r.capacity, "available": r.available, "metadata": dict(r.metadata)}
-            for rid, r in self.resources.items()
-        }
+    def snapshot(self) -> dict[str, Any]:
+        return {"resources": {k: vars(v) for k, v in self.resources.items()}, "claims": {k: vars(v) for k, v in self.claims.items()}}
