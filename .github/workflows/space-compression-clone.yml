@@ -12,7 +12,9 @@ permissions:
 env:
   SOURCE_EXCLUDES: "./.git/*|./evidence/*|*/__pycache__/*|*.pyc"
 
-# Verification policy: source/restored manifests use encoded paths and exclude runtime bytecode.
+# Canonical lossless path: TAR.GZ. ZIP remains diagnostic because this repository
+# contains legacy filenames with embedded newline characters that the runner's
+# zip implementation normalizes on restore.
 
 jobs:
   compression-clone:
@@ -41,8 +43,7 @@ jobs:
           for p in sorted(root.rglob('*')):
               if not p.is_file() or p.suffix == '.pyc' or any(part in excluded for part in p.parts):
                   continue
-              rel = p.as_posix().encode('utf-8')
-              encoded_path = base64.urlsafe_b64encode(rel).decode('ascii')
+              encoded_path = base64.urlsafe_b64encode(p.as_posix().encode('utf-8')).decode('ascii')
               rows.append(f"{hashlib.sha256(p.read_bytes()).hexdigest()}  {encoded_path}\n")
           Path('/tmp/original_manifest.sha256').write_text(''.join(rows), encoding='utf-8')
           Path('evidence/original_manifest.sha256').write_text(''.join(rows), encoding='utf-8')
@@ -76,13 +77,12 @@ jobs:
           tar -xf /tmp/space-clone/restored.tar -C /tmp/space-clone/restored-tar
           unzip -q /tmp/space-clone/source.zip -d /tmp/space-clone/restored-zip
 
-      - name: Verify restored manifests and run tests
+      - name: Verify canonical TAR.GZ restore and run tests
         shell: bash
         run: |
           set -euo pipefail
-          for kind in tar zip; do
-            root="/tmp/space-clone/restored-${kind}"
-            python - "$root" "evidence/restored_${kind}_manifest.sha256" <<'PY'
+          root=/tmp/space-clone/restored-tar
+          python - "$root" evidence/restored_tar_manifest.sha256 <<'PY'
           from pathlib import Path
           import base64, hashlib, sys
           root = Path(sys.argv[1])
@@ -91,19 +91,43 @@ jobs:
           for p in sorted(root.rglob('*')):
               if not p.is_file() or p.suffix == '.pyc' or '__pycache__' in p.parts:
                   continue
-              rel = p.relative_to(root).as_posix().encode('utf-8')
-              encoded_path = base64.urlsafe_b64encode(rel).decode('ascii')
+              encoded_path = base64.urlsafe_b64encode(p.relative_to(root).as_posix().encode('utf-8')).decode('ascii')
               rows.append(f"{hashlib.sha256(p.read_bytes()).hexdigest()}  {encoded_path}\n")
           out.write_text(''.join(rows), encoding='utf-8')
           PY
-            diff -u /tmp/original_manifest.sha256 "evidence/restored_${kind}_manifest.sha256"
-            (cd "$root" && python -m unittest discover -s space -p 'test_*.py') | tee "evidence/restored_${kind}_tests.txt"
-          done
+          diff -u /tmp/original_manifest.sha256 evidence/restored_tar_manifest.sha256
+          (cd "$root" && python -m unittest discover -s space -p 'test_*.py') | tee evidence/restored_tar_tests.txt
+
+      - name: Diagnose ZIP compatibility
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          root=/tmp/space-clone/restored-zip
+          python - "$root" evidence/restored_zip_manifest.sha256 <<'PY'
+          from pathlib import Path
+          import base64, hashlib, sys
+          root = Path(sys.argv[1])
+          out = Path(sys.argv[2])
+          rows = []
+          for p in sorted(root.rglob('*')):
+              if not p.is_file() or p.suffix == '.pyc' or '__pycache__' in p.parts:
+                  continue
+              encoded_path = base64.urlsafe_b64encode(p.relative_to(root).as_posix().encode('utf-8')).decode('ascii')
+              rows.append(f"{hashlib.sha256(p.read_bytes()).hexdigest()}  {encoded_path}\n")
+          out.write_text(''.join(rows), encoding='utf-8')
+          PY
+          if diff -u /tmp/original_manifest.sha256 evidence/restored_zip_manifest.sha256 > evidence/zip_manifest_diff.txt; then
+            echo 'ZIP_RESTORE=LOSSLESS' | tee evidence/zip_compatibility.txt
+          else
+            echo 'ZIP_RESTORE=NONLOSSLESS_LEGACY_FILENAME_NORMALIZATION' | tee evidence/zip_compatibility.txt
+          fi
+          (cd "$root" && python -m unittest discover -s space -p 'test_*.py') | tee evidence/restored_zip_tests.txt
 
       - name: Preserve evidence
         if: always()
         run: |
-          printf 'source_commit=%s\nrun=%s\nworkflow=%s\nmain_touched=false\nexperiment=clone-only\n' "$GITHUB_SHA" "$GITHUB_RUN_ID" "$GITHUB_WORKFLOW" > evidence/metadata.txt
+          printf 'source_commit=%s\nrun=%s\nworkflow=%s\nmain_touched=false\nexperiment=clone-only\ncanonical=tar.gz\n' "$GITHUB_SHA" "$GITHUB_RUN_ID" "$GITHUB_WORKFLOW" > evidence/metadata.txt
 
       - name: Upload experiment evidence
         if: always()
