@@ -1,16 +1,14 @@
-"""Minimal closed loop: Space action -> Guardian -> Memory/Graph feedback.
+"""Isolated cycle domain: SPACE action -> Guardian -> cycle memory.
 
-This is deliberately an in-memory deterministic prototype. It demonstrates
-that an authorized result can become a provenance-bearing memory/graph event
-without making the graph inspector responsible for policy or execution.
+The cycle may retain relations between its own states and events, but it is
+not allowed to materialize those relations as the operational GraphCore.
+Graph construction is a separate domain with its own boundary.
 """
 from dataclasses import dataclass
-from typing import Any
 
 from space.integration.space_guardian_bridge import IntegrationResult, SpaceAction, SpaceGuardianBridge
 from space.prototype.capability_registry import Capability
 from space.security.guardian_core import SecurityEvidence
-from tools.graph_memory_inspector.inspector import Finding, inspect_graph
 
 
 @dataclass(frozen=True)
@@ -24,6 +22,8 @@ class MemoryEvent:
 
 
 class SpaceMemoryGuardianCycle:
+    """Closed cycle domain with no graph-construction capability."""
+
     def __init__(self, bridge: SpaceGuardianBridge | None = None) -> None:
         self.bridge = bridge or SpaceGuardianBridge()
         self.events: list[MemoryEvent] = []
@@ -48,26 +48,26 @@ class SpaceMemoryGuardianCycle:
         )
         return result
 
-    def graph_snapshot(self) -> dict[str, Any]:
-        nodes = [
-            {"id": "space:" + event.space_id, "state": "ACTIVE", "provenance": "cycle"}
-            for event in self.events
-        ]
-        nodes += [
+    def cycle_snapshot(self) -> dict[str, list[dict[str, str]]]:
+        """Return cycle-local state only; never a GraphCore representation."""
+        states = [
             {"id": event.event_id, "state": event.decision, "provenance": event.provenance}
             for event in self.events
         ]
         relations = [
             {
-                "id": f"rel-{event.event_id}",
-                "source": "space:" + event.space_id,
+                "id": f"cycle-rel-{event.event_id}",
+                "source": "cycle:" + event.space_id,
                 "target": event.event_id,
-                "type": "PRODUCED_EVENT",
+                "type": "CYCLE_PRODUCED_EVENT",
                 "provenance": event.provenance,
             }
             for event in self.events
         ]
-        return {"nodes": nodes, "relations": relations}
+        return {"states": states, "relations": relations}
 
-    def inspect_feedback_graph(self) -> list[Finding]:
-        return inspect_graph(self.graph_snapshot())
+    def graph_snapshot(self):
+        raise PermissionError("cycle domain cannot be materialized as operational graph")
+
+    def inspect_feedback_graph(self):
+        raise PermissionError("cycle domain cannot enter graph inspection domain")
