@@ -3,6 +3,7 @@ from dataclasses import dataclass
 
 from space.integration.space_guardian_bridge import SpaceAction, SpaceGuardianBridge
 from space.organs.autonomous_organ import OrganMessage, OrganRuntime
+from space.organs.quarantine import OrganQuarantine
 from space.prototype.capability_registry import Capability
 from space.security.guardian_core import Decision, SecurityEvidence
 
@@ -16,11 +17,17 @@ class OrganDispatchResult:
 
 
 class OrganGuardianRouter:
-    """Routes organ messages only after Guardian authorization."""
+    """Routes organ messages only after quarantine and Guardian authorization."""
 
-    def __init__(self, runtime: OrganRuntime, bridge: SpaceGuardianBridge | None = None) -> None:
+    def __init__(
+        self,
+        runtime: OrganRuntime,
+        bridge: SpaceGuardianBridge | None = None,
+        quarantine: OrganQuarantine | None = None,
+    ) -> None:
         self.runtime = runtime
         self.bridge = bridge or SpaceGuardianBridge()
+        self.quarantine = quarantine or OrganQuarantine(runtime)
 
     def dispatch(
         self,
@@ -31,6 +38,8 @@ class OrganGuardianRouter:
         if message.target not in self.runtime.organs:
             raise ValueError("target organ is not registered")
         target = self.runtime.organs[message.target]
+        if self.quarantine.is_isolated(target.organ_id):
+            return OrganDispatchResult(Decision.BLOCK, False, target.organ_id, message.operation)
         action = SpaceAction(
             action_id=f"organ:{message.source}:{message.target}:{message.operation}",
             required_capabilities=(message.capability,) if message.capability else (),
