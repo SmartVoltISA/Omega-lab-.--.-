@@ -1,6 +1,7 @@
 # Act of Completed Work — Ω-Language Organ v0.1
 
 **Date:** 2026-08-16
+**Status:** ACCEPTED BASELINE
 
 ## Completed
 
@@ -20,4 +21,8 @@ The organ has no direct authority over the global graph, global memory, network,
 
 ### Verification
 
-Six unit tests were added. CI acceptance remains pending until the repository reports a green run for this commit.
+The full SPACE acceptance Run #88 executed **61 tests** and finished `OK`. The language-organ tests are included in the repository's `space/test_*.py` discovery suite.
+
+### Acceptance
+
+The v0.1 baseline is accepted as the language-organ foundation. Future model adapters and graph/memory bridges require separate tests and acceptance evidence.
