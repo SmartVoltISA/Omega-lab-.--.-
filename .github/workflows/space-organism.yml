@@ -1,5 +1,7 @@
 name: space-organism
 
+# CI acceptance gate for the autonomous-organ/closed-loop space organism.
+
 on:
   push:
     paths:
