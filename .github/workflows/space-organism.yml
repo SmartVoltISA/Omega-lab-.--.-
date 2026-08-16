@@ -3,17 +3,11 @@ name: space-organism
 on:
   push:
     paths:
-      - 'space/core/**'
-      - 'space/integration/**'
-      - 'space/prototype/**'
-      - 'space/security/**'
+      - 'space/**'
       - '.github/workflows/space-organism.yml'
   pull_request:
     paths:
-      - 'space/core/**'
-      - 'space/integration/**'
-      - 'space/prototype/**'
-      - 'space/security/**'
+      - 'space/**'
       - '.github/workflows/space-organism.yml'
 
 jobs:
