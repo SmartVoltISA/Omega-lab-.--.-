@@ -1,4 +1,4 @@
-# Ω-Space — Hardware Habitat Architecture v1.0
+# Ω-Space — Hardware Habitat Architecture v1.1
 
 ## Core rule
 
@@ -18,12 +18,48 @@ They are capabilities exposed by the habitat through controlled adapters.
 | GPU / accelerator | high-throughput processing organ | tensor/model/media workloads |
 | VRAM / accelerator memory | high-speed working memory | model/context buffers and accelerator state |
 | Network | external circulation | remote services and communication |
-| Wi-Fi | wireless external interface | network access through Guardian |
-| Bluetooth | short-range device interface | peripherals/devices through Guardian |
+| Wi-Fi | wireless external interface | network access and, where technically supported, radio-based sensing through Guardian |
+| Bluetooth | short-range device interface | peripherals/devices and, where technically supported, radio observations through Guardian |
 | Camera | eye sensor | visual perception |
 | Microphone | ear/sound sensor | audio perception |
 | Speaker/display | motor/output organs | external expression |
 | USB/PCIe/etc. | attachment interfaces | hardware expansion through adapters |
+
+## Hardware as both actuator and sensor
+
+Every hardware interface should be modeled as a capability set rather than as a one-way pipe.
+
+A device may provide one or more of:
+
+```text
+SENSE       → observe the environment
+RECEIVE     → receive external data
+TRANSMIT    → send data externally
+ACTUATE     → cause an external effect
+MEASURE     → measure device/environment state
+```
+
+The same physical interface may therefore have different semantic capabilities. For example, a wireless radio may communicate with a network and, where hardware/driver support exists, provide measurements such as signal strength or timing information that can contribute to environmental inference. This is **radio sensing**, not literal acoustic echolocation; inference must carry its uncertainty and provenance.
+
+## User authorization is capability-specific
+
+The user does not grant a vague "external access" switch. Authorization is scoped to capability, target, purpose, duration and direction where possible.
+
+Example:
+
+```text
+USER
+  ↓
+ALLOW Wi-Fi / READ NETWORK
+  ↓
+Guardian
+  ↓
+network capability
+```
+
+A user allowing Wi-Fi communication does not automatically authorize camera access, microphone access, Bluetooth control, file export, actuator control or unrelated network actions.
+
+Default state for external I/O is **DENY until explicitly authorized**, except for narrowly defined local functions required to keep the system safe and observable.
 
 ## CPU ↔ RAM ↔ GPU/VRAM
 
@@ -163,5 +199,7 @@ A laptop, workstation, server, edge computer or future robotic platform may prov
 12. USB/device adapter
 13. process/service supervisor
 14. hardware health adapter
+15. radio-sensing capability adapter, where supported
+16. capability authorization adapter
 
 These adapters remain outside the core brain and are controlled through the same capability + Guardian boundary.
