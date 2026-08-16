@@ -1,0 +1,83 @@
+name: SPACE Compression Clone Experiment
+
+on:
+  push:
+    branches:
+      - 'experiment/compression'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  compression-clone:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout experiment clone only
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+
+      - name: Baseline
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p evidence
+          git rev-parse HEAD | tee evidence/original_commit.txt
+          find . -type f -not -path './.git/*' -print0 | sort -z | xargs -0 sha256sum > evidence/original_manifest.sha256
+          du -sk . | tee evidence/original_size_kb.txt
+          python -m unittest discover -s space -p 'test_*.py' | tee evidence/baseline_tests.txt
+
+      - name: Make isolated clone
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf /tmp/space-clone
+          mkdir -p /tmp/space-clone
+          tar --exclude=.git --exclude=evidence -cf /tmp/space-clone/source.tar .
+          mkdir /tmp/space-clone/source
+          tar -xf /tmp/space-clone/source.tar -C /tmp/space-clone/source
+
+      - name: Compress clone
+        shell: bash
+        run: |
+          set -euo pipefail
+          gzip -9 -c /tmp/space-clone/source.tar > /tmp/space-clone/source.tar.gz
+          (cd /tmp/space-clone/source && zip -9 -qr /tmp/space-clone/source.zip .)
+          stat -c '%n %s bytes' /tmp/space-clone/source.tar /tmp/space-clone/source.tar.gz /tmp/space-clone/source.zip | tee evidence/compression_sizes.txt
+
+      - name: Restore clone
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir /tmp/space-clone/restored-tar /tmp/space-clone/restored-zip
+          gzip -dc /tmp/space-clone/source.tar.gz > /tmp/space-clone/restored.tar
+          tar -xf /tmp/space-clone/restored.tar -C /tmp/space-clone/restored-tar
+          unzip -q /tmp/space-clone/source.zip -d /tmp/space-clone/restored-zip
+
+      - name: Verify restored manifests and run tests
+        shell: bash
+        run: |
+          set -euo pipefail
+          (cd /tmp/space-clone/restored-tar && find . -type f -print0 | sort -z | xargs -0 sha256sum) > evidence/restored_tar_manifest.sha256
+          (cd /tmp/space-clone/restored-zip && find . -type f -print0 | sort -z | xargs -0 sha256sum) > evidence/restored_zip_manifest.sha256
+          diff -u evidence/original_manifest.sha256 evidence/restored_tar_manifest.sha256
+          diff -u evidence/original_manifest.sha256 evidence/restored_zip_manifest.sha256
+          (cd /tmp/space-clone/restored-tar && python -m unittest discover -s space -p 'test_*.py') | tee evidence/restored_tar_tests.txt
+          (cd /tmp/space-clone/restored-zip && python -m unittest discover -s space -p 'test_*.py') | tee evidence/restored_zip_tests.txt
+
+      - name: Preserve evidence
+        if: always()
+        run: |
+          printf 'source_commit=%s\nrun=%s\nworkflow=%s\nmain_touched=false\nexperiment=clone-only\n' "$GITHUB_SHA" "$GITHUB_RUN_ID" "$GITHUB_WORKFLOW" > evidence/metadata.txt
+
+      - name: Upload experiment evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: space-compression-clone-${{ github.run_id }}
+          path: evidence/
+          if-no-files-found: error
+          retention-days: 30
