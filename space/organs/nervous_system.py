@@ -1,5 +1,5 @@
 """Nervous system: routes signals between organs without doing their work."""
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from time import time
 from typing import Any, Callable
 import heapq
@@ -8,10 +8,10 @@ import heapq
 class Signal:
     priority: int
     sequence: int
-    kind: str
-    source: str
-    payload: Any
-    created_at: float = time()
+    kind: str = field(compare=False)
+    source: str = field(compare=False)
+    payload: Any = field(compare=False)
+    created_at: float = field(default_factory=time, compare=False)
 
 class NervousSystem:
     def __init__(self) -> None:
@@ -24,7 +24,7 @@ class NervousSystem:
 
     def emit(self, kind: str, source: str, payload: Any, priority: int = 100) -> Signal:
         self._sequence += 1
-        signal = Signal(priority, self._sequence, kind, source, payload, time())
+        signal = Signal(priority, self._sequence, kind, source, payload)
         heapq.heappush(self._queue, signal)
         return signal
 
