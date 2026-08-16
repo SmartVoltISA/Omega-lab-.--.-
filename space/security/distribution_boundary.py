@@ -1,8 +1,9 @@
-"""Hard boundary for external/distributed capabilities.
+"""Scoped boundary for external/distributed capabilities.
 
-Default policy is deny. This module deliberately contains no networking,
-Bluetooth, discovery, replication, or self-deployment implementation.
-It only defines the policy boundary those future tools must cross.
+The system may model or execute ordinary domain operations inside an
+explicitly isolated laboratory/sandbox. That is different from autonomous
+external propagation. External peer discovery, memory sharing, capability
+delegation and self-deployment remain explicit boundary events.
 """
 from dataclasses import dataclass
 from enum import Enum
@@ -15,6 +16,7 @@ class Capability(str, Enum):
     MEMORY_SHARING = "memory_sharing"
     CAPABILITY_DELEGATION = "capability_delegation"
     SELF_DEPLOYMENT = "self_deployment"
+    LAB_REPRODUCTION = "lab_reproduction"
 
 
 @dataclass(frozen=True)
@@ -23,15 +25,23 @@ class DistributionRequest:
     capability: Capability
     source: str
     target: str
+    scope: str = "external"
 
 
 class DistributionBoundary:
-    """Default-deny boundary for distributed/external behavior."""
+    """Separate ordinary laboratory capability from external propagation."""
+
+    SANDBOX_SCOPE = "sandbox"
 
     def inspect(self, request: DistributionRequest) -> bool:
-        # No capability is implicitly granted. A future explicit user-mediated
-        # policy can be layered above this boundary without changing the core.
+        # Ordinary domain/reproduction experiments are allowed only inside an
+        # explicit sandbox. External/distributed capabilities remain denied.
+        if request.capability == Capability.LAB_REPRODUCTION:
+            return request.scope == self.SANDBOX_SCOPE
         return False
+
+    def can_lab_reproduce(self, scope: str = SANDBOX_SCOPE) -> bool:
+        return scope == self.SANDBOX_SCOPE
 
     def can_delegate(self, *_args, **_kwargs) -> bool:
         return False
