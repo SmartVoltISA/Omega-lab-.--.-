@@ -1,0 +1,38 @@
+name: SPACE Stress Evidence
+
+on:
+  push:
+    paths:
+      - 'space/**'
+      - '.github/workflows/space-stress-evidence.yml'
+  workflow_dispatch:
+
+jobs:
+  stress:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Repeated organism suite
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p stress-results
+          : > stress-results/space-stress-report.txt
+          for i in $(seq 1 20); do
+            echo "=== SPACE stress iteration $i/20 ===" | tee -a stress-results/space-stress-report.txt
+            python -m unittest discover -s space -p 'test_*.py' 2>&1 | tee -a stress-results/space-stress-report.txt
+          done
+      - name: Save stress evidence
+        if: always()
+        run: printf 'commit=%s\nrun=%s\nworkflow=%s\niterations=20\n' "$GITHUB_SHA" "$GITHUB_RUN_ID" "$GITHUB_WORKFLOW" > stress-results/stress-run-metadata.txt
+      - name: Upload stress evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: space-stress-results-${{ github.run_id }}
+          path: stress-results/
+          if-no-files-found: error
+          retention-days: 30
