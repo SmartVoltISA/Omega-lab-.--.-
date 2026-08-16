@@ -22,4 +22,17 @@ jobs:
           python-version: '3.12'
       - name: Run Guardian tests
         working-directory: space/security
-        run: python -m unittest -v test_guardian_core.py
+        run: python -m unittest -v test_guardian_core.py 2>&1 | tee ../../guardian-test-report.txt
+      - name: Save Guardian evidence
+        if: always()
+        run: printf 'commit=%s\nrun=%s\nworkflow=%s\n' "$GITHUB_SHA" "$GITHUB_RUN_ID" "$GITHUB_WORKFLOW" > guardian-run-metadata.txt
+      - name: Upload Guardian evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: guardian-results-${{ github.run_id }}
+          path: |
+            guardian-test-report.txt
+            guardian-run-metadata.txt
+          if-no-files-found: error
+          retention-days: 30
