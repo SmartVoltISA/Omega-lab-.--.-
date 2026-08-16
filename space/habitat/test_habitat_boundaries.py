@@ -17,7 +17,9 @@ class HabitatBoundaryTests(unittest.TestCase):
     def test_resource_explicit_and_compact_contracts_share_state(self):
         rm = ResourceManager()
         rm.register("ram", "RAM", 16, "GB")
-        self.assertTrue(rm.request("compact", 4))
+        # Compact contract is (resource_id, amount); both contracts must
+        # address the same registered resource and therefore share state.
+        self.assertTrue(rm.request("ram", 4))
         self.assertTrue(rm.request("explicit", "space", "ram", 3, "GB"))
         self.assertEqual(rm.available("ram"), 9)
         self.assertTrue(rm.release("ram", 2))
