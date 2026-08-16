@@ -18,6 +18,9 @@ from space.organs import (
     NervousSystem, CirculatorySystem, SensorySystem, MotorSystem,
     DigestiveSystem, Habitat, ImmuneSystem,
 )
+from space.habitat.resource_manager import ResourceManager, Resource
+from space.habitat.guardian_io import GuardianIO, IORequest
+from space.habitat.space_transport import SpaceTransport, SpaceMessage
 
 @dataclass(frozen=True)
 class OrganismResult:
@@ -48,6 +51,9 @@ class SpaceOrganism:
         self.digestive = DigestiveSystem(llm_backend, "configured" if llm_backend else "none")
         self.immune = ImmuneSystem()
         self.habitat = habitat
+        self.resources = ResourceManager()
+        self.io = GuardianIO(self._authorize_io_request)
+        self.space_transport = SpaceTransport(self._authorize_space_message)
 
         self.graph.upsert_node(f"space:{space_id}", {"mode": "ACTIVE"})
         self.circulatory.register("cycle_budget", 1.0)
@@ -76,6 +82,47 @@ class SpaceOrganism:
     def register_actuator(self, actuator: str, handler: Callable[[Any], Any]) -> None:
         self.motor.register(actuator, handler)
 
+    def register_resource(self, resource_id: str, kind: str, capacity: float | None = None, unit: str | None = None, metadata: dict[str, Any] | None = None) -> None:
+        self.resources.register(Resource(resource_id, kind, capacity, unit, metadata or {}))
+
+    def claim_resource(self, claim_id: str, resource_id: str, amount: float, unit: str | None = None) -> bool:
+        return self.resources.request(claim_id, self.state.space_id, resource_id, amount, unit)
+
+    def release_resource(self, claim_id: str) -> bool:
+        return self.resources.release(claim_id)
+
+    def register_io_adapter(self, interface: str, handler: Callable[[str, Any], Any]) -> None:
+        self.io.register_adapter(interface, handler)
+
+    def external_io(self, request_id: str, interface: str, operation: str, capability_id: str, payload: Any, evidence: SecurityEvidence, direction: str = "out") -> Any:
+        request = IORequest(request_id, interface, operation, capability_id, payload, direction)
+        decision = self.io.execute(request)
+        self.audit.record(self.state.cycle, f"io:{interface}:{operation}", "ALLOW" if decision.allowed else "BLOCK", "guardian_io", {"request": request.__dict__, "reason": decision.reason})
+        if decision.allowed:
+            self.memory.remember(self.state.space_id, "external_io", {"request": request.__dict__, "result": decision.result}, f"interface:{interface}", self.state.cycle)
+            self.events.publish("EXTERNAL_IO", {"interface": interface, "operation": operation, "result": decision.result}, self.state.cycle)
+        return decision
+
+    def connect_space_peer(self, space_id: str, handler: Callable[[SpaceMessage], Any]) -> None:
+        self.space_transport.register_peer(space_id, handler)
+
+    def send_space_message(self, message: SpaceMessage, evidence: SecurityEvidence) -> Any:
+        decision = self.guardian.authorize(SpaceAction(message.message_id, (message.capability_id,)), self.capabilities.all(), evidence)
+        if not decision.executed:
+            self.audit.record(self.state.cycle, "space_transport", decision.decision.value, "guardian", message.__dict__)
+            raise PermissionError(f"Guardian denied SPACE message: {decision.decision.value}")
+        self.space_transport.authorize = lambda _: True
+        result = self.space_transport.send(message)
+        self.memory.remember(self.state.space_id, "space_message", {"message": message.__dict__, "result": result}, "space_transport", self.state.cycle)
+        self.nervous.emit("SPACE_MESSAGE", message.receiver, {"message": message.__dict__, "result": result}, priority=25)
+        return result
+
+    def _authorize_io_request(self, request: IORequest) -> bool:
+        return False
+
+    def _authorize_space_message(self, message: SpaceMessage) -> bool:
+        return False
+
     def _activate_context(self, owner: str) -> list[dict[str, Any]]:
         return [m.__dict__ for m in self.memory.related(owner=owner, limit=8)]
 
@@ -91,14 +138,7 @@ class SpaceOrganism:
         output = None
         if decision.executed:
             output = self.tools.call(tool.tool_id, context=context, state=self.state.snapshot(), **plan.inputs)
-        feedback = {
-            "tool": tool.tool_id,
-            "decision": decision.decision.value,
-            "executed": decision.executed,
-            "output": output,
-            "cycle": self.state.cycle,
-            "plan_reason": plan.reason,
-        }
+        feedback = {"tool": tool.tool_id, "decision": decision.decision.value, "executed": decision.executed, "output": output, "cycle": self.state.cycle, "plan_reason": plan.reason}
         self.state.last_result = output
         self.state.last_feedback = feedback
         self.state.cycle += 1
@@ -136,19 +176,9 @@ class SpaceOrganism:
 
     def snapshot(self) -> dict[str, Any]:
         return {
-            "state": self.state.snapshot(),
-            "memory": self.memory.snapshot(),
-            "graph": self.graph.snapshot(),
-            "events": self.events.recent(),
-            "audit": self.audit.snapshot(),
-            "capabilities": [c.__dict__ for c in self.capabilities.all()],
-            "tools": [t.tool_id for t in self.tools.list()],
-            "organs": {
-                "nervous_pending": self.nervous.pending(),
-                "sensory_modalities": self.sensory.modalities(),
-                "actuators": self.motor.actuators(),
-                "llm_backend": self.digestive.backend_name,
-                "immune_quarantined": sorted(self.immune._quarantined),
-                "habitat": self.habitat.snapshot() if self.habitat else None,
-            },
+            "state": self.state.snapshot(), "memory": self.memory.snapshot(), "graph": self.graph.snapshot(),
+            "events": self.events.recent(), "audit": self.audit.snapshot(),
+            "capabilities": [c.__dict__ for c in self.capabilities.all()], "tools": [t.tool_id for t in self.tools.list()],
+            "resources": self.resources.snapshot(),
+            "organs": {"nervous_pending": self.nervous.pending(), "sensory_modalities": self.sensory.modalities(), "actuators": self.motor.actuators(), "llm_backend": self.digestive.backend_name, "immune_quarantined": sorted(self.immune._quarantined), "habitat": self.habitat.snapshot() if self.habitat else None},
         }
