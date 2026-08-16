@@ -10,6 +10,7 @@ from space.core.planner import Planner
 from space.core.recovery import RecoveryManager
 from space.core.state import SpaceState
 from space.core.tool_registry import ToolRegistry, Tool
+from space.core.decision_support import DecisionSupport, DecisionBrief, Option
 from space.integration.space_guardian_bridge import SpaceAction, SpaceGuardianBridge
 from space.prototype.capability_registry import Capability, CapabilityRegistry
 from space.security.guardian_core import SecurityEvidence
@@ -28,7 +29,7 @@ class SpaceOrganism:
         self.state = SpaceState(space_id)
         self.memory = DistributedMemory(); self.graph = GraphCore(); self.capabilities = CapabilityRegistry(); self.tools = ToolRegistry()
         self.planner = Planner(); self.events = EventBus(); self.audit = AuditLog(); self.recovery = RecoveryManager()
-        self.guardian = SpaceGuardianBridge(); self.loop_guard = LoopGuard()
+        self.guardian = SpaceGuardianBridge(); self.loop_guard = LoopGuard(); self.decision_support = DecisionSupport()
         self.nervous = NervousSystem(); self.circulatory = CirculatorySystem(); self.sensory = SensorySystem(); self.motor = MotorSystem()
         self.digestive = DigestiveSystem(llm_backend, "configured" if llm_backend else "none"); self.immune = ImmuneSystem(); self.habitat = habitat
         self.resources = ResourceManager(); self.io = GuardianIO(); self.space_transport = SpaceTransport(); self.host = HostAdapter()
@@ -51,6 +52,22 @@ class SpaceOrganism:
     def connect_space_peer(self, space_id: str, handler: Callable[[SpaceMessage], Any]) -> None: self.space_transport.register_peer(space_id, handler)
     def _authorize_capability(self, action_id: str, capability_id: str, evidence: SecurityEvidence):
         return self.guardian.authorize(SpaceAction(action_id, (capability_id,)), self.capabilities.all(), evidence)
+
+    def build_decision_support(self, brief_id: str, question: str, options: list[Option], evidence: list[str] | None = None, recommendation: str | None = None, consequential: bool = True) -> DecisionBrief:
+        brief = self.decision_support.build(brief_id, question, options, evidence, recommendation, consequential)
+        self.memory.remember(self.state.space_id, "decision_brief", self.decision_support.explain(brief), "decision_support", self.state.cycle)
+        self.events.publish("DECISION_BRIEF", self.decision_support.explain(brief), self.state.cycle)
+        self.audit.record(self.state.cycle, "decision_support", "ANALYZE_ONLY", "human_agency", {"brief_id": brief_id, "decision_owner": "HUMAN"})
+        return brief
+
+    def record_human_decision(self, brief: DecisionBrief, option_id: str) -> dict[str, Any]:
+        decision = self.decision_support.record_human_decision(brief, option_id)
+        self.memory.remember(self.state.space_id, "human_decision", decision, "human", self.state.cycle)
+        self.graph.upsert_node(f"decision:{brief.brief_id}", decision)
+        self.graph.connect(f"space:{self.state.space_id}", f"decision:{brief.brief_id}", "HUMAN_DECISION")
+        self.events.publish("HUMAN_DECISION", decision, self.state.cycle)
+        self.audit.record(self.state.cycle, "human_decision", "RECORDED", "human", decision)
+        return decision
 
     def external_io(self, request_id: str, interface: str, operation: str, capability_id: str, payload: Any, evidence: SecurityEvidence, direction: str = "out") -> Any:
         request = IORequest(request_id, interface, operation, capability_id, payload, direction)
