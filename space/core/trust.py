@@ -29,14 +29,17 @@ class TrustLedger:
     def score(self, subject: str) -> float:
         return self._scores.get(subject, self.default)
 
+    def set_initial(self, subject: str, score: float, reason: str, evidence: Any = None) -> TrustEvent:
+        """Set a first explicit trust value without bypassing the audit trail."""
+        if subject in self._scores:
+            raise ValueError("initial trust already set")
+        return self.update(subject, score, reason, evidence)
+
     def update(self, subject: str, score: float, reason: str, evidence: Any = None) -> TrustEvent:
         if not 0.0 <= score <= 1.0:
             raise ValueError("trust must be in [0, 1]")
         previous = self.score(subject)
-        event = TrustEvent(
-            f"trust-{len(self._history) + 1}", subject, previous, score,
-            reason, evidence, time(),
-        )
+        event = TrustEvent(f"trust-{len(self._history) + 1}", subject, previous, score, reason, evidence, time())
         self._history.append(event)
         self._scores[subject] = score
         return event
