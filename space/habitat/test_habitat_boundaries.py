@@ -14,6 +14,15 @@ class HabitatBoundaryTests(unittest.TestCase):
         self.assertEqual(rm.available("ram"), 14)
         self.assertFalse(rm.request("ram", 20))
 
+    def test_resource_explicit_and_compact_contracts_share_state(self):
+        rm = ResourceManager()
+        rm.register("ram", "RAM", 16, "GB")
+        self.assertTrue(rm.request("compact", 4))
+        self.assertTrue(rm.request("explicit", "space", "ram", 3, "GB"))
+        self.assertEqual(rm.available("ram"), 9)
+        self.assertTrue(rm.release("ram", 2))
+        self.assertEqual(rm.available("ram"), 11)
+
     def test_external_io_requires_guardian(self):
         io = GuardianIO(lambda req: req.capability_id == "wifi.send")
         sent = []
