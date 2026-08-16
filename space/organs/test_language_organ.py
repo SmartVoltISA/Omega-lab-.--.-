@@ -32,6 +32,18 @@ class LanguageOrganTests(unittest.TestCase):
         self.organ.remember([relation], "long_term")
         self.assertIn("память — связь → граф", self.organ.answer_from_local_memory("память"))
 
+    def test_provenance_is_preserved(self):
+        relation = self.organ.understand("орган хранит память", provenance="dialogue:1")[0]
+        self.assertEqual(relation.provenance, "dialogue:1")
+        self.organ.remember([relation], "working")
+        self.assertEqual(self.organ.memory.working[0].provenance, "dialogue:1")
+
+    def test_confidence_is_bounded(self):
+        relation = SemanticRelation("орган", "имеет", "состояние", confidence=0.75)
+        self.assertEqual(relation.confidence, 0.75)
+        with self.assertRaises(ValueError):
+            SemanticRelation("орган", "имеет", "состояние", confidence=1.1)
+
     def test_unknown_language_is_rejected(self):
         with self.assertRaises(ValueError):
             self.organ.understand("это предложение вне контракта")
