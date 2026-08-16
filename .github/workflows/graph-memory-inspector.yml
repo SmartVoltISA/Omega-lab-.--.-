@@ -20,4 +20,17 @@ jobs:
           python-version: '3.12'
       - name: Run inspector tests
         working-directory: tools/graph_memory_inspector
-        run: python -m unittest -v test_inspector.py
+        run: python -m unittest -v test_inspector.py 2>&1 | tee ../../graph-memory-test-report.txt
+      - name: Save inspector evidence
+        if: always()
+        run: printf 'commit=%s\nrun=%s\nworkflow=%s\n' "$GITHUB_SHA" "$GITHUB_RUN_ID" "$GITHUB_WORKFLOW" > graph-memory-run-metadata.txt
+      - name: Upload inspector evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: graph-memory-results-${{ github.run_id }}
+          path: |
+            graph-memory-test-report.txt
+            graph-memory-run-metadata.txt
+          if-no-files-found: error
+          retention-days: 30
