@@ -12,40 +12,38 @@ class SpaceMemoryGuardianCycleTests(unittest.TestCase):
         self.cap = Capability("read_memory", "read memory", verification_state="VERIFIED")
         self.good = SecurityEvidence("space-1", "key-1", True, True, True)
 
-    def test_allowed_action_becomes_memory_and_clean_graph(self):
+    def test_allowed_action_becomes_cycle_memory(self):
         result = self.cycle.step(
-            SpaceAction("read-1", ("read_memory",)),
-            [self.cap],
-            self.good,
-            "test:allowed-action",
+            SpaceAction("read-1", ("read_memory",)), [self.cap], self.good, "test:allowed-action"
         )
         self.assertEqual(result.decision, Decision.ALLOW)
         self.assertTrue(result.executed)
         self.assertEqual(len(self.cycle.events), 1)
-        self.assertEqual(self.cycle.inspect_feedback_graph(), [])
+        snapshot = self.cycle.cycle_snapshot()
+        self.assertEqual(len(snapshot["states"]), 1)
+        self.assertEqual(len(snapshot["relations"]), 1)
 
     def test_blocked_action_is_recorded_without_execution(self):
         result = self.cycle.step(
-            SpaceAction("read-2", ("read_memory",)),
-            [self.cap],
-            SecurityEvidence("space-1", "key-1", True, True, False),
-            "test:replay",
+            SpaceAction("read-2", ("read_memory",)), [self.cap],
+            SecurityEvidence("space-1", "key-1", True, True, False), "test:replay"
         )
         self.assertEqual(result.decision, Decision.BLOCK)
         self.assertFalse(result.executed)
         self.assertEqual(self.cycle.events[0].decision, "BLOCK")
-        self.assertEqual(self.cycle.inspect_feedback_graph(), [])
 
     def test_missing_capability_becomes_restricted_memory(self):
         result = self.cycle.step(
-            SpaceAction("write-1", ("write_memory",)),
-            [self.cap],
-            self.good,
-            "test:missing-capability",
+            SpaceAction("write-1", ("write_memory",)), [self.cap], self.good, "test:missing-capability"
         )
         self.assertEqual(result.decision, Decision.RESTRICT)
         self.assertFalse(result.executed)
-        self.assertEqual(self.cycle.inspect_feedback_graph(), [])
+
+    def test_cycle_cannot_become_operational_graph(self):
+        with self.assertRaises(PermissionError):
+            self.cycle.graph_snapshot()
+        with self.assertRaises(PermissionError):
+            self.cycle.inspect_feedback_graph()
 
 
 if __name__ == "__main__":
