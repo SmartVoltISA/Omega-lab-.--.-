@@ -12,6 +12,8 @@ permissions:
 env:
   SOURCE_EXCLUDES: "./.git/*|./evidence/*|*/__pycache__/*|*.pyc"
 
+# Verification policy: source manifests and restored manifests exclude runtime bytecode.
+
 jobs:
   compression-clone:
     runs-on: ubuntu-latest
@@ -42,7 +44,6 @@ jobs:
               rows.append(f"{hashlib.sha256(p.read_bytes()).hexdigest()}  ./{p.as_posix()}\n")
           Path('/tmp/original_manifest.sha256').write_text(''.join(rows), encoding='utf-8')
           Path('evidence/original_manifest.sha256').write_text(''.join(rows), encoding='utf-8')
-          PY
           du -sk --exclude=.git --exclude=evidence . | tee evidence/original_size_kb.txt
 
       - name: Make isolated clone
