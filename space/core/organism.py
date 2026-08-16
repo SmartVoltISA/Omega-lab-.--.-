@@ -14,6 +14,10 @@ from space.core.tool_registry import ToolRegistry, Tool
 from space.integration.space_guardian_bridge import SpaceAction, SpaceGuardianBridge
 from space.prototype.capability_registry import Capability, CapabilityRegistry
 from space.security.guardian_core import SecurityEvidence
+from space.organs import (
+    NervousSystem, CirculatorySystem, SensorySystem, MotorSystem,
+    DigestiveSystem, Habitat, ImmuneSystem,
+)
 
 @dataclass(frozen=True)
 class OrganismResult:
@@ -24,7 +28,7 @@ class OrganismResult:
     guard_action: str
 
 class SpaceOrganism:
-    def __init__(self, space_id: str = "space-1") -> None:
+    def __init__(self, space_id: str = "space-1", habitat: Habitat | None = None, llm_backend: Any = None) -> None:
         self.state = SpaceState(space_id)
         self.memory = DistributedMemory()
         self.graph = GraphCore()
@@ -36,12 +40,29 @@ class SpaceOrganism:
         self.recovery = RecoveryManager()
         self.guardian = SpaceGuardianBridge()
         self.loop_guard = LoopGuard()
+
+        self.nervous = NervousSystem()
+        self.circulatory = CirculatorySystem()
+        self.sensory = SensorySystem()
+        self.motor = MotorSystem()
+        self.digestive = DigestiveSystem(llm_backend, "configured" if llm_backend else "none")
+        self.immune = ImmuneSystem()
+        self.habitat = habitat
+
         self.graph.upsert_node(f"space:{space_id}", {"mode": "ACTIVE"})
+        self.circulatory.register("cycle_budget", 1.0)
+        self.circulatory.health = "HEALTHY"
 
     def observe(self, observation: Any, source: str = "input") -> None:
         self.state.update(observation=observation, observation_source=source)
         self.memory.remember(self.state.space_id, "observation", observation, source, self.state.cycle)
         self.events.publish("OBSERVATION", observation, self.state.cycle)
+        self.nervous.emit("OBSERVATION", source, observation, priority=20)
+
+    def sense(self, modality: str, source: str | None = None, reliability: float = 1.0) -> Any:
+        observation = self.sensory.read(modality, source, reliability)
+        self.observe(observation.payload, observation.source)
+        return observation
 
     def register_capability(self, capability: Capability) -> None:
         self.capabilities.register(capability)
@@ -49,8 +70,17 @@ class SpaceOrganism:
     def register_tool(self, tool_id: str, description: str, capability_id: str, handler: Callable[..., Any]) -> None:
         self.tools.register(Tool(tool_id, description, capability_id, handler))
 
+    def register_sense(self, modality: str, reader: Callable[[], Any]) -> None:
+        self.sensory.register(modality, reader)
+
+    def register_actuator(self, actuator: str, handler: Callable[[Any], Any]) -> None:
+        self.motor.register(actuator, handler)
+
     def _activate_context(self, owner: str) -> list[dict[str, Any]]:
         return [m.__dict__ for m in self.memory.related(owner=owner, limit=8)]
+
+    def digest(self, input_id: str, prompt: str) -> Any:
+        return self.digestive.digest(input_id, prompt, self._activate_context(self.state.space_id))
 
     def step(self, tool_id: str, evidence: SecurityEvidence, **inputs: Any) -> OrganismResult:
         plan = self.planner.choose(tool_id, inputs)
@@ -78,7 +108,12 @@ class SpaceOrganism:
         self.graph.upsert_node(event_id, feedback, trace.trace_id)
         self.graph.connect(f"space:{self.state.space_id}", event_id, "PRODUCED_FEEDBACK", trace.trace_id)
         self.events.publish("RESULT", feedback, self.state.cycle)
+        self.nervous.emit("RESULT", tool.tool_id, feedback, priority=30)
         self.audit.record(self.state.cycle, tool.tool_id, decision.decision.value, plan.reason, feedback)
+        anomalies = self.immune.inspect(tool.tool_id, feedback)
+        if anomalies:
+            self.events.publish("ANOMALY", [a.__dict__ for a in anomalies], self.state.cycle)
+        self.circulatory.pulse(self.state.cycle, self.nervous.pending(), "HEALTHY" if decision.executed else "DEGRADED")
         semantic_state = {"mode": self.state.mode, "values": dict(self.state.values)}
         guard = self.loop_guard.observe(semantic_state, tool.tool_id, output)
         if guard.action == "STOP_REPLAN":
@@ -86,6 +121,11 @@ class SpaceOrganism:
             self.events.publish("LOOP_GUARD", guard.reason, self.state.cycle)
             self.audit.record(self.state.cycle, "loop_guard", "STOP_REPLAN", "guard", guard.reason)
         return OrganismResult(decision.decision.value, decision.executed, output, feedback, guard.action)
+
+    def actuate(self, actuator: str, payload: Any, authorized: bool = False) -> Any:
+        result = self.motor.execute(actuator, payload, authorized)
+        self.events.publish("ACTUATION", result.__dict__, self.state.cycle)
+        return result
 
     def recover(self, reason: str) -> None:
         decision = self.recovery.recover(reason, self.state.snapshot())
@@ -103,4 +143,12 @@ class SpaceOrganism:
             "audit": self.audit.snapshot(),
             "capabilities": [c.__dict__ for c in self.capabilities.all()],
             "tools": [t.tool_id for t in self.tools.list()],
+            "organs": {
+                "nervous_pending": self.nervous.pending(),
+                "sensory_modalities": self.sensory.modalities(),
+                "actuators": self.motor.actuators(),
+                "llm_backend": self.digestive.backend_name,
+                "immune_quarantined": sorted(self.immune._quarantined),
+                "habitat": self.habitat.snapshot() if self.habitat else None,
+            },
         }
