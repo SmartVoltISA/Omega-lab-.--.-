@@ -19,6 +19,21 @@ jobs:
         working-directory: space/security
         run: python -m unittest test_guardian_core.py -v
 
+  guardian-change-boundary:
+    name: Guardian Change Boundary
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run bidirectional change gateway tests
+        working-directory: space/security
+        run: python -m unittest test_guarded_change_gateway.py -v
+      - name: Run ledger tests
+        working-directory: space/security
+        run: python -m unittest test_change_ledger.py -v
+
   space-capabilities:
     name: Space Capability Registry
     runs-on: ubuntu-latest
@@ -45,8 +60,8 @@ jobs:
 
   all-components:
     name: All Components Gate
-    needs: [guardian, space-capabilities, graph-memory]
+    needs: [guardian, guardian-change-boundary, space-capabilities, graph-memory]
     runs-on: ubuntu-latest
     steps:
       - name: Components passed
-        run: echo "Guardian + Space Capability Registry + Graph Memory Inspector passed independently. Integration gate is open."
+        run: echo "Guardian + bidirectional change boundary + Space Capability Registry + Graph Memory Inspector passed independently. Integration gate is open."
