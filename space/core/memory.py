@@ -1,13 +1,8 @@
-"""Distributed structural memory for Ω-Space.
-
-The store keeps local traces and whole-system events separately while exposing
-one query surface. It is deterministic and dependency-free so it can later be
-backed by a durable store without changing the organism interface.
-"""
+"""Distributed structural memory for Ω-Space with integrity tracking."""
 from dataclasses import dataclass, asdict
 from time import time
 from typing import Any
-
+from space.core.memory_integrity import MemoryIntegrity
 
 @dataclass(frozen=True)
 class MemoryTrace:
@@ -19,18 +14,16 @@ class MemoryTrace:
     created_at: float
     cycle: int
 
-
 class DistributedMemory:
     def __init__(self) -> None:
         self._traces: dict[str, MemoryTrace] = {}
         self._counter = 0
+        self.integrity = MemoryIntegrity()
 
     def remember(self, owner: str, kind: str, value: Any, source: str, cycle: int = 0) -> MemoryTrace:
         self._counter += 1
-        trace = MemoryTrace(
-            trace_id=f"mem-{self._counter}", owner=owner, kind=kind,
-            value=value, source=source, created_at=time(), cycle=cycle,
-        )
+        trace = MemoryTrace(f"mem-{self._counter}", owner, kind, value, source, time(), cycle)
+        self.integrity.append(trace.trace_id, asdict(trace))
         self._traces[trace.trace_id] = trace
         return trace
 
@@ -38,10 +31,7 @@ class DistributedMemory:
         return self._traces[trace_id]
 
     def related(self, owner: str | None = None, kind: str | None = None, limit: int | None = None) -> list[MemoryTrace]:
-        items = [
-            t for t in self._traces.values()
-            if (owner is None or t.owner == owner) and (kind is None or t.kind == kind)
-        ]
+        items = [t for t in self._traces.values() if (owner is None or t.owner == owner) and (kind is None or t.kind == kind)]
         items.sort(key=lambda t: t.created_at, reverse=True)
         return items[:limit] if limit is not None else items
 
@@ -51,3 +41,9 @@ class DistributedMemory:
     def latest(self, owner: str) -> MemoryTrace | None:
         items = self.related(owner=owner, limit=1)
         return items[0] if items else None
+
+    def verify_integrity(self) -> bool:
+        return self.integrity.verify(self.snapshot())
+
+    def integrity_snapshot(self) -> list[dict[str, Any]]:
+        return self.integrity.snapshot()
