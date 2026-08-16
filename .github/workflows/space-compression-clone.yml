@@ -12,7 +12,7 @@ permissions:
 env:
   SOURCE_EXCLUDES: "./.git/*|./evidence/*|*/__pycache__/*|*.pyc"
 
-# Verification policy: source manifests and restored manifests exclude runtime bytecode.
+# Verification policy: source/restored manifests use encoded paths and exclude runtime bytecode.
 
 jobs:
   compression-clone:
@@ -34,14 +34,16 @@ jobs:
           python -m unittest discover -s space -p 'test_*.py' | tee evidence/baseline_tests.txt
           python - <<'PY'
           from pathlib import Path
-          import hashlib
+          import base64, hashlib
           root = Path('.')
           excluded = {'.git', 'evidence', '__pycache__'}
           rows = []
           for p in sorted(root.rglob('*')):
               if not p.is_file() or p.suffix == '.pyc' or any(part in excluded for part in p.parts):
                   continue
-              rows.append(f"{hashlib.sha256(p.read_bytes()).hexdigest()}  ./{p.as_posix()}\n")
+              rel = p.as_posix().encode('utf-8')
+              encoded_path = base64.urlsafe_b64encode(rel).decode('ascii')
+              rows.append(f"{hashlib.sha256(p.read_bytes()).hexdigest()}  {encoded_path}\n")
           Path('/tmp/original_manifest.sha256').write_text(''.join(rows), encoding='utf-8')
           Path('evidence/original_manifest.sha256').write_text(''.join(rows), encoding='utf-8')
           PY
@@ -82,14 +84,16 @@ jobs:
             root="/tmp/space-clone/restored-${kind}"
             python - "$root" "evidence/restored_${kind}_manifest.sha256" <<'PY'
           from pathlib import Path
-          import hashlib, sys
+          import base64, hashlib, sys
           root = Path(sys.argv[1])
           out = Path(sys.argv[2])
           rows = []
           for p in sorted(root.rglob('*')):
               if not p.is_file() or p.suffix == '.pyc' or '__pycache__' in p.parts:
                   continue
-              rows.append(f"{hashlib.sha256(p.read_bytes()).hexdigest()}  ./{p.relative_to(root).as_posix()}\n")
+              rel = p.relative_to(root).as_posix().encode('utf-8')
+              encoded_path = base64.urlsafe_b64encode(rel).decode('ascii')
+              rows.append(f"{hashlib.sha256(p.read_bytes()).hexdigest()}  {encoded_path}\n")
           out.write_text(''.join(rows), encoding='utf-8')
           PY
             diff -u /tmp/original_manifest.sha256 "evidence/restored_${kind}_manifest.sha256"
