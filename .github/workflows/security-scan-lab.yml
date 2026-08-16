@@ -1,0 +1,26 @@
+name: Guardian Security Scan Lab
+
+on:
+  push:
+    paths:
+      - 'space/security/security_scan_lab.py'
+      - 'space/security/test_security_scan_lab.py'
+      - '.github/workflows/security-scan-lab.yml'
+  pull_request:
+    paths:
+      - 'space/security/security_scan_lab.py'
+      - 'space/security/test_security_scan_lab.py'
+      - '.github/workflows/security-scan-lab.yml'
+  workflow_dispatch:
+
+jobs:
+  scan-boundary:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run security scan boundary tests
+        working-directory: space/security
+        run: python -m unittest -v test_security_scan_lab.py
