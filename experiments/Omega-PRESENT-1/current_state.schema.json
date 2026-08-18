@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "omega-present-1/current-state.schema.json",
+  "title": "Ω-PRESENT-1 CurrentState",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "state_id",
+    "cycle_id",
+    "timestamp",
+    "status",
+    "active_work",
+    "active_organs",
+    "available_data",
+    "missing_data",
+    "known",
+    "unknown",
+    "constraints",
+    "last_result",
+    "memory_refs",
+    "graph_ref"
+  ],
+  "properties": {
+    "state_id": {"type": "string", "minLength": 1},
+    "cycle_id": {"type": "string", "minLength": 1},
+    "timestamp": {"type": "string", "format": "date-time"},
+    "status": {"type": "string", "minLength": 1},
+    "active_work": {"type": "array", "items": {"type": "string"}},
+    "active_organs": {"type": "array", "items": {"type": "string"}},
+    "available_data": {"type": "array", "items": {"type": "string"}},
+    "missing_data": {"type": "array", "items": {"type": "string"}},
+    "known": {"type": "object"},
+    "unknown": {"type": "array", "items": {"type": "string"}},
+    "constraints": {"type": "array", "items": {"type": "string"}},
+    "last_result": {"type": ["object", "null"]},
+    "memory_refs": {"type": "array", "items": {"type": "string"}},
+    "graph_ref": {"type": ["string", "null"]}
+  },
+  "not": {
+    "anyOf": [
+      {"required": ["desired_state"]},
+      {"required": ["candidate_actions"]},
+      {"required": ["expected_result"]}
+    ]
+  }
+}
