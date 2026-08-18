@@ -107,8 +107,9 @@ def transition(
     if unexpected:
         raise ValueError(f"unsupported state fields: {sorted(unexpected)}")
 
+    next_cycle_id = cycle_id or previous.cycle_id
     values = {
-        "cycle_id": cycle_id or previous.cycle_id,
+        "cycle_id": next_cycle_id,
         "status": previous.status,
         "active_work": previous.active_work,
         "active_organs": previous.active_organs,
@@ -140,9 +141,13 @@ def transition(
         **values,
     )
 
+    changed_fields = set(changes)
+    if next_cycle_id != previous.cycle_id:
+        changed_fields.add("cycle_id")
+
     delta = {
         key: {"from": getattr(previous, key), "to": getattr(successor, key)}
-        for key in changes
+        for key in changed_fields
         if getattr(previous, key) != getattr(successor, key)
     }
 
