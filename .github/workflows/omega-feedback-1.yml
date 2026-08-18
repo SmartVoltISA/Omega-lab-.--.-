@@ -1,0 +1,28 @@
+name: omega-feedback-1
+
+on:
+  push:
+    paths:
+      - 'experiments/Omega-FEEDBACK-1/**'
+      - '.github/workflows/omega-feedback-1.yml'
+  pull_request:
+    paths:
+      - 'experiments/Omega-FEEDBACK-1/**'
+      - '.github/workflows/omega-feedback-1.yml'
+  workflow_dispatch:
+
+jobs:
+  verify-feedback:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: experiments/Omega-FEEDBACK-1
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run feedback tests
+        run: python -m unittest -v test_feedback.py
