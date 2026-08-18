@@ -1,0 +1,36 @@
+name: omega-cycle-1
+
+on:
+  push:
+    paths:
+      - 'experiments/Omega-CYCLE-1/**'
+      - 'experiments/Omega-PLAN-1/**'
+      - 'experiments/Omega-EXECUTION-1/**'
+      - 'experiments/Omega-VERIFICATION-1/**'
+      - 'experiments/Omega-FEEDBACK-1/**'
+      - '.github/workflows/omega-cycle-1.yml'
+  pull_request:
+    paths:
+      - 'experiments/Omega-CYCLE-1/**'
+      - 'experiments/Omega-PLAN-1/**'
+      - 'experiments/Omega-EXECUTION-1/**'
+      - 'experiments/Omega-VERIFICATION-1/**'
+      - 'experiments/Omega-FEEDBACK-1/**'
+      - '.github/workflows/omega-cycle-1.yml'
+  workflow_dispatch:
+
+jobs:
+  verify-cycle:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: experiments/Omega-CYCLE-1
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run end-to-end cycle proof
+        run: python -m unittest -v test_cycle.py
