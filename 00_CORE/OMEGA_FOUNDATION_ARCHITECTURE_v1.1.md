@@ -241,4 +241,56 @@ Existing Ω-Lab principles remain the source of structural rules; this document 
 
 > **Память сохраняет. Связь соединяет. Граф собирает. Целое возвращает состояние. Feedback изменяет части. Память сохраняет изменение. Новый цикл собирает новое целое.**
 
+## 16. History preservation — foundational rule
+
+History is part of the foundation, not an optional archive layer.
+
+The historical path must remain recoverable:
+
+```text
+ОРИГИНАЛЬНОЕ СОСТОЯНИЕ
+        ↓
+РАБОТА / НАБЛЮДЕНИЕ / ЭКСПЕРИМЕНТ
+        ↓
+РЕЗУЛЬТАТ
+        ↓
+ПРОВЕРКА
+        ↓
+РЕШЕНИЕ / ИЗМЕНЕНИЕ
+        ↓
+НОВОЕ СОСТОЯНИЕ
+```
+
+Every stage remains traceable to the preceding stage. Old states, intermediate work, failures, rejected hypotheses, incomplete records and frozen branches are preserved rather than silently rewritten or deleted.
+
+A later reconstruction must never be presented as the original historical record. If missing history is reconstructed, the reconstruction is recorded as a new derived record and linked to the surviving source material.
+
+A freeze is a state transition, not destruction:
+
+```text
+ACTIVE → FROZEN
+```
+
+Frozen work remains preserved and recoverable. It may later be resumed only through an explicit decision and a new continuation state.
+
+Rework creates a new version:
+
+```text
+v1 → REWORK → v2
+```
+
+and does not overwrite the historical result of v1.
+
+The minimum historical record for a significant work item is:
+
+```text
+GOAL → INPUT → ACTION → RESULT → VERIFICATION → STATE → FEEDBACK → NEXT STEP
+```
+
+The purpose of history is not to make the past look correct. Its purpose is to preserve what actually happened so that future states can be understood, reproduced, challenged and recovered.
+
+This rule applies to Ω-Lab, SPACE and their specialized organs, including MARKET.
+
+**FOUNDATIONAL RULE:** preserve the path, preserve the state, preserve the result, preserve the change.
+
 This is the foundation of the next SPACE implementation stage.
