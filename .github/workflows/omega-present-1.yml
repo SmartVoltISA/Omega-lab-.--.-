@@ -1,0 +1,24 @@
+name: omega-present-1
+
+on:
+  push:
+    paths:
+      - 'experiments/Omega-PRESENT-1/**'
+      - '.github/workflows/omega-present-1.yml'
+  pull_request:
+    paths:
+      - 'experiments/Omega-PRESENT-1/**'
+      - '.github/workflows/omega-present-1.yml'
+  workflow_dispatch:
+
+jobs:
+  verify-present:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: experiments/Omega-PRESENT-1
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Verify Python model
+        run: python -m unittest -v test_current_state.py
