@@ -1,0 +1,24 @@
+name: omega-plan-1
+
+on:
+  push:
+    paths:
+      - 'experiments/Omega-PLAN-1/**'
+      - '.github/workflows/omega-plan-1.yml'
+  pull_request:
+    paths:
+      - 'experiments/Omega-PLAN-1/**'
+      - '.github/workflows/omega-plan-1.yml'
+  workflow_dispatch:
+
+jobs:
+  verify-plan:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: experiments/Omega-PLAN-1
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Verify Python plan engine
+        run: python -m unittest -v test_plan.py
