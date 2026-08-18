@@ -21,17 +21,40 @@ class MemoryEvent:
     delta: Mapping[str, Any] = field(default_factory=dict)
 
 
-def record_state_change(
-    previous: CurrentState,
-    current: CurrentState,
-    *,
-    kind: str = "STATE_CHANGE",
-) -> MemoryEvent:
-    """Create a durable memory event linking two PRESENT states."""
+@dataclass
+class MemoryPresentLedger:
+    """Minimal append-only evidence store for MEMORY ↔ PRESENT."""
+
+    states: dict[str, CurrentState] = field(default_factory=dict)
+    events: list[MemoryEvent] = field(default_factory=list)
+
+    def append(self, state: CurrentState) -> None:
+        if state.state_id in self.states:
+            raise ValueError("state already exists; overwrite is forbidden")
+        self.states[state.state_id] = state
+
+    def link(self, previous: CurrentState, current: CurrentState, *, kind: str = "STATE_CHANGE") -> MemoryEvent:
+        if previous.state_id not in self.states or current.state_id not in self.states:
+            raise ValueError("both states must be appended before linking")
+        event = record_state_change(previous, current, kind=kind)
+        self.events.append(event)
+        return event
+
+    def reconstruct(self, start_state_id: str, end_state_id: str) -> CurrentState:
+        state = self.states[start_state_id]
+        while state.state_id != end_state_id:
+            candidates = [e for e in self.events if e.predecessor_state_id == state.state_id]
+            if len(candidates) != 1:
+                raise ValueError("memory chain is missing or ambiguous")
+            state = self.states[candidates[0].successor_state_id]
+        return state
+
+
+def record_state_change(previous: CurrentState, current: CurrentState, *, kind: str = "STATE_CHANGE") -> MemoryEvent:
     if previous.state_id == current.state_id:
         raise ValueError("memory event requires distinct states")
     if previous.cycle_id != current.cycle_id:
-        raise ValueError("cross-cycle transition must be explicitly represented by a new cycle event")
+        raise ValueError("cross-cycle transition requires an explicit cycle event")
 
     fields = (
         "status", "active_work", "active_organs", "available_data",
@@ -52,21 +75,3 @@ def record_state_change(
         kind=kind,
         delta=delta,
     )
-
-
-def reconstruct_state(start: CurrentState, events: list[MemoryEvent]) -> CurrentState:
-    """Replay a verified same-cycle event chain onto a starting state."""
-    state = start
-    for event in events:
-        if event.predecessor_state_id != state.state_id:
-            raise ValueError("memory chain has a broken predecessor link")
-        if event.cycle_id != state.cycle_id:
-            raise ValueError("memory chain crosses cycle boundary")
-        # The event is provenance; the successor itself remains the authoritative state.
-        # Replay therefore requires the caller to provide the actual successor through an
-        # attached transition store in a full implementation. This function intentionally
-        # refuses to invent state from a delta-only historical record.
-        raise ValueError(
-            "reconstruction requires successor state records; delta-only events are not enough"
-        )
-    return state
