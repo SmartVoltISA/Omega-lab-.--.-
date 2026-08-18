@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "omega-plan-1/plan.schema.json",
+  "title": "Ω-PLAN-1 Plan",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["plan_id", "source_future_id", "source_state_id", "desired_state", "next_result", "steps", "constraints", "status"],
+  "properties": {
+    "plan_id": {"type": "string", "minLength": 1},
+    "source_future_id": {"type": "string", "minLength": 1},
+    "source_state_id": {"type": "string", "minLength": 1},
+    "desired_state": {"type": "string", "minLength": 1},
+    "next_result": {"type": "string", "minLength": 1},
+    "steps": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["step_id", "action", "expected_result", "required_data", "constraints"],
+        "properties": {
+          "step_id": {"type": "string", "minLength": 1},
+          "action": {"type": "string", "minLength": 1},
+          "expected_result": {"type": "string", "minLength": 1},
+          "required_data": {"type": "array", "items": {"type": "string"}},
+          "constraints": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    },
+    "constraints": {"type": "array", "items": {"type": "string"}},
+    "status": {"const": "PROPOSED"}
+  }
+}
