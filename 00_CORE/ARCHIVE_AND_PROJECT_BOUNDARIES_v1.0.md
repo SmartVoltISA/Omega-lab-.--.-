@@ -1,40 +1,83 @@
-# Ω-Lab — ARCHIVE AND PROJECT BOUNDARIES v1.0
+# Ω-Lab — ARCHIVE AND PROJECT BOUNDARIES v1.1
 
 **Status:** CORE / ACTIVE  
 **Date:** 2026-08-18
 
 ## Purpose
 
-Preserve the complete historical path of work while keeping project scopes separated. No work is considered disposable merely because the active project changes.
+Preserve the complete historical path of work while keeping project scopes separated. No work is disposable merely because the active project changes.
 
-## Project boundaries
+## Project identities
 
-The following identities are distinct and must remain distinct:
+- **PROJECT OMEGA** — umbrella research/foundation project: universal principles, shared protocols, cross-project architecture and general experiments.
+- **SPACE** — operational organism/system project.
+- **MARKET** — market-analysis/application project.
 
-- **PROJECT OMEGA** — the umbrella research/foundation project and its general principles, experiments, protocols and cross-project results.
-- **SPACE** — the operational organism/system project. Work whose primary subject is SPACE belongs to SPACE.
-- **MARKET** — the market-analysis/application project. Work whose primary subject is MARKET belongs to MARKET.
+These identities remain distinct. A shared foundation does not merge the projects.
 
-A project name is not a cosmetic label. It identifies the owner/context of the work.
+## Fundamental propagation rule
 
-## Placement rule
+A mechanism that is proven to be **fundamental and universal** is not treated as belonging to only one project.
 
-Every significant artifact must be classified by scope before archival:
+It becomes a common foundation and must be available across every project and every applicable organ:
 
 ```text
-OMEGA-only       → OMEGA
-SPACE-only       → SPACE
-MARKET-only      → MARKET
-shared           → OMEGA + every applicable project
+             OMEGA FOUNDATION
+                    │
+        ┌───────────┼───────────┐
+        ↓           ↓           ↓
+      SPACE       MARKET      OTHER
+        │           │           │
+      organs      organs      organs
 ```
 
-If a foundation is being developed specifically for SPACE, it remains attached to SPACE even when it is derived from an Ω principle.
+Example: **MEMORY** is not merely a SPACE organ. If MEMORY is established as a fundamental Ω-Lab mechanism, its contract, principles and history belong to OMEGA and its operational implementation must be available to SPACE, MARKET and all other applicable organs.
 
-If a mechanism is genuinely reusable by both SPACE and MARKET, the shared foundation remains in OMEGA and the operational/adapted records are preserved in both SPACE and MARKET.
+The same rule applies to other mechanisms once they are demonstrated to be fundamental rather than merely useful in one project.
 
-Do not move a file merely because the underlying idea originated elsewhere. Preserve provenance and create explicit links/copies/adaptations where needed.
+## Classification
 
-## Historical preservation
+Every significant artifact receives one of three scopes:
+
+### 1. PROJECT-SPECIFIC
+
+```text
+SPACE-only  → SPACE
+MARKET-only → MARKET
+OMEGA-only  → OMEGA
+```
+
+It stays with its owning project.
+
+### 2. SHARED / REUSABLE
+
+A mechanism used by multiple projects but not yet established as fundamental:
+
+```text
+OMEGA shared definition
+        ↓
+project-specific implementations
+```
+
+### 3. FUNDAMENTAL / UNIVERSAL
+
+A mechanism that is an architectural foundation for the organism as a whole:
+
+```text
+OMEGA canonical foundation
+        ↓
+SPACE
+MARKET
+ALL APPLICABLE ORGANS
+```
+
+The canonical definition is maintained in OMEGA; each project retains its own implementation state, tests, adapters and history. The same mechanism may therefore be recorded in OMEGA + SPACE + MARKET without duplication of meaning or loss of provenance.
+
+## No silent relocation
+
+Do not move a file merely because its idea originated elsewhere. If scope expands, create explicit references, synchronized contracts or project-specific adaptations while preserving the original record.
+
+## History / archive
 
 History is append-only in meaning:
 
@@ -42,48 +85,50 @@ History is append-only in meaning:
 WORK → RESULT → VERIFICATION → DECISION → NEXT STATE
 ```
 
-Changing the active project does not erase the previous location, context, experiment, failure, rejected version or frozen branch.
+Changing active project does not erase the previous location, context, experiment, failure, rejected version, frozen state or branch.
 
-A later reconstruction must be recorded as a reconstruction, never silently presented as the original historical record.
+A reconstruction must be labelled as reconstruction; it must never silently replace the historical record.
 
-## Archive rule
+## Archive minimum
 
-For every completed work cycle, preserve at minimum:
+For every significant work cycle preserve:
 
 - project scope;
+- fundamental/shared/project-specific classification;
 - work item / experiment ID;
 - objective;
 - source state;
-- actions performed;
+- actions;
 - files changed;
 - commits / SHA;
-- test and CI status;
+- tests and CI status;
 - result;
 - limitations / failures;
 - decision;
 - next step;
-- links to related projects where applicable.
+- cross-project links;
+- provenance.
 
-## Cross-project rule
+## Environment is part of the organism
 
-When the same architectural mechanism belongs to several projects, maintain explicit cross-project relationships:
+A software organ is not complete merely because its source exists. If the organ requires a server/runtime environment, the environment is part of the implementation boundary and must also be specified, versioned and verified.
 
 ```text
-OMEGA FOUNDATION
-      │
-      ├── SPACE implementation
-      │
-      └── MARKET implementation
+CODE
+ ↓
+RUNTIME / SERVER ENVIRONMENT
+ ↓
+EXECUTION
+ ↓
+RESULT
 ```
 
-The shared principle does not make the implementations identical. Each project retains its own state, evidence, tests and history.
+The environment itself must have provenance: OS/runtime versions, dependencies, configuration, services, storage, network assumptions, secrets boundary and verification procedure. Secrets must never be committed as plaintext.
 
-## Current application
-
-The current SPACE implementation work must remain in SPACE. General architectural rules that govern Ω-Lab as a whole belong in OMEGA. MARKET-specific work must remain in MARKET. Shared mechanisms must be represented in all applicable scopes with provenance preserved.
+Because the execution environment can serve multiple projects, its **general infrastructure contract** belongs to OMEGA, while project-specific deployment/configuration remains in SPACE, MARKET or the applicable project.
 
 ## Non-negotiable rule
 
-> **Не смешивать проекты. Не терять историю. Не переносить смысл молча.**
+> **Не смешивать проекты. Не терять историю. Фундаментальное — распространять. Специфическое — оставлять у владельца. Среду работы считать частью системы.**
 
-The archive is not a graveyard. It is the structural memory from which later states are reconstructed.
+The archive is structural memory, not a graveyard.
