@@ -1,0 +1,25 @@
+name: omega-future-1
+
+on:
+  push:
+    paths:
+      - 'experiments/Omega-FUTURE-1/**'
+      - 'experiments/Omega-PRESENT-1/**'
+      - '.github/workflows/omega-future-1.yml'
+  pull_request:
+    paths:
+      - 'experiments/Omega-FUTURE-1/**'
+      - 'experiments/Omega-PRESENT-1/**'
+      - '.github/workflows/omega-future-1.yml'
+  workflow_dispatch:
+
+jobs:
+  verify-future-orientation:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: experiments/Omega-FUTURE-1
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify future orientation
+        run: python -m unittest -v test_future_orientation.py
