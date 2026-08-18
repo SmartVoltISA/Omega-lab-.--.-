@@ -1,0 +1,28 @@
+name: omega-verification-1
+
+on:
+  push:
+    paths:
+      - 'experiments/Omega-VERIFICATION-1/**'
+      - '.github/workflows/omega-verification-1.yml'
+  pull_request:
+    paths:
+      - 'experiments/Omega-VERIFICATION-1/**'
+      - '.github/workflows/omega-verification-1.yml'
+  workflow_dispatch:
+
+jobs:
+  verify-comparison:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: experiments/Omega-VERIFICATION-1
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run verification tests
+        run: python -m unittest -v test_verification.py
