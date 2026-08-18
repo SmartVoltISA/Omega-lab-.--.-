@@ -1,6 +1,7 @@
 """Executable Ω-EXECUTION-1 boundary tests."""
 
 import unittest
+from dataclasses import replace
 
 from execution import BoundedExecutor, Guardian
 
@@ -28,7 +29,7 @@ class ExecutionTests(unittest.TestCase):
         plan = type("Plan", (), {"plan_id": "plan-1"})()
         step = type("Step", (), {"step_id": "step-1", "action": "safe-test"})()
         auth = Guardian().authorize(plan.plan_id, step.step_id, authorized_by="test", reason="test")
-        denied = auth.__class__(**{**auth.__dict__, "granted": False})
+        denied = replace(auth, granted=False)
         with self.assertRaises(PermissionError):
             executor.execute(plan, step, denied)
 
