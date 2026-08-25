@@ -1,7 +1,7 @@
 # Ω-Lab — WORK ARCHIVE INDEX v1.0
 
 **Status:** CORE / ACTIVE  
-**Date:** 2026-08-18
+**Date:** 2026-08-26
 
 ## Current cycle
 
@@ -34,6 +34,16 @@ The governing architectural principles remain in OMEGA, including:
 
 MARKET retains its own market-state, data, experiments, hypotheses, replay/walk-forward results, application decisions and implementation history. SPACE architecture must not overwrite or absorb MARKET-specific evidence.
 
+### MATHEMATICS / Ω-RH
+
+**Ω-RH-01 — Riemann Hypothesis** is now an active public research track.
+
+- Hypothesis record: `HYPOTHESES/H-RH-01_RIEMANN_HYPOTHESIS.md`
+- Public research log: `03_EXPERIMENTS/Omega-RH-01/RESEARCH_LOG.md`
+- Status: OPEN / UNRESOLVED
+- No proof is claimed.
+- The full process, including failures and corrections, is to remain visible in the public repository.
+
 ## Archival principle
 
 This index is a navigation layer, not a replacement for the underlying records. Detailed history remains in the original experiment/project paths.
@@ -51,6 +61,8 @@ When an artifact is demonstrated to be genuinely shared, create explicit referen
               /    |    \
              /     |     \
           SPACE  SHARED  MARKET
+                    |
+                  Ω-RH
 ```
 
 `SHARED` means proven or explicitly intended common architecture; it does not erase project-specific state.
