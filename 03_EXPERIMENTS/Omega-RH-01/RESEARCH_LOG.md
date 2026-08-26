@@ -68,7 +68,7 @@ This is not an RH counterexample and does not disprove the spectral claim. It on
 
 ### Next action
 
-Find whether the correct spectral object is instead a compact resolvent, compact quadratic-form embedding, or another smoothing transform, and independently attack simplicity without assuming compactness of the prime shift operator.
+Find whether the correct spectral object is instead a compact resolvent, compact quadratic-form embedding, or another smoothing transform, and independently attack simplicity without assuming compactness of T.
 
 ## 2026-08-26 — RH-32
 
@@ -107,3 +107,58 @@ This would restore a legitimate discrete-spectrum framework without claiming tha
 `DISCRETE SPECTRUM != SIMPLE GROUND STATE`
 
 `SIMPLE GROUND STATE != RH`
+
+## 2026-08-26 — RH-33
+
+### Compact-resolvent lemma established for the stated Fourier-cutoff model
+
+The exact basis used in the audited Siche construction is the Fourier basis on the finite logarithmic interval, with
+
+    L = 2 log λ,
+    V_n(x) = exp(2π i n x/L),
+    n ∈ Z.
+
+The archimedean part is diagonal:
+
+    A V_n = a_n V_n,
+    a_n = θ'(nπ/log λ)/π.
+
+Using the standard Riemann–Siegel asymptotic,
+
+    θ'(t) = 1/2 log(|t|/(2π)) + O(t^-2),
+
+we obtain a_n→+∞ as |n|→∞. Therefore the natural diagonal self-adjoint operator A has compact resolvent: the diagonal entries of `(A+cI)^(-1)` tend to zero.
+
+The prime part is a finite sum of truncated translations for fixed λ. Each translation has norm ≤1, giving the finite bound
+
+    ||P_λ|| ≤ 2 Σ_{p^k≤λ²} log(p)p^(-k/2) < ∞.
+
+The polar vectors used by the construction have coefficients O(1/|n|), hence belong to ℓ²(Z). The polar term is consequently finite rank and bounded in this Fourier model.
+
+Thus K_λ=Π_λ−P_λ is bounded self-adjoint, and
+
+    QW_λ=A+K_λ
+
+is self-adjoint on D(A), bounded below, and has compact resolvent by the bounded-perturbation theorem.
+
+### Status
+
+`COMPACT RESOLVENT OF QW_λ: ESTABLISHED FOR THE STATED FOURIER-CUTOFF MODEL`
+
+This gives a legitimate discrete spectral framework at each fixed λ. It does not establish simplicity, λ→∞ convergence, or RH.
+
+### Next attack
+
+Attack S1 directly: determine whether the lowest eigenvalue is simple. The compact object available for Perron-type arguments is now the shifted resolvent of QW_λ, not P_λ itself. Candidate routes are positivity/irreducibility of a suitable resolvent, strict positivity of the ground state, or a direct variational nondegeneracy argument.
+
+### Integrity
+
+`P_λ noncompact ≠ QW_λ noncompact`
+
+`COMPACT RESOLVENT ≠ SIMPLE GROUND STATE`
+
+`FINITE-λ RESULT ≠ λ→∞ RESULT`
+
+`NUMERICAL GAP ≠ PROOF`
+
+`NO RH CLAIM`
