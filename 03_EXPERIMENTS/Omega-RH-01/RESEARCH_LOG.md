@@ -52,6 +52,20 @@ Independent public RH research repositories demonstrate that many apparently pro
 
 `OPEN — BASELINE / NO CLAIM OF SOLUTION`
 
-## Next action
+## 2026-08-26 — RH-31
 
-Construct the mathematical baseline of RH from primary mathematics and map the major equivalent formulations before attempting any Ω-specific derivation.
+### Siche / Krein–Rutman compactness attack
+
+The continuum prime operator in the audited construction is a finite positive sum of truncated translations after the logarithmic change of variables. A finite sum of translations on an interval is not automatically compact merely because the interval is compact.
+
+A stronger analytic obstruction was recorded: choose a sufficiently small interior support whose finitely many translated copies are disjoint, and use normalized oscillatory functions on that support. The sequence is bounded and weakly null, while the translated output retains a uniform positive L² norm. This contradicts the defining compactness property.
+
+### Status
+
+`KREIN–RUTMAN COMPACTNESS GATE: REJECTED FOR THE STATED SHIFT OPERATOR`
+
+This is not an RH counterexample and does not disprove the spectral claim. It only removes the supplied compact-operator justification for simplicity.
+
+### Next action
+
+Find whether the correct spectral object is instead a compact resolvent, compact quadratic-form embedding, or another smoothing transform, and independently attack simplicity without assuming compactness of the prime shift operator.
