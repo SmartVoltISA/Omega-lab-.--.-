@@ -162,3 +162,43 @@ Attack S1 directly: determine whether the lowest eigenvalue is simple. The compa
 `NUMERICAL GAP ≠ PROOF`
 
 `NO RH CLAIM`
+
+## 2026-08-26 — RH-34
+
+### Naive Fourier-cone positivity attack
+
+The next obvious route was tested: use compactness of the shifted resolvent and apply Perron/Krein–Rutman in the standard positive orthant of Fourier coefficients.
+
+A faithful finite reconstruction of the published QW matrix was used at λ² = 13, 23, 100 and 997 with N=10. For c safely above the lower spectral bound, the matrix of
+
+    R_c = (cI − QW_λ)^(-1)
+
+contains negative entries in every tested case; representative minima were approximately −6.64e−3, −3.94e−3, −6.44e−3 and −8.13e−3 respectively.
+
+### Interpretation
+
+The standard Fourier coefficient cone is therefore not an immediate positivity cone for the resolvent. This rejects the naive transfer
+
+    compact resolvent -> entrywise positivity -> Perron simplicity.
+
+It does NOT prove that no other cone or representation gives positivity improvement.
+
+### Status
+
+`FOURIER-CONE PERRON ROUTE: REJECTED AS NAIVE PROOF MECHANISM`
+
+`S1: OPEN`
+
+### Next attack
+
+Move to the physical/logarithmic representation of the localized Weil form. Test whether the full quadratic form admits an irreducible Dirichlet-form or positivity-improving semigroup structure. Independently compare with the 2026 Suzuki screw-function formulation, which reports unconditional simplicity and evenness for sufficiently small intervals, and determine whether that mechanism can be extended to the λ-range relevant here.
+
+### Integrity
+
+`NEGATIVE MATRIX ENTRY ≠ NO POSITIVE CONE EXISTS`
+
+`FINITE MATRIX ≠ CONTINUUM THEOREM`
+
+`COMPACT RESOLVENT ≠ SIMPLE GROUND STATE`
+
+`S1 OPEN`
