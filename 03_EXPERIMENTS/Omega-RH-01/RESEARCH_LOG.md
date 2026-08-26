@@ -69,3 +69,41 @@ This is not an RH counterexample and does not disprove the spectral claim. It on
 ### Next action
 
 Find whether the correct spectral object is instead a compact resolvent, compact quadratic-form embedding, or another smoothing transform, and independently attack simplicity without assuming compactness of the prime shift operator.
+
+## 2026-08-26 — RH-32
+
+### Compact-resolvent replacement
+
+The Siche construction explicitly decomposes the finite-cutoff Weil operator as
+
+    QW_λ = A + Π − P.
+
+The prime shift operator P is noncompact, so the Krein–Rutman compactness premise is rejected. The next candidate is different: the archimedean part A is an unbounded Fourier multiplier whose symbol is proportional to θ'(t), and θ'(t) grows logarithmically as |t|→∞. This suggests that A, rather than P, supplies the confining compact-resolvent mechanism.
+
+For fixed λ, P contains only finitely many truncated shifts and is bounded; Π is finite rank in the displayed Fourier construction, subject to proving continuity of the polar evaluation functionals in the correct form topology. If A is self-adjoint with compact resolvent and Π−P is bounded self-adjoint on the same domain, then QW_λ is a bounded perturbation of A and inherits compact resolvent.
+
+### Status
+
+`COMPACT RESOLVENT OF QW_λ: PLAUSIBLE / KEY LEMMAS NOT YET PROVED`
+
+This would restore a legitimate discrete-spectrum framework without claiming that P itself is compact.
+
+### Required proofs
+
+1. Exact Hilbert space and domain.
+2. Exact archimedean multiplier and its lower bound/asymptotic.
+3. Compactness of `(A+cI)^(-1)`.
+4. Boundedness/form-boundedness of P_λ.
+5. Continuity of Π_λ in the correct topology.
+6. Self-adjointness and boundary consistency.
+7. Only after these: simplicity of the ground state and λ→∞ convergence.
+
+### Integrity
+
+`NONCOMPACT P != NO SPECTRUM`
+
+`COMPACT RESOLVENT CANDIDATE != PROOF`
+
+`DISCRETE SPECTRUM != SIMPLE GROUND STATE`
+
+`SIMPLE GROUND STATE != RH`
