@@ -31,7 +31,7 @@ A failed experiment is a result and must remain recorded.
 6. Prime-number, Fibonacci, and ordering mechanisms are recurring hypotheses, but their causal role in LP2 remains unproven.
 7. OutGuess payloads exist in several LP2 images; some extracted material is currently unusable/garbled.
 
-## First experimental branches
+## Experimental branches
 
 ### C1 — Stream-key hypothesis
 Test whether a deterministic keystream derived from primes/totients can reproduce known solved pages and then generalize to unsolved pages.
@@ -48,9 +48,16 @@ Extract and classify payloads page-by-page. Do not treat garbage output as evide
 ### C5 — Negative controls
 Apply each candidate mechanism to shuffled/randomized controls. A mechanism that produces equally good English-like output on controls is rejected as non-diagnostic.
 
+### C6 — CICADA-GRAPH-001
+Model confirmed puzzle objects as nodes and confirmed transformations/relationships as typed edges. Test whether recurring graph motifs, hubs, bridges, or transition structures contain information not explained by chronology alone. The first target is the solved-anchor corpus; unresolved material is not used to manufacture the model.
+
+See `CICADA-GRAPH-001.md` and `cicada_graph_001.py`.
+
 ## First target
 
-LP2 unsolved corpus, beginning with one page at a time. The first objective is **not** to solve the book; it is to find one new, reproducible structural support that survives controls.
+LP2 unsolved corpus, beginning with one page at a time. The immediate objective is **not** to solve the book; it is to find one new, reproducible structural support that survives controls.
+
+For the graph branch, the immediate target is narrower: establish whether a provenance-controlled graph of solved/confirmed transitions has non-trivial structure beyond a chronological list. Only after that passes will unresolved pages be allowed to contribute predictive tests.
 
 ## Current external state
 
