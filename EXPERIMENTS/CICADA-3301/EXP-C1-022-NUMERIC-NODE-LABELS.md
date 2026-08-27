@@ -1,67 +1,83 @@
-# EXP-C1-022 — Numeric Invariant as Cross-Layer Node Label
+# EXP-C1-022 — Numeric Invariant / Cross-Layer Audit
 
 **Date:** 2026-08-28
 **Branch:** `research/cicada-3301`
-**Status:** STRONG STRUCTURAL OBSERVATION; semantic role UNKNOWN
+**Status:** CORRECTED; strong recurrence of 1033, but node-label interpretation remains UNKNOWN
 
-## Question
+## Correction to previous version
 
-Does the value `1033` recur across independently documented Cicada layers as more than a numerical constant, specifically as a structural identifier linking an object, a network node, and Liber Primus material?
+The earlier version claimed an archived `X-Cicada: 1033` header. Primary/community material checked in the current audit instead shows a documented 2014 header `X-Cicada: 3301` on the fourth onion. Therefore the `X-Cicada: 1033` claim is REMOVED from the evidence set.
+
+This correction is important: we do not promote a false edge merely because it supports the graph hypothesis.
 
 ## Provenance-controlled observations
 
-1. A 2014 portrait contains two numeric columns. The left column sums to **1033**; the right column sums to **3301**.
-2. The operational steganographic password documented for extraction of `magicsquares.txt` is **33011033**.
-3. The extracted artifact contains three magic squares: 5×5/3301, 7×7/1033, and 5×5/1033.
-4. The 5×5/1033 matrix is reproduced in later Liber Primus-related material.
-5. The subsequent 2014 onion material is served with the HTTP header **`X-Cicada: 1033`**.
-6. That same stage contains Liber Primus pages and associated transformation material.
+1. The 2014 portrait exposes numeric columns whose sums are **1033** and **3301**.
+2. The documented OpenPuff extraction password for `magicsquares.txt` is **33011033**.
+3. The extracted artifact contains three magic squares with constants **3301, 1033, 1033**.
+4. The 5×5/1033 matrix is reproduced in Liber Primus / P63-related material.
+5. A separate documented 2012/2013 puzzle mechanism pauses a prime-number display at **1033 and 3301**, showing that both numbers were operationally highlighted before the 2014 magic-square stage.
+6. The 2014 HTTP header evidence currently supports **`X-Cicada: 3301`**, not `1033`.
+7. 2014 user-agent strings independently contain `CicaDOS 1.033` / `Cic/DOS/ 1.033`, but these are version-like identifiers and are not automatically equivalent to the 1033 magic constant.
 
-## Structural graph
+## Structural graph after correction
 
-`numeric source → 1033 → magic-square object`
+`numeric source → 1033/3301 → ordered concatenation 33011033 → steganographic extraction → magic-square constraints → later Liber Primus representation`
 
-`1033 → X-Cicada node label → Liber Primus payload`
+Separately:
 
-`1033 → repeated 5×5 matrix → Liber Primus representation`
+`prime display → explicit pauses at 1033 and 3301`
 
-The repeated value therefore crosses at least three representation classes:
+Separately:
 
-- numerical invariant;
-- network/stage identifier;
-- mathematical/Liber Primus object label.
+`2014 HTTP stage → X-Cicada: 3301`
 
-## What is actually established
+These are legitimate edges. We currently DO NOT connect `1033 → X-Cicada`.
 
-The recurrence of `1033` across these layers is **OBSERVED / DERIVED** from archived material. It is stronger than a simple coincidence because the occurrences are structurally connected by the documented puzzle chain and one occurrence is an explicit protocol/header field.
+## What is established
+
+1033 is not an isolated number in the corpus. It appears as:
+
+- a portrait-derived invariant;
+- a magic-square constant;
+- a repeated Liber Primus matrix invariant;
+- an explicitly highlighted value in the earlier prime-number sequence;
+- a version-like component in later `1.033` user-agent strings.
+
+This is a strong recurrence across representation classes, but the occurrences may have different functions.
 
 ## What is NOT established
 
-This experiment does **not** establish that:
+This experiment does not establish that:
 
-- 1033 is a universal Cicada state variable;
-- 1033 was intended as a graph node identifier;
-- 1033 mathematically generates the later matrix;
+- 1033 is a universal state variable;
+- 1033 is a network node identifier;
+- 1033 generates the P63 matrix;
 - 1033 is cryptographic key material;
+- 3301 and 1033 form a universal key pair;
 - the authors consciously designed a graph architecture.
 
-Those remain UNKNOWN.
+## New falsifiable prediction
 
-## Falsifiable prediction
+If 1033 is a conserved operational state rather than a recurring thematic/structural constant, there should be another independently documented transition where changing or selecting 1033 changes the next object, route, key, or validation result.
 
-If `1033` is functioning as a conserved state/bridge variable rather than a local repeated constant, independently documented later stages should contain at least one additional occurrence where 1033 controls, labels, indexes, validates, or selects another object.
-
-A mere textual appearance is insufficient. The occurrence must participate in an operational or structural relation.
+A mere occurrence, version string, or numerical coincidence does not qualify.
 
 ## Controls
 
-1. Search for 3301 under the same criteria.
-2. Search other prominent constants from the corpus to estimate the base recurrence rate.
-3. Compare occurrences preserving provenance against shuffled numeric labels.
-4. Reject the bridge interpretation if 1033 has no greater structural recurrence than comparable numbers.
+Use 3301 and other prominent constants as controls. Compare:
+
+- frequency of appearance;
+- operational use;
+- role changes across stages;
+- whether the value participates in a deterministic transition.
 
 ## Current verdict
 
-**STRONG STRUCTURAL OBSERVATION; SEMANTIC ROLE UNKNOWN.**
+**1033 recurrence: OBSERVED.**
 
-The correct next move is not to decode 1033 directly. It is to test whether the same value repeatedly acts as a selector, label, validator, or routing state across independent stages.
+**1033 as conserved state / bridge variable: PLAUSIBLE, NOT PROVED.**
+
+**`X-Cicada: 1033`: REJECTED / REMOVED from evidence.**
+
+The next experiment should prioritize operational uses of 1033 and 3301, especially places where either value selects, unlocks, indexes, validates, or routes to another object.
