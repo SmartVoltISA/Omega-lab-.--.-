@@ -1,0 +1,10 @@
+family,condition,suppression,recovery
+asym,direct,0.092910,0.094097
+asym,none,0.000024,-0.000029
+asym,shared,0.000021,0.000109
+linear,direct,0.174889,0.175844
+linear,none,0.000024,-0.000029
+linear,shared,0.000021,0.000109
+tanh,direct,0.090191,0.091016
+tanh,none,0.000024,-0.000029
+tanh,shared,0.000021,0.000109
