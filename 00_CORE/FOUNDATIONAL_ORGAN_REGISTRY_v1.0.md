@@ -11,6 +11,22 @@ Identify mechanisms that are foundational to the organism and therefore must be 
 
 An organ enters this registry only when its mechanism has been sufficiently demonstrated as general architecture. Before that point it remains a project experiment or candidate foundation.
 
+### Canonical research status rule
+
+A mechanism may be **canonical as a research direction** without being declared a proven universal law.
+
+Canonicalization records that the direction is important, stable, traceable, and subject to continued verification. It does **not** by itself establish universality or empirical truth.
+
+Therefore:
+
+```text
+CANONICAL RESEARCH DIRECTION
+          ≠
+PROVEN UNIVERSAL LAW
+```
+
+No mechanism may be promoted to `FOUNDATIONAL` merely because it is repeatedly observed, intuitively compelling, or central to current reasoning. Promotion requires the registry's full evidence path and project-independent verification.
+
 ## Current foundational candidate
 
 ### MEMORY
@@ -44,6 +60,41 @@ RESULT / CHANGE
       ↓
 MEMORY EVENT
 ```
+
+### Ω-0 — BOUNDARY / INTERNAL–EXTERNAL FRONTIER
+
+**Status:** CANONICAL RESEARCH DIRECTION / FOUNDATIONAL HYPOTHESIS  
+**Scope:** Ω-Math ↔ Ω-Lab
+
+The Ω-0 direction treats `0` as a possible boundary, reference point, and interaction frontier rather than as a third relational state.
+
+The distinction remains strict:
+
+```text
+EntityState   = {0, 1}
+RelationState = {-1, +1}
+absence       ≠ relation value 0
+```
+
+Within the research model, the boundary may be interpreted as the frontier where opposing processes meet and where external influence and internal response interact:
+
+```text
+                 EXTERNAL
+                    ↓
+          ───────── 0 ─────────
+                    ↑
+                 INTERNAL
+```
+
+A time-indexed evolution of the frontier is a candidate basis for describing a path:
+
+```text
+0(t₀) → 0(t₁) → 0(t₂) → 0(t₃) → ...
+```
+
+The interpretation **"path is struggle through time"** remains model-specific and is not promoted to a universal primitive definition.
+
+This principle is deliberately recorded here as a canonical research direction and foundational hypothesis, while remaining outside the proven universal registry until independent evidence satisfies the promotion rule.
 
 ### PRESENT
 
