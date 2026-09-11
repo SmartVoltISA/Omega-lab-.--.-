@@ -96,6 +96,49 @@ The interpretation **"path is struggle through time"** remains model-specific an
 
 This principle is deliberately recorded here as a canonical research direction and foundational hypothesis, while remaining outside the proven universal registry until independent evidence satisfies the promotion rule.
 
+### Entity–relation constitution principle
+
+**Status:** CANONICAL ARCHITECTURAL PRINCIPLE / FOUNDATIONAL DIRECTION  
+**Scope:** Ω-Math ↔ Ω-Lab ↔ FUNDAMENT/ORISIK
+
+An entity is not to be treated as an irreducible substance hidden inside a relation. An entity may be a **stable configuration of relations**. Relations describe how configurations/entities influence one another, while the internal organization of each entity is itself relational.
+
+Canonical chain:
+
+```text
+relations
+    ↓
+configuration
+    ↓
+stable entity
+```
+
+Interaction:
+
+```text
+entity/configuration A
+        │
+     influence
+        ↓
+entity/configuration B
+```
+
+Both `A` and `B` may themselves contain internal relational structure. A relation must not be reified into an additional entity merely because it carries interaction semantics.
+
+Mandatory separations:
+
+```text
+entity ≠ irreducible substance
+relation ≠ hidden entity
+entity = potentially stable relational configuration
+interaction = influence/change between configurations
+internal relations ≠ external relations, while both use the same relational architecture
+```
+
+This principle does not alter the Ω-Math primitive typing: `EntityState` and `RelationState` remain disjoint, and absence remains distinct from relation value.
+
+It is recorded here so that future LAB experiments do not repeatedly return to a substance-first interpretation of entities or attempt to search for an entity inside every relation.
+
 ### PRESENT
 
 **Current scope:** SPACE implementation; candidate for universal foundation.
