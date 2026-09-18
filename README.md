@@ -344,7 +344,7 @@ Comparison with baseline
 
 ## License
 
-This project is licensed under the MIT License.
+This repository is licensed under the Apache License 2.0. See [`LICENSE`](LICENSE) for the complete license text.
 
 **Ω-Lab is an open hypothesis and an experimental tool.  
 Use it, test it, break it, rebuild it.**
