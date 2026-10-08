@@ -103,7 +103,9 @@ D. learned boundary + growth
 
 ### Status
 
-FORMALIZATION / NEXT EXPERIMENT.
+EXECUTED — TOY RESULT RECORDED 2026-10-08.
+
+Result: a fixed 12-state relational ring reproduced the same topology while retained trace differed strongly between equivalent positions separated by one cycle. See `EXPERIMENTS/RESULTS/GEOMETRY_FOUNDATION_RESULTS_2026-10-08.md`.
 
 ### Question
 
@@ -136,7 +138,9 @@ No claim of proof until executed.
 
 ### Status
 
-PREREGISTRATION TARGET / NOT YET EXECUTED.
+EXECUTED — CURRENT LEARNED-BOUNDARY METHOD NEGATIVE 2026-10-08.
+
+A spectral/Fiedler boundary failed to reliably recover the planted dynamical boundary. A simple retention threshold succeeded because it encoded the same defining statistic. Therefore the learned-boundary mechanism is not promoted. Full result is in `EXPERIMENTS/RESULTS/GEOMETRY_FOUNDATION_RESULTS_2026-10-08.md`.
 
 ### Hypothesis
 
