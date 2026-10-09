@@ -1771,6 +1771,7 @@
         "delta_baseline": -0.07700000000000001,
         "delta_random": -0.06849999999999995,
         "learned": 0.44,
+        "learned_f1": 1.0,
         "random": 0.5085
       },
       {
@@ -1779,6 +1780,7 @@
         "delta_baseline": -0.04299999999999998,
         "delta_random": -0.06399999999999995,
         "learned": 0.4465,
+        "learned_f1": 1.0,
         "random": 0.5105
       },
       {
@@ -1787,6 +1789,7 @@
         "delta_baseline": -0.08950000000000002,
         "delta_random": -0.059,
         "learned": 0.4275,
+        "learned_f1": 1.0,
         "random": 0.4865
       },
       {
@@ -1795,6 +1798,7 @@
         "delta_baseline": -0.02150000000000002,
         "delta_random": -0.07349999999999995,
         "learned": 0.432,
+        "learned_f1": 1.0,
         "random": 0.5055
       },
       {
@@ -1803,6 +1807,7 @@
         "delta_baseline": -0.006500000000000006,
         "delta_random": -0.020999999999999963,
         "learned": 0.4875,
+        "learned_f1": 1.0,
         "random": 0.5085
       },
       {
@@ -1811,6 +1816,7 @@
         "delta_baseline": -0.019499999999999962,
         "delta_random": -0.03899999999999998,
         "learned": 0.4505,
+        "learned_f1": 1.0,
         "random": 0.4895
       },
       {
@@ -1819,6 +1825,7 @@
         "delta_baseline": 0.016500000000000015,
         "delta_random": -0.019999999999999962,
         "learned": 0.4855,
+        "learned_f1": 1.0,
         "random": 0.5055
       },
       {
@@ -1827,6 +1834,7 @@
         "delta_baseline": -0.062,
         "delta_random": -0.04999999999999999,
         "learned": 0.4375,
+        "learned_f1": 1.0,
         "random": 0.4875
       },
       {
@@ -1835,6 +1843,7 @@
         "delta_baseline": -0.03149999999999997,
         "delta_random": -0.035499999999999976,
         "learned": 0.483,
+        "learned_f1": 1.0,
         "random": 0.5185
       },
       {
@@ -1843,6 +1852,7 @@
         "delta_baseline": 0.007000000000000006,
         "delta_random": 0.0015000000000000013,
         "learned": 0.4995,
+        "learned_f1": 1.0,
         "random": 0.498
       },
       {
@@ -1851,6 +1861,7 @@
         "delta_baseline": -0.06599999999999995,
         "delta_random": -0.04849999999999999,
         "learned": 0.4415,
+        "learned_f1": 1.0,
         "random": 0.49
       },
       {
@@ -1859,6 +1870,7 @@
         "delta_baseline": -0.007000000000000006,
         "delta_random": -0.003500000000000003,
         "learned": 0.491,
+        "learned_f1": 1.0,
         "random": 0.4945
       },
       {
@@ -1867,6 +1879,7 @@
         "delta_baseline": 0.0005000000000000004,
         "delta_random": 0.010000000000000009,
         "learned": 0.493,
+        "learned_f1": 1.0,
         "random": 0.483
       },
       {
@@ -1875,6 +1888,7 @@
         "delta_baseline": -0.04749999999999999,
         "delta_random": 0.007000000000000006,
         "learned": 0.4625,
+        "learned_f1": 1.0,
         "random": 0.4555
       },
       {
@@ -1883,6 +1897,7 @@
         "delta_baseline": -0.026499999999999968,
         "delta_random": -0.046999999999999986,
         "learned": 0.449,
+        "learned_f1": 1.0,
         "random": 0.496
       },
       {
@@ -1891,6 +1906,7 @@
         "delta_baseline": -0.08949999999999997,
         "delta_random": -0.05449999999999999,
         "learned": 0.419,
+        "learned_f1": 1.0,
         "random": 0.4735
       },
       {
@@ -1899,6 +1915,7 @@
         "delta_baseline": -0.067,
         "delta_random": -0.07,
         "learned": 0.421,
+        "learned_f1": 1.0,
         "random": 0.491
       },
       {
@@ -1907,6 +1924,7 @@
         "delta_baseline": -0.10999999999999999,
         "delta_random": -0.09050000000000002,
         "learned": 0.4305,
+        "learned_f1": 1.0,
         "random": 0.521
       },
       {
@@ -1915,6 +1933,7 @@
         "delta_baseline": -0.02699999999999997,
         "delta_random": -0.016500000000000015,
         "learned": 0.4825,
+        "learned_f1": 1.0,
         "random": 0.499
       },
       {
@@ -1923,6 +1942,7 @@
         "delta_baseline": -0.006000000000000005,
         "delta_random": -0.013000000000000012,
         "learned": 0.4705,
+        "learned_f1": 1.0,
         "random": 0.4835
       },
       {
@@ -1931,6 +1951,7 @@
         "delta_baseline": -0.07250000000000001,
         "delta_random": -0.03149999999999997,
         "learned": 0.4525,
+        "learned_f1": 1.0,
         "random": 0.484
       },
       {
@@ -1939,6 +1960,7 @@
         "delta_baseline": -0.008000000000000007,
         "delta_random": -0.008000000000000007,
         "learned": 0.49,
+        "learned_f1": 1.0,
         "random": 0.498
       },
       {
@@ -1947,6 +1969,7 @@
         "delta_baseline": -0.05199999999999999,
         "delta_random": -0.061,
         "learned": 0.429,
+        "learned_f1": 1.0,
         "random": 0.49
       },
       {
@@ -1955,6 +1978,7 @@
         "delta_baseline": -0.08200000000000002,
         "delta_random": -0.08350000000000002,
         "learned": 0.416,
+        "learned_f1": 1.0,
         "random": 0.4995
       },
       {
@@ -1963,6 +1987,7 @@
         "delta_baseline": -0.01100000000000001,
         "delta_random": -0.01100000000000001,
         "learned": 0.4865,
+        "learned_f1": 1.0,
         "random": 0.4975
       },
       {
@@ -1971,6 +1996,7 @@
         "delta_baseline": -0.014500000000000013,
         "delta_random": -0.04849999999999999,
         "learned": 0.449,
+        "learned_f1": 1.0,
         "random": 0.4975
       },
       {
@@ -1979,6 +2005,7 @@
         "delta_baseline": -0.04949999999999999,
         "delta_random": -0.09000000000000002,
         "learned": 0.448,
+        "learned_f1": 1.0,
         "random": 0.538
       },
       {
@@ -1987,6 +2014,7 @@
         "delta_baseline": 0.0025000000000000022,
         "delta_random": -0.035999999999999976,
         "learned": 0.4795,
+        "learned_f1": 1.0,
         "random": 0.5155
       },
       {
@@ -1995,6 +2023,7 @@
         "delta_baseline": -0.06749999999999995,
         "delta_random": -0.05949999999999994,
         "learned": 0.464,
+        "learned_f1": 1.0,
         "random": 0.5235
       },
       {
@@ -2003,6 +2032,7 @@
         "delta_baseline": -0.014500000000000013,
         "delta_random": -0.004500000000000004,
         "learned": 0.472,
+        "learned_f1": 1.0,
         "random": 0.4765
       },
       {
@@ -2011,6 +2041,7 @@
         "delta_baseline": -0.006500000000000006,
         "delta_random": -0.033999999999999975,
         "learned": 0.452,
+        "learned_f1": 1.0,
         "random": 0.486
       },
       {
@@ -2019,6 +2050,7 @@
         "delta_baseline": -0.021499999999999964,
         "delta_random": -0.05549999999999994,
         "learned": 0.464,
+        "learned_f1": 1.0,
         "random": 0.5195
       },
       {
@@ -2027,6 +2059,7 @@
         "delta_baseline": -0.019499999999999962,
         "delta_random": 0.021999999999999964,
         "learned": 0.49,
+        "learned_f1": 1.0,
         "random": 0.468
       },
       {
@@ -2035,6 +2068,7 @@
         "delta_baseline": -0.03249999999999997,
         "delta_random": -0.05499999999999999,
         "learned": 0.453,
+        "learned_f1": 1.0,
         "random": 0.508
       },
       {
@@ -2043,6 +2077,7 @@
         "delta_baseline": -0.009500000000000008,
         "delta_random": -0.03699999999999998,
         "learned": 0.4705,
+        "learned_f1": 1.0,
         "random": 0.5075
       },
       {
@@ -2051,6 +2086,7 @@
         "delta_baseline": 0.0020000000000000018,
         "delta_random": -0.04349999999999998,
         "learned": 0.4665,
+        "learned_f1": 1.0,
         "random": 0.51
       },
       {
@@ -2059,6 +2095,7 @@
         "delta_baseline": -0.026499999999999968,
         "delta_random": -0.034499999999999975,
         "learned": 0.465,
+        "learned_f1": 1.0,
         "random": 0.4995
       },
       {
@@ -2067,6 +2104,7 @@
         "delta_baseline": -0.0635,
         "delta_random": -0.05149999999999999,
         "learned": 0.4365,
+        "learned_f1": 1.0,
         "random": 0.488
       },
       {
@@ -2075,6 +2113,7 @@
         "delta_baseline": -0.045999999999999985,
         "delta_random": -0.0030000000000000027,
         "learned": 0.4935,
+        "learned_f1": 1.0,
         "random": 0.4965
       },
       {
@@ -2083,331 +2122,372 @@
         "delta_baseline": -0.03249999999999997,
         "delta_random": -0.06299999999999994,
         "learned": 0.4385,
+        "learned_f1": 1.0,
         "random": 0.5015
       },
       {
-        "baseline": 0.482,
+        "baseline": 0.4815,
         "condition": "homogeneous",
-        "delta_baseline": 0.010000000000000009,
-        "delta_random": 0.02849999999999997,
-        "learned": 0.492,
+        "delta_baseline": 0.014500000000000013,
+        "delta_random": 0.03249999999999997,
+        "learned": 0.496,
+        "learned_f1": null,
         "random": 0.4635
+      },
+      {
+        "baseline": 0.481,
+        "condition": "homogeneous",
+        "delta_baseline": -0.009000000000000008,
+        "delta_random": -0.04949999999999999,
+        "learned": 0.472,
+        "learned_f1": null,
+        "random": 0.5215
       },
       {
         "baseline": 0.492,
         "condition": "homogeneous",
-        "delta_baseline": -0.009500000000000008,
-        "delta_random": -0.03899999999999998,
-        "learned": 0.4825,
-        "random": 0.5215
-      },
-      {
-        "baseline": 0.4995,
-        "condition": "homogeneous",
-        "delta_baseline": -0.012500000000000011,
-        "delta_random": 0.01150000000000001,
-        "learned": 0.487,
+        "delta_baseline": -0.044999999999999984,
+        "delta_random": -0.02849999999999997,
+        "learned": 0.447,
+        "learned_f1": null,
         "random": 0.4755
       },
       {
-        "baseline": 0.523,
+        "baseline": 0.512,
         "condition": "homogeneous",
-        "delta_baseline": -0.026000000000000023,
-        "delta_random": -0.02100000000000002,
-        "learned": 0.497,
+        "delta_baseline": -0.028000000000000025,
+        "delta_random": -0.03400000000000003,
+        "learned": 0.484,
+        "learned_f1": null,
         "random": 0.518
       },
       {
-        "baseline": 0.4385,
+        "baseline": 0.5585,
         "condition": "homogeneous",
-        "delta_baseline": 0.018500000000000016,
-        "delta_random": -0.034499999999999975,
-        "learned": 0.457,
+        "delta_baseline": -0.02949999999999997,
+        "delta_random": 0.03750000000000003,
+        "learned": 0.529,
+        "learned_f1": null,
         "random": 0.4915
       },
       {
-        "baseline": 0.528,
+        "baseline": 0.515,
         "condition": "homogeneous",
-        "delta_baseline": -0.02650000000000008,
-        "delta_random": -0.01650000000000007,
-        "learned": 0.5015,
+        "delta_baseline": 0.005499999999999949,
+        "delta_random": 0.0024999999999999467,
+        "learned": 0.5205,
+        "learned_f1": null,
         "random": 0.518
       },
       {
-        "baseline": 0.509,
+        "baseline": 0.479,
         "condition": "homogeneous",
-        "delta_baseline": 0.01849999999999996,
-        "delta_random": 0.013000000000000012,
-        "learned": 0.5275,
+        "delta_baseline": 0.0050000000000000044,
+        "delta_random": -0.03049999999999997,
+        "learned": 0.484,
+        "learned_f1": null,
         "random": 0.5145
       },
       {
-        "baseline": 0.491,
+        "baseline": 0.5005,
         "condition": "homogeneous",
-        "delta_baseline": -0.010000000000000009,
-        "delta_random": 0.022499999999999964,
-        "learned": 0.481,
+        "delta_baseline": 0.007000000000000006,
+        "delta_random": 0.04899999999999993,
+        "learned": 0.5075,
+        "learned_f1": null,
         "random": 0.4585
       },
       {
-        "baseline": 0.484,
+        "baseline": 0.474,
         "condition": "homogeneous",
-        "delta_baseline": 0.03149999999999997,
-        "delta_random": 0.01899999999999996,
-        "learned": 0.5155,
+        "delta_baseline": 0.04200000000000004,
+        "delta_random": 0.019500000000000017,
+        "learned": 0.516,
+        "learned_f1": null,
         "random": 0.4965
-      },
-      {
-        "baseline": 0.4645,
-        "condition": "homogeneous",
-        "delta_baseline": 0.01599999999999996,
-        "delta_random": 0.013499999999999956,
-        "learned": 0.4805,
-        "random": 0.467
-      },
-      {
-        "baseline": 0.4785,
-        "condition": "homogeneous",
-        "delta_baseline": 0.023999999999999966,
-        "delta_random": 0.013499999999999956,
-        "learned": 0.5025,
-        "random": 0.489
-      },
-      {
-        "baseline": 0.5025,
-        "condition": "homogeneous",
-        "delta_baseline": 0.01100000000000001,
-        "delta_random": 0.05649999999999994,
-        "learned": 0.5135,
-        "random": 0.457
-      },
-      {
-        "baseline": 0.539,
-        "condition": "homogeneous",
-        "delta_baseline": -0.0040000000000000036,
-        "delta_random": 0.018500000000000072,
-        "learned": 0.535,
-        "random": 0.5165
-      },
-      {
-        "baseline": 0.514,
-        "condition": "homogeneous",
-        "delta_baseline": -0.0025000000000000577,
-        "delta_random": 0.007000000000000006,
-        "learned": 0.5115,
-        "random": 0.5045
-      },
-      {
-        "baseline": 0.4655,
-        "condition": "homogeneous",
-        "delta_baseline": 0.008999999999999952,
-        "delta_random": -0.015000000000000013,
-        "learned": 0.4745,
-        "random": 0.4895
-      },
-      {
-        "baseline": 0.475,
-        "condition": "homogeneous",
-        "delta_baseline": -0.019999999999999962,
-        "delta_random": -0.012500000000000011,
-        "learned": 0.455,
-        "random": 0.4675
-      },
-      {
-        "baseline": 0.496,
-        "condition": "homogeneous",
-        "delta_baseline": 0.02849999999999997,
-        "delta_random": 0.034999999999999976,
-        "learned": 0.5245,
-        "random": 0.4895
-      },
-      {
-        "baseline": 0.518,
-        "condition": "homogeneous",
-        "delta_baseline": -0.019000000000000017,
-        "delta_random": -0.016000000000000014,
-        "learned": 0.499,
-        "random": 0.515
-      },
-      {
-        "baseline": 0.5205,
-        "condition": "homogeneous",
-        "delta_baseline": 0.02100000000000002,
-        "delta_random": 0.057499999999999996,
-        "learned": 0.5415,
-        "random": 0.484
-      },
-      {
-        "baseline": 0.5015,
-        "condition": "homogeneous",
-        "delta_baseline": -0.0034999999999999476,
-        "delta_random": 0.030999999999999972,
-        "learned": 0.498,
-        "random": 0.467
-      },
-      {
-        "baseline": 0.4805,
-        "condition": "homogeneous",
-        "delta_baseline": 0.020999999999999963,
-        "delta_random": -0.0030000000000000027,
-        "learned": 0.5015,
-        "random": 0.5045
-      },
-      {
-        "baseline": 0.473,
-        "condition": "homogeneous",
-        "delta_baseline": 0.020500000000000018,
-        "delta_random": -0.0010000000000000009,
-        "learned": 0.4935,
-        "random": 0.4945
-      },
-      {
-        "baseline": 0.5,
-        "condition": "homogeneous",
-        "delta_baseline": 0.0004999999999999449,
-        "delta_random": 0.04549999999999993,
-        "learned": 0.5005,
-        "random": 0.455
-      },
-      {
-        "baseline": 0.5295,
-        "condition": "homogeneous",
-        "delta_baseline": -0.017000000000000015,
-        "delta_random": -0.000500000000000056,
-        "learned": 0.5125,
-        "random": 0.513
-      },
-      {
-        "baseline": 0.54,
-        "condition": "homogeneous",
-        "delta_baseline": -0.031500000000000083,
-        "delta_random": 0.022999999999999965,
-        "learned": 0.5085,
-        "random": 0.4855
-      },
-      {
-        "baseline": 0.4895,
-        "condition": "homogeneous",
-        "delta_baseline": -0.01100000000000001,
-        "delta_random": -0.039500000000000035,
-        "learned": 0.4785,
-        "random": 0.518
-      },
-      {
-        "baseline": 0.5045,
-        "condition": "homogeneous",
-        "delta_baseline": 0.0040000000000000036,
-        "delta_random": 0.022499999999999964,
-        "learned": 0.5085,
-        "random": 0.486
-      },
-      {
-        "baseline": 0.485,
-        "condition": "homogeneous",
-        "delta_baseline": -0.025499999999999967,
-        "delta_random": -0.07250000000000001,
-        "learned": 0.4595,
-        "random": 0.532
-      },
-      {
-        "baseline": 0.4685,
-        "condition": "homogeneous",
-        "delta_baseline": -0.009000000000000008,
-        "delta_random": -0.009999999999999953,
-        "learned": 0.4595,
-        "random": 0.4695
       },
       {
         "baseline": 0.522,
         "condition": "homogeneous",
-        "delta_baseline": -0.0045000000000000595,
-        "delta_random": 0.03199999999999997,
-        "learned": 0.5175,
-        "random": 0.4855
+        "delta_baseline": 0.012499999999999956,
+        "delta_random": 0.06749999999999995,
+        "learned": 0.5345,
+        "learned_f1": null,
+        "random": 0.467
       },
       {
-        "baseline": 0.495,
+        "baseline": 0.4955,
         "condition": "homogeneous",
-        "delta_baseline": -0.010000000000000009,
-        "delta_random": -0.03749999999999998,
-        "learned": 0.485,
-        "random": 0.5225
+        "delta_baseline": -0.0020000000000000018,
+        "delta_random": 0.004500000000000004,
+        "learned": 0.4935,
+        "learned_f1": null,
+        "random": 0.489
       },
       {
-        "baseline": 0.496,
+        "baseline": 0.485,
         "condition": "homogeneous",
-        "delta_baseline": 0.033499999999999974,
-        "delta_random": 0.021499999999999964,
-        "learned": 0.5295,
-        "random": 0.508
+        "delta_baseline": 0.028000000000000025,
+        "delta_random": 0.055999999999999994,
+        "learned": 0.513,
+        "learned_f1": null,
+        "random": 0.457
       },
       {
-        "baseline": 0.523,
+        "baseline": 0.498,
         "condition": "homogeneous",
-        "delta_baseline": -0.014500000000000068,
-        "delta_random": 0.022999999999999965,
-        "learned": 0.5085,
-        "random": 0.4855
+        "delta_baseline": -0.02150000000000002,
+        "delta_random": -0.03999999999999998,
+        "learned": 0.4765,
+        "learned_f1": null,
+        "random": 0.5165
       },
       {
-        "baseline": 0.4925,
+        "baseline": 0.481,
         "condition": "homogeneous",
-        "delta_baseline": 0.004500000000000004,
-        "delta_random": -0.030000000000000027,
-        "learned": 0.497,
-        "random": 0.527
+        "delta_baseline": -0.0015000000000000013,
+        "delta_random": -0.024999999999999967,
+        "learned": 0.4795,
+        "learned_f1": null,
+        "random": 0.5045
+      },
+      {
+        "baseline": 0.504,
+        "condition": "homogeneous",
+        "delta_baseline": 0.0020000000000000018,
+        "delta_random": 0.016500000000000015,
+        "learned": 0.506,
+        "learned_f1": null,
+        "random": 0.4895
+      },
+      {
+        "baseline": 0.4995,
+        "condition": "homogeneous",
+        "delta_baseline": -0.018500000000000016,
+        "delta_random": 0.013499999999999956,
+        "learned": 0.481,
+        "learned_f1": null,
+        "random": 0.4675
+      },
+      {
+        "baseline": 0.546,
+        "condition": "homogeneous",
+        "delta_baseline": 0.005499999999999949,
+        "delta_random": 0.062,
+        "learned": 0.5515,
+        "learned_f1": null,
+        "random": 0.4895
+      },
+      {
+        "baseline": 0.4505,
+        "condition": "homogeneous",
+        "delta_baseline": -0.03250000000000003,
+        "delta_random": -0.09700000000000003,
+        "learned": 0.418,
+        "learned_f1": null,
+        "random": 0.515
+      },
+      {
+        "baseline": 0.4935,
+        "condition": "homogeneous",
+        "delta_baseline": 0.034999999999999976,
+        "delta_random": 0.044499999999999984,
+        "learned": 0.5285,
+        "learned_f1": null,
+        "random": 0.484
+      },
+      {
+        "baseline": 0.524,
+        "condition": "homogeneous",
+        "delta_baseline": 0.019000000000000017,
+        "delta_random": 0.07600000000000001,
+        "learned": 0.543,
+        "learned_f1": null,
+        "random": 0.467
+      },
+      {
+        "baseline": 0.478,
+        "condition": "homogeneous",
+        "delta_baseline": 0.03300000000000003,
+        "delta_random": 0.006500000000000061,
+        "learned": 0.511,
+        "learned_f1": null,
+        "random": 0.5045
+      },
+      {
+        "baseline": 0.4945,
+        "condition": "homogeneous",
+        "delta_baseline": 0.0005000000000000004,
+        "delta_random": 0.0005000000000000004,
+        "learned": 0.495,
+        "learned_f1": null,
+        "random": 0.4945
+      },
+      {
+        "baseline": 0.532,
+        "condition": "homogeneous",
+        "delta_baseline": -0.014000000000000012,
+        "delta_random": 0.063,
+        "learned": 0.518,
+        "learned_f1": null,
+        "random": 0.455
       },
       {
         "baseline": 0.5345,
         "condition": "homogeneous",
-        "delta_baseline": -0.012499999999999956,
-        "delta_random": -0.007000000000000006,
-        "learned": 0.522,
-        "random": 0.529
+        "delta_baseline": -0.046499999999999986,
+        "delta_random": -0.025000000000000022,
+        "learned": 0.488,
+        "learned_f1": null,
+        "random": 0.513
       },
       {
-        "baseline": 0.523,
+        "baseline": 0.5005,
         "condition": "homogeneous",
-        "delta_baseline": -0.03650000000000003,
-        "delta_random": -0.02899999999999997,
-        "learned": 0.4865,
-        "random": 0.5155
+        "delta_baseline": -0.007999999999999952,
+        "delta_random": 0.007000000000000006,
+        "learned": 0.4925,
+        "learned_f1": null,
+        "random": 0.4855
+      },
+      {
+        "baseline": 0.4815,
+        "condition": "homogeneous",
+        "delta_baseline": 0.009000000000000008,
+        "delta_random": -0.027500000000000024,
+        "learned": 0.4905,
+        "learned_f1": null,
+        "random": 0.518
+      },
+      {
+        "baseline": 0.515,
+        "condition": "homogeneous",
+        "delta_baseline": -0.0020000000000000018,
+        "delta_random": 0.027000000000000024,
+        "learned": 0.513,
+        "learned_f1": null,
+        "random": 0.486
+      },
+      {
+        "baseline": 0.502,
+        "condition": "homogeneous",
+        "delta_baseline": -0.033499999999999974,
+        "delta_random": -0.0635,
+        "learned": 0.4685,
+        "learned_f1": null,
+        "random": 0.532
+      },
+      {
+        "baseline": 0.5065,
+        "condition": "homogeneous",
+        "delta_baseline": 0.009500000000000064,
+        "delta_random": 0.04650000000000004,
+        "learned": 0.516,
+        "learned_f1": null,
+        "random": 0.4695
+      },
+      {
+        "baseline": 0.5425,
+        "condition": "homogeneous",
+        "delta_baseline": -0.024499999999999966,
+        "delta_random": 0.03250000000000003,
+        "learned": 0.518,
+        "learned_f1": null,
+        "random": 0.4855
+      },
+      {
+        "baseline": 0.562,
+        "condition": "homogeneous",
+        "delta_baseline": -0.020500000000000074,
+        "delta_random": 0.019000000000000017,
+        "learned": 0.5415,
+        "learned_f1": null,
+        "random": 0.5225
+      },
+      {
+        "baseline": 0.5525,
+        "condition": "homogeneous",
+        "delta_baseline": -0.033499999999999974,
+        "delta_random": 0.01100000000000001,
+        "learned": 0.519,
+        "learned_f1": null,
+        "random": 0.508
+      },
+      {
+        "baseline": 0.4955,
+        "condition": "homogeneous",
+        "delta_baseline": -0.03149999999999997,
+        "delta_random": -0.021499999999999964,
+        "learned": 0.464,
+        "learned_f1": null,
+        "random": 0.4855
+      },
+      {
+        "baseline": 0.4685,
+        "condition": "homogeneous",
+        "delta_baseline": -0.007000000000000006,
+        "delta_random": -0.0655,
+        "learned": 0.4615,
+        "learned_f1": null,
+        "random": 0.527
       },
       {
         "baseline": 0.4855,
         "condition": "homogeneous",
-        "delta_baseline": 0.019500000000000017,
-        "delta_random": -0.007499999999999951,
-        "learned": 0.505,
+        "delta_baseline": -0.014500000000000013,
+        "delta_random": -0.05800000000000005,
+        "learned": 0.471,
+        "learned_f1": null,
+        "random": 0.529
+      },
+      {
+        "baseline": 0.4935,
+        "condition": "homogeneous",
+        "delta_baseline": -0.02400000000000002,
+        "delta_random": -0.045999999999999985,
+        "learned": 0.4695,
+        "learned_f1": null,
+        "random": 0.5155
+      },
+      {
+        "baseline": 0.4615,
+        "condition": "homogeneous",
+        "delta_baseline": 0.02999999999999997,
+        "delta_random": -0.020999999999999963,
+        "learned": 0.4915,
+        "learned_f1": null,
         "random": 0.5125
       },
       {
-        "baseline": 0.4705,
+        "baseline": 0.5,
         "condition": "homogeneous",
-        "delta_baseline": 0.04150000000000004,
-        "delta_random": 0.013500000000000012,
-        "learned": 0.512,
+        "delta_baseline": -0.017000000000000015,
+        "delta_random": -0.015500000000000014,
+        "learned": 0.483,
+        "learned_f1": null,
         "random": 0.4985
       },
       {
-        "baseline": 0.534,
+        "baseline": 0.508,
         "condition": "homogeneous",
-        "delta_baseline": -0.01650000000000007,
-        "delta_random": 0.01200000000000001,
-        "learned": 0.5175,
+        "delta_baseline": 0.02400000000000002,
+        "delta_random": 0.02650000000000008,
+        "learned": 0.532,
+        "learned_f1": null,
         "random": 0.5055
       },
       {
-        "baseline": 0.469,
+        "baseline": 0.484,
         "condition": "homogeneous",
-        "delta_baseline": 0.031000000000000028,
-        "delta_random": -0.013499999999999956,
-        "learned": 0.5,
+        "delta_baseline": -0.010000000000000009,
+        "delta_random": -0.03949999999999998,
+        "learned": 0.474,
+        "learned_f1": null,
         "random": 0.5135
       }
     ]
   },
-  "sha256": "db6d3ea6e7251e09ca2511de282f5563a5b869da773f5a222855f6feb7243ece",
+  "sha256": "4c4f95e668917db00ad6242413094a10794f5405c4d17fc3f31f146a5f6c4e0d",
   "suite": "Geometry Foundation EXP-001..006 independent full rerun",
   "summary": {
     "EXP-001": {
@@ -2565,24 +2645,24 @@
     "EXP-006": {
       "homogeneous": {
         "baseline": {
-          "mean": 0.4984375,
+          "mean": 0.5022625,
           "n": 40,
-          "sd": 0.024169059342208164
+          "sd": 0.026107270698664264
         },
         "delta_baseline": {
-          "mean": 0.0010499999999999856,
+          "mean": -0.0048000000000000004,
           "n": 40,
-          "sd": 0.02015860190512306
+          "sd": 0.022639255673186285
         },
         "delta_random": {
-          "mean": 0.0028624999999999888,
+          "mean": 0.0008375000000000035,
           "n": 40,
-          "sd": 0.028176865283056
+          "sd": 0.04207797820713348
         },
         "learned": {
-          "mean": 0.49948750000000003,
+          "mean": 0.4974625,
           "n": 40,
-          "sd": 0.02111491376570913
+          "sd": 0.028393387524707322
         },
         "random": {
           "mean": 0.496625,
@@ -2610,6 +2690,11 @@
           "mean": 0.45915,
           "n": 40,
           "sd": 0.02396477115288724
+        },
+        "learned_f1": {
+          "mean": 1.0,
+          "n": 40,
+          "sd": 0.0
         },
         "random": {
           "mean": 0.4977499999999999,
