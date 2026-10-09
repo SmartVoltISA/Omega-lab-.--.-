@@ -10,14 +10,14 @@ NumPy: 2.5.3
 {
   "accuracy": {
     "boundary": {
-      "mean": 0.21430333333333337,
+      "mean": 0.1781283333333334,
       "n": 30,
-      "sd": 0.061949002849303304
+      "sd": 0.06912133594870207
     },
     "flat": {
-      "mean": 0.14599333333333334,
+      "mean": 0.11429999999999998,
       "n": 30,
-      "sd": 0.04159890112385955
+      "sd": 0.04989264854976478
     },
     "grow": {
       "mean": 0.21473333333333333,
@@ -25,9 +25,9 @@ NumPy: 2.5.3
       "sd": 0.06154031806162881
     },
     "memory": {
-      "mean": 0.21473333333333333,
+      "mean": 0.1781283333333334,
       "n": 30,
-      "sd": 0.06154031806162881
+      "sd": 0.06912133594870207
     }
   },
   "note": "Independent ledger-scale rerun, not source-identical.",
@@ -164,11 +164,16 @@ NumPy: 2.5.3
     "n": 30,
     "sd": 0.010192641062889795
   },
-  "note": "Fresh homogeneous generator; partition is not automatically meaningful.",
-  "shuffled_cut": {
-    "mean": 0.5210293848025734,
+  "note": "Fresh homogeneous generator; compared against 100 random balanced partitions per run.",
+  "random_balanced_cut": {
+    "mean": 0.5216968515092422,
     "n": 30,
-    "sd": 0.008677056560379353
+    "sd": 0.0008059600417317784
+  },
+  "random_balanced_cut_within_run_sd": {
+    "mean": 0.009195146076725846,
+    "n": 30,
+    "sd": 0.0007069069165728978
   }
 }
 
