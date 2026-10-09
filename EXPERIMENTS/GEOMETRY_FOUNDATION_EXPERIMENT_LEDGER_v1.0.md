@@ -204,3 +204,16 @@ Current decision:
 5. EXP-006 remains an exploratory positive-control intervention test, not a certified general causal-boundary detector.
 
 No result here establishes a universal law of physical space, consciousness, or nature.
+
+
+### Identifier crosswalk to the infographic
+
+The numbering in the infographic differs from the repository ledger numbering for the first three experiments. To avoid accidental mis-citation:
+- Infographic EXP-001 (ring/cycle and memory) → repository rerun EXP-002.
+- Infographic EXP-002 (spectral boundary instability) → repository historical boundary-method result EXP-003 / `GEOMETRY_FOUNDATION_RESULTS_2026-10-08.md`.
+- Infographic EXP-003 (memory and representational growth) → repository rerun EXP-001.
+- Infographic EXP-004 (recovery of a hidden relational boundary) → repository rerun EXP-004.
+- Infographic EXP-005 (spontaneous boundary without supplied groups) → repository rerun EXP-005.
+- Infographic EXP-006 (functional boundary under intervention) → repository rerun EXP-006.
+
+The runner IDs follow the repository ledger and are not silently renumbered to match the image.
