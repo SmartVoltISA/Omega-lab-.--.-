@@ -1,0 +1,45 @@
+name: Geometry Foundation Full Rerun
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'EXPERIMENTS/geometry_foundation_full_run.py'
+      - '.github/workflows/geometry-foundation-full-run.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  full-rerun:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install numerical dependency
+        run: python -m pip install --upgrade pip numpy
+      - name: Run EXP-001 through EXP-006
+        run: python EXPERIMENTS/geometry_foundation_full_run.py | tee geometry-foundation-run.log
+      - name: Validate outputs and row counts
+        run: |
+          python - <<'PY'
+          import json
+          p=json.load(open('EXPERIMENTS/RESULTS/GEOMETRY_FOUNDATION_FULL_RUN_2026-10-10.json'))
+          expected={'EXP-001':30,'EXP-002':30,'EXP-003':50,'EXP-004':150,'EXP-005':30,'EXP-006':80}
+          got={k:len(v) for k,v in p['raw_runs'].items()}
+          assert got == expected, (got, expected)
+          assert set(p['summary']) == set(expected)
+          print('VALIDATED', got)
+          PY
+      - name: Upload raw results and summary
+        uses: actions/upload-artifact@v4
+        with:
+          name: geometry-foundation-exp001-exp006
+          path: |
+            EXPERIMENTS/RESULTS/GEOMETRY_FOUNDATION_FULL_RUN_2026-10-10.json
+            EXPERIMENTS/RESULTS/GEOMETRY_FOUNDATION_FULL_RUN_2026-10-10.md
+            geometry-foundation-run.log
