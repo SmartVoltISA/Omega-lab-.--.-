@@ -13,6 +13,12 @@ def cnt(seq,n):
  c=np.zeros((n,n))
  for a,b in zip(seq[:-1],seq[1:]): c[int(a),int(b)]+=1
  return c
+def graph_part(c):
+ w=c+c.T
+ np.fill_diagonal(w,0)
+ d=w.sum(axis=1); inv=1/np.sqrt(np.maximum(d,1e-12))
+ _,v=np.linalg.eigh(np.eye(len(c))-inv[:,None]*w*inv[None,:])
+ return (v[:,1]>np.median(v[:,1])).astype(int)
 def f1(a,b):
  a=np.asarray(a,int); b=np.asarray(b,int)
  def z(x):
@@ -76,16 +82,16 @@ def e6(seed,mod):
  p=np.array([[(.85/h if i//h==j//h else .15/h) for j in range(n)] for i in range(n)]) if mod else np.array([r.dirichlet(np.ones(n)) for _ in range(n)])
  s=int(r.integers(n)); seq=[]
  for _ in range(12000): seq.append(s); s=int(r.choice(n,p=p[s]/p[s].sum()))
- q=part(cnt(seq,n)); rnd=np.array([0]*h+[1]*h); r.shuffle(rnd); node=int(r.integers(n)); changed=p.copy(); changed[node]=1/n
+ c=cnt(seq,n); q=graph_part(c); learned_f1=f1(q,[0]*h+[1]*h) if mod else None; rnd=np.array([0]*h+[1]*h); r.shuffle(rnd); node=int(r.integers(n)); changed=p.copy(); changed[node]=1/n
  def local(g,m):
   s=node; same=0
   for _ in range(2000): s=int(r.choice(n,p=m[s]/m[s].sum())); same+=int(g[s]==g[node])
   return same/2000
  x=local(q,changed); y=local(rnd,changed); z=local(q,p)
- return {"condition":"modular" if mod else "homogeneous","learned":x,"random":y,"baseline":z,"delta_random":x-y,"delta_baseline":x-z}
+ return {"condition":"modular" if mod else "homogeneous","learned_f1":learned_f1,"learned":x,"random":y,"baseline":z,"delta_random":x-y,"delta_baseline":x-z}
 a=[e6(SEED+3000+i,True) for i in range(40)]+[e6(SEED+4000+i,False) for i in range(40)]; raw["EXP-006"]=a; out["EXP-006"]={}
 for cond in ["modular","homogeneous"]:
- b=[x for x in a if x["condition"]==cond]; out["EXP-006"][cond]={k:stats([x[k] for x in b]) for k in ["learned","random","baseline","delta_random","delta_baseline"]}
+ b=[x for x in a if x["condition"]==cond]; out["EXP-006"][cond]={k:stats([x[k] for x in b if x[k] is not None]) for k in ["learned_f1","learned","random","baseline","delta_random","delta_baseline"] if any(x[k] is not None for x in b)}
 out["EXP-006"]["note"]="Exploratory intervention proxy; not causal-boundary certification."
 payload={"date":"2026-10-10","suite":"Geometry Foundation EXP-001..006 independent full rerun","base_seed":SEED,"python":platform.python_version(),"numpy":np.__version__,"sha256":hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),"summary":out,"raw_runs":raw}
 (OUT/"GEOMETRY_FOUNDATION_FULL_RUN_2026-10-10.json").write_text(json.dumps(payload,indent=2,sort_keys=True)+"\n")
