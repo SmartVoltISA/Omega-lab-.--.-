@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   full-rerun:
@@ -43,3 +43,11 @@ jobs:
             EXPERIMENTS/RESULTS/GEOMETRY_FOUNDATION_FULL_RUN_2026-10-10.json
             EXPERIMENTS/RESULTS/GEOMETRY_FOUNDATION_FULL_RUN_2026-10-10.md
             geometry-foundation-run.log
+      - name: Commit generated results on main push
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add EXPERIMENTS/RESULTS/GEOMETRY_FOUNDATION_FULL_RUN_2026-10-10.json EXPERIMENTS/RESULTS/GEOMETRY_FOUNDATION_FULL_RUN_2026-10-10.md
+          git diff --cached --quiet || git commit -m "results: record geometry foundation EXP-001 through EXP-006"
+          git push
