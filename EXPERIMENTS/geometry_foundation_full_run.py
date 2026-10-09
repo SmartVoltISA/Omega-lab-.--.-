@@ -33,13 +33,20 @@ def e1(seed):
   if n<cap and r.random()<.00035:
    a=min(int(r.integers(1,4)),cap-n); old=n; n+=a; added+=a; p=np.pad(p,((0,a),(0,a)))
    for i in range(old,n): p[i,:n]=r.dirichlet(np.ones(n))
-   for i in range(n): p[i,:n]=(p[i,:n]+.03)/(p[i,:n]+.03).sum()
+   for i in range(n):
+    row=p[i,:n]+.03; p[i,:n]=row/row.sum()
   if t and t%250==0:
    i=int(r.integers(n)); p[i,:n]=r.dirichlet(np.maximum(p[i,:n]*40,.05))
-  y=int(r.choice(n,p=p[s,:n]/p[s,:n].sum())); row=c[s,:n]
-  preds={"flat":last.get(s,-1),"memory":int(row.argmax()) if row.sum() else -1,"boundary":int(np.argmax(np.where(row/row.sum()>=.1,row,0))) if row.sum() else -1,"grow":int(row.argmax()) if row.sum() else -1}
+  y=int(r.choice(n,p=p[s,:n]/p[s,:n].sum()))
+  # FLAT/MEMORY/BOUNDARY have fixed 8-state representation; GROW can represent all observed states.
+  row=c[s,:8] if s<8 else np.zeros(8)
+  preds={"flat":last.get(s,-1) if s<8 else -1,
+         "memory":int(row.argmax()) if s<8 and row.sum() else -1,
+         "boundary":int(np.argmax(np.where(row/row.sum()>=.1,row,0))) if s<8 and row.sum() else -1,
+         "grow":int(c[s,:n].argmax()) if c[s,:n].sum() else -1}
   for k,v in preds.items(): ok[k]+=int(v==y)
-  last[s]=y; c[s,y]+=1; s=y
+  if s<8: last[s]=y if y<8 else -1
+  c[s,y]+=1; s=y
  return {"accuracy":{k:v/20000 for k,v in ok.items()},"states":n,"added":added}
 a=[e1(SEED+i) for i in range(30)]; raw["EXP-001"]=a; out["EXP-001"]={"accuracy":{k:stats([x["accuracy"][k] for x in a]) for k in a[0]["accuracy"]},"states":stats([x["states"] for x in a]),"note":"Independent ledger-scale rerun, not source-identical."}
 # EXP-002: ring topology recurrence with accumulating trace.
@@ -73,9 +80,13 @@ def e5(seed):
  r=np.random.default_rng(seed); n=24; w=np.ones((n,n)); np.fill_diagonal(w,0); s=int(r.integers(n)); seq=[]
  for _ in range(20000):
   y=int(r.choice(n,p=w[s]/w[s].sum())); seq.append(y); w[s,y]+=.15; w*=.99998; s=y
- c=cnt(seq,n); q=part(c); shuffled=c.copy(); r.shuffle(shuffled); qn=part(shuffled)
- return {"cut":float(c[q[:,None]!=q[None,:]].sum()/c.sum()),"shuffled_cut":float(c[qn[:,None]!=qn[None,:]].sum()/c.sum())}
-a=[e5(SEED+2000+i) for i in range(30)]; raw["EXP-005"]=a; out["EXP-005"]={"candidate_cut":stats([x["cut"] for x in a]),"shuffled_cut":stats([x["shuffled_cut"] for x in a]),"note":"Fresh homogeneous generator; partition is not automatically meaningful."}
+ c=cnt(seq,n); q=part(c); candidate=float(c[q[:,None]!=q[None,:]].sum()/c.sum())
+ null=[]
+ for _ in range(100):
+  labels=np.array([0]*(n//2)+[1]*(n//2)); r.shuffle(labels)
+  null.append(float(c[labels[:,None]!=labels[None,:]].sum()/c.sum()))
+ return {"candidate_cut":candidate,"random_balanced_cut_mean":float(np.mean(null)),"random_balanced_cut_sd":float(np.std(null,ddof=1))}
+a=[e5(SEED+2000+i) for i in range(30)]; raw["EXP-005"]=a; out["EXP-005"]={"candidate_cut":stats([x["candidate_cut"] for x in a]),"random_balanced_cut":stats([x["random_balanced_cut_mean"] for x in a]),"random_balanced_cut_within_run_sd":stats([x["random_balanced_cut_sd"] for x in a]),"note":"Fresh homogeneous generator; compared against 100 random balanced partitions per run."}
 # EXP-006: intervention proxy, modular positive control vs homogeneous null.
 def e6(seed,mod):
  r=np.random.default_rng(seed); n=24; h=12
