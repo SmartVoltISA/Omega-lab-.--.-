@@ -1766,728 +1766,808 @@
     ],
     "EXP-006": [
       {
-        "baseline": 0.517,
         "condition": "modular",
-        "delta_baseline": -0.07700000000000001,
-        "delta_random": -0.06849999999999995,
-        "learned": 0.44,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.15,
+        "learned_crossing_delta": 0.35,
         "learned_f1": 1.0,
-        "random": 0.5085
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.4999999999999999,
+        "random_crossing_delta": 1.1102230246251565e-16
       },
       {
-        "baseline": 0.4895,
         "condition": "modular",
-        "delta_baseline": -0.04299999999999998,
-        "delta_random": -0.06399999999999995,
-        "learned": 0.4465,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.15,
+        "learned_crossing_delta": 0.35,
         "learned_f1": 1.0,
-        "random": 0.5105
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.5,
+        "random_crossing_delta": 0.0
       },
       {
-        "baseline": 0.517,
         "condition": "modular",
-        "delta_baseline": -0.08950000000000002,
-        "delta_random": -0.059,
-        "learned": 0.4275,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.15,
+        "learned_crossing_delta": 0.35,
         "learned_f1": 1.0,
-        "random": 0.4865
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.44166666666666665,
+        "random_crossing_delta": 0.05833333333333335
       },
       {
-        "baseline": 0.4535,
         "condition": "modular",
-        "delta_baseline": -0.02150000000000002,
-        "delta_random": -0.07349999999999995,
-        "learned": 0.432,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.15,
+        "learned_crossing_delta": 0.35,
         "learned_f1": 1.0,
-        "random": 0.5055
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.4416666666666667,
+        "random_crossing_delta": 0.05833333333333329
       },
       {
-        "baseline": 0.494,
         "condition": "modular",
-        "delta_baseline": -0.006500000000000006,
-        "delta_random": -0.020999999999999963,
-        "learned": 0.4875,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.15,
+        "learned_crossing_delta": 0.35,
         "learned_f1": 1.0,
-        "random": 0.5085
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.5583333333333332,
+        "random_crossing_delta": -0.05833333333333324
       },
       {
-        "baseline": 0.47,
         "condition": "modular",
-        "delta_baseline": -0.019499999999999962,
-        "delta_random": -0.03899999999999998,
-        "learned": 0.4505,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.15,
+        "learned_crossing_delta": 0.35,
         "learned_f1": 1.0,
-        "random": 0.4895
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.4999999999999999,
+        "random_crossing_delta": 1.1102230246251565e-16
       },
       {
-        "baseline": 0.469,
         "condition": "modular",
-        "delta_baseline": 0.016500000000000015,
-        "delta_random": -0.019999999999999962,
-        "learned": 0.4855,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.15,
+        "learned_crossing_delta": 0.35,
         "learned_f1": 1.0,
-        "random": 0.5055
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.4416666666666667,
+        "random_crossing_delta": 0.05833333333333329
       },
       {
-        "baseline": 0.4995,
         "condition": "modular",
-        "delta_baseline": -0.062,
-        "delta_random": -0.04999999999999999,
-        "learned": 0.4375,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.15,
+        "learned_crossing_delta": 0.35,
         "learned_f1": 1.0,
-        "random": 0.4875
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.44166666666666665,
+        "random_crossing_delta": 0.05833333333333335
       },
       {
-        "baseline": 0.5145,
         "condition": "modular",
-        "delta_baseline": -0.03149999999999997,
-        "delta_random": -0.035499999999999976,
-        "learned": 0.483,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.15,
+        "learned_crossing_delta": 0.35,
         "learned_f1": 1.0,
-        "random": 0.5185
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.4999999999999999,
+        "random_crossing_delta": 1.1102230246251565e-16
       },
       {
-        "baseline": 0.4925,
         "condition": "modular",
-        "delta_baseline": 0.007000000000000006,
-        "delta_random": 0.0015000000000000013,
-        "learned": 0.4995,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.15,
+        "learned_crossing_delta": 0.35,
         "learned_f1": 1.0,
-        "random": 0.498
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.44166666666666665,
+        "random_crossing_delta": 0.05833333333333335
       },
       {
-        "baseline": 0.5075,
         "condition": "modular",
-        "delta_baseline": -0.06599999999999995,
-        "delta_random": -0.04849999999999999,
-        "learned": 0.4415,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.15,
+        "learned_crossing_delta": 0.35,
         "learned_f1": 1.0,
-        "random": 0.49
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.5583333333333332,
+        "random_crossing_delta": -0.05833333333333324
       },
       {
-        "baseline": 0.498,
         "condition": "modular",
-        "delta_baseline": -0.007000000000000006,
-        "delta_random": -0.003500000000000003,
-        "learned": 0.491,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.15,
+        "learned_crossing_delta": 0.35,
         "learned_f1": 1.0,
-        "random": 0.4945
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.5,
+        "random_crossing_delta": 0.0
       },
       {
-        "baseline": 0.4925,
         "condition": "modular",
-        "delta_baseline": 0.0005000000000000004,
-        "delta_random": 0.010000000000000009,
-        "learned": 0.493,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.15,
+        "learned_crossing_delta": 0.35,
         "learned_f1": 1.0,
-        "random": 0.483
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.4416666666666667,
+        "random_crossing_delta": 0.05833333333333329
       },
       {
-        "baseline": 0.51,
         "condition": "modular",
-        "delta_baseline": -0.04749999999999999,
-        "delta_random": 0.007000000000000006,
-        "learned": 0.4625,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.15,
+        "learned_crossing_delta": 0.35,
         "learned_f1": 1.0,
-        "random": 0.4555
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.3833333333333333,
+        "random_crossing_delta": 0.1166666666666667
       },
       {
-        "baseline": 0.4755,
         "condition": "modular",
-        "delta_baseline": -0.026499999999999968,
-        "delta_random": -0.046999999999999986,
-        "learned": 0.449,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.15,
+        "learned_crossing_delta": 0.35,
         "learned_f1": 1.0,
-        "random": 0.496
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.44166666666666665,
+        "random_crossing_delta": 0.05833333333333335
       },
       {
-        "baseline": 0.5085,
         "condition": "modular",
-        "delta_baseline": -0.08949999999999997,
-        "delta_random": -0.05449999999999999,
-        "learned": 0.419,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.15,
+        "learned_crossing_delta": 0.35,
         "learned_f1": 1.0,
-        "random": 0.4735
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.3833333333333334,
+        "random_crossing_delta": 0.11666666666666659
       },
       {
-        "baseline": 0.488,
         "condition": "modular",
-        "delta_baseline": -0.067,
-        "delta_random": -0.07,
-        "learned": 0.421,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.15,
+        "learned_crossing_delta": 0.35,
         "learned_f1": 1.0,
-        "random": 0.491
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.5,
+        "random_crossing_delta": 0.0
       },
       {
-        "baseline": 0.5405,
         "condition": "modular",
-        "delta_baseline": -0.10999999999999999,
-        "delta_random": -0.09050000000000002,
-        "learned": 0.4305,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.15,
+        "learned_crossing_delta": 0.35,
         "learned_f1": 1.0,
-        "random": 0.521
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.558333333333333,
+        "random_crossing_delta": -0.058333333333333015
       },
       {
-        "baseline": 0.5095,
         "condition": "modular",
-        "delta_baseline": -0.02699999999999997,
-        "delta_random": -0.016500000000000015,
-        "learned": 0.4825,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.15,
+        "learned_crossing_delta": 0.35,
         "learned_f1": 1.0,
-        "random": 0.499
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.5,
+        "random_crossing_delta": 0.0
       },
       {
-        "baseline": 0.4765,
         "condition": "modular",
-        "delta_baseline": -0.006000000000000005,
-        "delta_random": -0.013000000000000012,
-        "learned": 0.4705,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.15,
+        "learned_crossing_delta": 0.35,
         "learned_f1": 1.0,
-        "random": 0.4835
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.5,
+        "random_crossing_delta": 0.0
       },
       {
-        "baseline": 0.525,
         "condition": "modular",
-        "delta_baseline": -0.07250000000000001,
-        "delta_random": -0.03149999999999997,
-        "learned": 0.4525,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.15,
+        "learned_crossing_delta": 0.35,
         "learned_f1": 1.0,
-        "random": 0.484
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.5,
+        "random_crossing_delta": 0.0
       },
       {
-        "baseline": 0.498,
         "condition": "modular",
-        "delta_baseline": -0.008000000000000007,
-        "delta_random": -0.008000000000000007,
-        "learned": 0.49,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.15,
+        "learned_crossing_delta": 0.35,
         "learned_f1": 1.0,
-        "random": 0.498
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.558333333333333,
+        "random_crossing_delta": -0.058333333333333015
       },
       {
-        "baseline": 0.481,
         "condition": "modular",
-        "delta_baseline": -0.05199999999999999,
-        "delta_random": -0.061,
-        "learned": 0.429,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.15,
+        "learned_crossing_delta": 0.35,
         "learned_f1": 1.0,
-        "random": 0.49
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.44166666666666665,
+        "random_crossing_delta": 0.05833333333333335
       },
       {
-        "baseline": 0.498,
         "condition": "modular",
-        "delta_baseline": -0.08200000000000002,
-        "delta_random": -0.08350000000000002,
-        "learned": 0.416,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.15,
+        "learned_crossing_delta": 0.35,
         "learned_f1": 1.0,
-        "random": 0.4995
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.44166666666666665,
+        "random_crossing_delta": 0.05833333333333335
       },
       {
-        "baseline": 0.4975,
         "condition": "modular",
-        "delta_baseline": -0.01100000000000001,
-        "delta_random": -0.01100000000000001,
-        "learned": 0.4865,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.15,
+        "learned_crossing_delta": 0.35,
         "learned_f1": 1.0,
-        "random": 0.4975
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.5,
+        "random_crossing_delta": 0.0
       },
       {
-        "baseline": 0.4635,
         "condition": "modular",
-        "delta_baseline": -0.014500000000000013,
-        "delta_random": -0.04849999999999999,
-        "learned": 0.449,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.15,
+        "learned_crossing_delta": 0.35,
         "learned_f1": 1.0,
-        "random": 0.4975
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.5,
+        "random_crossing_delta": 0.0
       },
       {
-        "baseline": 0.4975,
         "condition": "modular",
-        "delta_baseline": -0.04949999999999999,
-        "delta_random": -0.09000000000000002,
-        "learned": 0.448,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.15,
+        "learned_crossing_delta": 0.35,
         "learned_f1": 1.0,
-        "random": 0.538
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.6749999999999998,
+        "random_crossing_delta": -0.17499999999999982
       },
       {
-        "baseline": 0.477,
         "condition": "modular",
-        "delta_baseline": 0.0025000000000000022,
-        "delta_random": -0.035999999999999976,
-        "learned": 0.4795,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.15,
+        "learned_crossing_delta": 0.35,
         "learned_f1": 1.0,
-        "random": 0.5155
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.44166666666666665,
+        "random_crossing_delta": 0.05833333333333335
       },
       {
-        "baseline": 0.5315,
         "condition": "modular",
-        "delta_baseline": -0.06749999999999995,
-        "delta_random": -0.05949999999999994,
-        "learned": 0.464,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.15,
+        "learned_crossing_delta": 0.35,
         "learned_f1": 1.0,
-        "random": 0.5235
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.558333333333333,
+        "random_crossing_delta": -0.058333333333333015
       },
       {
-        "baseline": 0.4865,
         "condition": "modular",
-        "delta_baseline": -0.014500000000000013,
-        "delta_random": -0.004500000000000004,
-        "learned": 0.472,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.15,
+        "learned_crossing_delta": 0.35,
         "learned_f1": 1.0,
-        "random": 0.4765
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.4416666666666667,
+        "random_crossing_delta": 0.05833333333333329
       },
       {
-        "baseline": 0.4585,
         "condition": "modular",
-        "delta_baseline": -0.006500000000000006,
-        "delta_random": -0.033999999999999975,
-        "learned": 0.452,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.15,
+        "learned_crossing_delta": 0.35,
         "learned_f1": 1.0,
-        "random": 0.486
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.558333333333333,
+        "random_crossing_delta": -0.058333333333333015
       },
       {
-        "baseline": 0.4855,
         "condition": "modular",
-        "delta_baseline": -0.021499999999999964,
-        "delta_random": -0.05549999999999994,
-        "learned": 0.464,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.15,
+        "learned_crossing_delta": 0.35,
         "learned_f1": 1.0,
-        "random": 0.5195
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.6166666666666665,
+        "random_crossing_delta": -0.11666666666666647
       },
       {
-        "baseline": 0.5095,
         "condition": "modular",
-        "delta_baseline": -0.019499999999999962,
-        "delta_random": 0.021999999999999964,
-        "learned": 0.49,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.15,
+        "learned_crossing_delta": 0.35,
         "learned_f1": 1.0,
-        "random": 0.468
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.44166666666666665,
+        "random_crossing_delta": 0.05833333333333335
       },
       {
-        "baseline": 0.4855,
         "condition": "modular",
-        "delta_baseline": -0.03249999999999997,
-        "delta_random": -0.05499999999999999,
-        "learned": 0.453,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.15,
+        "learned_crossing_delta": 0.35,
         "learned_f1": 1.0,
-        "random": 0.508
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.6166666666666665,
+        "random_crossing_delta": -0.11666666666666647
       },
       {
-        "baseline": 0.48,
         "condition": "modular",
-        "delta_baseline": -0.009500000000000008,
-        "delta_random": -0.03699999999999998,
-        "learned": 0.4705,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.15,
+        "learned_crossing_delta": 0.35,
         "learned_f1": 1.0,
-        "random": 0.5075
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.4999999999999999,
+        "random_crossing_delta": 1.1102230246251565e-16
       },
       {
-        "baseline": 0.4645,
         "condition": "modular",
-        "delta_baseline": 0.0020000000000000018,
-        "delta_random": -0.04349999999999998,
-        "learned": 0.4665,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.15,
+        "learned_crossing_delta": 0.35,
         "learned_f1": 1.0,
-        "random": 0.51
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.6749999999999998,
+        "random_crossing_delta": -0.17499999999999982
       },
       {
-        "baseline": 0.4915,
         "condition": "modular",
-        "delta_baseline": -0.026499999999999968,
-        "delta_random": -0.034499999999999975,
-        "learned": 0.465,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.15,
+        "learned_crossing_delta": 0.35,
         "learned_f1": 1.0,
-        "random": 0.4995
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.5583333333333332,
+        "random_crossing_delta": -0.05833333333333324
       },
       {
-        "baseline": 0.5,
         "condition": "modular",
-        "delta_baseline": -0.0635,
-        "delta_random": -0.05149999999999999,
-        "learned": 0.4365,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.15,
+        "learned_crossing_delta": 0.35,
         "learned_f1": 1.0,
-        "random": 0.488
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.44166666666666665,
+        "random_crossing_delta": 0.05833333333333335
       },
       {
-        "baseline": 0.5395,
         "condition": "modular",
-        "delta_baseline": -0.045999999999999985,
-        "delta_random": -0.0030000000000000027,
-        "learned": 0.4935,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.15,
+        "learned_crossing_delta": 0.35,
         "learned_f1": 1.0,
-        "random": 0.4965
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.4416666666666667,
+        "random_crossing_delta": 0.05833333333333329
       },
       {
-        "baseline": 0.471,
         "condition": "modular",
-        "delta_baseline": -0.03249999999999997,
-        "delta_random": -0.06299999999999994,
-        "learned": 0.4385,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.15,
+        "learned_crossing_delta": 0.35,
         "learned_f1": 1.0,
-        "random": 0.5015
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.5,
+        "random_crossing_delta": 0.0
       },
       {
-        "baseline": 0.4815,
         "condition": "homogeneous",
-        "delta_baseline": 0.014500000000000013,
-        "delta_random": 0.03249999999999997,
-        "learned": 0.496,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.5803990329727714,
+        "learned_crossing_delta": -0.0803990329727714,
         "learned_f1": null,
-        "random": 0.4635
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.5682270905587234,
+        "random_crossing_delta": -0.06822709055872345
       },
       {
-        "baseline": 0.481,
         "condition": "homogeneous",
-        "delta_baseline": -0.009000000000000008,
-        "delta_random": -0.04949999999999999,
-        "learned": 0.472,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.26039845107885856,
+        "learned_crossing_delta": 0.23960154892114144,
         "learned_f1": null,
-        "random": 0.5215
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.44036053252629814,
+        "random_crossing_delta": 0.05963946747370186
       },
       {
-        "baseline": 0.492,
         "condition": "homogeneous",
-        "delta_baseline": -0.044999999999999984,
-        "delta_random": -0.02849999999999997,
-        "learned": 0.447,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.43188652766679797,
+        "learned_crossing_delta": 0.06811347233320203,
         "learned_f1": null,
-        "random": 0.4755
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.37889956776852873,
+        "random_crossing_delta": 0.12110043223147127
       },
       {
-        "baseline": 0.512,
         "condition": "homogeneous",
-        "delta_baseline": -0.028000000000000025,
-        "delta_random": -0.03400000000000003,
-        "learned": 0.484,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.42337582077291347,
+        "learned_crossing_delta": 0.07662417922708653,
         "learned_f1": null,
-        "random": 0.518
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.7548768037814418,
+        "random_crossing_delta": -0.25487680378144184
       },
       {
-        "baseline": 0.5585,
         "condition": "homogeneous",
-        "delta_baseline": -0.02949999999999997,
-        "delta_random": 0.03750000000000003,
-        "learned": 0.529,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.6554775403559884,
+        "learned_crossing_delta": -0.15547754035598838,
         "learned_f1": null,
-        "random": 0.4915
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.3827900555345572,
+        "random_crossing_delta": 0.1172099444654428
       },
       {
-        "baseline": 0.515,
         "condition": "homogeneous",
-        "delta_baseline": 0.005499999999999949,
-        "delta_random": 0.0024999999999999467,
-        "learned": 0.5205,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.471116119289167,
+        "learned_crossing_delta": 0.028883880710832976,
         "learned_f1": null,
-        "random": 0.518
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.6108909672964955,
+        "random_crossing_delta": -0.1108909672964955
       },
       {
-        "baseline": 0.479,
         "condition": "homogeneous",
-        "delta_baseline": 0.0050000000000000044,
-        "delta_random": -0.03049999999999997,
-        "learned": 0.484,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.5531468223571029,
+        "learned_crossing_delta": -0.053146822357102885,
         "learned_f1": null,
-        "random": 0.5145
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.42019063779790133,
+        "random_crossing_delta": 0.07980936220209867
       },
       {
-        "baseline": 0.5005,
         "condition": "homogeneous",
-        "delta_baseline": 0.007000000000000006,
-        "delta_random": 0.04899999999999993,
-        "learned": 0.5075,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.4293863814001014,
+        "learned_crossing_delta": 0.07061361859989862,
         "learned_f1": null,
-        "random": 0.4585
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.3719506880474853,
+        "random_crossing_delta": 0.12804931195251468
       },
       {
-        "baseline": 0.474,
         "condition": "homogeneous",
-        "delta_baseline": 0.04200000000000004,
-        "delta_random": 0.019500000000000017,
-        "learned": 0.516,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.46674625999594843,
+        "learned_crossing_delta": 0.03325374000405157,
         "learned_f1": null,
-        "random": 0.4965
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.3986824982512772,
+        "random_crossing_delta": 0.10131750174872278
       },
       {
-        "baseline": 0.522,
         "condition": "homogeneous",
-        "delta_baseline": 0.012499999999999956,
-        "delta_random": 0.06749999999999995,
-        "learned": 0.5345,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.3624279126888668,
+        "learned_crossing_delta": 0.13757208731113318,
         "learned_f1": null,
-        "random": 0.467
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.5280698985627301,
+        "random_crossing_delta": -0.028069898562730122
       },
       {
-        "baseline": 0.4955,
         "condition": "homogeneous",
-        "delta_baseline": -0.0020000000000000018,
-        "delta_random": 0.004500000000000004,
-        "learned": 0.4935,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.41147322310844764,
+        "learned_crossing_delta": 0.08852677689155236,
         "learned_f1": null,
-        "random": 0.489
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.4826161100729839,
+        "random_crossing_delta": 0.017383889927016116
       },
       {
-        "baseline": 0.485,
         "condition": "homogeneous",
-        "delta_baseline": 0.028000000000000025,
-        "delta_random": 0.055999999999999994,
-        "learned": 0.513,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.39747384347184495,
+        "learned_crossing_delta": 0.10252615652815505,
         "learned_f1": null,
-        "random": 0.457
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.3818891398616656,
+        "random_crossing_delta": 0.11811086013833438
       },
       {
-        "baseline": 0.498,
         "condition": "homogeneous",
-        "delta_baseline": -0.02150000000000002,
-        "delta_random": -0.03999999999999998,
-        "learned": 0.4765,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.26959259513770545,
+        "learned_crossing_delta": 0.23040740486229455,
         "learned_f1": null,
-        "random": 0.5165
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.44360001964669177,
+        "random_crossing_delta": 0.05639998035330823
       },
       {
-        "baseline": 0.481,
         "condition": "homogeneous",
-        "delta_baseline": -0.0015000000000000013,
-        "delta_random": -0.024999999999999967,
-        "learned": 0.4795,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.3786835323615686,
+        "learned_crossing_delta": 0.1213164676384314,
         "learned_f1": null,
-        "random": 0.5045
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.5547774609079157,
+        "random_crossing_delta": -0.05477746090791569
       },
       {
-        "baseline": 0.504,
         "condition": "homogeneous",
-        "delta_baseline": 0.0020000000000000018,
-        "delta_random": 0.016500000000000015,
-        "learned": 0.506,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.3660622494387809,
+        "learned_crossing_delta": 0.1339377505612191,
         "learned_f1": null,
-        "random": 0.4895
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.5674576420431864,
+        "random_crossing_delta": -0.06745764204318638
       },
       {
-        "baseline": 0.4995,
         "condition": "homogeneous",
-        "delta_baseline": -0.018500000000000016,
-        "delta_random": 0.013499999999999956,
-        "learned": 0.481,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.43012892782343143,
+        "learned_crossing_delta": 0.06987107217656857,
         "learned_f1": null,
-        "random": 0.4675
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.35642990571121036,
+        "random_crossing_delta": 0.14357009428878964
       },
       {
-        "baseline": 0.546,
         "condition": "homogeneous",
-        "delta_baseline": 0.005499999999999949,
-        "delta_random": 0.062,
-        "learned": 0.5515,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.5352672057704958,
+        "learned_crossing_delta": -0.0352672057704958,
         "learned_f1": null,
-        "random": 0.4895
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.6792918522688951,
+        "random_crossing_delta": -0.1792918522688951
       },
       {
-        "baseline": 0.4505,
         "condition": "homogeneous",
-        "delta_baseline": -0.03250000000000003,
-        "delta_random": -0.09700000000000003,
-        "learned": 0.418,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.333127579317291,
+        "learned_crossing_delta": 0.16687242068270902,
         "learned_f1": null,
-        "random": 0.515
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.5255219972906479,
+        "random_crossing_delta": -0.025521997290647858
       },
       {
-        "baseline": 0.4935,
         "condition": "homogeneous",
-        "delta_baseline": 0.034999999999999976,
-        "delta_random": 0.044499999999999984,
-        "learned": 0.5285,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.47744755320536814,
+        "learned_crossing_delta": 0.022552446794631864,
         "learned_f1": null,
-        "random": 0.484
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.5009890783177444,
+        "random_crossing_delta": -0.0009890783177444185
       },
       {
-        "baseline": 0.524,
         "condition": "homogeneous",
-        "delta_baseline": 0.019000000000000017,
-        "delta_random": 0.07600000000000001,
-        "learned": 0.543,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.5466847306086494,
+        "learned_crossing_delta": -0.046684730608649416,
         "learned_f1": null,
-        "random": 0.467
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.5325709553100799,
+        "random_crossing_delta": -0.03257095531007992
       },
       {
-        "baseline": 0.478,
         "condition": "homogeneous",
-        "delta_baseline": 0.03300000000000003,
-        "delta_random": 0.006500000000000061,
-        "learned": 0.511,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.4939187180291329,
+        "learned_crossing_delta": 0.006081281970867103,
         "learned_f1": null,
-        "random": 0.5045
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.44480758634981693,
+        "random_crossing_delta": 0.05519241365018307
       },
       {
-        "baseline": 0.4945,
         "condition": "homogeneous",
-        "delta_baseline": 0.0005000000000000004,
-        "delta_random": 0.0005000000000000004,
-        "learned": 0.495,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.4904632147283804,
+        "learned_crossing_delta": 0.009536785271619608,
         "learned_f1": null,
-        "random": 0.4945
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.5372677871150527,
+        "random_crossing_delta": -0.03726778711505274
       },
       {
-        "baseline": 0.532,
         "condition": "homogeneous",
-        "delta_baseline": -0.014000000000000012,
-        "delta_random": 0.063,
-        "learned": 0.518,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.3432414248091957,
+        "learned_crossing_delta": 0.15675857519080427,
         "learned_f1": null,
-        "random": 0.455
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.4630275662966649,
+        "random_crossing_delta": 0.036972433703335084
       },
       {
-        "baseline": 0.5345,
         "condition": "homogeneous",
-        "delta_baseline": -0.046499999999999986,
-        "delta_random": -0.025000000000000022,
-        "learned": 0.488,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.373540179965827,
+        "learned_crossing_delta": 0.126459820034173,
         "learned_f1": null,
-        "random": 0.513
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.6450539035421801,
+        "random_crossing_delta": -0.14505390354218006
       },
       {
-        "baseline": 0.5005,
         "condition": "homogeneous",
-        "delta_baseline": -0.007999999999999952,
-        "delta_random": 0.007000000000000006,
-        "learned": 0.4925,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.38056102452876595,
+        "learned_crossing_delta": 0.11943897547123405,
         "learned_f1": null,
-        "random": 0.4855
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.5150744920796223,
+        "random_crossing_delta": -0.015074492079622304
       },
       {
-        "baseline": 0.4815,
         "condition": "homogeneous",
-        "delta_baseline": 0.009000000000000008,
-        "delta_random": -0.027500000000000024,
-        "learned": 0.4905,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.5324183418024478,
+        "learned_crossing_delta": -0.03241834180244785,
         "learned_f1": null,
-        "random": 0.518
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.5247279475871149,
+        "random_crossing_delta": -0.02472794758711494
       },
       {
-        "baseline": 0.515,
         "condition": "homogeneous",
-        "delta_baseline": -0.0020000000000000018,
-        "delta_random": 0.027000000000000024,
-        "learned": 0.513,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.634879439550509,
+        "learned_crossing_delta": -0.13487943955050896,
         "learned_f1": null,
-        "random": 0.486
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.5134266713206105,
+        "random_crossing_delta": -0.013426671320610484
       },
       {
-        "baseline": 0.502,
         "condition": "homogeneous",
-        "delta_baseline": -0.033499999999999974,
-        "delta_random": -0.0635,
-        "learned": 0.4685,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.3627156109275114,
+        "learned_crossing_delta": 0.13728438907248858,
         "learned_f1": null,
-        "random": 0.532
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.5676728526079537,
+        "random_crossing_delta": -0.06767285260795375
       },
       {
-        "baseline": 0.5065,
         "condition": "homogeneous",
-        "delta_baseline": 0.009500000000000064,
-        "delta_random": 0.04650000000000004,
-        "learned": 0.516,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.559982540265204,
+        "learned_crossing_delta": -0.059982540265204,
         "learned_f1": null,
-        "random": 0.4695
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.5107534074877889,
+        "random_crossing_delta": -0.010753407487788857
       },
       {
-        "baseline": 0.5425,
         "condition": "homogeneous",
-        "delta_baseline": -0.024499999999999966,
-        "delta_random": 0.03250000000000003,
-        "learned": 0.518,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.4642215654023427,
+        "learned_crossing_delta": 0.03577843459765728,
         "learned_f1": null,
-        "random": 0.4855
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.6334895208850696,
+        "random_crossing_delta": -0.1334895208850696
       },
       {
-        "baseline": 0.562,
         "condition": "homogeneous",
-        "delta_baseline": -0.020500000000000074,
-        "delta_random": 0.019000000000000017,
-        "learned": 0.5415,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.4109389799359072,
+        "learned_crossing_delta": 0.08906102006409278,
         "learned_f1": null,
-        "random": 0.5225
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.6313256106649121,
+        "random_crossing_delta": -0.1313256106649121
       },
       {
-        "baseline": 0.5525,
         "condition": "homogeneous",
-        "delta_baseline": -0.033499999999999974,
-        "delta_random": 0.01100000000000001,
-        "learned": 0.519,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.3782007706523869,
+        "learned_crossing_delta": 0.12179922934761311,
         "learned_f1": null,
-        "random": 0.508
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.48666003245869366,
+        "random_crossing_delta": 0.013339967541306341
       },
       {
-        "baseline": 0.4955,
         "condition": "homogeneous",
-        "delta_baseline": -0.03149999999999997,
-        "delta_random": -0.021499999999999964,
-        "learned": 0.464,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.4118750374013328,
+        "learned_crossing_delta": 0.0881249625986672,
         "learned_f1": null,
-        "random": 0.4855
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.6661800299145438,
+        "random_crossing_delta": -0.16618002991454384
       },
       {
-        "baseline": 0.4685,
         "condition": "homogeneous",
-        "delta_baseline": -0.007000000000000006,
-        "delta_random": -0.0655,
-        "learned": 0.4615,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.4589384609939666,
+        "learned_crossing_delta": 0.041061539006033376,
         "learned_f1": null,
-        "random": 0.527
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.3955935136517435,
+        "random_crossing_delta": 0.1044064863482565
       },
       {
-        "baseline": 0.4855,
         "condition": "homogeneous",
-        "delta_baseline": -0.014500000000000013,
-        "delta_random": -0.05800000000000005,
-        "learned": 0.471,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.5666700067875443,
+        "learned_crossing_delta": -0.06667000678754431,
         "learned_f1": null,
-        "random": 0.529
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.642000398721048,
+        "random_crossing_delta": -0.14200039872104797
       },
       {
-        "baseline": 0.4935,
         "condition": "homogeneous",
-        "delta_baseline": -0.02400000000000002,
-        "delta_random": -0.045999999999999985,
-        "learned": 0.4695,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.4792537437232028,
+        "learned_crossing_delta": 0.020746256276797215,
         "learned_f1": null,
-        "random": 0.5155
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.49418978362543875,
+        "random_crossing_delta": 0.00581021637456125
       },
       {
-        "baseline": 0.4615,
         "condition": "homogeneous",
-        "delta_baseline": 0.02999999999999997,
-        "delta_random": -0.020999999999999963,
-        "learned": 0.4915,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.5495814293121225,
+        "learned_crossing_delta": -0.049581429312122505,
         "learned_f1": null,
-        "random": 0.5125
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.5776403942725762,
+        "random_crossing_delta": -0.07764039427257619
       },
       {
-        "baseline": 0.5,
         "condition": "homogeneous",
-        "delta_baseline": -0.017000000000000015,
-        "delta_random": -0.015500000000000014,
-        "learned": 0.483,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.532736872621902,
+        "learned_crossing_delta": -0.03273687262190195,
         "learned_f1": null,
-        "random": 0.4985
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.29394911417067543,
+        "random_crossing_delta": 0.20605088582932457
       },
       {
-        "baseline": 0.508,
         "condition": "homogeneous",
-        "delta_baseline": 0.02400000000000002,
-        "delta_random": 0.02650000000000008,
-        "learned": 0.532,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.27645149365814486,
+        "learned_crossing_delta": 0.22354850634185514,
         "learned_f1": null,
-        "random": 0.5055
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.5395621511379414,
+        "random_crossing_delta": -0.03956215113794137
       },
       {
-        "baseline": 0.484,
         "condition": "homogeneous",
-        "delta_baseline": -0.010000000000000009,
-        "delta_random": -0.03949999999999998,
-        "learned": 0.474,
+        "learned_crossing_after": 0.5,
+        "learned_crossing_baseline": 0.301926216738476,
+        "learned_crossing_delta": 0.19807378326152397,
         "learned_f1": null,
-        "random": 0.5135
+        "random_crossing_after": 0.5,
+        "random_crossing_baseline": 0.30352352530256627,
+        "random_crossing_delta": 0.19647647469743373
       }
     ]
   },
-  "sha256": "4c4f95e668917db00ad6242413094a10794f5405c4d17fc3f31f146a5f6c4e0d",
+  "sha256": "a0dfb2a2dc027f6f27806882004a19412c063d3ec59867422cafaa99315e1286",
   "suite": "Geometry Foundation EXP-001..006 independent full rerun",
   "summary": {
     "EXP-001": {
@@ -2644,62 +2724,72 @@
     },
     "EXP-006": {
       "homogeneous": {
-        "baseline": {
-          "mean": 0.5022625,
+        "learned_crossing_after": {
+          "mean": 0.5,
           "n": 40,
-          "sd": 0.026107270698664264
+          "sd": 0.0
         },
-        "delta_baseline": {
-          "mean": -0.0048000000000000004,
+        "learned_crossing_baseline": {
+          "mean": 0.4445704345164101,
           "n": 40,
-          "sd": 0.022639255673186285
+          "sd": 0.09777638849480556
         },
-        "delta_random": {
-          "mean": 0.0008375000000000035,
+        "learned_crossing_delta": {
+          "mean": 0.055429565483589925,
           "n": 40,
-          "sd": 0.04207797820713348
+          "sd": 0.09777638849480556
         },
-        "learned": {
-          "mean": 0.4974625,
+        "random_crossing_after": {
+          "mean": 0.5,
           "n": 40,
-          "sd": 0.028393387524707322
+          "sd": 0.0
         },
-        "random": {
-          "mean": 0.496625,
+        "random_crossing_baseline": {
+          "mean": 0.5066502297687119,
           "n": 40,
-          "sd": 0.02201594701748991
+          "sd": 0.10628318131911675
+        },
+        "random_crossing_delta": {
+          "mean": -0.006650229768711838,
+          "n": 40,
+          "sd": 0.10628318131911675
         }
       },
       "modular": {
-        "baseline": {
-          "mean": 0.4940999999999999,
+        "learned_crossing_after": {
+          "mean": 0.5,
           "n": 40,
-          "sd": 0.021089917386860838
+          "sd": 0.0
         },
-        "delta_baseline": {
-          "mean": -0.034949999999999995,
+        "learned_crossing_baseline": {
+          "mean": 0.15,
           "n": 40,
-          "sd": 0.03119126274768099
+          "sd": 0.0
         },
-        "delta_random": {
-          "mean": -0.03859999999999999,
+        "learned_crossing_delta": {
+          "mean": 0.35,
           "n": 40,
-          "sd": 0.028387474666632776
-        },
-        "learned": {
-          "mean": 0.45915,
-          "n": 40,
-          "sd": 0.02396477115288724
+          "sd": 0.0
         },
         "learned_f1": {
           "mean": 1.0,
           "n": 40,
           "sd": 0.0
         },
-        "random": {
-          "mean": 0.4977499999999999,
+        "random_crossing_after": {
+          "mean": 0.5,
           "n": 40,
-          "sd": 0.015981960984906597
+          "sd": 0.0
+        },
+        "random_crossing_baseline": {
+          "mean": 0.49854166666666655,
+          "n": 40,
+          "sd": 0.0692575476463244
+        },
+        "random_crossing_delta": {
+          "mean": 0.0014583333333333989,
+          "n": 40,
+          "sd": 0.0692575476463244
         }
       },
       "note": "Exploratory intervention proxy; not causal-boundary certification."

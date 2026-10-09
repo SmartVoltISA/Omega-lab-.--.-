@@ -176,62 +176,72 @@ NumPy: 2.5.3
 
 {
   "homogeneous": {
-    "baseline": {
-      "mean": 0.5022625,
+    "learned_crossing_after": {
+      "mean": 0.5,
       "n": 40,
-      "sd": 0.026107270698664264
+      "sd": 0.0
     },
-    "delta_baseline": {
-      "mean": -0.0048000000000000004,
+    "learned_crossing_baseline": {
+      "mean": 0.4445704345164101,
       "n": 40,
-      "sd": 0.022639255673186285
+      "sd": 0.09777638849480556
     },
-    "delta_random": {
-      "mean": 0.0008375000000000035,
+    "learned_crossing_delta": {
+      "mean": 0.055429565483589925,
       "n": 40,
-      "sd": 0.04207797820713348
+      "sd": 0.09777638849480556
     },
-    "learned": {
-      "mean": 0.4974625,
+    "random_crossing_after": {
+      "mean": 0.5,
       "n": 40,
-      "sd": 0.028393387524707322
+      "sd": 0.0
     },
-    "random": {
-      "mean": 0.496625,
+    "random_crossing_baseline": {
+      "mean": 0.5066502297687119,
       "n": 40,
-      "sd": 0.02201594701748991
+      "sd": 0.10628318131911675
+    },
+    "random_crossing_delta": {
+      "mean": -0.006650229768711838,
+      "n": 40,
+      "sd": 0.10628318131911675
     }
   },
   "modular": {
-    "baseline": {
-      "mean": 0.4940999999999999,
+    "learned_crossing_after": {
+      "mean": 0.5,
       "n": 40,
-      "sd": 0.021089917386860838
+      "sd": 0.0
     },
-    "delta_baseline": {
-      "mean": -0.034949999999999995,
+    "learned_crossing_baseline": {
+      "mean": 0.15,
       "n": 40,
-      "sd": 0.03119126274768099
+      "sd": 0.0
     },
-    "delta_random": {
-      "mean": -0.03859999999999999,
+    "learned_crossing_delta": {
+      "mean": 0.35,
       "n": 40,
-      "sd": 0.028387474666632776
-    },
-    "learned": {
-      "mean": 0.45915,
-      "n": 40,
-      "sd": 0.02396477115288724
+      "sd": 0.0
     },
     "learned_f1": {
       "mean": 1.0,
       "n": 40,
       "sd": 0.0
     },
-    "random": {
-      "mean": 0.4977499999999999,
+    "random_crossing_after": {
+      "mean": 0.5,
       "n": 40,
-      "sd": 0.015981960984906597
+      "sd": 0.0
+    },
+    "random_crossing_baseline": {
+      "mean": 0.49854166666666655,
+      "n": 40,
+      "sd": 0.0692575476463244
+    },
+    "random_crossing_delta": {
+      "mean": 0.0014583333333333989,
+      "n": 40,
+      "sd": 0.0692575476463244
     }
   },
   "note": "Exploratory intervention proxy; not causal-boundary certification."
