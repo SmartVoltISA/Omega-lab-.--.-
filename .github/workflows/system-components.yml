@@ -1,4 +1,4 @@
-name: System Components CI
+name: Ω-Lab Local Components CI
 
 on:
   push:
@@ -6,71 +6,22 @@ on:
   pull_request:
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
-  guardian:
-    name: Guardian Core
+  omega-loop-guard:
+    name: Ω Loop Guard Tests
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
-      - name: Run Guardian tests
-        working-directory: space/security
-        run: python -m unittest test_guardian_core.py -v 2>&1 | tee ../../guardian-core-report.txt
-      - name: Upload Guardian core evidence
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: system-guardian-core-${{ github.run_id }}
-          path: guardian-core-report.txt
-          if-no-files-found: error
-          retention-days: 30
-
-  guardian-change-boundary:
-    name: Guardian Change Boundary
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-      - name: Run bidirectional change gateway tests
-        working-directory: space/security
-        run: python -m unittest test_guarded_change_gateway.py -v 2>&1 | tee ../../change-gateway-report.txt
-      - name: Run ledger tests
-        working-directory: space/security
-        run: python -m unittest test_change_ledger.py -v 2>&1 | tee ../../change-ledger-report.txt
-      - name: Upload change boundary evidence
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: system-change-boundary-${{ github.run_id }}
-          path: |
-            change-gateway-report.txt
-            change-ledger-report.txt
-          if-no-files-found: error
-          retention-days: 30
-
-  space-capabilities:
-    name: Space Capability Registry
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-      - name: Run capability tests
-        working-directory: space/prototype
-        run: python -m unittest test_capability_registry.py -v 2>&1 | tee ../../capability-report.txt
-      - name: Upload capability evidence
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: system-capabilities-${{ github.run_id }}
-          path: capability-report.txt
-          if-no-files-found: error
-          retention-days: 30
+          python-version: "3.12"
+      - name: Install test runner
+        run: python -m pip install pytest
+      - name: Run local Ω loop-guard tests
+        run: python -m pytest -q 00_CORE/test_omega_loop_guard.py
 
   graph-memory:
     name: Graph Memory Inspector
@@ -79,35 +30,19 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
+          python-version: "3.12"
       - name: Run graph inspector tests
         working-directory: tools/graph_memory_inspector
-        run: python -m unittest test_inspector.py -v 2>&1 | tee ../../graph-memory-report.txt
-      - name: Upload graph memory evidence
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: system-graph-memory-${{ github.run_id }}
-          path: graph-memory-report.txt
-          if-no-files-found: error
-          retention-days: 30
+        run: python -m unittest test_inspector.py -v
 
-  all-components:
-    name: All Components Gate
-    needs: [guardian, guardian-change-boundary, space-capabilities, graph-memory]
+  local-components-gate:
+    name: Local Research Tools Gate
+    needs: [omega-loop-guard, graph-memory]
     runs-on: ubuntu-latest
     steps:
-      - name: Components passed
-        run: echo "Guardian + bidirectional change boundary + Space Capability Registry + Graph Memory Inspector passed independently. Integration gate is open."
-      - name: Save integration gate evidence
+      - name: Record scope
         run: |
-          mkdir -p integration-results
-          printf 'commit=%s\nrun=%s\nworkflow=%s\nresult=SUCCESS\n' "$GITHUB_SHA" "$GITHUB_RUN_ID" "$GITHUB_WORKFLOW" > integration-results/all-components-gate.txt
-      - name: Upload integration gate evidence
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: system-components-gate-${{ github.run_id }}
-          path: integration-results/
-          if-no-files-found: error
-          retention-days: 30
+          echo "PASS: Ω-Lab-local loop guard and graph-memory inspector tests passed."
+          echo "SCOPE: this gate covers executable components present in Ω-Lab."
+          echo "SPACE / Guardian tests belong to their canonical repositories."
+          echo "Removed duplicate SPACE implementations are not restored or represented as passing here."
