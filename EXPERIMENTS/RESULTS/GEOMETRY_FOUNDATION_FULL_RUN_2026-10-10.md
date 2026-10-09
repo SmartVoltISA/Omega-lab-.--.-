@@ -1,0 +1,236 @@
+# Geometry Foundation Full Run 2026-10-10
+Status: executed; independent operationalization where source code was absent.
+
+Base seed: 20261010
+Python: 3.12.15
+NumPy: 2.5.3
+
+## EXP-001
+
+{
+  "accuracy": {
+    "boundary": {
+      "mean": 0.21430333333333337,
+      "n": 30,
+      "sd": 0.061949002849303304
+    },
+    "flat": {
+      "mean": 0.14599333333333334,
+      "n": 30,
+      "sd": 0.04159890112385955
+    },
+    "grow": {
+      "mean": 0.21473333333333333,
+      "n": 30,
+      "sd": 0.06154031806162881
+    },
+    "memory": {
+      "mean": 0.21473333333333333,
+      "n": 30,
+      "sd": 0.06154031806162881
+    }
+  },
+  "note": "Independent ledger-scale rerun, not source-identical.",
+  "states": {
+    "mean": 20.7,
+    "n": 30,
+    "sd": 3.8160279041848266
+  }
+}
+
+## EXP-002
+
+{
+  "note": "Toy ring; recurrence is not historical-state return.",
+  "trace_delta": {
+    "mean": 1.125,
+    "n": 30,
+    "sd": 0.0
+  }
+}
+
+## EXP-003
+
+{
+  "conductance": {
+    "mean": 0.080024,
+    "n": 50,
+    "sd": 0.003928262845023464
+  },
+  "f1": {
+    "mean": 1.0,
+    "n": 50,
+    "sd": 0.0
+  },
+  "note": "Hidden modules are present in generator; not spontaneous emergence."
+}
+
+## EXP-004
+
+{
+  "0.1": {
+    "conductance": {
+      "mean": 0.09925824061340999,
+      "n": 30,
+      "sd": 0.003269497741851521
+    },
+    "f1": {
+      "mean": 1.0,
+      "n": 30,
+      "sd": 0.0
+    },
+    "heldout_within": {
+      "mean": 0.9006222222222223,
+      "n": 30,
+      "sd": 0.006080389514981351
+    }
+  },
+  "0.2": {
+    "conductance": {
+      "mean": 0.1999333249989582,
+      "n": 30,
+      "sd": 0.004418498342569421
+    },
+    "f1": {
+      "mean": 1.0,
+      "n": 30,
+      "sd": 0.0
+    },
+    "heldout_within": {
+      "mean": 0.8000333333333334,
+      "n": 30,
+      "sd": 0.008850114184167176
+    }
+  },
+  "0.3": {
+    "conductance": {
+      "mean": 0.3004708921948576,
+      "n": 30,
+      "sd": 0.0050783427222206206
+    },
+    "f1": {
+      "mean": 1.0,
+      "n": 30,
+      "sd": 0.0
+    },
+    "heldout_within": {
+      "mean": 0.7008666666666665,
+      "n": 30,
+      "sd": 0.009190866697506881
+    }
+  },
+  "0.4": {
+    "conductance": {
+      "mean": 0.398441471850648,
+      "n": 30,
+      "sd": 0.005110185843604481
+    },
+    "f1": {
+      "mean": 1.0,
+      "n": 30,
+      "sd": 0.0
+    },
+    "heldout_within": {
+      "mean": 0.5980777777777778,
+      "n": 30,
+      "sd": 0.011724710563733361
+    }
+  },
+  "0.45": {
+    "conductance": {
+      "mean": 0.44973955077718053,
+      "n": 30,
+      "sd": 0.008974485971852178
+    },
+    "f1": {
+      "mean": 0.9944444444444446,
+      "n": 30,
+      "sd": 0.030429030972509218
+    },
+    "heldout_within": {
+      "mean": 0.5498888888888889,
+      "n": 30,
+      "sd": 0.011422345959942203
+    }
+  },
+  "note": "Planted-module positive control."
+}
+
+## EXP-005
+
+{
+  "candidate_cut": {
+    "mean": 0.547622381119056,
+    "n": 30,
+    "sd": 0.010192641062889795
+  },
+  "note": "Fresh homogeneous generator; partition is not automatically meaningful.",
+  "shuffled_cut": {
+    "mean": 0.5210293848025734,
+    "n": 30,
+    "sd": 0.008677056560379353
+  }
+}
+
+## EXP-006
+
+{
+  "homogeneous": {
+    "baseline": {
+      "mean": 0.4984375,
+      "n": 40,
+      "sd": 0.024169059342208164
+    },
+    "delta_baseline": {
+      "mean": 0.0010499999999999856,
+      "n": 40,
+      "sd": 0.02015860190512306
+    },
+    "delta_random": {
+      "mean": 0.0028624999999999888,
+      "n": 40,
+      "sd": 0.028176865283056
+    },
+    "learned": {
+      "mean": 0.49948750000000003,
+      "n": 40,
+      "sd": 0.02111491376570913
+    },
+    "random": {
+      "mean": 0.496625,
+      "n": 40,
+      "sd": 0.02201594701748991
+    }
+  },
+  "modular": {
+    "baseline": {
+      "mean": 0.4940999999999999,
+      "n": 40,
+      "sd": 0.021089917386860838
+    },
+    "delta_baseline": {
+      "mean": -0.034949999999999995,
+      "n": 40,
+      "sd": 0.03119126274768099
+    },
+    "delta_random": {
+      "mean": -0.03859999999999999,
+      "n": 40,
+      "sd": 0.028387474666632776
+    },
+    "learned": {
+      "mean": 0.45915,
+      "n": 40,
+      "sd": 0.02396477115288724
+    },
+    "random": {
+      "mean": 0.4977499999999999,
+      "n": 40,
+      "sd": 0.015981960984906597
+    }
+  },
+  "note": "Exploratory intervention proxy; not causal-boundary certification."
+}
+
+Limits: EXP-003/004 use planted modules; EXP-005 partition is not automatically meaningful; EXP-006 is exploratory; none of these toy tests establishes a universal physical law.
+Raw per-seed results are in GEOMETRY_FOUNDATION_FULL_RUN_2026-10-10.json.

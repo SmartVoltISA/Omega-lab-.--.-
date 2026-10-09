@@ -1,0 +1,2623 @@
+{
+  "base_seed": 20261010,
+  "date": "2026-10-10",
+  "numpy": "2.5.3",
+  "python": "3.12.15",
+  "raw_runs": {
+    "EXP-001": [
+      {
+        "accuracy": {
+          "boundary": 0.21095,
+          "flat": 0.13895,
+          "grow": 0.21095,
+          "memory": 0.21095
+        },
+        "added": 11,
+        "states": 19
+      },
+      {
+        "accuracy": {
+          "boundary": 0.21785,
+          "flat": 0.1534,
+          "grow": 0.21785,
+          "memory": 0.21785
+        },
+        "added": 9,
+        "states": 17
+      },
+      {
+        "accuracy": {
+          "boundary": 0.1768,
+          "flat": 0.12865,
+          "grow": 0.1768,
+          "memory": 0.1768
+        },
+        "added": 14,
+        "states": 22
+      },
+      {
+        "accuracy": {
+          "boundary": 0.1508,
+          "flat": 0.10405,
+          "grow": 0.1518,
+          "memory": 0.1518
+        },
+        "added": 16,
+        "states": 24
+      },
+      {
+        "accuracy": {
+          "boundary": 0.3137,
+          "flat": 0.2211,
+          "grow": 0.3137,
+          "memory": 0.3137
+        },
+        "added": 5,
+        "states": 13
+      },
+      {
+        "accuracy": {
+          "boundary": 0.2374,
+          "flat": 0.1507,
+          "grow": 0.2375,
+          "memory": 0.2375
+        },
+        "added": 16,
+        "states": 24
+      },
+      {
+        "accuracy": {
+          "boundary": 0.24375,
+          "flat": 0.15525,
+          "grow": 0.244,
+          "memory": 0.244
+        },
+        "added": 16,
+        "states": 24
+      },
+      {
+        "accuracy": {
+          "boundary": 0.33155,
+          "flat": 0.2203,
+          "grow": 0.33155,
+          "memory": 0.33155
+        },
+        "added": 8,
+        "states": 16
+      },
+      {
+        "accuracy": {
+          "boundary": 0.3391,
+          "flat": 0.24095,
+          "grow": 0.3391,
+          "memory": 0.3391
+        },
+        "added": 10,
+        "states": 18
+      },
+      {
+        "accuracy": {
+          "boundary": 0.17485,
+          "flat": 0.1196,
+          "grow": 0.1753,
+          "memory": 0.1753
+        },
+        "added": 16,
+        "states": 24
+      },
+      {
+        "accuracy": {
+          "boundary": 0.1543,
+          "flat": 0.1022,
+          "grow": 0.15545,
+          "memory": 0.15545
+        },
+        "added": 16,
+        "states": 24
+      },
+      {
+        "accuracy": {
+          "boundary": 0.2684,
+          "flat": 0.18275,
+          "grow": 0.2684,
+          "memory": 0.2684
+        },
+        "added": 7,
+        "states": 15
+      },
+      {
+        "accuracy": {
+          "boundary": 0.2098,
+          "flat": 0.145,
+          "grow": 0.2104,
+          "memory": 0.2104
+        },
+        "added": 16,
+        "states": 24
+      },
+      {
+        "accuracy": {
+          "boundary": 0.1093,
+          "flat": 0.08015,
+          "grow": 0.1109,
+          "memory": 0.1109
+        },
+        "added": 16,
+        "states": 24
+      },
+      {
+        "accuracy": {
+          "boundary": 0.22985,
+          "flat": 0.1509,
+          "grow": 0.22985,
+          "memory": 0.22985
+        },
+        "added": 6,
+        "states": 14
+      },
+      {
+        "accuracy": {
+          "boundary": 0.21,
+          "flat": 0.13495,
+          "grow": 0.21,
+          "memory": 0.21
+        },
+        "added": 10,
+        "states": 18
+      },
+      {
+        "accuracy": {
+          "boundary": 0.15535,
+          "flat": 0.1001,
+          "grow": 0.15535,
+          "memory": 0.15535
+        },
+        "added": 15,
+        "states": 23
+      },
+      {
+        "accuracy": {
+          "boundary": 0.1767,
+          "flat": 0.12555,
+          "grow": 0.17695,
+          "memory": 0.17695
+        },
+        "added": 16,
+        "states": 24
+      },
+      {
+        "accuracy": {
+          "boundary": 0.16685,
+          "flat": 0.1233,
+          "grow": 0.1672,
+          "memory": 0.1672
+        },
+        "added": 16,
+        "states": 24
+      },
+      {
+        "accuracy": {
+          "boundary": 0.22955,
+          "flat": 0.1551,
+          "grow": 0.2297,
+          "memory": 0.2297
+        },
+        "added": 11,
+        "states": 19
+      },
+      {
+        "accuracy": {
+          "boundary": 0.2061,
+          "flat": 0.14765,
+          "grow": 0.2061,
+          "memory": 0.2061
+        },
+        "added": 12,
+        "states": 20
+      },
+      {
+        "accuracy": {
+          "boundary": 0.26355,
+          "flat": 0.17145,
+          "grow": 0.26355,
+          "memory": 0.26355
+        },
+        "added": 7,
+        "states": 15
+      },
+      {
+        "accuracy": {
+          "boundary": 0.32785,
+          "flat": 0.21685,
+          "grow": 0.32785,
+          "memory": 0.32785
+        },
+        "added": 11,
+        "states": 19
+      },
+      {
+        "accuracy": {
+          "boundary": 0.18365,
+          "flat": 0.13215,
+          "grow": 0.18375,
+          "memory": 0.18375
+        },
+        "added": 16,
+        "states": 24
+      },
+      {
+        "accuracy": {
+          "boundary": 0.1649,
+          "flat": 0.11695,
+          "grow": 0.1659,
+          "memory": 0.1659
+        },
+        "added": 16,
+        "states": 24
+      },
+      {
+        "accuracy": {
+          "boundary": 0.14735,
+          "flat": 0.10405,
+          "grow": 0.1521,
+          "memory": 0.1521
+        },
+        "added": 16,
+        "states": 24
+      },
+      {
+        "accuracy": {
+          "boundary": 0.19995,
+          "flat": 0.124,
+          "grow": 0.20075,
+          "memory": 0.20075
+        },
+        "added": 16,
+        "states": 24
+      },
+      {
+        "accuracy": {
+          "boundary": 0.1492,
+          "flat": 0.10075,
+          "grow": 0.14975,
+          "memory": 0.14975
+        },
+        "added": 16,
+        "states": 24
+      },
+      {
+        "accuracy": {
+          "boundary": 0.17105,
+          "flat": 0.12,
+          "grow": 0.17085,
+          "memory": 0.17085
+        },
+        "added": 14,
+        "states": 22
+      },
+      {
+        "accuracy": {
+          "boundary": 0.30865,
+          "flat": 0.213,
+          "grow": 0.30865,
+          "memory": 0.30865
+        },
+        "added": 7,
+        "states": 15
+      }
+    ],
+    "EXP-002": [
+      {
+        "edges": 12,
+        "max": 1.25,
+        "min": 1.0,
+        "trace_delta": 1.125
+      },
+      {
+        "edges": 12,
+        "max": 1.25,
+        "min": 1.0,
+        "trace_delta": 1.125
+      },
+      {
+        "edges": 12,
+        "max": 1.25,
+        "min": 1.0,
+        "trace_delta": 1.125
+      },
+      {
+        "edges": 12,
+        "max": 1.25,
+        "min": 1.0,
+        "trace_delta": 1.125
+      },
+      {
+        "edges": 12,
+        "max": 1.25,
+        "min": 1.0,
+        "trace_delta": 1.125
+      },
+      {
+        "edges": 12,
+        "max": 1.25,
+        "min": 1.0,
+        "trace_delta": 1.125
+      },
+      {
+        "edges": 12,
+        "max": 1.25,
+        "min": 1.0,
+        "trace_delta": 1.125
+      },
+      {
+        "edges": 12,
+        "max": 1.25,
+        "min": 1.0,
+        "trace_delta": 1.125
+      },
+      {
+        "edges": 12,
+        "max": 1.25,
+        "min": 1.0,
+        "trace_delta": 1.125
+      },
+      {
+        "edges": 12,
+        "max": 1.25,
+        "min": 1.0,
+        "trace_delta": 1.125
+      },
+      {
+        "edges": 12,
+        "max": 1.25,
+        "min": 1.0,
+        "trace_delta": 1.125
+      },
+      {
+        "edges": 12,
+        "max": 1.25,
+        "min": 1.0,
+        "trace_delta": 1.125
+      },
+      {
+        "edges": 12,
+        "max": 1.25,
+        "min": 1.0,
+        "trace_delta": 1.125
+      },
+      {
+        "edges": 12,
+        "max": 1.25,
+        "min": 1.0,
+        "trace_delta": 1.125
+      },
+      {
+        "edges": 12,
+        "max": 1.25,
+        "min": 1.0,
+        "trace_delta": 1.125
+      },
+      {
+        "edges": 12,
+        "max": 1.25,
+        "min": 1.0,
+        "trace_delta": 1.125
+      },
+      {
+        "edges": 12,
+        "max": 1.25,
+        "min": 1.0,
+        "trace_delta": 1.125
+      },
+      {
+        "edges": 12,
+        "max": 1.25,
+        "min": 1.0,
+        "trace_delta": 1.125
+      },
+      {
+        "edges": 12,
+        "max": 1.25,
+        "min": 1.0,
+        "trace_delta": 1.125
+      },
+      {
+        "edges": 12,
+        "max": 1.25,
+        "min": 1.0,
+        "trace_delta": 1.125
+      },
+      {
+        "edges": 12,
+        "max": 1.25,
+        "min": 1.0,
+        "trace_delta": 1.125
+      },
+      {
+        "edges": 12,
+        "max": 1.25,
+        "min": 1.0,
+        "trace_delta": 1.125
+      },
+      {
+        "edges": 12,
+        "max": 1.25,
+        "min": 1.0,
+        "trace_delta": 1.125
+      },
+      {
+        "edges": 12,
+        "max": 1.25,
+        "min": 1.0,
+        "trace_delta": 1.125
+      },
+      {
+        "edges": 12,
+        "max": 1.25,
+        "min": 1.0,
+        "trace_delta": 1.125
+      },
+      {
+        "edges": 12,
+        "max": 1.25,
+        "min": 1.0,
+        "trace_delta": 1.125
+      },
+      {
+        "edges": 12,
+        "max": 1.25,
+        "min": 1.0,
+        "trace_delta": 1.125
+      },
+      {
+        "edges": 12,
+        "max": 1.25,
+        "min": 1.0,
+        "trace_delta": 1.125
+      },
+      {
+        "edges": 12,
+        "max": 1.25,
+        "min": 1.0,
+        "trace_delta": 1.125
+      },
+      {
+        "edges": 12,
+        "max": 1.25,
+        "min": 1.0,
+        "trace_delta": 1.125
+      }
+    ],
+    "EXP-003": [
+      {
+        "conductance": 0.0804,
+        "f1": 1.0,
+        "seed": 20261110
+      },
+      {
+        "conductance": 0.0828,
+        "f1": 1.0,
+        "seed": 20261111
+      },
+      {
+        "conductance": 0.0772,
+        "f1": 1.0,
+        "seed": 20261112
+      },
+      {
+        "conductance": 0.084,
+        "f1": 1.0,
+        "seed": 20261113
+      },
+      {
+        "conductance": 0.0756,
+        "f1": 1.0,
+        "seed": 20261114
+      },
+      {
+        "conductance": 0.0758,
+        "f1": 1.0,
+        "seed": 20261115
+      },
+      {
+        "conductance": 0.081,
+        "f1": 1.0,
+        "seed": 20261116
+      },
+      {
+        "conductance": 0.0766,
+        "f1": 1.0,
+        "seed": 20261117
+      },
+      {
+        "conductance": 0.0732,
+        "f1": 1.0,
+        "seed": 20261118
+      },
+      {
+        "conductance": 0.0764,
+        "f1": 1.0,
+        "seed": 20261119
+      },
+      {
+        "conductance": 0.0786,
+        "f1": 1.0,
+        "seed": 20261120
+      },
+      {
+        "conductance": 0.0834,
+        "f1": 1.0,
+        "seed": 20261121
+      },
+      {
+        "conductance": 0.0834,
+        "f1": 1.0,
+        "seed": 20261122
+      },
+      {
+        "conductance": 0.0794,
+        "f1": 1.0,
+        "seed": 20261123
+      },
+      {
+        "conductance": 0.084,
+        "f1": 1.0,
+        "seed": 20261124
+      },
+      {
+        "conductance": 0.076,
+        "f1": 1.0,
+        "seed": 20261125
+      },
+      {
+        "conductance": 0.0784,
+        "f1": 1.0,
+        "seed": 20261126
+      },
+      {
+        "conductance": 0.0798,
+        "f1": 1.0,
+        "seed": 20261127
+      },
+      {
+        "conductance": 0.082,
+        "f1": 1.0,
+        "seed": 20261128
+      },
+      {
+        "conductance": 0.0764,
+        "f1": 1.0,
+        "seed": 20261129
+      },
+      {
+        "conductance": 0.0792,
+        "f1": 1.0,
+        "seed": 20261130
+      },
+      {
+        "conductance": 0.0796,
+        "f1": 1.0,
+        "seed": 20261131
+      },
+      {
+        "conductance": 0.0858,
+        "f1": 1.0,
+        "seed": 20261132
+      },
+      {
+        "conductance": 0.0786,
+        "f1": 1.0,
+        "seed": 20261133
+      },
+      {
+        "conductance": 0.0748,
+        "f1": 1.0,
+        "seed": 20261134
+      },
+      {
+        "conductance": 0.0818,
+        "f1": 1.0,
+        "seed": 20261135
+      },
+      {
+        "conductance": 0.0734,
+        "f1": 1.0,
+        "seed": 20261136
+      },
+      {
+        "conductance": 0.0762,
+        "f1": 1.0,
+        "seed": 20261137
+      },
+      {
+        "conductance": 0.0838,
+        "f1": 1.0,
+        "seed": 20261138
+      },
+      {
+        "conductance": 0.0826,
+        "f1": 1.0,
+        "seed": 20261139
+      },
+      {
+        "conductance": 0.073,
+        "f1": 1.0,
+        "seed": 20261140
+      },
+      {
+        "conductance": 0.0868,
+        "f1": 1.0,
+        "seed": 20261141
+      },
+      {
+        "conductance": 0.0822,
+        "f1": 1.0,
+        "seed": 20261142
+      },
+      {
+        "conductance": 0.0868,
+        "f1": 1.0,
+        "seed": 20261143
+      },
+      {
+        "conductance": 0.0792,
+        "f1": 1.0,
+        "seed": 20261144
+      },
+      {
+        "conductance": 0.0754,
+        "f1": 1.0,
+        "seed": 20261145
+      },
+      {
+        "conductance": 0.0814,
+        "f1": 1.0,
+        "seed": 20261146
+      },
+      {
+        "conductance": 0.0854,
+        "f1": 1.0,
+        "seed": 20261147
+      },
+      {
+        "conductance": 0.081,
+        "f1": 1.0,
+        "seed": 20261148
+      },
+      {
+        "conductance": 0.0782,
+        "f1": 1.0,
+        "seed": 20261149
+      },
+      {
+        "conductance": 0.0754,
+        "f1": 1.0,
+        "seed": 20261150
+      },
+      {
+        "conductance": 0.0808,
+        "f1": 1.0,
+        "seed": 20261151
+      },
+      {
+        "conductance": 0.0886,
+        "f1": 1.0,
+        "seed": 20261152
+      },
+      {
+        "conductance": 0.0818,
+        "f1": 1.0,
+        "seed": 20261153
+      },
+      {
+        "conductance": 0.0766,
+        "f1": 1.0,
+        "seed": 20261154
+      },
+      {
+        "conductance": 0.0846,
+        "f1": 1.0,
+        "seed": 20261155
+      },
+      {
+        "conductance": 0.0808,
+        "f1": 1.0,
+        "seed": 20261156
+      },
+      {
+        "conductance": 0.0852,
+        "f1": 1.0,
+        "seed": 20261157
+      },
+      {
+        "conductance": 0.0752,
+        "f1": 1.0,
+        "seed": 20261158
+      },
+      {
+        "conductance": 0.0826,
+        "f1": 1.0,
+        "seed": 20261159
+      }
+    ],
+    "EXP-004": [
+      {
+        "conductance": 0.10551318914864358,
+        "cross": 0.1,
+        "f1": 1.0,
+        "heldout_within": 0.8983333333333333
+      },
+      {
+        "conductance": 0.09788723590448806,
+        "cross": 0.1,
+        "f1": 1.0,
+        "heldout_within": 0.9103333333333333
+      },
+      {
+        "conductance": 0.1021377672209026,
+        "cross": 0.1,
+        "f1": 1.0,
+        "heldout_within": 0.897
+      },
+      {
+        "conductance": 0.09838729841230154,
+        "cross": 0.1,
+        "f1": 1.0,
+        "heldout_within": 0.9066666666666666
+      },
+      {
+        "conductance": 0.10051256407050882,
+        "cross": 0.1,
+        "f1": 1.0,
+        "heldout_within": 0.897
+      },
+      {
+        "conductance": 0.09913739217402175,
+        "cross": 0.1,
+        "f1": 1.0,
+        "heldout_within": 0.9036666666666666
+      },
+      {
+        "conductance": 0.0932616577072134,
+        "cross": 0.1,
+        "f1": 1.0,
+        "heldout_within": 0.9
+      },
+      {
+        "conductance": 0.09763720465058132,
+        "cross": 0.1,
+        "f1": 1.0,
+        "heldout_within": 0.8966666666666666
+      },
+      {
+        "conductance": 0.09763720465058132,
+        "cross": 0.1,
+        "f1": 1.0,
+        "heldout_within": 0.903
+      },
+      {
+        "conductance": 0.0997624703087886,
+        "cross": 0.1,
+        "f1": 1.0,
+        "heldout_within": 0.9096666666666666
+      },
+      {
+        "conductance": 0.10426303287910989,
+        "cross": 0.1,
+        "f1": 1.0,
+        "heldout_within": 0.9
+      },
+      {
+        "conductance": 0.10276284535566946,
+        "cross": 0.1,
+        "f1": 1.0,
+        "heldout_within": 0.896
+      },
+      {
+        "conductance": 0.09826228278534817,
+        "cross": 0.1,
+        "f1": 1.0,
+        "heldout_within": 0.896
+      },
+      {
+        "conductance": 0.10338792349043631,
+        "cross": 0.1,
+        "f1": 1.0,
+        "heldout_within": 0.8913333333333333
+      },
+      {
+        "conductance": 0.09601200150018753,
+        "cross": 0.1,
+        "f1": 1.0,
+        "heldout_within": 0.904
+      },
+      {
+        "conductance": 0.10501312664083011,
+        "cross": 0.1,
+        "f1": 1.0,
+        "heldout_within": 0.9136666666666666
+      },
+      {
+        "conductance": 0.09513689211151394,
+        "cross": 0.1,
+        "f1": 1.0,
+        "heldout_within": 0.8896666666666667
+      },
+      {
+        "conductance": 0.10263782972871609,
+        "cross": 0.1,
+        "f1": 1.0,
+        "heldout_within": 0.8996666666666666
+      },
+      {
+        "conductance": 0.09926240780097512,
+        "cross": 0.1,
+        "f1": 1.0,
+        "heldout_within": 0.8996666666666666
+      },
+      {
+        "conductance": 0.10176272034004251,
+        "cross": 0.1,
+        "f1": 1.0,
+        "heldout_within": 0.9043333333333333
+      },
+      {
+        "conductance": 0.09776222027753469,
+        "cross": 0.1,
+        "f1": 1.0,
+        "heldout_within": 0.891
+      },
+      {
+        "conductance": 0.09501187648456057,
+        "cross": 0.1,
+        "f1": 1.0,
+        "heldout_within": 0.9086666666666666
+      },
+      {
+        "conductance": 0.09763720465058132,
+        "cross": 0.1,
+        "f1": 1.0,
+        "heldout_within": 0.897
+      },
+      {
+        "conductance": 0.09663707963495437,
+        "cross": 0.1,
+        "f1": 1.0,
+        "heldout_within": 0.904
+      },
+      {
+        "conductance": 0.0928866108263533,
+        "cross": 0.1,
+        "f1": 1.0,
+        "heldout_within": 0.9
+      },
+      {
+        "conductance": 0.09788723590448806,
+        "cross": 0.1,
+        "f1": 1.0,
+        "heldout_within": 0.907
+      },
+      {
+        "conductance": 0.09826228278534817,
+        "cross": 0.1,
+        "f1": 1.0,
+        "heldout_within": 0.9016666666666666
+      },
+      {
+        "conductance": 0.10013751718964871,
+        "cross": 0.1,
+        "f1": 1.0,
+        "heldout_within": 0.8903333333333333
+      },
+      {
+        "conductance": 0.09888736092011502,
+        "cross": 0.1,
+        "f1": 1.0,
+        "heldout_within": 0.898
+      },
+      {
+        "conductance": 0.10226278284785598,
+        "cross": 0.1,
+        "f1": 1.0,
+        "heldout_within": 0.9043333333333333
+      },
+      {
+        "conductance": 0.19939992499062384,
+        "cross": 0.2,
+        "f1": 1.0,
+        "heldout_within": 0.7853333333333333
+      },
+      {
+        "conductance": 0.20002500312539068,
+        "cross": 0.2,
+        "f1": 1.0,
+        "heldout_within": 0.8
+      },
+      {
+        "conductance": 0.20740092511563946,
+        "cross": 0.2,
+        "f1": 1.0,
+        "heldout_within": 0.7966666666666666
+      },
+      {
+        "conductance": 0.19177397174646832,
+        "cross": 0.2,
+        "f1": 1.0,
+        "heldout_within": 0.795
+      },
+      {
+        "conductance": 0.19702462807850982,
+        "cross": 0.2,
+        "f1": 1.0,
+        "heldout_within": 0.7966666666666666
+      },
+      {
+        "conductance": 0.20090011251406426,
+        "cross": 0.2,
+        "f1": 1.0,
+        "heldout_within": 0.8043333333333333
+      },
+      {
+        "conductance": 0.19802475309413678,
+        "cross": 0.2,
+        "f1": 1.0,
+        "heldout_within": 0.7856666666666666
+      },
+      {
+        "conductance": 0.20340042505313163,
+        "cross": 0.2,
+        "f1": 1.0,
+        "heldout_within": 0.8006666666666666
+      },
+      {
+        "conductance": 0.19039879984998126,
+        "cross": 0.2,
+        "f1": 1.0,
+        "heldout_within": 0.7863333333333333
+      },
+      {
+        "conductance": 0.20215026878359796,
+        "cross": 0.2,
+        "f1": 1.0,
+        "heldout_within": 0.7956666666666666
+      },
+      {
+        "conductance": 0.19802475309413678,
+        "cross": 0.2,
+        "f1": 1.0,
+        "heldout_within": 0.8123333333333334
+      },
+      {
+        "conductance": 0.20065008126015751,
+        "cross": 0.2,
+        "f1": 1.0,
+        "heldout_within": 0.7983333333333333
+      },
+      {
+        "conductance": 0.2080260032504063,
+        "cross": 0.2,
+        "f1": 1.0,
+        "heldout_within": 0.7946666666666666
+      },
+      {
+        "conductance": 0.19289911238904864,
+        "cross": 0.2,
+        "f1": 1.0,
+        "heldout_within": 0.8003333333333333
+      },
+      {
+        "conductance": 0.19877484685585697,
+        "cross": 0.2,
+        "f1": 1.0,
+        "heldout_within": 0.8023333333333333
+      },
+      {
+        "conductance": 0.20102512814101764,
+        "cross": 0.2,
+        "f1": 1.0,
+        "heldout_within": 0.8003333333333333
+      },
+      {
+        "conductance": 0.19902487810976371,
+        "cross": 0.2,
+        "f1": 1.0,
+        "heldout_within": 0.7916666666666666
+      },
+      {
+        "conductance": 0.20577572196524566,
+        "cross": 0.2,
+        "f1": 1.0,
+        "heldout_within": 0.802
+      },
+      {
+        "conductance": 0.1957744718089761,
+        "cross": 0.2,
+        "f1": 1.0,
+        "heldout_within": 0.7883333333333333
+      },
+      {
+        "conductance": 0.19702462807850982,
+        "cross": 0.2,
+        "f1": 1.0,
+        "heldout_within": 0.8023333333333333
+      },
+      {
+        "conductance": 0.19314914364295538,
+        "cross": 0.2,
+        "f1": 1.0,
+        "heldout_within": 0.7993333333333333
+      },
+      {
+        "conductance": 0.20065008126015751,
+        "cross": 0.2,
+        "f1": 1.0,
+        "heldout_within": 0.8233333333333334
+      },
+      {
+        "conductance": 0.20302537817227154,
+        "cross": 0.2,
+        "f1": 1.0,
+        "heldout_within": 0.8103333333333333
+      },
+      {
+        "conductance": 0.20040005000625077,
+        "cross": 0.2,
+        "f1": 1.0,
+        "heldout_within": 0.8176666666666667
+      },
+      {
+        "conductance": 0.19977497187148394,
+        "cross": 0.2,
+        "f1": 1.0,
+        "heldout_within": 0.8076666666666666
+      },
+      {
+        "conductance": 0.2056507063382923,
+        "cross": 0.2,
+        "f1": 1.0,
+        "heldout_within": 0.8106666666666666
+      },
+      {
+        "conductance": 0.1978997374671834,
+        "cross": 0.2,
+        "f1": 1.0,
+        "heldout_within": 0.797
+      },
+      {
+        "conductance": 0.20102512814101764,
+        "cross": 0.2,
+        "f1": 1.0,
+        "heldout_within": 0.797
+      },
+      {
+        "conductance": 0.20290036254531815,
+        "cross": 0.2,
+        "f1": 1.0,
+        "heldout_within": 0.8026666666666666
+      },
+      {
+        "conductance": 0.2060257532191524,
+        "cross": 0.2,
+        "f1": 1.0,
+        "heldout_within": 0.7963333333333333
+      },
+      {
+        "conductance": 0.2997874734341793,
+        "cross": 0.3,
+        "f1": 1.0,
+        "heldout_within": 0.6976666666666667
+      },
+      {
+        "conductance": 0.2866608326040755,
+        "cross": 0.3,
+        "f1": 1.0,
+        "heldout_within": 0.6953333333333334
+      },
+      {
+        "conductance": 0.31003875484435556,
+        "cross": 0.3,
+        "f1": 1.0,
+        "heldout_within": 0.7056666666666667
+      },
+      {
+        "conductance": 0.29953744218027256,
+        "cross": 0.3,
+        "f1": 1.0,
+        "heldout_within": 0.681
+      },
+      {
+        "conductance": 0.3055381922740343,
+        "cross": 0.3,
+        "f1": 1.0,
+        "heldout_within": 0.6973333333333334
+      },
+      {
+        "conductance": 0.2965370671333917,
+        "cross": 0.3,
+        "f1": 1.0,
+        "heldout_within": 0.6953333333333334
+      },
+      {
+        "conductance": 0.3025378172271534,
+        "cross": 0.3,
+        "f1": 1.0,
+        "heldout_within": 0.699
+      },
+      {
+        "conductance": 0.29416177022127765,
+        "cross": 0.3,
+        "f1": 1.0,
+        "heldout_within": 0.703
+      },
+      {
+        "conductance": 0.30466308288536065,
+        "cross": 0.3,
+        "f1": 1.0,
+        "heldout_within": 0.688
+      },
+      {
+        "conductance": 0.29428678584823104,
+        "cross": 0.3,
+        "f1": 1.0,
+        "heldout_within": 0.7066666666666667
+      },
+      {
+        "conductance": 0.3077884735591949,
+        "cross": 0.3,
+        "f1": 1.0,
+        "heldout_within": 0.6896666666666667
+      },
+      {
+        "conductance": 0.30191273909238653,
+        "cross": 0.3,
+        "f1": 1.0,
+        "heldout_within": 0.71
+      },
+      {
+        "conductance": 0.2922865358169771,
+        "cross": 0.3,
+        "f1": 1.0,
+        "heldout_within": 0.6873333333333334
+      },
+      {
+        "conductance": 0.2955369421177647,
+        "cross": 0.3,
+        "f1": 1.0,
+        "heldout_within": 0.7003333333333334
+      },
+      {
+        "conductance": 0.30366295786973374,
+        "cross": 0.3,
+        "f1": 1.0,
+        "heldout_within": 0.7113333333333334
+      },
+      {
+        "conductance": 0.29828728591073883,
+        "cross": 0.3,
+        "f1": 1.0,
+        "heldout_within": 0.6943333333333334
+      },
+      {
+        "conductance": 0.3027878484810601,
+        "cross": 0.3,
+        "f1": 1.0,
+        "heldout_within": 0.694
+      },
+      {
+        "conductance": 0.3062882860357545,
+        "cross": 0.3,
+        "f1": 1.0,
+        "heldout_within": 0.706
+      },
+      {
+        "conductance": 0.29866233279159893,
+        "cross": 0.3,
+        "f1": 1.0,
+        "heldout_within": 0.7036666666666667
+      },
+      {
+        "conductance": 0.30078759844980624,
+        "cross": 0.3,
+        "f1": 1.0,
+        "heldout_within": 0.6973333333333334
+      },
+      {
+        "conductance": 0.3027878484810601,
+        "cross": 0.3,
+        "f1": 1.0,
+        "heldout_within": 0.707
+      },
+      {
+        "conductance": 0.30078759844980624,
+        "cross": 0.3,
+        "f1": 1.0,
+        "heldout_within": 0.7203333333333334
+      },
+      {
+        "conductance": 0.30703837979747467,
+        "cross": 0.3,
+        "f1": 1.0,
+        "heldout_within": 0.7123333333333334
+      },
+      {
+        "conductance": 0.30366295786973374,
+        "cross": 0.3,
+        "f1": 1.0,
+        "heldout_within": 0.6956666666666667
+      },
+      {
+        "conductance": 0.29503687960995123,
+        "cross": 0.3,
+        "f1": 1.0,
+        "heldout_within": 0.697
+      },
+      {
+        "conductance": 0.30316289536192026,
+        "cross": 0.3,
+        "f1": 1.0,
+        "heldout_within": 0.701
+      },
+      {
+        "conductance": 0.3030378797349669,
+        "cross": 0.3,
+        "f1": 1.0,
+        "heldout_within": 0.6936666666666667
+      },
+      {
+        "conductance": 0.30141267658457305,
+        "cross": 0.3,
+        "f1": 1.0,
+        "heldout_within": 0.7136666666666667
+      },
+      {
+        "conductance": 0.29716214526815854,
+        "cross": 0.3,
+        "f1": 1.0,
+        "heldout_within": 0.7176666666666667
+      },
+      {
+        "conductance": 0.29828728591073883,
+        "cross": 0.3,
+        "f1": 1.0,
+        "heldout_within": 0.7046666666666667
+      },
+      {
+        "conductance": 0.404675584448056,
+        "cross": 0.4,
+        "f1": 1.0,
+        "heldout_within": 0.6076666666666667
+      },
+      {
+        "conductance": 0.40455056882110263,
+        "cross": 0.4,
+        "f1": 1.0,
+        "heldout_within": 0.5916666666666667
+      },
+      {
+        "conductance": 0.3915489436179522,
+        "cross": 0.4,
+        "f1": 1.0,
+        "heldout_within": 0.5943333333333334
+      },
+      {
+        "conductance": 0.39429928741092635,
+        "cross": 0.4,
+        "f1": 1.0,
+        "heldout_within": 0.5973333333333334
+      },
+      {
+        "conductance": 0.4019252406550819,
+        "cross": 0.4,
+        "f1": 1.0,
+        "heldout_within": 0.5926666666666667
+      },
+      {
+        "conductance": 0.40042505313164145,
+        "cross": 0.4,
+        "f1": 1.0,
+        "heldout_within": 0.6103333333333333
+      },
+      {
+        "conductance": 0.40080010001250155,
+        "cross": 0.4,
+        "f1": 1.0,
+        "heldout_within": 0.5946666666666667
+      },
+      {
+        "conductance": 0.40455056882110263,
+        "cross": 0.4,
+        "f1": 1.0,
+        "heldout_within": 0.591
+      },
+      {
+        "conductance": 0.3922990373796725,
+        "cross": 0.4,
+        "f1": 1.0,
+        "heldout_within": 0.5963333333333334
+      },
+      {
+        "conductance": 0.40080010001250155,
+        "cross": 0.4,
+        "f1": 1.0,
+        "heldout_within": 0.6176666666666667
+      },
+      {
+        "conductance": 0.39604950618827356,
+        "cross": 0.4,
+        "f1": 1.0,
+        "heldout_within": 0.621
+      },
+      {
+        "conductance": 0.3950493811726466,
+        "cross": 0.4,
+        "f1": 1.0,
+        "heldout_within": 0.607
+      },
+      {
+        "conductance": 0.3957994749343668,
+        "cross": 0.4,
+        "f1": 1.0,
+        "heldout_within": 0.5956666666666667
+      },
+      {
+        "conductance": 0.39754969371171395,
+        "cross": 0.4,
+        "f1": 1.0,
+        "heldout_within": 0.598
+      },
+      {
+        "conductance": 0.39642455306913366,
+        "cross": 0.4,
+        "f1": 1.0,
+        "heldout_within": 0.6213333333333333
+      },
+      {
+        "conductance": 0.40117514689336164,
+        "cross": 0.4,
+        "f1": 1.0,
+        "heldout_within": 0.605
+      },
+      {
+        "conductance": 0.3982997874734342,
+        "cross": 0.4,
+        "f1": 1.0,
+        "heldout_within": 0.5993333333333334
+      },
+      {
+        "conductance": 0.3984248031003875,
+        "cross": 0.4,
+        "f1": 1.0,
+        "heldout_within": 0.5776666666666667
+      },
+      {
+        "conductance": 0.4024253031628954,
+        "cross": 0.4,
+        "f1": 1.0,
+        "heldout_within": 0.597
+      },
+      {
+        "conductance": 0.40080010001250155,
+        "cross": 0.4,
+        "f1": 1.0,
+        "heldout_within": 0.597
+      },
+      {
+        "conductance": 0.3956744593074134,
+        "cross": 0.4,
+        "f1": 1.0,
+        "heldout_within": 0.593
+      },
+      {
+        "conductance": 0.39054881860232527,
+        "cross": 0.4,
+        "f1": 1.0,
+        "heldout_within": 0.578
+      },
+      {
+        "conductance": 0.404675584448056,
+        "cross": 0.4,
+        "f1": 1.0,
+        "heldout_within": 0.6146666666666667
+      },
+      {
+        "conductance": 0.39029878734841855,
+        "cross": 0.4,
+        "f1": 1.0,
+        "heldout_within": 0.574
+      },
+      {
+        "conductance": 0.39967495936992126,
+        "cross": 0.4,
+        "f1": 1.0,
+        "heldout_within": 0.588
+      },
+      {
+        "conductance": 0.404675584448056,
+        "cross": 0.4,
+        "f1": 1.0,
+        "heldout_within": 0.601
+      },
+      {
+        "conductance": 0.39304913114139267,
+        "cross": 0.4,
+        "f1": 1.0,
+        "heldout_within": 0.6
+      },
+      {
+        "conductance": 0.41067633454181773,
+        "cross": 0.4,
+        "f1": 1.0,
+        "heldout_within": 0.5926666666666667
+      },
+      {
+        "conductance": 0.3916739592449056,
+        "cross": 0.4,
+        "f1": 1.0,
+        "heldout_within": 0.6023333333333334
+      },
+      {
+        "conductance": 0.39442430303787973,
+        "cross": 0.4,
+        "f1": 1.0,
+        "heldout_within": 0.586
+      },
+      {
+        "conductance": 0.45343167895986997,
+        "cross": 0.45,
+        "f1": 1.0,
+        "heldout_within": 0.5543333333333333
+      },
+      {
+        "conductance": 0.4838104763095387,
+        "cross": 0.45,
+        "f1": 0.8333333333333334,
+        "heldout_within": 0.513
+      },
+      {
+        "conductance": 0.4444305538192274,
+        "cross": 0.45,
+        "f1": 1.0,
+        "heldout_within": 0.545
+      },
+      {
+        "conductance": 0.44055506938367295,
+        "cross": 0.45,
+        "f1": 1.0,
+        "heldout_within": 0.5586666666666666
+      },
+      {
+        "conductance": 0.4489311163895487,
+        "cross": 0.45,
+        "f1": 1.0,
+        "heldout_within": 0.5526666666666666
+      },
+      {
+        "conductance": 0.44755594449306163,
+        "cross": 0.45,
+        "f1": 1.0,
+        "heldout_within": 0.5536666666666666
+      },
+      {
+        "conductance": 0.44305538192274035,
+        "cross": 0.45,
+        "f1": 1.0,
+        "heldout_within": 0.55
+      },
+      {
+        "conductance": 0.45755719464933114,
+        "cross": 0.45,
+        "f1": 1.0,
+        "heldout_within": 0.5333333333333333
+      },
+      {
+        "conductance": 0.45343167895986997,
+        "cross": 0.45,
+        "f1": 1.0,
+        "heldout_within": 0.559
+      },
+      {
+        "conductance": 0.4418052256532066,
+        "cross": 0.45,
+        "f1": 1.0,
+        "heldout_within": 0.5433333333333333
+      },
+      {
+        "conductance": 0.4488061007625953,
+        "cross": 0.45,
+        "f1": 1.0,
+        "heldout_within": 0.5603333333333333
+      },
+      {
+        "conductance": 0.4556819602450306,
+        "cross": 0.45,
+        "f1": 1.0,
+        "heldout_within": 0.5446666666666666
+      },
+      {
+        "conductance": 0.45305663207900987,
+        "cross": 0.45,
+        "f1": 1.0,
+        "heldout_within": 0.5466666666666666
+      },
+      {
+        "conductance": 0.43742967870983873,
+        "cross": 0.45,
+        "f1": 1.0,
+        "heldout_within": 0.5543333333333333
+      },
+      {
+        "conductance": 0.44918114764345546,
+        "cross": 0.45,
+        "f1": 1.0,
+        "heldout_within": 0.5623333333333334
+      },
+      {
+        "conductance": 0.4424303037879735,
+        "cross": 0.45,
+        "f1": 1.0,
+        "heldout_within": 0.5383333333333333
+      },
+      {
+        "conductance": 0.44718089761220153,
+        "cross": 0.45,
+        "f1": 1.0,
+        "heldout_within": 0.5366666666666666
+      },
+      {
+        "conductance": 0.45068133516689585,
+        "cross": 0.45,
+        "f1": 1.0,
+        "heldout_within": 0.548
+      },
+      {
+        "conductance": 0.45280660082510316,
+        "cross": 0.45,
+        "f1": 1.0,
+        "heldout_within": 0.5476666666666666
+      },
+      {
+        "conductance": 0.4514314289286161,
+        "cross": 0.45,
+        "f1": 1.0,
+        "heldout_within": 0.5443333333333333
+      },
+      {
+        "conductance": 0.46030753844230526,
+        "cross": 0.45,
+        "f1": 1.0,
+        "heldout_within": 0.557
+      },
+      {
+        "conductance": 0.4423052881610201,
+        "cross": 0.45,
+        "f1": 1.0,
+        "heldout_within": 0.566
+      },
+      {
+        "conductance": 0.4349293661707713,
+        "cross": 0.45,
+        "f1": 1.0,
+        "heldout_within": 0.5493333333333333
+      },
+      {
+        "conductance": 0.44068008501062633,
+        "cross": 0.45,
+        "f1": 1.0,
+        "heldout_within": 0.5623333333333334
+      },
+      {
+        "conductance": 0.4493061632704088,
+        "cross": 0.45,
+        "f1": 1.0,
+        "heldout_within": 0.5606666666666666
+      },
+      {
+        "conductance": 0.45705713214151766,
+        "cross": 0.45,
+        "f1": 1.0,
+        "heldout_within": 0.534
+      },
+      {
+        "conductance": 0.45368171021377673,
+        "cross": 0.45,
+        "f1": 1.0,
+        "heldout_within": 0.5603333333333333
+      },
+      {
+        "conductance": 0.4529316164520565,
+        "cross": 0.45,
+        "f1": 1.0,
+        "heldout_within": 0.5583333333333333
+      },
+      {
+        "conductance": 0.4444305538192274,
+        "cross": 0.45,
+        "f1": 1.0,
+        "heldout_within": 0.561
+      },
+      {
+        "conductance": 0.45330666333291664,
+        "cross": 0.45,
+        "f1": 1.0,
+        "heldout_within": 0.5413333333333333
+      }
+    ],
+    "EXP-005": [
+      {
+        "cut": 0.5447772388619431,
+        "shuffled_cut": 0.5238261913095654
+      },
+      {
+        "cut": 0.5460773038651933,
+        "shuffled_cut": 0.5083754187709385
+      },
+      {
+        "cut": 0.5287764388219411,
+        "shuffled_cut": 0.5231261563078153
+      },
+      {
+        "cut": 0.5505275263763189,
+        "shuffled_cut": 0.5153257662883144
+      },
+      {
+        "cut": 0.552427621381069,
+        "shuffled_cut": 0.5184759237961898
+      },
+      {
+        "cut": 0.5479273963698185,
+        "shuffled_cut": 0.5226261313065653
+      },
+      {
+        "cut": 0.5533276663833192,
+        "shuffled_cut": 0.5267763388169409
+      },
+      {
+        "cut": 0.5507275363768188,
+        "shuffled_cut": 0.5137256862843143
+      },
+      {
+        "cut": 0.552527626381319,
+        "shuffled_cut": 0.5296264813240662
+      },
+      {
+        "cut": 0.5510275513775689,
+        "shuffled_cut": 0.5064253212660633
+      },
+      {
+        "cut": 0.552527626381319,
+        "shuffled_cut": 0.5133256662833142
+      },
+      {
+        "cut": 0.5466773338666934,
+        "shuffled_cut": 0.52017600880044
+      },
+      {
+        "cut": 0.5576278813940697,
+        "shuffled_cut": 0.5136256812840642
+      },
+      {
+        "cut": 0.5559777988899445,
+        "shuffled_cut": 0.5088254412720636
+      },
+      {
+        "cut": 0.5458772938646932,
+        "shuffled_cut": 0.5226261313065653
+      },
+      {
+        "cut": 0.5476273813690684,
+        "shuffled_cut": 0.5292264613230662
+      },
+      {
+        "cut": 0.528326416320816,
+        "shuffled_cut": 0.5353267663383169
+      },
+      {
+        "cut": 0.5527276363818191,
+        "shuffled_cut": 0.5109755487774389
+      },
+      {
+        "cut": 0.535576778838942,
+        "shuffled_cut": 0.5291264563228162
+      },
+      {
+        "cut": 0.5271763588179409,
+        "shuffled_cut": 0.5224261213060652
+      },
+      {
+        "cut": 0.5579778988949448,
+        "shuffled_cut": 0.5340267013350668
+      },
+      {
+        "cut": 0.5432271613580679,
+        "shuffled_cut": 0.5225261263063153
+      },
+      {
+        "cut": 0.5472773638681934,
+        "shuffled_cut": 0.512525626281314
+      },
+      {
+        "cut": 0.5541277063853193,
+        "shuffled_cut": 0.5222261113055653
+      },
+      {
+        "cut": 0.5644282214110705,
+        "shuffled_cut": 0.5453272663633182
+      },
+      {
+        "cut": 0.5266263313165658,
+        "shuffled_cut": 0.5240762038101905
+      },
+      {
+        "cut": 0.5550277513875693,
+        "shuffled_cut": 0.5194259712985649
+      },
+      {
+        "cut": 0.5432271613580679,
+        "shuffled_cut": 0.5172758637931897
+      },
+      {
+        "cut": 0.5415270763538177,
+        "shuffled_cut": 0.5162258112905646
+      },
+      {
+        "cut": 0.5669783489174459,
+        "shuffled_cut": 0.5232761638081904
+      }
+    ],
+    "EXP-006": [
+      {
+        "baseline": 0.517,
+        "condition": "modular",
+        "delta_baseline": -0.07700000000000001,
+        "delta_random": -0.06849999999999995,
+        "learned": 0.44,
+        "random": 0.5085
+      },
+      {
+        "baseline": 0.4895,
+        "condition": "modular",
+        "delta_baseline": -0.04299999999999998,
+        "delta_random": -0.06399999999999995,
+        "learned": 0.4465,
+        "random": 0.5105
+      },
+      {
+        "baseline": 0.517,
+        "condition": "modular",
+        "delta_baseline": -0.08950000000000002,
+        "delta_random": -0.059,
+        "learned": 0.4275,
+        "random": 0.4865
+      },
+      {
+        "baseline": 0.4535,
+        "condition": "modular",
+        "delta_baseline": -0.02150000000000002,
+        "delta_random": -0.07349999999999995,
+        "learned": 0.432,
+        "random": 0.5055
+      },
+      {
+        "baseline": 0.494,
+        "condition": "modular",
+        "delta_baseline": -0.006500000000000006,
+        "delta_random": -0.020999999999999963,
+        "learned": 0.4875,
+        "random": 0.5085
+      },
+      {
+        "baseline": 0.47,
+        "condition": "modular",
+        "delta_baseline": -0.019499999999999962,
+        "delta_random": -0.03899999999999998,
+        "learned": 0.4505,
+        "random": 0.4895
+      },
+      {
+        "baseline": 0.469,
+        "condition": "modular",
+        "delta_baseline": 0.016500000000000015,
+        "delta_random": -0.019999999999999962,
+        "learned": 0.4855,
+        "random": 0.5055
+      },
+      {
+        "baseline": 0.4995,
+        "condition": "modular",
+        "delta_baseline": -0.062,
+        "delta_random": -0.04999999999999999,
+        "learned": 0.4375,
+        "random": 0.4875
+      },
+      {
+        "baseline": 0.5145,
+        "condition": "modular",
+        "delta_baseline": -0.03149999999999997,
+        "delta_random": -0.035499999999999976,
+        "learned": 0.483,
+        "random": 0.5185
+      },
+      {
+        "baseline": 0.4925,
+        "condition": "modular",
+        "delta_baseline": 0.007000000000000006,
+        "delta_random": 0.0015000000000000013,
+        "learned": 0.4995,
+        "random": 0.498
+      },
+      {
+        "baseline": 0.5075,
+        "condition": "modular",
+        "delta_baseline": -0.06599999999999995,
+        "delta_random": -0.04849999999999999,
+        "learned": 0.4415,
+        "random": 0.49
+      },
+      {
+        "baseline": 0.498,
+        "condition": "modular",
+        "delta_baseline": -0.007000000000000006,
+        "delta_random": -0.003500000000000003,
+        "learned": 0.491,
+        "random": 0.4945
+      },
+      {
+        "baseline": 0.4925,
+        "condition": "modular",
+        "delta_baseline": 0.0005000000000000004,
+        "delta_random": 0.010000000000000009,
+        "learned": 0.493,
+        "random": 0.483
+      },
+      {
+        "baseline": 0.51,
+        "condition": "modular",
+        "delta_baseline": -0.04749999999999999,
+        "delta_random": 0.007000000000000006,
+        "learned": 0.4625,
+        "random": 0.4555
+      },
+      {
+        "baseline": 0.4755,
+        "condition": "modular",
+        "delta_baseline": -0.026499999999999968,
+        "delta_random": -0.046999999999999986,
+        "learned": 0.449,
+        "random": 0.496
+      },
+      {
+        "baseline": 0.5085,
+        "condition": "modular",
+        "delta_baseline": -0.08949999999999997,
+        "delta_random": -0.05449999999999999,
+        "learned": 0.419,
+        "random": 0.4735
+      },
+      {
+        "baseline": 0.488,
+        "condition": "modular",
+        "delta_baseline": -0.067,
+        "delta_random": -0.07,
+        "learned": 0.421,
+        "random": 0.491
+      },
+      {
+        "baseline": 0.5405,
+        "condition": "modular",
+        "delta_baseline": -0.10999999999999999,
+        "delta_random": -0.09050000000000002,
+        "learned": 0.4305,
+        "random": 0.521
+      },
+      {
+        "baseline": 0.5095,
+        "condition": "modular",
+        "delta_baseline": -0.02699999999999997,
+        "delta_random": -0.016500000000000015,
+        "learned": 0.4825,
+        "random": 0.499
+      },
+      {
+        "baseline": 0.4765,
+        "condition": "modular",
+        "delta_baseline": -0.006000000000000005,
+        "delta_random": -0.013000000000000012,
+        "learned": 0.4705,
+        "random": 0.4835
+      },
+      {
+        "baseline": 0.525,
+        "condition": "modular",
+        "delta_baseline": -0.07250000000000001,
+        "delta_random": -0.03149999999999997,
+        "learned": 0.4525,
+        "random": 0.484
+      },
+      {
+        "baseline": 0.498,
+        "condition": "modular",
+        "delta_baseline": -0.008000000000000007,
+        "delta_random": -0.008000000000000007,
+        "learned": 0.49,
+        "random": 0.498
+      },
+      {
+        "baseline": 0.481,
+        "condition": "modular",
+        "delta_baseline": -0.05199999999999999,
+        "delta_random": -0.061,
+        "learned": 0.429,
+        "random": 0.49
+      },
+      {
+        "baseline": 0.498,
+        "condition": "modular",
+        "delta_baseline": -0.08200000000000002,
+        "delta_random": -0.08350000000000002,
+        "learned": 0.416,
+        "random": 0.4995
+      },
+      {
+        "baseline": 0.4975,
+        "condition": "modular",
+        "delta_baseline": -0.01100000000000001,
+        "delta_random": -0.01100000000000001,
+        "learned": 0.4865,
+        "random": 0.4975
+      },
+      {
+        "baseline": 0.4635,
+        "condition": "modular",
+        "delta_baseline": -0.014500000000000013,
+        "delta_random": -0.04849999999999999,
+        "learned": 0.449,
+        "random": 0.4975
+      },
+      {
+        "baseline": 0.4975,
+        "condition": "modular",
+        "delta_baseline": -0.04949999999999999,
+        "delta_random": -0.09000000000000002,
+        "learned": 0.448,
+        "random": 0.538
+      },
+      {
+        "baseline": 0.477,
+        "condition": "modular",
+        "delta_baseline": 0.0025000000000000022,
+        "delta_random": -0.035999999999999976,
+        "learned": 0.4795,
+        "random": 0.5155
+      },
+      {
+        "baseline": 0.5315,
+        "condition": "modular",
+        "delta_baseline": -0.06749999999999995,
+        "delta_random": -0.05949999999999994,
+        "learned": 0.464,
+        "random": 0.5235
+      },
+      {
+        "baseline": 0.4865,
+        "condition": "modular",
+        "delta_baseline": -0.014500000000000013,
+        "delta_random": -0.004500000000000004,
+        "learned": 0.472,
+        "random": 0.4765
+      },
+      {
+        "baseline": 0.4585,
+        "condition": "modular",
+        "delta_baseline": -0.006500000000000006,
+        "delta_random": -0.033999999999999975,
+        "learned": 0.452,
+        "random": 0.486
+      },
+      {
+        "baseline": 0.4855,
+        "condition": "modular",
+        "delta_baseline": -0.021499999999999964,
+        "delta_random": -0.05549999999999994,
+        "learned": 0.464,
+        "random": 0.5195
+      },
+      {
+        "baseline": 0.5095,
+        "condition": "modular",
+        "delta_baseline": -0.019499999999999962,
+        "delta_random": 0.021999999999999964,
+        "learned": 0.49,
+        "random": 0.468
+      },
+      {
+        "baseline": 0.4855,
+        "condition": "modular",
+        "delta_baseline": -0.03249999999999997,
+        "delta_random": -0.05499999999999999,
+        "learned": 0.453,
+        "random": 0.508
+      },
+      {
+        "baseline": 0.48,
+        "condition": "modular",
+        "delta_baseline": -0.009500000000000008,
+        "delta_random": -0.03699999999999998,
+        "learned": 0.4705,
+        "random": 0.5075
+      },
+      {
+        "baseline": 0.4645,
+        "condition": "modular",
+        "delta_baseline": 0.0020000000000000018,
+        "delta_random": -0.04349999999999998,
+        "learned": 0.4665,
+        "random": 0.51
+      },
+      {
+        "baseline": 0.4915,
+        "condition": "modular",
+        "delta_baseline": -0.026499999999999968,
+        "delta_random": -0.034499999999999975,
+        "learned": 0.465,
+        "random": 0.4995
+      },
+      {
+        "baseline": 0.5,
+        "condition": "modular",
+        "delta_baseline": -0.0635,
+        "delta_random": -0.05149999999999999,
+        "learned": 0.4365,
+        "random": 0.488
+      },
+      {
+        "baseline": 0.5395,
+        "condition": "modular",
+        "delta_baseline": -0.045999999999999985,
+        "delta_random": -0.0030000000000000027,
+        "learned": 0.4935,
+        "random": 0.4965
+      },
+      {
+        "baseline": 0.471,
+        "condition": "modular",
+        "delta_baseline": -0.03249999999999997,
+        "delta_random": -0.06299999999999994,
+        "learned": 0.4385,
+        "random": 0.5015
+      },
+      {
+        "baseline": 0.482,
+        "condition": "homogeneous",
+        "delta_baseline": 0.010000000000000009,
+        "delta_random": 0.02849999999999997,
+        "learned": 0.492,
+        "random": 0.4635
+      },
+      {
+        "baseline": 0.492,
+        "condition": "homogeneous",
+        "delta_baseline": -0.009500000000000008,
+        "delta_random": -0.03899999999999998,
+        "learned": 0.4825,
+        "random": 0.5215
+      },
+      {
+        "baseline": 0.4995,
+        "condition": "homogeneous",
+        "delta_baseline": -0.012500000000000011,
+        "delta_random": 0.01150000000000001,
+        "learned": 0.487,
+        "random": 0.4755
+      },
+      {
+        "baseline": 0.523,
+        "condition": "homogeneous",
+        "delta_baseline": -0.026000000000000023,
+        "delta_random": -0.02100000000000002,
+        "learned": 0.497,
+        "random": 0.518
+      },
+      {
+        "baseline": 0.4385,
+        "condition": "homogeneous",
+        "delta_baseline": 0.018500000000000016,
+        "delta_random": -0.034499999999999975,
+        "learned": 0.457,
+        "random": 0.4915
+      },
+      {
+        "baseline": 0.528,
+        "condition": "homogeneous",
+        "delta_baseline": -0.02650000000000008,
+        "delta_random": -0.01650000000000007,
+        "learned": 0.5015,
+        "random": 0.518
+      },
+      {
+        "baseline": 0.509,
+        "condition": "homogeneous",
+        "delta_baseline": 0.01849999999999996,
+        "delta_random": 0.013000000000000012,
+        "learned": 0.5275,
+        "random": 0.5145
+      },
+      {
+        "baseline": 0.491,
+        "condition": "homogeneous",
+        "delta_baseline": -0.010000000000000009,
+        "delta_random": 0.022499999999999964,
+        "learned": 0.481,
+        "random": 0.4585
+      },
+      {
+        "baseline": 0.484,
+        "condition": "homogeneous",
+        "delta_baseline": 0.03149999999999997,
+        "delta_random": 0.01899999999999996,
+        "learned": 0.5155,
+        "random": 0.4965
+      },
+      {
+        "baseline": 0.4645,
+        "condition": "homogeneous",
+        "delta_baseline": 0.01599999999999996,
+        "delta_random": 0.013499999999999956,
+        "learned": 0.4805,
+        "random": 0.467
+      },
+      {
+        "baseline": 0.4785,
+        "condition": "homogeneous",
+        "delta_baseline": 0.023999999999999966,
+        "delta_random": 0.013499999999999956,
+        "learned": 0.5025,
+        "random": 0.489
+      },
+      {
+        "baseline": 0.5025,
+        "condition": "homogeneous",
+        "delta_baseline": 0.01100000000000001,
+        "delta_random": 0.05649999999999994,
+        "learned": 0.5135,
+        "random": 0.457
+      },
+      {
+        "baseline": 0.539,
+        "condition": "homogeneous",
+        "delta_baseline": -0.0040000000000000036,
+        "delta_random": 0.018500000000000072,
+        "learned": 0.535,
+        "random": 0.5165
+      },
+      {
+        "baseline": 0.514,
+        "condition": "homogeneous",
+        "delta_baseline": -0.0025000000000000577,
+        "delta_random": 0.007000000000000006,
+        "learned": 0.5115,
+        "random": 0.5045
+      },
+      {
+        "baseline": 0.4655,
+        "condition": "homogeneous",
+        "delta_baseline": 0.008999999999999952,
+        "delta_random": -0.015000000000000013,
+        "learned": 0.4745,
+        "random": 0.4895
+      },
+      {
+        "baseline": 0.475,
+        "condition": "homogeneous",
+        "delta_baseline": -0.019999999999999962,
+        "delta_random": -0.012500000000000011,
+        "learned": 0.455,
+        "random": 0.4675
+      },
+      {
+        "baseline": 0.496,
+        "condition": "homogeneous",
+        "delta_baseline": 0.02849999999999997,
+        "delta_random": 0.034999999999999976,
+        "learned": 0.5245,
+        "random": 0.4895
+      },
+      {
+        "baseline": 0.518,
+        "condition": "homogeneous",
+        "delta_baseline": -0.019000000000000017,
+        "delta_random": -0.016000000000000014,
+        "learned": 0.499,
+        "random": 0.515
+      },
+      {
+        "baseline": 0.5205,
+        "condition": "homogeneous",
+        "delta_baseline": 0.02100000000000002,
+        "delta_random": 0.057499999999999996,
+        "learned": 0.5415,
+        "random": 0.484
+      },
+      {
+        "baseline": 0.5015,
+        "condition": "homogeneous",
+        "delta_baseline": -0.0034999999999999476,
+        "delta_random": 0.030999999999999972,
+        "learned": 0.498,
+        "random": 0.467
+      },
+      {
+        "baseline": 0.4805,
+        "condition": "homogeneous",
+        "delta_baseline": 0.020999999999999963,
+        "delta_random": -0.0030000000000000027,
+        "learned": 0.5015,
+        "random": 0.5045
+      },
+      {
+        "baseline": 0.473,
+        "condition": "homogeneous",
+        "delta_baseline": 0.020500000000000018,
+        "delta_random": -0.0010000000000000009,
+        "learned": 0.4935,
+        "random": 0.4945
+      },
+      {
+        "baseline": 0.5,
+        "condition": "homogeneous",
+        "delta_baseline": 0.0004999999999999449,
+        "delta_random": 0.04549999999999993,
+        "learned": 0.5005,
+        "random": 0.455
+      },
+      {
+        "baseline": 0.5295,
+        "condition": "homogeneous",
+        "delta_baseline": -0.017000000000000015,
+        "delta_random": -0.000500000000000056,
+        "learned": 0.5125,
+        "random": 0.513
+      },
+      {
+        "baseline": 0.54,
+        "condition": "homogeneous",
+        "delta_baseline": -0.031500000000000083,
+        "delta_random": 0.022999999999999965,
+        "learned": 0.5085,
+        "random": 0.4855
+      },
+      {
+        "baseline": 0.4895,
+        "condition": "homogeneous",
+        "delta_baseline": -0.01100000000000001,
+        "delta_random": -0.039500000000000035,
+        "learned": 0.4785,
+        "random": 0.518
+      },
+      {
+        "baseline": 0.5045,
+        "condition": "homogeneous",
+        "delta_baseline": 0.0040000000000000036,
+        "delta_random": 0.022499999999999964,
+        "learned": 0.5085,
+        "random": 0.486
+      },
+      {
+        "baseline": 0.485,
+        "condition": "homogeneous",
+        "delta_baseline": -0.025499999999999967,
+        "delta_random": -0.07250000000000001,
+        "learned": 0.4595,
+        "random": 0.532
+      },
+      {
+        "baseline": 0.4685,
+        "condition": "homogeneous",
+        "delta_baseline": -0.009000000000000008,
+        "delta_random": -0.009999999999999953,
+        "learned": 0.4595,
+        "random": 0.4695
+      },
+      {
+        "baseline": 0.522,
+        "condition": "homogeneous",
+        "delta_baseline": -0.0045000000000000595,
+        "delta_random": 0.03199999999999997,
+        "learned": 0.5175,
+        "random": 0.4855
+      },
+      {
+        "baseline": 0.495,
+        "condition": "homogeneous",
+        "delta_baseline": -0.010000000000000009,
+        "delta_random": -0.03749999999999998,
+        "learned": 0.485,
+        "random": 0.5225
+      },
+      {
+        "baseline": 0.496,
+        "condition": "homogeneous",
+        "delta_baseline": 0.033499999999999974,
+        "delta_random": 0.021499999999999964,
+        "learned": 0.5295,
+        "random": 0.508
+      },
+      {
+        "baseline": 0.523,
+        "condition": "homogeneous",
+        "delta_baseline": -0.014500000000000068,
+        "delta_random": 0.022999999999999965,
+        "learned": 0.5085,
+        "random": 0.4855
+      },
+      {
+        "baseline": 0.4925,
+        "condition": "homogeneous",
+        "delta_baseline": 0.004500000000000004,
+        "delta_random": -0.030000000000000027,
+        "learned": 0.497,
+        "random": 0.527
+      },
+      {
+        "baseline": 0.5345,
+        "condition": "homogeneous",
+        "delta_baseline": -0.012499999999999956,
+        "delta_random": -0.007000000000000006,
+        "learned": 0.522,
+        "random": 0.529
+      },
+      {
+        "baseline": 0.523,
+        "condition": "homogeneous",
+        "delta_baseline": -0.03650000000000003,
+        "delta_random": -0.02899999999999997,
+        "learned": 0.4865,
+        "random": 0.5155
+      },
+      {
+        "baseline": 0.4855,
+        "condition": "homogeneous",
+        "delta_baseline": 0.019500000000000017,
+        "delta_random": -0.007499999999999951,
+        "learned": 0.505,
+        "random": 0.5125
+      },
+      {
+        "baseline": 0.4705,
+        "condition": "homogeneous",
+        "delta_baseline": 0.04150000000000004,
+        "delta_random": 0.013500000000000012,
+        "learned": 0.512,
+        "random": 0.4985
+      },
+      {
+        "baseline": 0.534,
+        "condition": "homogeneous",
+        "delta_baseline": -0.01650000000000007,
+        "delta_random": 0.01200000000000001,
+        "learned": 0.5175,
+        "random": 0.5055
+      },
+      {
+        "baseline": 0.469,
+        "condition": "homogeneous",
+        "delta_baseline": 0.031000000000000028,
+        "delta_random": -0.013499999999999956,
+        "learned": 0.5,
+        "random": 0.5135
+      }
+    ]
+  },
+  "sha256": "db6d3ea6e7251e09ca2511de282f5563a5b869da773f5a222855f6feb7243ece",
+  "suite": "Geometry Foundation EXP-001..006 independent full rerun",
+  "summary": {
+    "EXP-001": {
+      "accuracy": {
+        "boundary": {
+          "mean": 0.21430333333333337,
+          "n": 30,
+          "sd": 0.061949002849303304
+        },
+        "flat": {
+          "mean": 0.14599333333333334,
+          "n": 30,
+          "sd": 0.04159890112385955
+        },
+        "grow": {
+          "mean": 0.21473333333333333,
+          "n": 30,
+          "sd": 0.06154031806162881
+        },
+        "memory": {
+          "mean": 0.21473333333333333,
+          "n": 30,
+          "sd": 0.06154031806162881
+        }
+      },
+      "note": "Independent ledger-scale rerun, not source-identical.",
+      "states": {
+        "mean": 20.7,
+        "n": 30,
+        "sd": 3.8160279041848266
+      }
+    },
+    "EXP-002": {
+      "note": "Toy ring; recurrence is not historical-state return.",
+      "trace_delta": {
+        "mean": 1.125,
+        "n": 30,
+        "sd": 0.0
+      }
+    },
+    "EXP-003": {
+      "conductance": {
+        "mean": 0.080024,
+        "n": 50,
+        "sd": 0.003928262845023464
+      },
+      "f1": {
+        "mean": 1.0,
+        "n": 50,
+        "sd": 0.0
+      },
+      "note": "Hidden modules are present in generator; not spontaneous emergence."
+    },
+    "EXP-004": {
+      "0.1": {
+        "conductance": {
+          "mean": 0.09925824061340999,
+          "n": 30,
+          "sd": 0.003269497741851521
+        },
+        "f1": {
+          "mean": 1.0,
+          "n": 30,
+          "sd": 0.0
+        },
+        "heldout_within": {
+          "mean": 0.9006222222222223,
+          "n": 30,
+          "sd": 0.006080389514981351
+        }
+      },
+      "0.2": {
+        "conductance": {
+          "mean": 0.1999333249989582,
+          "n": 30,
+          "sd": 0.004418498342569421
+        },
+        "f1": {
+          "mean": 1.0,
+          "n": 30,
+          "sd": 0.0
+        },
+        "heldout_within": {
+          "mean": 0.8000333333333334,
+          "n": 30,
+          "sd": 0.008850114184167176
+        }
+      },
+      "0.3": {
+        "conductance": {
+          "mean": 0.3004708921948576,
+          "n": 30,
+          "sd": 0.0050783427222206206
+        },
+        "f1": {
+          "mean": 1.0,
+          "n": 30,
+          "sd": 0.0
+        },
+        "heldout_within": {
+          "mean": 0.7008666666666665,
+          "n": 30,
+          "sd": 0.009190866697506881
+        }
+      },
+      "0.4": {
+        "conductance": {
+          "mean": 0.398441471850648,
+          "n": 30,
+          "sd": 0.005110185843604481
+        },
+        "f1": {
+          "mean": 1.0,
+          "n": 30,
+          "sd": 0.0
+        },
+        "heldout_within": {
+          "mean": 0.5980777777777778,
+          "n": 30,
+          "sd": 0.011724710563733361
+        }
+      },
+      "0.45": {
+        "conductance": {
+          "mean": 0.44973955077718053,
+          "n": 30,
+          "sd": 0.008974485971852178
+        },
+        "f1": {
+          "mean": 0.9944444444444446,
+          "n": 30,
+          "sd": 0.030429030972509218
+        },
+        "heldout_within": {
+          "mean": 0.5498888888888889,
+          "n": 30,
+          "sd": 0.011422345959942203
+        }
+      },
+      "note": "Planted-module positive control."
+    },
+    "EXP-005": {
+      "candidate_cut": {
+        "mean": 0.547622381119056,
+        "n": 30,
+        "sd": 0.010192641062889795
+      },
+      "note": "Fresh homogeneous generator; partition is not automatically meaningful.",
+      "shuffled_cut": {
+        "mean": 0.5210293848025734,
+        "n": 30,
+        "sd": 0.008677056560379353
+      }
+    },
+    "EXP-006": {
+      "homogeneous": {
+        "baseline": {
+          "mean": 0.4984375,
+          "n": 40,
+          "sd": 0.024169059342208164
+        },
+        "delta_baseline": {
+          "mean": 0.0010499999999999856,
+          "n": 40,
+          "sd": 0.02015860190512306
+        },
+        "delta_random": {
+          "mean": 0.0028624999999999888,
+          "n": 40,
+          "sd": 0.028176865283056
+        },
+        "learned": {
+          "mean": 0.49948750000000003,
+          "n": 40,
+          "sd": 0.02111491376570913
+        },
+        "random": {
+          "mean": 0.496625,
+          "n": 40,
+          "sd": 0.02201594701748991
+        }
+      },
+      "modular": {
+        "baseline": {
+          "mean": 0.4940999999999999,
+          "n": 40,
+          "sd": 0.021089917386860838
+        },
+        "delta_baseline": {
+          "mean": -0.034949999999999995,
+          "n": 40,
+          "sd": 0.03119126274768099
+        },
+        "delta_random": {
+          "mean": -0.03859999999999999,
+          "n": 40,
+          "sd": 0.028387474666632776
+        },
+        "learned": {
+          "mean": 0.45915,
+          "n": 40,
+          "sd": 0.02396477115288724
+        },
+        "random": {
+          "mean": 0.4977499999999999,
+          "n": 40,
+          "sd": 0.015981960984906597
+        }
+      },
+      "note": "Exploratory intervention proxy; not causal-boundary certification."
+    }
+  }
+}
