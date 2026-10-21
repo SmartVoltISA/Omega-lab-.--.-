@@ -1,1 +1,47 @@
-{}
+{
+  "A_no_memory": {
+    "score": -102.4622,
+    "incidents": 69.5194,
+    "unsafe_actions": 69.5194,
+    "probe_count": 0,
+    "probe_rate": 0,
+    "model_error": 0.4178,
+    "uncertainty_final": 0.38
+  },
+  "B_episode_replay": {
+    "score": 19.1969,
+    "incidents": 8.1278,
+    "unsafe_actions": 8.1278,
+    "probe_count": 0,
+    "probe_rate": 0,
+    "model_error": 0.2588,
+    "uncertainty_final": 0.4451
+  },
+  "C_similarity_only": {
+    "score": 55.0767,
+    "incidents": 1.2889,
+    "unsafe_actions": 1.2889,
+    "probe_count": 86.8556,
+    "probe_rate": 0.7238,
+    "model_error": 0.0682,
+    "uncertainty_final": 0.0577
+  },
+  "D_model_based_probe": {
+    "score": 26.8081,
+    "incidents": 3.5444,
+    "unsafe_actions": 3.5444,
+    "probe_count": 37.7347,
+    "probe_rate": 0.3145,
+    "model_error": 0.0735,
+    "uncertainty_final": 0.16
+  },
+  "E_random_probe": {
+    "score": -62.5825,
+    "incidents": 47.9236,
+    "unsafe_actions": 47.9236,
+    "probe_count": 41.7528,
+    "probe_rate": 0.3479,
+    "model_error": 0.0861,
+    "uncertainty_final": 0.0536
+  }
+}
