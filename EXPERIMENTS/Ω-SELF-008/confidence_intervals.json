@@ -1,0 +1,106 @@
+{
+  "D_combined_vs_A_fixed_post_progress_rate": {
+    "mean_difference": 0.0028,
+    "paired_bootstrap_95_ci": [
+      0.0018,
+      0.0037
+    ],
+    "resamples": 3000
+  },
+  "D_combined_vs_B_reward_only_post_progress_rate": {
+    "mean_difference": -0.0043,
+    "paired_bootstrap_95_ci": [
+      -0.0054,
+      -0.0034
+    ],
+    "resamples": 3000
+  },
+  "D_combined_vs_C_punishment_only_post_progress_rate": {
+    "mean_difference": 0.0027,
+    "paired_bootstrap_95_ci": [
+      0.002,
+      0.0034
+    ],
+    "resamples": 3000
+  },
+  "D_combined_vs_E_sham_post_progress_rate": {
+    "mean_difference": 0.0015,
+    "paired_bootstrap_95_ci": [
+      0.0004,
+      0.0026
+    ],
+    "resamples": 3000
+  },
+  "D_combined_vs_A_fixed_adaptation_lag": {
+    "mean_difference": 0.9458,
+    "paired_bootstrap_95_ci": [
+      -2.1625,
+      4.3167
+    ],
+    "resamples": 3000
+  },
+  "D_combined_vs_B_reward_only_adaptation_lag": {
+    "mean_difference": 3.8,
+    "paired_bootstrap_95_ci": [
+      0.975,
+      6.725
+    ],
+    "resamples": 3000
+  },
+  "D_combined_vs_C_punishment_only_adaptation_lag": {
+    "mean_difference": 1.275,
+    "paired_bootstrap_95_ci": [
+      -1.75,
+      4.3833
+    ],
+    "resamples": 3000
+  },
+  "D_combined_vs_E_sham_adaptation_lag": {
+    "mean_difference": -0.225,
+    "paired_bootstrap_95_ci": [
+      -3.55,
+      2.95
+    ],
+    "resamples": 3000
+  },
+  "D_combined_vs_A_fixed_violation_steps": {
+    "mean_difference": 0,
+    "paired_bootstrap_95_ci": [
+      0,
+      0
+    ],
+    "resamples": 3000
+  },
+  "D_combined_vs_B_reward_only_violation_steps": {
+    "mean_difference": 0,
+    "paired_bootstrap_95_ci": [
+      0,
+      0
+    ],
+    "resamples": 3000
+  },
+  "D_combined_vs_C_punishment_only_violation_steps": {
+    "mean_difference": 0,
+    "paired_bootstrap_95_ci": [
+      0,
+      0
+    ],
+    "resamples": 3000
+  },
+  "D_combined_vs_E_sham_violation_steps": {
+    "mean_difference": 0,
+    "paired_bootstrap_95_ci": [
+      0,
+      0
+    ],
+    "resamples": 3000
+  },
+  "unseen_drift_D_vs_A_post_progress_rate": {
+    "mean_difference": 0.0037,
+    "paired_bootstrap_95_ci": [
+      0.0015,
+      0.0058
+    ],
+    "resamples": 3000
+  }
+}

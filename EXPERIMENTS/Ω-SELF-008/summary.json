@@ -1,0 +1,62 @@
+{
+  "A_fixed": {
+    "episodes": 320,
+    "survival_pct": 100,
+    "mean_steps": 300,
+    "mean_progress": 190.838,
+    "pre_progress_rate": 0.973,
+    "post_progress_rate": 0.435,
+    "mean_adaptation_lag": 8.78,
+    "mean_energy": 24.85,
+    "violation_steps": 0,
+    "work_fraction": 0.543
+  },
+  "B_reward_only": {
+    "episodes": 320,
+    "survival_pct": 100,
+    "mean_steps": 300,
+    "mean_progress": 191.578,
+    "pre_progress_rate": 0.968,
+    "post_progress_rate": 0.441,
+    "mean_adaptation_lag": 6.61,
+    "mean_energy": 23.37,
+    "violation_steps": 0,
+    "work_fraction": 0.548
+  },
+  "C_punishment_only": {
+    "episodes": 320,
+    "survival_pct": 100,
+    "mean_steps": 300,
+    "mean_progress": 190.895,
+    "pre_progress_rate": 0.974,
+    "post_progress_rate": 0.435,
+    "mean_adaptation_lag": 8.38,
+    "mean_energy": 24.02,
+    "violation_steps": 0,
+    "work_fraction": 0.544
+  },
+  "D_combined": {
+    "episodes": 320,
+    "survival_pct": 100,
+    "mean_steps": 300,
+    "mean_progress": 191.33,
+    "pre_progress_rate": 0.973,
+    "post_progress_rate": 0.438,
+    "mean_adaptation_lag": 9.33,
+    "mean_energy": 23.89,
+    "violation_steps": 0,
+    "work_fraction": 0.546
+  },
+  "E_sham": {
+    "episodes": 320,
+    "survival_pct": 100,
+    "mean_steps": 300,
+    "mean_progress": 190.731,
+    "pre_progress_rate": 0.971,
+    "post_progress_rate": 0.436,
+    "mean_adaptation_lag": 9.52,
+    "mean_energy": 25.28,
+    "violation_steps": 0,
+    "work_fraction": 0.543
+  }
+}

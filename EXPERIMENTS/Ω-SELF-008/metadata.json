@@ -1,0 +1,38 @@
+{
+  "experiment": "Ω-SELF-008",
+  "seed_start": 88000,
+  "test_seeds_per_family": 80,
+  "horizon": 300,
+  "train_families": [
+    "rapid",
+    "slow",
+    "surprise"
+  ],
+  "test_families": [
+    "rapid",
+    "slow",
+    "surprise",
+    "unseen_drift"
+  ],
+  "unseen_family": "unseen_drift",
+  "conditions": [
+    "A_fixed",
+    "B_reward_only",
+    "C_punishment_only",
+    "D_combined",
+    "E_sham"
+  ],
+  "primary_metrics": [
+    "post_progress_rate",
+    "adaptation_lag",
+    "violation_steps"
+  ],
+  "feedback_interval_steps": 25,
+  "method": "hand-coded controllers; local reference run; rerun committed script to verify exact parity",
+  "limitations": [
+    "Hand-coded controllers, not open-ended learning",
+    "One synthetic unseen family",
+    "All conditions reached 100% survival and zero violation steps",
+    "Synthetic environment only; no consciousness or general-intelligence claim"
+  ]
+}
