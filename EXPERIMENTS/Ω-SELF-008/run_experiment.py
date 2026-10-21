@@ -51,7 +51,7 @@ def run_episode(family,seed,horizon,condition):
    elif condition=="E_sham":
     energy_threshold=max(8,min(48,energy_threshold+(.9 if ((t+1)//25)%2 else -.9)))
     stress_limit=max(9,min(25,stress_limit+(.7 if ((t+1)//25)%2 else -.7)))
- change=min(cfg["change"],len(records))
+ change=min(cfg["change"],len(records)) if cfg["change"] < horizon else horizon//2
  before=[x for x in records if x["t"]<change]
  after=[x for x in records if x["t"]>=change]
  def avg(xs,key): return statistics.mean(x[key] for x in xs) if xs else 0.0
