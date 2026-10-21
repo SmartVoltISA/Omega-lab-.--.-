@@ -1,4 +1,74 @@
 {
-  "status": "pending execution",
-  "note": "Run run_experiment.py to generate observed metrics."
+  "A_no_memory": {
+    "score": -12.8692,
+    "incidents": 46.4764,
+    "work_actions": 128,
+    "probe_count": 12,
+    "probe_rate": 0.0857,
+    "revisions": 0,
+    "prediction_error": 0,
+    "final_model_error": 0.0868,
+    "uncertainty_final": 0.34,
+    "final_risk": 0.5171
+  },
+  "B_surface_replay": {
+    "score": 58.3825,
+    "incidents": 6.9264,
+    "work_actions": 87.8319,
+    "probe_count": 12,
+    "probe_rate": 0.0857,
+    "revisions": 0,
+    "prediction_error": 0,
+    "final_model_error": 0.0858,
+    "uncertainty_final": 0.34,
+    "final_risk": 0.5099
+  },
+  "C_similarity_probe": {
+    "score": 59.8322,
+    "incidents": 2.0792,
+    "work_actions": 83.6222,
+    "probe_count": 79.7042,
+    "probe_rate": 0.5693,
+    "revisions": 0,
+    "prediction_error": 0.0945,
+    "final_model_error": 0.0832,
+    "uncertainty_final": 0.34,
+    "final_risk": 0.5365
+  },
+  "D_uncertainty_revision": {
+    "score": 59.3598,
+    "incidents": 2.9,
+    "work_actions": 83.9764,
+    "probe_count": 66.6028,
+    "probe_rate": 0.4757,
+    "revisions": 16.3667,
+    "prediction_error": 0.0695,
+    "final_model_error": 0.0887,
+    "uncertainty_final": 0.1114,
+    "final_risk": 0.5275
+  },
+  "E_random_probe": {
+    "score": 23.702,
+    "incidents": 27.1625,
+    "work_actions": 114.3,
+    "probe_count": 55.3708,
+    "probe_rate": 0.3955,
+    "revisions": 0,
+    "prediction_error": 0.0957,
+    "final_model_error": 0.092,
+    "uncertainty_final": 0.34,
+    "final_risk": 0.4931
+  },
+  "F_model_only": {
+    "score": 23.3168,
+    "incidents": 27.3486,
+    "work_actions": 110.0361,
+    "probe_count": 12,
+    "probe_rate": 0.0857,
+    "revisions": 0,
+    "prediction_error": 0,
+    "final_model_error": 0.1776,
+    "uncertainty_final": 0.34,
+    "final_risk": 0.5069
+  }
 }
