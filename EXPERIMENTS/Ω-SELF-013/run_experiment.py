@@ -114,6 +114,7 @@ def mean_ci(values, rng, nboot=1200):
     return mean, boots[int(0.025*nboot)], boots[min(nboot-1, int(0.975*nboot))]
 
 def main():
+    global N_STEPS
     ap = argparse.ArgumentParser()
     ap.add_argument("--episodes", type=int, default=N_EPISODES)
     ap.add_argument("--steps", type=int, default=N_STEPS)
