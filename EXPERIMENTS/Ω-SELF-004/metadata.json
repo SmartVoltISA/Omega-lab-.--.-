@@ -1,0 +1,18 @@
+{
+  "experiment": "Ω-SELF-004",
+  "status": "PILOT / NEEDS REPLICATION",
+  "completed_run": {
+    "training_environments": 40,
+    "candidates": 20,
+    "test_environments": 400,
+    "horizon": 400,
+    "total_test_agent_runs": 1600,
+    "search_seed": 404,
+    "selected_policy": {
+      "energy_threshold": 32.07470301021098,
+      "rest_threshold": 29.748459463152756
+    },
+    "best_training_score": 0.8558276917612992
+  },
+  "note": "A larger planned run timed out and is not included. Training/test seeds are disjoint; environment families are not held out."
+}
