@@ -1,0 +1,34 @@
+name: Ω-SELF-015 reproducibility check
+
+on:
+  pull_request:
+    paths:
+      - "EXPERIMENTS/Ω-SELF-015/**"
+      - ".github/workflows/omega-self-015.yml"
+  workflow_dispatch:
+
+jobs:
+  run-experiment:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Compile runner
+        run: python -m py_compile "EXPERIMENTS/Ω-SELF-015/run_experiment.py"
+      - name: Execute fixed-seed experiment
+        run: |
+          python "EXPERIMENTS/Ω-SELF-015/run_experiment.py" --episodes 300 --seed 150015 --out /tmp/omega-self-015-results.csv | tee /tmp/omega-self-015-summary.txt
+      - name: Preserve outputs
+        uses: actions/upload-artifact@v4
+        with:
+          name: omega-self-015-results
+          path: |
+            /tmp/omega-self-015-results.csv
+            /tmp/omega-self-015-results.summary.json
+            /tmp/omega-self-015-summary.txt
+          retention-days: 30
