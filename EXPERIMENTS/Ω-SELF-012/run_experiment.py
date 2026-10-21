@@ -25,7 +25,8 @@ def run_episode(policy, family, seed):
     for step in range(STEPS):
         # Scenario family is held out by cue encoding, not by changing the abstract risk structure.
         event = rng.choices(["ordinary", "emergency", "recovery"], weights=[0.55, 0.25, 0.20])[0]
-        latent_risk = rng.random()
+        risk_base = {"ordinary": 0.35, "emergency": 0.82, "recovery": 0.58}[event]
+        latent_risk = min(1.0, max(0.0, risk_base + rng.uniform(-0.22, 0.22)))
         cue = latent_risk
         if family == "heldout_cue_shift":
             cue = 1.0 - latent_risk  # same underlying structure, inverted surface cue
@@ -37,7 +38,7 @@ def run_episode(policy, family, seed):
             emergency_severity = 0.0
         # Agent's cue-based prediction may be wrong, especially on the held-out mapping.
         predicted_risk = cue  # held-out family reverses the cue mapping; no family-specific correction is allowed
-        uncertainty = abs(predicted_risk - 0.5) * 2.0
+        uncertainty = 1.0 - abs(predicted_risk - 0.5) * 2.0  # highest near an ambiguous cue
         # Safe probe costs a small amount but reveals whether a risky/urgent transfer is warranted.
         do_probe = False
         if policy == "C_total_outcome":
