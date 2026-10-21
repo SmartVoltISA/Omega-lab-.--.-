@@ -1,0 +1,6 @@
+[
+ {"condition":"A_fixed_baseline","runs":400,"full_horizon_rate":0.7,"mean_survival_steps":336.1525,"sd_survival_steps":116.622903,"mean_final_energy":25.643824,"mean_energy":35.247912,"mean_score":0.718406},
+ {"condition":"B_handcoded_feedback","runs":400,"full_horizon_rate":0.9625,"mean_survival_steps":389.3075,"sd_survival_steps":58.65846,"mean_final_energy":37.253538,"mean_energy":38.445456,"mean_score":0.826065},
+ {"condition":"C_search_selected","runs":400,"full_horizon_rate":1.0,"mean_survival_steps":400.0,"sd_survival_steps":0.0,"mean_final_energy":42.271644,"mean_energy":41.785922,"mean_score":0.854465},
+ {"condition":"D_random_candidate_control","runs":400,"full_horizon_rate":0.99,"mean_survival_steps":397.675,"sd_survival_steps":25.697476,"mean_final_energy":39.380479,"mean_energy":39.481221,"mean_score":0.844344}
+]
