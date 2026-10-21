@@ -1,1 +1,98 @@
-{}
+{
+  "D_model_based_probe_vs_A_no_memory_score": {
+    "difference": 130.2472,
+    "ci95": [
+      115.4559,
+      144.9557
+    ],
+    "resamples": 4000
+  },
+  "D_model_based_probe_vs_A_no_memory_incidents": {
+    "difference": -67.9625,
+    "ci95": [
+      -72.325,
+      -63.6542
+    ],
+    "resamples": 4000
+  },
+  "D_model_based_probe_vs_A_no_memory_model_error": {
+    "difference": -0.3524,
+    "ci95": [
+      -0.3788,
+      -0.3272
+    ],
+    "resamples": 4000
+  },
+  "D_model_based_probe_vs_B_episode_replay_score": {
+    "difference": 8.8418,
+    "ci95": [
+      2.8367,
+      14.8118
+    ],
+    "resamples": 4000
+  },
+  "D_model_based_probe_vs_B_episode_replay_incidents": {
+    "difference": -5.9083,
+    "ci95": [
+      -6.6583,
+      -5.1542
+    ],
+    "resamples": 4000
+  },
+  "D_model_based_probe_vs_B_episode_replay_model_error": {
+    "difference": -0.1643,
+    "ci95": [
+      -0.1836,
+      -0.144
+    ],
+    "resamples": 4000
+  },
+  "D_model_based_probe_vs_C_similarity_only_score": {
+    "difference": -31.6462,
+    "ci95": [
+      -35.6159,
+      -27.499
+    ],
+    "resamples": 4000
+  },
+  "D_model_based_probe_vs_C_similarity_only_incidents": {
+    "difference": 2.0542,
+    "ci95": [
+      1.6333,
+      2.4708
+    ],
+    "resamples": 4000
+  },
+  "D_model_based_probe_vs_C_similarity_only_model_error": {
+    "difference": 0.0013,
+    "ci95": [
+      -0.0114,
+      0.0135
+    ],
+    "resamples": 4000
+  },
+  "D_model_based_probe_vs_E_random_probe_score": {
+    "difference": 82.7518,
+    "ci95": [
+      73.2823,
+      92.573
+    ],
+    "resamples": 4000
+  },
+  "D_model_based_probe_vs_E_random_probe_incidents": {
+    "difference": -43.8917,
+    "ci95": [
+      -46.8208,
+      -40.9542
+    ],
+    "resamples": 4000
+  },
+  "D_model_based_probe_vs_E_random_probe_model_error": {
+    "difference": -0.0231,
+    "ci95": [
+      -0.0357,
+      -0.0115
+    ],
+    "resamples": 4000
+  }
+}
