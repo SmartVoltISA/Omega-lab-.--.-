@@ -128,7 +128,7 @@ def run_episode(policy, seed):
         cumulative_matches += match
         cumulative_n += 1
         reliability = update_estimate(cumulative_matches,cumulative_n)
-        if policy == "change_detector" and t >= BASELINE_STEPS+DETECT_PRIOR+DETECT_RECENT:
+        if policy == "change_detector" and t >= BASELINE_STEPS+DETECT_RECENT-1:
             recent = list(detect_history)[-DETECT_RECENT:]
             prior = list(detect_history)[:DETECT_PRIOR]
             if len(prior) == DETECT_PRIOR and len(recent) == DETECT_RECENT:
