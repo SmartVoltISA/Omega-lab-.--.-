@@ -1,1 +1,30 @@
-{}
+{
+  "experiment": "Ω-SELF-010",
+  "seeds_per_condition_family": 240,
+  "steps_per_episode": 120,
+  "conditions": [
+    "A_no_memory",
+    "B_episode_replay",
+    "C_similarity_only",
+    "D_model_based_probe",
+    "E_random_probe"
+  ],
+  "families": [
+    "hot_surface",
+    "pressurized_vessel",
+    "unseen_electrical"
+  ],
+  "held_out_family": "unseen_electrical",
+  "primary_metrics": [
+    "incidents",
+    "score",
+    "model_error",
+    "probe_rate"
+  ],
+  "design": "safe probes provide non-injurious evidence; direct-contact harms are simulated; family cue scales differ",
+  "limitations": [
+    "Synthetic environment; manually specified cue transforms",
+    "Model-based condition receives the correct family transform, so this is an oracle-normalization benchmark, not autonomous discovery",
+    "One held-out family; no evidence of general intelligence or consciousness"
+  ]
+}
