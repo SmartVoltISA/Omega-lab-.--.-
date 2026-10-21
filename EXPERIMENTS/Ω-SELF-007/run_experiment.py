@@ -38,8 +38,8 @@ def episode(family, seed, horizon, condition):
                 energy_threshold=max(8.0,min(45.0,energy_threshold+(0.7 if r>0.9 else -1.0)))
                 stress_limit=max(10.0,min(28.0,stress_limit+(0.3 if r>0.9 else -0.4)))
             else:
-                energy_threshold=max(12.0,min(48.0,energy_threshold+(0.7 if p>0.25 else (-0.8 if r<0.85 else 0.15)))
-                stress_limit=max(10.0,min(25.0,stress_limit+(1.0 if p<0.10 and r>0.85 else (-1.5 if p>0.25 else 0.0)))
+                energy_threshold=max(12.0,min(48.0,energy_threshold+(0.7 if p>0.25 else (-0.8 if r<0.85 else 0.15))))
+                stress_limit=max(10.0,min(25.0,stress_limit+(1.0 if p<0.10 and r>0.85 else (-1.5 if p>0.25 else 0.0))))
         elif condition=='C_punishment_only' and (t+1)%25==0:
             p=statistics.mean(recent_punishment)
             energy_threshold=max(18.0,min(48.0,energy_threshold+(1.5 if p>0.20 else -0.1)))
