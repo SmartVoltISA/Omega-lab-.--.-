@@ -1,0 +1,24 @@
+{
+  "experiment": "Ω-SELF-005",
+  "seed": 20261021,
+  "selection_metric": "0.75 * full-survival fraction + 0.25 * mean energy / 100",
+  "train_families": ["rapid", "slow", "surprise"],
+  "test_families": ["rapid", "slow", "surprise", "unseen_drift"],
+  "unseen_family": "unseen_drift",
+  "train_seeds_per_family": 40,
+  "test_seeds_per_family": 120,
+  "horizon": 300,
+  "candidate_count": 24,
+  "selected_candidate": "candidate_20",
+  "selected_policy": {"energy_threshold": 63.66, "stress_threshold": 16.05, "cue_enabled": false},
+  "random_candidate": "candidate_19",
+  "random_policy": {"energy_threshold": 37.84, "stress_threshold": 9.81, "cue_enabled": false},
+  "primary_summary": {
+    "A_fixed_baseline": {"episodes": 480, "full_survival_pct": 100, "mean_survival_steps": 300, "mean_energy": 36.78, "final_energy": 34.45, "score": 0.84194},
+    "B_feedback_adaptive": {"episodes": 480, "full_survival_pct": 100, "mean_survival_steps": 300, "mean_energy": 48.19, "final_energy": 47.51, "score": 0.87047},
+    "C_train_selected": {"episodes": 480, "full_survival_pct": 100, "mean_survival_steps": 300, "mean_energy": 63.24, "final_energy": 63.14, "score": 0.9081},
+    "D_random_candidate": {"episodes": 480, "full_survival_pct": 100, "mean_survival_steps": 300, "mean_energy": 39.75, "final_energy": 37.36, "score": 0.84938}
+  },
+  "candidate_distribution": {"count": 24, "best_test_score": 0.9081, "median_test_score": 0.843555, "random_candidate_test_score": 0.84938},
+  "limitations": ["Toy hand-coded simulator and policies", "All primary conditions reached 100% survival, so survival metric saturated", "Only one randomly selected candidate in primary comparison", "No confidence intervals", "No compute-matched search baseline", "Only one designed unseen environment family"]
+}

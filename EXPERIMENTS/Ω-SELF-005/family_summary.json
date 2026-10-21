@@ -1,0 +1,26 @@
+{
+  "A_fixed_baseline": {
+    "rapid": {"full_survival_pct": 100, "mean_survival_steps": 300, "mean_energy": 36.77},
+    "slow": {"full_survival_pct": 100, "mean_survival_steps": 300, "mean_energy": 36.85},
+    "surprise": {"full_survival_pct": 100, "mean_survival_steps": 300, "mean_energy": 36.75},
+    "unseen_drift": {"full_survival_pct": 100, "mean_survival_steps": 300, "mean_energy": 36.72}
+  },
+  "B_feedback_adaptive": {
+    "rapid": {"full_survival_pct": 100, "mean_survival_steps": 300, "mean_energy": 48.17},
+    "slow": {"full_survival_pct": 100, "mean_survival_steps": 300, "mean_energy": 48.25},
+    "surprise": {"full_survival_pct": 100, "mean_survival_steps": 300, "mean_energy": 48.15},
+    "unseen_drift": {"full_survival_pct": 100, "mean_survival_steps": 300, "mean_energy": 48.18}
+  },
+  "C_train_selected": {
+    "rapid": {"full_survival_pct": 100, "mean_survival_steps": 300, "mean_energy": 63.22},
+    "slow": {"full_survival_pct": 100, "mean_survival_steps": 300, "mean_energy": 63.30},
+    "surprise": {"full_survival_pct": 100, "mean_survival_steps": 300, "mean_energy": 63.19},
+    "unseen_drift": {"full_survival_pct": 100, "mean_survival_steps": 300, "mean_energy": 63.24}
+  },
+  "D_random_candidate": {
+    "rapid": {"full_survival_pct": 100, "mean_survival_steps": 300, "mean_energy": 39.75},
+    "slow": {"full_survival_pct": 100, "mean_survival_steps": 300, "mean_energy": 39.84},
+    "surprise": {"full_survival_pct": 100, "mean_survival_steps": 300, "mean_energy": 39.73},
+    "unseen_drift": {"full_survival_pct": 100, "mean_survival_steps": 300, "mean_energy": 39.69}
+  }
+}
