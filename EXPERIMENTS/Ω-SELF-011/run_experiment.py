@@ -73,10 +73,14 @@ def episode(seed,cond,family,steps=140):
  model_error=abs(clip(model_scale*cue+model_offset)-latent)
  return {'condition':cond,'family':family,'seed':seed,'score':score,'incidents':incidents,'work_actions':work,'probe_count':probes,'probe_rate':probes/steps,'revisions':revisions,'prediction_error':statistics.mean(prediction_errors) if prediction_errors else 0.,'final_model_error':model_error,'uncertainty_final':uncertainty,'final_risk':latent}
 def avg(rows,k): return statistics.mean(r[k] for r in rows)
-def ci_pair(a,b,key,n=4000,seed=1111):
- rng=random.Random(seed); m=min(len(a),len(b)); ds=[]
- for _ in range(n): ds.append(statistics.mean(a[i][key]-b[i][key] for i in (rng.randrange(m) for _ in range(m))))
- ds.sort(); return {'difference':round(avg(a,key)-avg(b,key),4),'ci95':[round(ds[int(.025*n)],4),round(ds[min(n-1,int(.975*n))],4)],'resamples':n}
+def ci_diff(a,b,key,n=4000,seed=1111):
+ # Independent episode groups: resample each condition separately, not paired by row order.
+ rng=random.Random(seed); da=[]; m=len(a); q=len(b)
+ for _ in range(n):
+  ma=statistics.mean(a[rng.randrange(m)][key] for _ in range(m))
+  mb=statistics.mean(b[rng.randrange(q)][key] for _ in range(q))
+  da.append(ma-mb)
+ da.sort(); return {'difference':round(avg(a,key)-avg(b,key),4),'ci95':[round(da[int(.025*n)],4),round(da[min(n-1,int(.975*n))],4)],'resamples':n,'method':'independent bootstrap; episodes are not paired'}
 def main():
  ap=argparse.ArgumentParser(); ap.add_argument('--seeds',type=int,default=240); ap.add_argument('--steps',type=int,default=140); ap.add_argument('--out',default='results.csv'); args=ap.parse_args()
  rows=[]
@@ -98,7 +102,7 @@ def main():
  held=[r for r in rows if r['family']=='unseen_electrical']; ci={}
  for baseline in ['A_no_memory','B_surface_replay','C_similarity_probe','E_random_probe','F_model_only']:
   for k in ['score','incidents','final_model_error']:
-   ci[f'D_uncertainty_revision_vs_{baseline}_{k}']=ci_pair([r for r in held if r['condition']=='D_uncertainty_revision'],[r for r in held if r['condition']==baseline],k,seed=1120+len(ci))
+   ci[f'D_uncertainty_revision_vs_{baseline}_{k}']=ci_diff([r for r in held if r['condition']=='D_uncertainty_revision'],[r for r in held if r['condition']==baseline],k,seed=1120+len(ci))
  meta={'experiment':'Ω-SELF-011','seeds_per_condition_family':args.seeds,'steps_per_episode':args.steps,'conditions':CONDS,'families':FAMILIES,'held_out_family':'unseen_electrical','calibration_steps':12,'primary_metrics':['incidents','score','probe_rate','final_model_error','final_risk'],'safety_note':'harmful actions occur only inside the simulator; calibration probes are non-injurious','limitations':['Synthetic environment and hand-coded policies','Simple affine model','One held-out family','No claim of consciousness or general intelligence']}
  for name,data in [('summary.json',summary),('family_summary.json',family),('confidence_intervals.json',ci),('metadata.json',meta)]: (out.parent/name).write_text(json.dumps(data,indent=2))
  print(json.dumps({'summary':summary,'family_summary':family,'confidence_intervals':ci,'metadata':meta},indent=2))
