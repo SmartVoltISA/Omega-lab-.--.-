@@ -9,9 +9,6 @@ FAMILIES = ["ordinary", "emergency", "cue_shift"]
 N_EPISODES = 240
 N_STEPS = 24
 
-def sigmoid(x):
-    return 1.0 / (1.0 + math.exp(-max(-30.0, min(30.0, x))))
-
 def scenario(rng, family, step):
     base = rng.uniform(0.08, 0.92)
     if family == "emergency":
@@ -60,12 +57,13 @@ def choose(policy, s, learned_reliability, rng):
     return max(candidates, key=lambda a: (values[a], {"retreat":0,"defend":1,"disable":2,"sacrifice":3}[a]))
 
 def run_episode(policy, family, seed):
-    rng = random.Random(seed)
+    scenario_rng = random.Random(seed)
+    action_rng = random.Random(seed + 50000000)
     learned_rel = 0.75
     rows = defaultdict(float)
     for t in range(N_STEPS):
-        s = scenario(rng, family, t)
-        action = choose(policy, s, learned_rel, rng)
+        s = scenario(scenario_rng, family, t)
+        action = choose(policy, s, learned_rel, action_rng)
         threat = s["threat"]
         people = s["people"]
         rows["decisions"] += 1
@@ -77,16 +75,16 @@ def run_episode(policy, family, seed):
         rows["self_sacrifice"] += int(action == "sacrifice")
         rows["avoidable_sacrifice"] += int(action == "sacrifice" and (not threat or s["retreat"]))
         if action == "sacrifice":
-            survived = rng.random() < 0.02
+            survived = action_rng.random() < 0.02
             saved_fraction = 0.96 if threat else 0.65
         elif action == "retreat":
-            survived = rng.random() < 0.98
+            survived = action_rng.random() < 0.98
             saved_fraction = (0.12 if threat else 0.95) if s["retreat"] else 0.30
         elif action == "defend":
-            survived = rng.random() < (0.90 if not threat else 0.80 - 0.04*s["severity"])
+            survived = action_rng.random() < (0.90 if not threat else 0.80 - 0.04*s["severity"])
             saved_fraction = 0.88 if threat else 0.78
         else: # disable opponent
-            survived = rng.random() < (0.93 if not threat else 0.86)
+            survived = action_rng.random() < (0.93 if not threat else 0.86)
             saved_fraction = 0.93 if threat else 0.72
         rows["agent_survived"] += int(survived)
         harmed = round(people * (1.0 - saved_fraction))
@@ -94,7 +92,7 @@ def run_episode(policy, family, seed):
         rows["people_protected"] += people - harmed
         # Learning is based on observed outcome proxy, not privileged access to truth.
         if policy == "consequence_learning":
-            observed_threat = action in ("defend", "disable") and (not survived or rng.random() < 0.12)
+            observed_threat = action in ("defend", "disable") and (not survived or action_rng.random() < 0.12)
             # Bayesian-like moving estimate of whether this cue predicts an adverse event.
             target = 1.0 if observed_threat == s["cue"] else 0.0
             learned_rel = min(0.95, max(0.05, 0.92*learned_rel + 0.08*target))
@@ -122,7 +120,6 @@ def main():
     ap.add_argument("--seed", type=int, default=130013)
     ap.add_argument("--out", default="results.csv")
     args = ap.parse_args()
-    global N_STEPS
     N_STEPS = args.steps
     raw = []
     for fi, family in enumerate(FAMILIES):
@@ -146,7 +143,7 @@ def main():
                 # Episode-level rates / counts, not pooled decisions pretending to be independent.
                 out[key+"_mean"]=statistics.mean(vals) if vals else None
                 if key in ("agent_survived","people_harmed","opponent_harm","unnecessary_force","avoidable_sacrifice","proxy_utility","calibration_error"):
-                    m,lo,hi=mean_ci(vals, random.Random(args.seed+hash((family,policy,key))%100000), nboot=1200)
+                    m,lo,hi=mean_ci(vals, random.Random(args.seed + sum(ord(ch) for ch in (family+policy+key))), nboot=1200)
                     out[key+"_ci95_low"]=lo; out[key+"_ci95_high"]=hi
             summary.append(out)
     with open("summary.json","w",encoding="utf-8") as f:
