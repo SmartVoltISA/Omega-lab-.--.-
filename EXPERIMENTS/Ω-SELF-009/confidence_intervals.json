@@ -1,0 +1,65 @@
+{
+  "C_abstract_vs_A_no_transfer_score": {
+    "difference": 25.8864,
+    "ci95": [
+      25.1904,
+      26.5904
+    ]
+  },
+  "C_abstract_vs_A_no_transfer_violations": {
+    "difference": -22.056,
+    "ci95": [
+      -22.644,
+      -21.492
+    ]
+  },
+  "C_abstract_vs_A_no_transfer_final_risk": {
+    "difference": -0.204,
+    "ci95": [
+      -0.2172,
+      -0.1916
+    ]
+  },
+  "C_abstract_vs_B_episode_replay_score": {
+    "difference": 1.0992,
+    "ci95": [
+      1.0512,
+      1.1424
+    ]
+  },
+  "C_abstract_vs_B_episode_replay_violations": {
+    "difference": 0,
+    "ci95": [
+      0,
+      0
+    ]
+  },
+  "C_abstract_vs_B_episode_replay_final_risk": {
+    "difference": 0.2456,
+    "ci95": [
+      0.235,
+      0.2556
+    ]
+  },
+  "C_abstract_vs_D_random_rule_score": {
+    "difference": 29.264,
+    "ci95": [
+      28.4336,
+      30.072
+    ]
+  },
+  "C_abstract_vs_D_random_rule_violations": {
+    "difference": -1.78,
+    "ci95": [
+      -2.052,
+      -1.532
+    ]
+  },
+  "C_abstract_vs_D_random_rule_final_risk": {
+    "difference": 0.2809,
+    "ci95": [
+      0.251,
+      0.3111
+    ]
+  }
+}
