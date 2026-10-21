@@ -1,0 +1,132 @@
+{
+  "A_fixed": {
+    "rapid": {
+      "survival": 100,
+      "progress": 177.4,
+      "energy": 25.79,
+      "work_fraction": 0.584
+    },
+    "slow": {
+      "survival": 100,
+      "progress": 209.64,
+      "energy": 25.81,
+      "work_fraction": 0.584
+    },
+    "surprise": {
+      "survival": 100,
+      "progress": 181.07,
+      "energy": 25.8,
+      "work_fraction": 0.584
+    },
+    "unseen_drift": {
+      "survival": 100,
+      "progress": 185.08,
+      "energy": 25.8,
+      "work_fraction": 0.584
+    }
+  },
+  "B_reward_only": {
+    "rapid": {
+      "survival": 100,
+      "progress": 178.36,
+      "energy": 24.06,
+      "work_fraction": 0.588
+    },
+    "slow": {
+      "survival": 100,
+      "progress": 210.72,
+      "energy": 24.1,
+      "work_fraction": 0.588
+    },
+    "surprise": {
+      "survival": 100,
+      "progress": 180.92,
+      "energy": 25.78,
+      "work_fraction": 0.586
+    },
+    "unseen_drift": {
+      "survival": 100,
+      "progress": 186.62,
+      "energy": 23.83,
+      "work_fraction": 0.588
+    }
+  },
+  "C_punishment_only": {
+    "rapid": {
+      "survival": 100,
+      "progress": 177.48,
+      "energy": 25.32,
+      "work_fraction": 0.584
+    },
+    "slow": {
+      "survival": 100,
+      "progress": 209.69,
+      "energy": 25.34,
+      "work_fraction": 0.584
+    },
+    "surprise": {
+      "survival": 100,
+      "progress": 181.21,
+      "energy": 25.33,
+      "work_fraction": 0.584
+    },
+    "unseen_drift": {
+      "survival": 100,
+      "progress": 185.26,
+      "energy": 25.32,
+      "work_fraction": 0.584
+    }
+  },
+  "D_whip_and_carrot": {
+    "rapid": {
+      "survival": 100,
+      "progress": 178.42,
+      "energy": 23.65,
+      "work_fraction": 0.588
+    },
+    "slow": {
+      "survival": 100,
+      "progress": 210.55,
+      "energy": 24.64,
+      "work_fraction": 0.587
+    },
+    "surprise": {
+      "survival": 100,
+      "progress": 181.31,
+      "energy": 24.89,
+      "work_fraction": 0.587
+    },
+    "unseen_drift": {
+      "survival": 100,
+      "progress": 186.62,
+      "energy": 23.64,
+      "work_fraction": 0.588
+    }
+  },
+  "E_sham_feedback": {
+    "rapid": {
+      "survival": 100,
+      "progress": 177.12,
+      "energy": 26.2,
+      "work_fraction": 0.583
+    },
+    "slow": {
+      "survival": 100,
+      "progress": 209.25,
+      "energy": 26.2,
+      "work_fraction": 0.584
+    },
+    "surprise": {
+      "survival": 100,
+      "progress": 180.9,
+      "energy": 26.19,
+      "work_fraction": 0.583
+    },
+    "unseen_drift": {
+      "survival": 100,
+      "progress": 184.88,
+      "energy": 26.2,
+      "work_fraction": 0.583
+    }
+  }
+}

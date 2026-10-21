@@ -1,0 +1,31 @@
+{
+  "experiment": "Ω-SELF-007",
+  "seed": 81000,
+  "test_families": [
+    "rapid",
+    "slow",
+    "surprise",
+    "unseen_drift"
+  ],
+  "unseen_family": "unseen_drift",
+  "test_seeds_per_family": 60,
+  "horizon": 250,
+  "conditions": [
+    "A_fixed",
+    "B_reward_only",
+    "C_punishment_only",
+    "D_whip_and_carrot",
+    "E_sham_feedback"
+  ],
+  "reward_signal": "incremental useful task progress",
+  "punishment_signal": "low-energy and high-stress penalties",
+  "feedback_interval_steps": 25,
+  "initial_thresholds_shared": true,
+  "method": "hand-coded feedback-rule comparison; not open-ended learning",
+  "limitations": [
+    "Toy hand-coded environment and controllers",
+    "Only one designed unseen family",
+    "All conditions reached 100% survival",
+    "Not evidence of consciousness or general intelligence"
+  ]
+}

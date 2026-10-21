@@ -1,0 +1,72 @@
+{
+  "experiment": "Ω-SELF-007",
+  "seed": 81000,
+  "horizon": 250,
+  "test_seeds_per_family": 60,
+  "episodes_per_condition": 240,
+  "test_families": [
+    "rapid",
+    "slow",
+    "surprise",
+    "unseen_drift"
+  ],
+  "conditions": {
+    "A_fixed": {
+      "episodes": 240,
+      "full_survival_pct": 100,
+      "mean_survival_steps": 250,
+      "mean_task_progress": 188.3,
+      "mean_energy": 25.8,
+      "final_energy": 22.6,
+      "work_fraction": 0.584,
+      "descriptive_score": 0.75303
+    },
+    "B_reward_only": {
+      "episodes": 240,
+      "full_survival_pct": 100,
+      "mean_survival_steps": 250,
+      "mean_task_progress": 189.16,
+      "mean_energy": 24.44,
+      "final_energy": 18.5,
+      "work_fraction": 0.588,
+      "descriptive_score": 0.75408
+    },
+    "C_punishment_only": {
+      "episodes": 240,
+      "full_survival_pct": 100,
+      "mean_survival_steps": 250,
+      "mean_task_progress": 188.41,
+      "mean_energy": 25.33,
+      "final_energy": 22.55,
+      "work_fraction": 0.584,
+      "descriptive_score": 0.75287
+    },
+    "D_whip_and_carrot": {
+      "episodes": 240,
+      "full_survival_pct": 100,
+      "mean_survival_steps": 250,
+      "mean_task_progress": 189.22,
+      "mean_energy": 24.21,
+      "final_energy": 18.6,
+      "work_fraction": 0.588,
+      "descriptive_score": 0.75403
+    },
+    "E_sham_feedback": {
+      "episodes": 240,
+      "full_survival_pct": 100,
+      "mean_survival_steps": 250,
+      "mean_task_progress": 188.04,
+      "mean_energy": 26.2,
+      "final_energy": 23.28,
+      "work_fraction": 0.583,
+      "descriptive_score": 0.7527
+    }
+  },
+  "interpretation": "Combined feedback slightly exceeds fixed and punishment-only in useful progress, but is not clearly better than reward-only; all conditions have 100% survival.",
+  "limitations": [
+    "Toy hand-coded environment and controllers",
+    "Only one designed unseen family",
+    "All conditions reached 100% survival",
+    "Not evidence of consciousness or general intelligence"
+  ]
+}
