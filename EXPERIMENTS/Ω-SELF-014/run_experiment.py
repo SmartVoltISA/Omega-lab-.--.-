@@ -86,6 +86,7 @@ def run_episode(policy, seed):
     scene_rng = random.Random(seed)
     action_rng = random.Random(seed+9000001)
     history = deque(maxlen=WINDOW)
+    detect_history = deque(maxlen=DETECT_PRIOR+DETECT_RECENT)
     cumulative_matches, cumulative_n = 0,0
     reliability = 0.75
     detected = False
@@ -105,7 +106,8 @@ def run_episode(policy, seed):
         elif policy == "rolling_learner":
             decision_rel = update_estimate(sum(history),len(history)) if history else 0.75
         elif policy == "change_detector":
-            decision_rel = update_estimate(sum(history),len(history)) if history else 0.75
+            decision_rel = (update_estimate(sum(history),len(history)) if detected and history
+                            else reliability)
         else:
             decision_rel = BASELINE_RELIABILITY
         action = choose(policy,cue,decision_rel,people,retreat,action_rng)
@@ -122,12 +124,13 @@ def run_episode(policy, seed):
         feedback_threat = threat if action_rng.random() < FEEDBACK_ACCURACY else not threat
         match = int(cue == feedback_threat)
         history.append(match)
+        detect_history.append(match)
         cumulative_matches += match
         cumulative_n += 1
         reliability = update_estimate(cumulative_matches,cumulative_n)
         if policy == "change_detector" and t >= BASELINE_STEPS+DETECT_PRIOR+DETECT_RECENT:
-            recent = list(history)[-DETECT_RECENT:]
-            prior = list(history)[-WINDOW:-DETECT_RECENT]
+            recent = list(detect_history)[-DETECT_RECENT:]
+            prior = list(detect_history)[:DETECT_PRIOR]
             if len(prior) == DETECT_PRIOR and len(recent) == DETECT_RECENT:
                 prior_rate = sum(prior)/len(prior)
                 recent_rate = sum(recent)/len(recent)
