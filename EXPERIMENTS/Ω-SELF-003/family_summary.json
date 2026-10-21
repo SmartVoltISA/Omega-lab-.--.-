@@ -1,0 +1,6 @@
+[
+ {"family":0,"label":"rapid regime changes","A_reactive_noisy":0.456,"B_self_model_fixed":0.348,"C_feedback_self_modify":0.952,"D_sham_self_modify":0.092,"E_oracle_state":1.0},
+ {"family":1,"label":"slow regime changes","A_reactive_noisy":0.624,"B_self_model_fixed":0.540,"C_feedback_self_modify":0.964,"D_sham_self_modify":0.228,"E_oracle_state":1.0},
+ {"family":2,"label":"one surprise shift","A_reactive_noisy":0.132,"B_self_model_fixed":0.092,"C_feedback_self_modify":0.872,"D_sham_self_modify":0.004,"E_oracle_state":0.988},
+ {"family":3,"label":"no regime shift","A_reactive_noisy":0.780,"B_self_model_fixed":0.748,"C_feedback_self_modify":1.0,"D_sham_self_modify":0.564,"E_oracle_state":1.0}
+]
