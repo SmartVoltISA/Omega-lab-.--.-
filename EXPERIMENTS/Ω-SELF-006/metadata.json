@@ -1,0 +1,38 @@
+{
+  "experiment": "Ω-SELF-006",
+  "seed": 20261022,
+  "train_families": [
+    "rapid",
+    "slow",
+    "surprise"
+  ],
+  "test_families": [
+    "rapid",
+    "slow",
+    "surprise",
+    "unseen_drift"
+  ],
+  "unseen_family": "unseen_drift",
+  "train_seeds_per_family": 20,
+  "test_seeds_per_family": 60,
+  "horizon": 250,
+  "candidate_count": 24,
+  "objective": "0.50 * normalized task progress + 0.30 * full survival + 0.20 * normalized mean energy",
+  "selected_candidate": "candidate_13",
+  "selected_policy": {
+    "energy_threshold": 44.96,
+    "stress_limit": 18.7
+  },
+  "random_candidate": "candidate_15",
+  "random_policy": {
+    "energy_threshold": 15.42,
+    "stress_limit": 11.38
+  },
+  "limitations": [
+    "Toy hand-coded policies and simulator; not evidence of general intelligence or consciousness.",
+    "One designed unseen family only.",
+    "All primary conditions reached 100% survival.",
+    "Composite objective rewards resource retention enough to compensate for reduced progress.",
+    "No compute-matched optimizer-vs-baseline comparison."
+  ]
+}

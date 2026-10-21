@@ -1,0 +1,74 @@
+{
+  "experiment": "Ω-SELF-006",
+  "seed": 20261022,
+  "horizon": 250,
+  "train_seeds_per_family": 20,
+  "test_seeds_per_family": 60,
+  "candidate_count": 24,
+  "objective": "0.50 * normalized task progress + 0.30 * full survival + 0.20 * normalized mean energy",
+  "selected_candidate": "candidate_13",
+  "selected_policy": {
+    "energy_threshold": 44.96,
+    "stress_limit": 18.7
+  },
+  "random_candidate": "candidate_15",
+  "random_policy": {
+    "energy_threshold": 15.42,
+    "stress_limit": 11.38
+  },
+  "primary_summary": {
+    "A_fixed_baseline": {
+      "episodes": 240,
+      "full_survival_pct": 100,
+      "mean_survival_steps": 250,
+      "mean_task_progress": 189.38,
+      "mean_energy": 23.24,
+      "final_energy": 19.7,
+      "work_fraction": 0.587,
+      "composite_score": 0.72524
+    },
+    "B_feedback_heuristic": {
+      "episodes": 240,
+      "full_survival_pct": 100,
+      "mean_survival_steps": 250,
+      "mean_task_progress": 185.37,
+      "mean_energy": 31.85,
+      "final_energy": 31.19,
+      "work_fraction": 0.576,
+      "composite_score": 0.73444
+    },
+    "C_search_best_of_N": {
+      "episodes": 240,
+      "full_survival_pct": 100,
+      "mean_survival_steps": 250,
+      "mean_task_progress": 180.15,
+      "mean_energy": 45.5,
+      "final_energy": 44.55,
+      "work_fraction": 0.564,
+      "composite_score": 0.75132
+    },
+    "D_random_candidate_matched_N": {
+      "episodes": 240,
+      "full_survival_pct": 100,
+      "mean_survival_steps": 250,
+      "mean_task_progress": 190.32,
+      "mean_energy": 22.5,
+      "final_energy": 15.01,
+      "work_fraction": 0.591,
+      "composite_score": 0.72564
+    }
+  },
+  "candidate_distribution": {
+    "best_test_score": 0.75132,
+    "median_test_score": 0.72766,
+    "selected_test_score": 0.75132,
+    "random_test_score": 0.72564
+  },
+  "limitations": [
+    "Toy hand-coded policies and simulator; not evidence of general intelligence or consciousness.",
+    "One designed unseen family only.",
+    "All primary conditions reached 100% survival.",
+    "Composite objective rewards resource retention enough to compensate for reduced progress.",
+    "No compute-matched optimizer-vs-baseline comparison."
+  ]
+}

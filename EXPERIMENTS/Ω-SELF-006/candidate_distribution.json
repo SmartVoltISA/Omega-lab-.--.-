@@ -1,0 +1,170 @@
+[
+  {
+    "candidate": "candidate_00",
+    "train_score": 0.7435,
+    "test_score": 0.74158,
+    "test_progress": 183.38,
+    "test_survival_pct": 100
+  },
+  {
+    "candidate": "candidate_01",
+    "train_score": 0.75046,
+    "test_score": 0.74829,
+    "test_progress": 180.47,
+    "test_survival_pct": 100
+  },
+  {
+    "candidate": "candidate_02",
+    "train_score": 0.74908,
+    "test_score": 0.74742,
+    "test_progress": 181.33,
+    "test_survival_pct": 100
+  },
+  {
+    "candidate": "candidate_03",
+    "train_score": 0.71748,
+    "test_score": 0.71541,
+    "test_progress": 191.83,
+    "test_survival_pct": 100
+  },
+  {
+    "candidate": "candidate_04",
+    "train_score": 0.72816,
+    "test_score": 0.72559,
+    "test_progress": 189.67,
+    "test_survival_pct": 100
+  },
+  {
+    "candidate": "candidate_05",
+    "train_score": 0.72848,
+    "test_score": 0.72662,
+    "test_progress": 188.14,
+    "test_survival_pct": 100
+  },
+  {
+    "candidate": "candidate_06",
+    "train_score": 0.74443,
+    "test_score": 0.74192,
+    "test_progress": 183.48,
+    "test_survival_pct": 100
+  },
+  {
+    "candidate": "candidate_07",
+    "train_score": 0.73092,
+    "test_score": 0.7287,
+    "test_progress": 189.37,
+    "test_survival_pct": 100
+  },
+  {
+    "candidate": "candidate_08",
+    "train_score": 0.72277,
+    "test_score": 0.7206,
+    "test_progress": 190.27,
+    "test_survival_pct": 100
+  },
+  {
+    "candidate": "candidate_09",
+    "train_score": 0.72692,
+    "test_score": 0.72474,
+    "test_progress": 191.12,
+    "test_survival_pct": 100
+  },
+  {
+    "candidate": "candidate_10",
+    "train_score": 0.72666,
+    "test_score": 0.72415,
+    "test_progress": 189.92,
+    "test_survival_pct": 100
+  },
+  {
+    "candidate": "candidate_11",
+    "train_score": 0.71988,
+    "test_score": 0.71764,
+    "test_progress": 191.47,
+    "test_survival_pct": 100
+  },
+  {
+    "candidate": "candidate_12",
+    "train_score": 0.72584,
+    "test_score": 0.72334,
+    "test_progress": 190.04,
+    "test_survival_pct": 100
+  },
+  {
+    "candidate": "candidate_13",
+    "train_score": 0.75381,
+    "test_score": 0.75132,
+    "test_progress": 180.15,
+    "test_survival_pct": 100
+  },
+  {
+    "candidate": "candidate_14",
+    "train_score": 0.73639,
+    "test_score": 0.73435,
+    "test_progress": 185.26,
+    "test_survival_pct": 100
+  },
+  {
+    "candidate": "candidate_15",
+    "train_score": 0.72812,
+    "test_score": 0.72564,
+    "test_progress": 190.32,
+    "test_survival_pct": 100
+  },
+  {
+    "candidate": "candidate_16",
+    "train_score": 0.73995,
+    "test_score": 0.73784,
+    "test_progress": 183.59,
+    "test_survival_pct": 100
+  },
+  {
+    "candidate": "candidate_17",
+    "train_score": 0.72439,
+    "test_score": 0.72187,
+    "test_progress": 190.81,
+    "test_survival_pct": 100
+  },
+  {
+    "candidate": "candidate_18",
+    "train_score": 0.74795,
+    "test_score": 0.74578,
+    "test_progress": 181.97,
+    "test_survival_pct": 100
+  },
+  {
+    "candidate": "candidate_19",
+    "train_score": 0.74952,
+    "test_score": 0.74773,
+    "test_progress": 180.5,
+    "test_survival_pct": 100
+  },
+  {
+    "candidate": "candidate_20",
+    "train_score": 0.73269,
+    "test_score": 0.73048,
+    "test_progress": 189.12,
+    "test_survival_pct": 100
+  },
+  {
+    "candidate": "candidate_21",
+    "train_score": 0.72942,
+    "test_score": 0.72661,
+    "test_progress": 190.48,
+    "test_survival_pct": 100
+  },
+  {
+    "candidate": "candidate_22",
+    "train_score": 0.74006,
+    "test_score": 0.73795,
+    "test_progress": 185.24,
+    "test_survival_pct": 100
+  },
+  {
+    "candidate": "candidate_23",
+    "train_score": 0.7268,
+    "test_score": 0.72461,
+    "test_progress": 190.63,
+    "test_survival_pct": 100
+  }
+]

@@ -1,0 +1,26 @@
+{
+  "C_vs_A_progress": {
+    "mean_progress_difference": -9.227,
+    "paired_bootstrap_95_ci": [
+      -9.433,
+      -9.01
+    ],
+    "resamples": 3000
+  },
+  "C_vs_D_progress": {
+    "mean_progress_difference": -10.166,
+    "paired_bootstrap_95_ci": [
+      -10.387,
+      -9.942
+    ],
+    "resamples": 3000
+  },
+  "B_vs_A_progress": {
+    "mean_progress_difference": -4.014,
+    "paired_bootstrap_95_ci": [
+      -4.175,
+      -3.854
+    ],
+    "resamples": 3000
+  }
+}

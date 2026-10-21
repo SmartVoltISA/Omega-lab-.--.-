@@ -1,0 +1,106 @@
+{
+  "A_fixed_baseline": {
+    "rapid": {
+      "full_survival_pct": 100,
+      "mean_task_progress": 179.03,
+      "mean_energy": 23.24,
+      "composite_score": 0.70455
+    },
+    "slow": {
+      "full_survival_pct": 100,
+      "mean_task_progress": 210.11,
+      "mean_energy": 23.24,
+      "composite_score": 0.76669
+    },
+    "surprise": {
+      "full_survival_pct": 100,
+      "mean_task_progress": 182.11,
+      "mean_energy": 23.26,
+      "composite_score": 0.71073
+    },
+    "unseen_drift": {
+      "full_survival_pct": 100,
+      "mean_task_progress": 186.28,
+      "mean_energy": 23.22,
+      "composite_score": 0.71899
+    }
+  },
+  "B_feedback_heuristic": {
+    "rapid": {
+      "full_survival_pct": 100,
+      "mean_task_progress": 174.5,
+      "mean_energy": 31.84,
+      "composite_score": 0.71268
+    },
+    "slow": {
+      "full_survival_pct": 100,
+      "mean_task_progress": 206.51,
+      "mean_energy": 31.84,
+      "composite_score": 0.7767
+    },
+    "surprise": {
+      "full_survival_pct": 100,
+      "mean_task_progress": 178.11,
+      "mean_energy": 31.87,
+      "composite_score": 0.71997
+    },
+    "unseen_drift": {
+      "full_survival_pct": 100,
+      "mean_task_progress": 182.35,
+      "mean_energy": 31.85,
+      "composite_score": 0.7284
+    }
+  },
+  "C_search_best_of_N": {
+    "rapid": {
+      "full_survival_pct": 100,
+      "mean_task_progress": 169.4,
+      "mean_energy": 45.5,
+      "composite_score": 0.72981
+    },
+    "slow": {
+      "full_survival_pct": 100,
+      "mean_task_progress": 201.73,
+      "mean_energy": 45.5,
+      "composite_score": 0.79446
+    },
+    "surprise": {
+      "full_survival_pct": 100,
+      "mean_task_progress": 172.3,
+      "mean_energy": 45.5,
+      "composite_score": 0.7356
+    },
+    "unseen_drift": {
+      "full_survival_pct": 100,
+      "mean_task_progress": 177.19,
+      "mean_energy": 45.51,
+      "composite_score": 0.7454
+    }
+  },
+  "D_random_candidate_matched_N": {
+    "rapid": {
+      "full_survival_pct": 100,
+      "mean_task_progress": 178.46,
+      "mean_energy": 22.54,
+      "composite_score": 0.70198
+    },
+    "slow": {
+      "full_survival_pct": 100,
+      "mean_task_progress": 212.19,
+      "mean_energy": 22.48,
+      "composite_score": 0.76935
+    },
+    "surprise": {
+      "full_survival_pct": 100,
+      "mean_task_progress": 183.39,
+      "mean_energy": 22.55,
+      "composite_score": 0.71189
+    },
+    "unseen_drift": {
+      "full_survival_pct": 100,
+      "mean_task_progress": 187.24,
+      "mean_energy": 22.44,
+      "composite_score": 0.71936
+    }
+  }
+}
