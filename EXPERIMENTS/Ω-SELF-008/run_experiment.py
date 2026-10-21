@@ -46,8 +46,8 @@ def run_episode(family,seed,horizon,condition):
     energy_threshold=max(12,min(48,energy_threshold+(1.3 if p>.22 else -.15)))
     stress_limit=max(9,min(21,stress_limit+(-1.3 if p>.22 else .2)))
    elif condition=="D_combined":
-    energy_threshold=max(10,min(48,energy_threshold+(0.8 if p>.22 else (-.5 if r<.7 else .1)))
-    stress_limit=max(9,min(25,stress_limit+(1.0 if p<.08 and r>.8 else (-1.2 if p>.22 else 0.0)))
+    energy_threshold=max(10,min(48,energy_threshold+(0.8 if p>.22 else (-.5 if r<.7 else .1))))
+    stress_limit=max(9,min(25,stress_limit+(1.0 if p<.08 and r>.8 else (-1.2 if p>.22 else 0.0))))
    elif condition=="E_sham":
     energy_threshold=max(8,min(48,energy_threshold+(.9 if ((t+1)//25)%2 else -.9)))
     stress_limit=max(9,min(25,stress_limit+(.7 if ((t+1)//25)%2 else -.7)))
