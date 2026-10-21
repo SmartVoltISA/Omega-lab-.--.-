@@ -1,0 +1,122 @@
+{
+  "A_no_memory": {
+    "hot_surface": {
+      "score": -12.4775,
+      "incidents": 46.3458,
+      "probe_rate": 0.0857,
+      "final_model_error": 0.0408
+    },
+    "pressurized_vessel": {
+      "score": -7.3775,
+      "incidents": 44.6458,
+      "probe_rate": 0.0857,
+      "final_model_error": 0.0952
+    },
+    "unseen_electrical": {
+      "score": -18.7525,
+      "incidents": 48.4375,
+      "probe_rate": 0.0857,
+      "final_model_error": 0.1243
+    }
+  },
+  "B_surface_replay": {
+    "hot_surface": {
+      "score": 63.8234,
+      "incidents": 5.8,
+      "probe_rate": 0.0857,
+      "final_model_error": 0.0393
+    },
+    "pressurized_vessel": {
+      "score": 56.7836,
+      "incidents": 7.0125,
+      "probe_rate": 0.0857,
+      "final_model_error": 0.0922
+    },
+    "unseen_electrical": {
+      "score": 54.5406,
+      "incidents": 7.9667,
+      "probe_rate": 0.0857,
+      "final_model_error": 0.126
+    }
+  },
+  "C_similarity_probe": {
+    "hot_surface": {
+      "score": 62.754,
+      "incidents": 1.9458,
+      "probe_rate": 0.4896,
+      "final_model_error": 0.0383
+    },
+    "pressurized_vessel": {
+      "score": 63.1747,
+      "incidents": 1.6167,
+      "probe_rate": 0.5699,
+      "final_model_error": 0.0913
+    },
+    "unseen_electrical": {
+      "score": 53.5679,
+      "incidents": 2.675,
+      "probe_rate": 0.6484,
+      "final_model_error": 0.1201
+    }
+  },
+  "D_uncertainty_revision": {
+    "hot_surface": {
+      "score": 58.0704,
+      "incidents": 2.8958,
+      "probe_rate": 0.4832,
+      "final_model_error": 0.0686
+    },
+    "pressurized_vessel": {
+      "score": 56.4173,
+      "incidents": 2.9042,
+      "probe_rate": 0.4891,
+      "final_model_error": 0.0914
+    },
+    "unseen_electrical": {
+      "score": 63.5917,
+      "incidents": 2.9,
+      "probe_rate": 0.4549,
+      "final_model_error": 0.1062
+    }
+  },
+  "E_random_probe": {
+    "hot_surface": {
+      "score": 16.944,
+      "incidents": 29.1125,
+      "probe_rate": 0.3969,
+      "final_model_error": 0.038
+    },
+    "pressurized_vessel": {
+      "score": 18.0833,
+      "incidents": 28.7417,
+      "probe_rate": 0.3941,
+      "final_model_error": 0.0998
+    },
+    "unseen_electrical": {
+      "score": 36.0787,
+      "incidents": 23.6333,
+      "probe_rate": 0.3955,
+      "final_model_error": 0.1383
+    }
+  },
+  "F_model_only": {
+    "hot_surface": {
+      "score": 33.8478,
+      "incidents": 22.1458,
+      "probe_rate": 0.0857,
+      "final_model_error": 0.14
+    },
+    "pressurized_vessel": {
+      "score": 25.3262,
+      "incidents": 27.8708,
+      "probe_rate": 0.0857,
+      "final_model_error": 0.1845
+    },
+    "unseen_electrical": {
+      "score": 10.7763,
+      "incidents": 32.0292,
+      "probe_rate": 0.0857,
+      "final_model_error": 0.2083
+    }
+  }
+}
