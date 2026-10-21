@@ -1,0 +1,35 @@
+[
+  {
+    "condition": "A_reactive",
+    "runs": 200,
+    "mean_survival_steps": 500,
+    "sd_survival_steps": 0,
+    "full_horizon_rate": 1,
+    "mean_final_energy": 20.02152972492781,
+    "mean_energy": 63.55335292633013,
+    "mean_prediction_error": null,
+    "mean_policy_changes": 0
+  },
+  {
+    "condition": "B_self_model",
+    "runs": 200,
+    "mean_survival_steps": 493.765,
+    "sd_survival_steps": 26.19102180357952,
+    "full_horizon_rate": 0.915,
+    "mean_final_energy": 42.72511637185754,
+    "mean_energy": 75.53081553113152,
+    "mean_prediction_error": 13.29232118408133,
+    "mean_policy_changes": 0
+  },
+  {
+    "condition": "C_self_modifying",
+    "runs": 200,
+    "mean_survival_steps": 497.71,
+    "sd_survival_steps": 15.242953722653445,
+    "full_horizon_rate": 0.965,
+    "mean_final_energy": 39.56949411296374,
+    "mean_energy": 73.60960564203862,
+    "mean_prediction_error": 13.21679368519191,
+    "mean_policy_changes": 76.565
+  }
+]
