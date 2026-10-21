@@ -170,13 +170,16 @@ def main():
     with open(args.out,"w",newline="",encoding="utf-8") as f:
         w=csv.DictWriter(f,fieldnames=list(raw[0]));w.writeheader();w.writerows(raw)
     summary=[]
+    grouped = {}
+    for row in raw:
+        grouped.setdefault((row["policy"], row["phase"], row["episode"]), []).append(row)
     metrics=["survived","people_harmed","opponent_harm","unnecessary_force",
              "avoidable_sacrifice","retreat","utility","reliability_error"]
     for policy in POLICIES:
         for phase in ("baseline","shifted"):
             epvals=[]
             for ep in range(args.episodes):
-                subset=[r for r in raw if r["policy"]==policy and r["episode"]==ep and r["phase"]==phase]
+                subset=grouped[(policy,phase,ep)]
                 rec={"policy":policy,"phase":phase,"episode":ep}
                 for m in metrics:
                     rec[m]=statistics.mean(r[m] for r in subset)
