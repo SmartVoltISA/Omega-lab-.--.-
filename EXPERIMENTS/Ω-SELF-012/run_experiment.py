@@ -36,16 +36,16 @@ def run_episode(policy, family, seed):
             target = min(range(2), key=lambda i: others[i])
             emergency_severity = 0.0
         # Agent's cue-based prediction may be wrong, especially on the held-out mapping.
-        predicted_risk = cue if family != "heldout_cue_shift" else 1.0 - cue
+        predicted_risk = cue  # held-out family reverses the cue mapping; no family-specific correction is allowed
         uncertainty = abs(predicted_risk - 0.5) * 2.0
         # Safe probe costs a small amount but reveals whether a risky/urgent transfer is warranted.
         do_probe = False
         if policy == "C_total_outcome":
             do_probe = False
         elif policy == "D_consequence_fairness":
-            do_probe = uncertainty > 0.65 and latent_risk > 0.72
+            do_probe = uncertainty > 0.65 and event == "emergency"
         elif policy == "E_uncertainty_aware":
-            do_probe = uncertainty > 0.35 and (event == "emergency" or latent_risk > 0.6)
+            do_probe = uncertainty > 0.35 and (event == "emergency" or predicted_risk > 0.6)
         elif policy == "F_random_control":
             do_probe = rng.random() < 0.30
         if do_probe:
