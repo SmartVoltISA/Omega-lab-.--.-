@@ -1,0 +1,62 @@
+{
+  "A_no_transfer": {
+    "heat": {
+      "score": 130.0144,
+      "violations": 0.304,
+      "safe_action_rate": 0.2286,
+      "final_risk": 0.6591
+    },
+    "battery": {
+      "score": 104.2128,
+      "violations": 22.056,
+      "safe_action_rate": 0.1466,
+      "final_risk": 0.7315
+    },
+    "transfer_gap_score": 25.8016
+  },
+  "B_episode_replay": {
+    "heat": {
+      "score": 129.8304,
+      "violations": 0,
+      "safe_action_rate": 0.2323,
+      "final_risk": 0.5329
+    },
+    "battery": {
+      "score": 129,
+      "violations": 0,
+      "safe_action_rate": 0.2361,
+      "final_risk": 0.2819
+    },
+    "transfer_gap_score": 0.8304
+  },
+  "C_abstract_rule": {
+    "heat": {
+      "score": 129.8304,
+      "violations": 0,
+      "safe_action_rate": 0.2323,
+      "final_risk": 0.5329
+    },
+    "battery": {
+      "score": 130.0992,
+      "violations": 0,
+      "safe_action_rate": 0.231,
+      "final_risk": 0.5274
+    },
+    "transfer_gap_score": -0.2688
+  },
+  "D_random_rule": {
+    "heat": {
+      "score": 101.2096,
+      "violations": 1.96,
+      "safe_action_rate": 0.3466,
+      "final_risk": 0.2349
+    },
+    "battery": {
+      "score": 100.8352,
+      "violations": 1.78,
+      "safe_action_rate": 0.35,
+      "final_risk": 0.2465
+    },
+    "transfer_gap_score": 0.3744
+  }
+}

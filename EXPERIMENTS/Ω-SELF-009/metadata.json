@@ -1,0 +1,26 @@
+{
+  "experiment": "Ω-SELF-009",
+  "seeds_per_family": 250,
+  "steps_per_episode": 180,
+  "episodes_per_condition": 500,
+  "conditions": [
+    "A_no_transfer",
+    "B_episode_replay",
+    "C_abstract_rule",
+    "D_random_rule"
+  ],
+  "train_family": "heat",
+  "transfer_test_family": "battery",
+  "hypothesis": "A portable abstract risk rule transfers better than surface-level episode replay to a structurally analogous task.",
+  "primary_metrics": [
+    "battery score",
+    "battery violations",
+    "battery final risk"
+  ],
+  "limitations": [
+    "Toy simulator with stochastic noise",
+    "Abstract-rule normalization is explicitly provided, so this tests rule transfer rather than autonomous abstraction discovery",
+    "Only one transfer family tested",
+    "No evidence of general intelligence or consciousness"
+  ]
+}
