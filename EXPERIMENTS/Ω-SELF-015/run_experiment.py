@@ -98,7 +98,8 @@ def run_episode(ep, policy, seed):
             "useful_intervention": useful, "probe": used_probe, "wait": used_wait,
             "abstain": abstained, "probe_cost": probe_cost, "delay_cost": delay_cost,
             "utility": utility,
-            "cue_reliability_error": abs(r_est-reliability) if policy not in ("fixed_aggressive", "random") else None
+            "cue_reliability_error": abs((0.82 if policy == "static_cue" else r_est)-reliability)
+                if policy not in ("fixed_aggressive", "random", "safe_probe_always") else None
         })
     return rows
 
