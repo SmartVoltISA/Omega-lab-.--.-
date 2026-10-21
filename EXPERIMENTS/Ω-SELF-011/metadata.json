@@ -1,0 +1,35 @@
+{
+  "experiment": "Ω-SELF-011",
+  "seeds_per_condition_family": 240,
+  "steps_per_episode": 140,
+  "conditions": [
+    "A_no_memory",
+    "B_surface_replay",
+    "C_similarity_probe",
+    "D_uncertainty_revision",
+    "E_random_probe",
+    "F_model_only"
+  ],
+  "families": [
+    "hot_surface",
+    "pressurized_vessel",
+    "unseen_electrical"
+  ],
+  "held_out_family": "unseen_electrical",
+  "calibration_steps": 12,
+  "primary_metrics": [
+    "incidents",
+    "score",
+    "probe_rate",
+    "final_model_error",
+    "final_risk"
+  ],
+  "safety_note": "harmful actions occur only inside the simulator; calibration probes are non-injurious",
+  "limitations": [
+    "Synthetic environment and hand-coded policies",
+    "Simple affine model",
+    "One held-out family",
+    "No claim of consciousness or general intelligence"
+  ],
+  "status": "run results pending; do not interpret until committed runner is executed"
+}
