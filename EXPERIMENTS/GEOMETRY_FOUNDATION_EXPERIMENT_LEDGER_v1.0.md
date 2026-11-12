@@ -217,3 +217,22 @@ The numbering in the infographic differs from the repository ledger numbering fo
 - Infographic EXP-006 (functional boundary under intervention) → repository rerun EXP-006.
 
 The runner IDs follow the repository ledger and are not silently renumbered to match the image.
+
+
+## Experiment 007 — Relation endpoint coalescence (historical reconstruction)
+
+**Status: EXECUTED / RECONSTRUCTED OPERATIONALIZATION — NOT EXACT HISTORICAL REPLICATION.**
+
+Archive 013 reports a historical model with 150 moving relations and endpoint welding below distance 0.1, producing triangles and longer contours. The original source code, geometry scale, movement law, seeds and raw outputs are unavailable. We therefore created a transparent reconstruction, without overwriting the historical claim.
+
+Implementation: `EXPERIMENTS/EXP-007_RELATION_ENDPOINT_COALESCENCE_RECONSTRUCTION.py`.
+
+Result report: `EXPERIMENTS/RESULTS/EXP-007_RELATION_ENDPOINT_COALESCENCE_RECONSTRUCTION_2026-11-12.md`.
+
+The reconstruction initializes 150 relations as 300 free endpoints (no vertices), moves endpoint clusters in a periodic 2D box, and coalesces endpoints below a distance threshold. A matched-random null performs the same number of endpoint contractions without spatial selection.
+
+40 paired seeds were run at thresholds 0.05, 0.10 and 0.20. At the archival threshold 0.10, spatial and matched-random controls were nearly indistinguishable in cycle rank (120.825 vs 120.800), loops (8.700 vs 8.775) and triangles (111.800 vs 108.600). At 0.20, spatial runs showed more triangles (122.950 vs 101.375; paired mean delta +21.575, bootstrap 95% CI +9.474 to +32.975), but the graph was already nearly fully collapsed (mean 19.475 derived vertices from 300 endpoints). A movement-scale sensitivity check did not show a consistent spatial advantage.
+
+**Decision:** PARTIAL / NOT CONFIRMED. The model demonstrates that derived vertices and cycles can be constructed from relations without initializing vertices. However, cycle formation is largely reproduced by matched random contractions. A threshold-sensitive clustering signal appears only in a high-coalescence regime and is not yet evidence of robust meaningful node emergence. Recursive reuse of emergent nodes as relations remains untested.
+
+Do not promote this result to a universal law. Preserve Archive 013 as historical evidence only; EXP-007 is a new reconstruction with explicit assumptions.
